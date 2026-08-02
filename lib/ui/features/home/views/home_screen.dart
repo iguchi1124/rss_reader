@@ -4,6 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../articles/views/article_list_screen.dart';
 import '../../feeds/view_models/feed_list_view_model.dart';
 import '../../feeds/views/feed_list_screen.dart';
+import 'home_navigation_bar.dart';
+import 'home_sidebar.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -15,40 +17,47 @@ class HomeScreen extends ConsumerStatefulWidget {
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   int _index = 0;
 
+  void _select(int index) => setState(() => _index = index);
+
   @override
   Widget build(BuildContext context) {
     // Watched here rather than inside a tab so the badge survives switching.
     final unread = ref.watch(unreadCountProvider);
 
+    // Read from the theme rather than dart:io so an override reaches it and
+    // a test can render both arrangements.
+    final isMac = Theme.of(context).platform == TargetPlatform.macOS;
+
+    // Keeps scroll position and already-loaded articles across tab switches.
+    final body = IndexedStack(
+      index: _index,
+      children: const [ArticleListScreen(), FeedListScreen()],
+    );
+
+    if (isMac) {
+      return Scaffold(
+        body: Row(
+          children: [
+            HomeSidebar(
+              selectedIndex: _index,
+              onDestinationSelected: _select,
+              unreadCount: unread,
+            ),
+            Expanded(child: body),
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
-      // Keeps scroll position and already-loaded articles across tab switches.
-      body: IndexedStack(
-        index: _index,
-        children: const [ArticleListScreen(), FeedListScreen()],
-      ),
-      bottomNavigationBar: NavigationBar(
+      // The tab bar is translucent, so the list has to run behind it. This
+      // also hands the bar's height to the body as MediaQuery bottom padding.
+      extendBody: true,
+      body: body,
+      bottomNavigationBar: HomeNavigationBar(
         selectedIndex: _index,
-        onDestinationSelected: (index) => setState(() => _index = index),
-        destinations: [
-          NavigationDestination(
-            icon: Badge.count(
-              count: unread,
-              isLabelVisible: unread > 0,
-              child: const Icon(Icons.article_outlined),
-            ),
-            selectedIcon: Badge.count(
-              count: unread,
-              isLabelVisible: unread > 0,
-              child: const Icon(Icons.article),
-            ),
-            label: 'Latest',
-          ),
-          const NavigationDestination(
-            icon: Icon(Icons.rss_feed_outlined),
-            selectedIcon: Icon(Icons.rss_feed),
-            label: 'Feeds',
-          ),
-        ],
+        onDestinationSelected: _select,
+        unreadCount: unread,
       ),
     );
   }

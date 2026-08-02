@@ -92,9 +92,13 @@ Three screen frames sit at 393x852 with the safe-area insets (59 top, 34 bottom)
 drawn in, so a frame's height is what the device shows rather than what the
 scroll view holds:
 
-- `ScreenLatest` — `ArticleListScreen` with the filter bar and navigation bar
-- `ScreenFeeds` — `FeedListScreen` with the extended FAB
+- `ScreenLatest` — `ArticleListScreen` with the filter bar and the tab bar
+- `ScreenFeeds` — `FeedListScreen` with the extended FAB above the tab bar
 - `ScreenArticleDetail` — the article header and the HtmlContent blocks below it
+
+`ScreenLatestMacOS` is the desktop arrangement and sits at 1024x680 with no
+insets, because a window has none. `metadata.platform` on each frame records
+which build it stands for.
 
 Each screen carries a `theme` key pinning it to light, and repeats one row down
 as `…Dark`. Pinning is what puts both modes on the canvas at once — an unpinned
@@ -105,55 +109,55 @@ Edit both or delete the dark row.
 
 The component frames are unpinned and follow the canvas.
 
-Below them are the pieces on their own: `ArticleTile`, `FeedTile`, `FilterBar`,
-`ReadSwipeBackground`, `EmptyView`, `ErrorView`, `AddFeedDialog`,
-`ConfirmDialog`, `HtmlContentSpecimen`.
+### Glass
 
-Every node carries an explicit width and height rather than sizing to its
-content, because the canvas has no text engine to reflow with. Text heights are
-`fontSize` times the Material 3 line height, or times the `height` the widget
-overrides it with. Editing a string does not resize its box; the number has to
-follow.
+Navigation splits two ways, and `home_screen.dart` branches on
+`Theme.of(context).platform` to match:
 
-Sizes that Flutter owns rather than this app — app bar 64, navigation bar 80,
-`ListTile` 72, dialog corner radius 28 — are transcribed from the Material 3
-specs Flutter implements. They are close, not authoritative: measure a
-screenshot before trusting one to the pixel.
+| | frame | widget |
+| --- | --- | --- |
+| iOS, Android | `ScreenLatest`, `ScreenFeeds` | `HomeNavigationBar` — a capsule floating over the list |
+| macOS | `ScreenLatestMacOS` | `HomeSidebar` — 220 wide, fixed, full height |
 
-Only `color.*` and `text.*` variables are generated from `AppTheme`; anything
-else added on the canvas survives. `test/ui/core/theme_pen_sync_test.dart` fails
-when the generated ones drift. Regenerate after touching the theme:
+Both are built on `GlassSurface`, which is a `ClipRRect` over a
+`BackdropFilter`. The clip is not decoration: a `BackdropFilter` blurs
+everything inside its nearest ancestor clip, so without one it would blur the
+whole screen.
 
-```sh
-UPDATE_PEN_VARIABLES=1 mise exec flutter -- flutter test test/ui/core/theme_pen_sync_test.dart
-```
+The phone bar floats, which is why `HomeScreen` sets `extendBody: true` — a
+translucent panel with nothing passing behind it is a tinted rectangle, not
+glass. `extendBody` also hands the bar's height down as `MediaQuery` bottom
+padding, and the two list screens spend it explicitly rather than relying on
+`ListView` to adopt it, since what they are clearing is a widget of ours and
+not a system inset.
 
-A colour change means changing `AppTheme._seedColor`, not the `.pen` file.
+The sidebar has less to work with. macOS vibrancy samples the desktop behind
+the window, which Flutter cannot reach without an `NSVisualEffectView`, so what
+`HomeSidebar` blurs is the window background. It reads as translucent, not as
+vibrancy, and no amount of tuning here will change that.
 
-Translating a node to a widget:
+Neither is Liquid Glass. The refraction at the edges needs a fragment shader
+through `ImageFilter.shader`; what is here is the frosting and a hairline that
+stands in for the specular edge. Flutter ships none of this and is not taking
+contributions for it, so nothing better arrives by upgrading.
 
-| `.pen` | Dart |
-| --- | --- |
-| `"fill": "$color.<role>"` | `Theme.of(context).colorScheme.<role>` |
-| `"fontSize": "$text.<style>.size"` | `Theme.of(context).textTheme.<style>` |
-| `frame` with `layout: "vertical"` | `Column` |
-| `frame` with `layout: "horizontal"` | `Row` |
-| `alignItems` / `justifyContent` | `crossAxisAlignment` / `mainAxisAlignment` |
-| `padding: [top, right, bottom, left]` | `EdgeInsets.fromLTRB(left, top, right, bottom)` |
-| `gap` | `spacing` on the `Row` or `Column` |
-| childless `frame` between siblings | `SizedBox` of that height |
-| `width: "fill_container"` | `Expanded` |
-| `width: "fit_content"` | intrinsic size, no wrapper |
-| `cornerRadius` with `fill` | `BoxDecoration` on a `Container` |
-| `ellipse` | `BoxDecoration(shape: BoxShape.circle)` |
+Anything anchored to the bottom of a screen inside the tabs has to clear the
+bar by hand. `Scaffold` lifts its floating action button and its snack bars over
+its own `bottomNavigationBar`, and these screens have none — the bar belongs to
+`HomeScreen`, one Scaffold further out. So `FeedListScreen` pads its FAB by
+`MediaQuery.paddingOf(context).bottom`, and every snack bar goes through
+`AppMessenger`, which floats it and gives it the same margin. A fixed snack bar
+cannot take one, which is why they float.
 
-A `fill` or `fontSize` holding a literal rather than a `$` reference is
-unfinished design, not a spec. Never carry one into Dart: the reference is what
-survives a theme change, and a hard-coded hex is invisible in light mode review
-and wrong in dark mode.
+`BackdropFilter` is expensive, and both of these sit over a scrolling list, so
+they re-filter every frame. If a second glass surface ever appears, give them a
+shared `BackdropKey` so the engine filters once.
 
-pen.dev's MCP server is local to the machine running it, so the agent that reads
-a `.pen` file is the one running beside pen.dev.
+`glass.tint`, `glass.rim` and `glass.shadow` in the `.pen` are hand-owned. They
+need an alpha channel and the generated `color.*` values are opaque, so they sit
+under their own prefix — which is also what keeps `UPDATE_PEN_VARIABLES=1` from
+deleting them. They were picked by eye against `color.surface` and will not
+follow a change to `AppTheme._seedColor`.
 
 ### App icon
 
