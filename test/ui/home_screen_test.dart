@@ -97,6 +97,7 @@ void main() {
     await tester.tap(find.text('Feeds'));
     await settle(tester);
     expect(find.text('No feeds yet'), findsOneWidget);
+    expect(find.byType(FloatingActionButton), findsNothing);
   });
 
   testWidgets('adding a feed by URL lists its articles', (tester) async {
@@ -105,7 +106,7 @@ void main() {
     await tester.tap(find.text('Feeds'));
     await settle(tester);
 
-    await tester.tap(find.widgetWithText(FloatingActionButton, 'Add'));
+    await tester.tap(find.widgetWithText(FilledButton, 'Add feed'));
     await settle(tester);
 
     await tester.enterText(find.byType(TextField), 'https://example.com/rss');
@@ -115,6 +116,7 @@ void main() {
     // Registered in the feed list and counted as one unread article.
     expect(find.text('Test Feed'), findsWidgets);
     expect(find.text('1'), findsWidgets);
+    expect(find.byType(FloatingActionButton), findsOneWidget);
 
     await tester.tap(find.text('Latest'));
     await settle(tester);
@@ -129,7 +131,7 @@ void main() {
 
     await tester.tap(find.text('Feeds'));
     await settle(tester);
-    await tester.tap(find.widgetWithText(FloatingActionButton, 'Add'));
+    await tester.tap(find.widgetWithText(FilledButton, 'Add feed'));
     await settle(tester);
 
     await tester.enterText(

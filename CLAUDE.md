@@ -93,7 +93,7 @@ drawn in, so a frame's height is what the device shows rather than what the
 scroll view holds:
 
 - `ScreenLatest` — `ArticleListScreen` with the filter bar and the tab bar
-- `ScreenFeeds` — `FeedListScreen` with the extended FAB above the tab bar
+- `ScreenFeeds` — `FeedListScreen` with the circular FAB above the tab bar
 - `ScreenArticleDetail` — the article header and the HtmlContent blocks below it
 
 `ScreenLatestMacOS` is the desktop arrangement and sits at 1024x680 with no
@@ -108,6 +108,24 @@ does not reach `ScreenLatestDark`, and nothing checks that they still agree.
 Edit both or delete the dark row.
 
 The component frames are unpinned and follow the canvas.
+
+Two properties are easy to leave out, because a `.pen` file stays valid JSON
+without them and only looks wrong once it is open on the canvas:
+
+- A text node wraps only when `textGrowth` is set. Every one here uses
+  `"fixed-width"`, which fixes the width and lets the height grow; the default
+  grows the width instead and runs the string out of its frame. The format has
+  no `maxLines`, so where a widget caps its lines the count is recorded in
+  `metadata` and spent on the node's `height`. That height is a starting point —
+  the canvas is free to grow it, and the numbers written here are what Flutter
+  renders, not what pen.dev will.
+- An icon node needs a `library` from the documented set: `lucide`, `feather`,
+  `phosphor`, or `Material Symbols` followed by `Outlined`, `Rounded` or
+  `Sharp`. A bare `"Material Symbols"` renders as `?`, and so does any name
+  carrying Flutter's variant suffix — `Icons.article_outlined` and
+  `Icons.star_border` are `article` and `star` here. Material Symbols carries
+  the variant on a FILL axis the icon node cannot reach, so a selected tab draws
+  outlined on the canvas and filled in the app.
 
 ### Glass
 
