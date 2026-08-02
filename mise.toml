@@ -1,0 +1,7 @@
+[tools]
+flutter = "3.41.0"
+# Gradle targets Java 17 (android/app/build.gradle.kts).
+java = "temurin-17.0.19+10"
+# CocoaPods is required for the ios/ and macos/ builds; it installs into the ruby above.
+ruby = "3.2.1"
+"gem:cocoapods" = "1.16.2"
