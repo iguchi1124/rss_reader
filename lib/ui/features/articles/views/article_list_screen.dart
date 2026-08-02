@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../domain/models/article.dart';
 import '../../../../domain/models/feed.dart';
 import '../../../core/app_messenger.dart';
+import '../../../core/theme.dart';
 import '../../../core/widgets/status_view.dart';
 import '../../article_detail/views/article_detail_screen.dart';
 import '../view_models/article_list_view_model.dart';
@@ -24,6 +25,7 @@ class ArticleListScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(_title),
+        actionsPadding: appBarActionsPadding(context),
         actions: [
           IconButton(
             onPressed: isRefreshing ? null : () => _refresh(context, ref),
@@ -110,9 +112,13 @@ class ArticleListScreen extends ConsumerWidget {
 
     return ListView.separated(
       physics: const AlwaysScrollableScrollPhysics(),
-      // Set explicitly rather than left to the automatic MediaQuery padding,
-      // because what it clears is the floating tab bar, not a system inset.
-      padding: EdgeInsets.only(bottom: MediaQuery.paddingOf(context).bottom),
+      // The bottom is set explicitly rather than left to the automatic
+      // MediaQuery padding, because what it clears is the floating tab bar,
+      // not a system inset.
+      padding: EdgeInsets.only(
+        right: rightGutter(context),
+        bottom: MediaQuery.paddingOf(context).bottom,
+      ),
       itemCount: articles.length,
       separatorBuilder: (_, _) => const Divider(indent: 16, endIndent: 16),
       itemBuilder: (context, index) {

@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../domain/models/feed.dart';
 import '../../../../utils/date_format.dart';
 import '../../../core/app_messenger.dart';
+import '../../../core/theme.dart';
 import '../../../core/widgets/status_view.dart';
 import '../../articles/views/article_list_screen.dart';
 import '../view_models/feed_list_view_model.dart';
@@ -21,6 +22,7 @@ class FeedListScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Feeds'),
+        actionsPadding: appBarActionsPadding(context),
         actions: [
           IconButton(
             onPressed: isRefreshing || !hasFeeds
@@ -47,6 +49,7 @@ class FeedListScreen extends ConsumerWidget {
       floatingActionButton: hasFeeds
           ? Padding(
               padding: EdgeInsets.only(
+                right: rightGutter(context),
                 bottom: MediaQuery.paddingOf(context).bottom,
               ),
               child: FloatingActionButton(
@@ -105,8 +108,10 @@ class FeedListScreen extends ConsumerWidget {
 
     return ListView.separated(
       physics: const AlwaysScrollableScrollPhysics(),
-      // Clears the FAB, and on phones the floating tab bar beneath it.
+      // The bottom clears the FAB, and on phones the floating tab bar beneath
+      // it.
       padding: EdgeInsets.only(
+        right: rightGutter(context),
         bottom: 88 + MediaQuery.paddingOf(context).bottom,
       ),
       itemCount: feeds.length,
@@ -146,6 +151,10 @@ class _FeedTile extends ConsumerWidget {
     final theme = Theme.of(context);
 
     return ListTile(
+      // The trailing menu button carries 12 points of its own padding, so the
+      // theme's 16 would push its glyph to 28 from the edge. 4 puts it at the
+      // 16 the divider and the app bar use.
+      contentPadding: const EdgeInsets.fromLTRB(16, 4, 4, 4),
       leading: CircleAvatar(
         backgroundColor: theme.colorScheme.primaryContainer,
         child: Text(
