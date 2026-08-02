@@ -81,6 +81,81 @@ A refresh the user asked for is tracked by its own `RefreshState` provider.
 Reusing the `AsyncValue` for it would flash the spinner after every ordinary
 write, since those reload the list too.
 
+## Design
+
+`design/rss_reader.pen` is a pen.dev canvas mirroring the widgets under `lib/ui/`.
+It is a design source, not a build input — nothing generates Dart from it, and
+`metadata.dart` on a reusable frame names the widget it stands for. Keep the two
+in step or delete the frame.
+
+The `variables` block is generated from `AppTheme`, never hand-edited;
+`test/ui/core/theme_pen_sync_test.dart` fails when it drifts. Regenerate after
+touching the theme:
+
+```sh
+UPDATE_PEN_VARIABLES=1 mise exec flutter -- flutter test test/ui/core/theme_pen_sync_test.dart
+```
+
+A colour change means changing `AppTheme._seedColor`, not the `.pen` file.
+
+Translating a node to a widget:
+
+| `.pen` | Dart |
+| --- | --- |
+| `"fill": "$color.<role>"` | `Theme.of(context).colorScheme.<role>` |
+| `"fontSize": "$text.<style>.size"` | `Theme.of(context).textTheme.<style>` |
+| `frame` with `layout: "vertical"` | `Column` |
+| `frame` with `layout: "horizontal"` | `Row` |
+| `alignItems` / `justifyContent` | `crossAxisAlignment` / `mainAxisAlignment` |
+| `padding: [top, right, bottom, left]` | `EdgeInsets.fromLTRB(left, top, right, bottom)` |
+| `gap` | `spacing` on the `Row` or `Column` |
+| childless `frame` between siblings | `SizedBox` of that height |
+| `width: "fill_container"` | `Expanded` |
+| `width: "fit_content"` | intrinsic size, no wrapper |
+| `cornerRadius` with `fill` | `BoxDecoration` on a `Container` |
+| `ellipse` | `BoxDecoration(shape: BoxShape.circle)` |
+
+A `fill` or `fontSize` holding a literal rather than a `$` reference is
+unfinished design, not a spec. Never carry one into Dart: the reference is what
+survives a theme change, and a hard-coded hex is invisible in light mode review
+and wrong in dark mode.
+
+pen.dev's MCP server is local to the machine running it, so the agent that reads
+a `.pen` file is the one running beside pen.dev.
+
+### App icon
+
+`design/app_icon.pen` holds three frames, each exporting to the PNG named in its
+`metadata.export`:
+
+| frame | export | used for |
+| --- | --- | --- |
+| `AppIcon` | `design/app_icon.png` | iOS, Android legacy `mipmap` |
+| `AppIconMacOS` | `design/app_icon_macos.png` | macOS — rounded and inset, since macOS does not mask |
+| `AppIconForeground` | `design/app_icon_foreground.png` | Android adaptive foreground, transparent |
+
+The foreground frame draws the glyph smaller than the others on purpose: an
+adaptive icon only guarantees the middle 72 of its 108 units are visible, so
+artwork sized like `AppIcon` would lose its edges under a circular mask.
+
+Re-export the three PNGs from pen.dev, then regenerate every platform asset:
+
+```sh
+mise exec flutter -- flutter pub get
+mise exec flutter -- dart run flutter_launcher_icons
+```
+
+`flutter_launcher_icons.yaml` holds the configuration. `#1A120E` appears there
+and in `android/app/src/main/res/values/colors.xml` because the Android adaptive
+background is a platform resource, not a Flutter theme value — it cannot read
+`AppTheme`. Change it in both, or the launcher background and the icon artwork
+drift apart.
+
+The icon's colours are fixed, not theme-derived: `$icon.background`,
+`$icon.foreground`, and `$icon.accent` in the `.pen` file carry no `theme` key.
+A launcher icon does not follow the system light/dark setting, so the rule about
+`$color.*` references tracking `AppTheme` does not apply here.
+
 ## Conventions
 
 **Errors.** Fallible operations return `Result<T>` (`Ok` / `Failure`) instead of

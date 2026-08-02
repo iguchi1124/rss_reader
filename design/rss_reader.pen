@@ -1,0 +1,544 @@
+{
+  "version": "2.14",
+  "themes": {
+    "mode": [
+      "light",
+      "dark"
+    ]
+  },
+  "variables": {
+    "color.primary": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#8D4D2D",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#FFB693",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.primaryContainer": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFDBCC",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#703718",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.onPrimaryContainer": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#703718",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#FFDBCC",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.surface": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFF8F6",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#1A120E",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.onSurface": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#221A16",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#F0DFD8",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.surfaceContainerHighest": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#F0DFD8",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#3D332E",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.onSurfaceVariant": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#52443D",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#D7C2B9",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.outline": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#85736C",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#A08D85",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.outlineVariant": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#D7C2B9",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#52443D",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.error": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#BA1A1A",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#FFB4AB",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.surfaceTint": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#8D4D2D",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#FFB693",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "text.headlineSmall.size": {
+      "type": "number",
+      "value": null
+    },
+    "text.titleLarge.size": {
+      "type": "number",
+      "value": null
+    },
+    "text.titleMedium.size": {
+      "type": "number",
+      "value": null
+    },
+    "text.titleSmall.size": {
+      "type": "number",
+      "value": null
+    },
+    "text.bodyLarge.size": {
+      "type": "number",
+      "value": null
+    },
+    "text.bodyMedium.size": {
+      "type": "number",
+      "value": null
+    },
+    "text.bodySmall.size": {
+      "type": "number",
+      "value": null
+    },
+    "text.labelLarge.size": {
+      "type": "number",
+      "value": null
+    },
+    "text.labelSmall.size": {
+      "type": "number",
+      "value": null
+    }
+  },
+  "children": [
+    {
+      "id": "ArticleTile",
+      "type": "frame",
+      "reusable": true,
+      "x": 0,
+      "y": 0,
+      "width": 393,
+      "height": "fit_content",
+      "layout": "horizontal",
+      "alignItems": "start",
+      "gap": 0,
+      "padding": [
+        12,
+        8,
+        12,
+        16
+      ],
+      "fill": "$color.surface",
+      "metadata": {
+        "dart": "lib/ui/features/articles/views/article_tile.dart"
+      },
+      "children": [
+        {
+          "id": "unreadMarker",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": "fit_content",
+          "height": "fit_content",
+          "layout": "vertical",
+          "padding": [
+            6,
+            10,
+            0,
+            0
+          ],
+          "children": [
+            {
+              "id": "unreadDot",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "width": 8,
+              "height": 8,
+              "fill": "$color.primary"
+            }
+          ]
+        },
+        {
+          "id": "content",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": "fill_container",
+          "height": "fit_content",
+          "layout": "vertical",
+          "alignItems": "start",
+          "gap": 0,
+          "children": [
+            {
+              "id": "title",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "content": "Designing on canvas, landing in code",
+              "fontSize": "$text.titleSmall.size",
+              "fill": "$color.onSurface",
+              "width": "fill_container",
+              "height": "fit_content",
+              "fontWeight": 700,
+              "lineHeight": 1.4,
+              "maxLines": 2
+            },
+            {
+              "id": "gap4",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 1,
+              "height": 4
+            },
+            {
+              "id": "summary",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "content": "A short excerpt of the article body, trimmed to two lines so every row in the list keeps the same height.",
+              "fontSize": "$text.bodySmall.size",
+              "fill": "$color.onSurfaceVariant",
+              "width": "fill_container",
+              "height": "fit_content",
+              "lineHeight": 1.45,
+              "maxLines": 2
+            },
+            {
+              "id": "gap6",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 1,
+              "height": 6
+            },
+            {
+              "id": "meta",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "content": "Example Feed · 2h ago",
+              "fontSize": "$text.labelSmall.size",
+              "fill": "$color.outline",
+              "width": "fill_container",
+              "height": "fit_content",
+              "maxLines": 1
+            }
+          ]
+        },
+        {
+          "id": "starButton",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 40,
+          "height": 40,
+          "layout": "horizontal",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "starIcon",
+              "type": "icon",
+              "x": 0,
+              "y": 0,
+              "width": 20,
+              "height": 20,
+              "icon": "star_border",
+              "fill": "$color.outline"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EmptyView",
+      "type": "frame",
+      "reusable": true,
+      "x": 460,
+      "y": 0,
+      "width": 393,
+      "height": "fit_content",
+      "layout": "vertical",
+      "alignItems": "center",
+      "gap": 0,
+      "padding": 32,
+      "fill": "$color.surface",
+      "metadata": {
+        "dart": "lib/ui/core/widgets/status_view.dart"
+      },
+      "children": [
+        {
+          "id": "emptyIcon",
+          "type": "icon",
+          "x": 0,
+          "y": 0,
+          "width": 56,
+          "height": 56,
+          "icon": "inbox",
+          "fill": "$color.outline"
+        },
+        {
+          "id": "emptyGap16",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 16
+        },
+        {
+          "id": "emptyTitle",
+          "type": "text",
+          "x": 0,
+          "y": 0,
+          "content": "No articles yet",
+          "fontSize": "$text.titleMedium.size",
+          "fill": "$color.onSurface",
+          "width": "fill_container",
+          "height": "fit_content",
+          "textAlign": "center"
+        },
+        {
+          "id": "emptyGap8",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 8
+        },
+        {
+          "id": "emptyMessage",
+          "type": "text",
+          "x": 0,
+          "y": 0,
+          "content": "Add a feed to start reading.",
+          "fontSize": "$text.bodyMedium.size",
+          "fill": "$color.onSurfaceVariant",
+          "width": "fill_container",
+          "height": "fit_content",
+          "textAlign": "center"
+        }
+      ]
+    },
+    {
+      "id": "ErrorView",
+      "type": "frame",
+      "reusable": true,
+      "x": 920,
+      "y": 0,
+      "width": 393,
+      "height": "fit_content",
+      "layout": "vertical",
+      "alignItems": "center",
+      "gap": 0,
+      "padding": 32,
+      "fill": "$color.surface",
+      "metadata": {
+        "dart": "lib/ui/core/widgets/status_view.dart"
+      },
+      "children": [
+        {
+          "id": "errorIcon",
+          "type": "icon",
+          "x": 0,
+          "y": 0,
+          "width": 56,
+          "height": 56,
+          "icon": "error_outline",
+          "fill": "$color.error"
+        },
+        {
+          "id": "errorGap16",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 16
+        },
+        {
+          "id": "errorMessage",
+          "type": "text",
+          "x": 0,
+          "y": 0,
+          "content": "The feed could not be reached.",
+          "fontSize": "$text.bodyMedium.size",
+          "fill": "$color.onSurface",
+          "width": "fill_container",
+          "height": "fit_content",
+          "textAlign": "center"
+        },
+        {
+          "id": "errorGap24",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 24
+        },
+        {
+          "id": "retryButton",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": "fit_content",
+          "height": 40,
+          "cornerRadius": 20,
+          "layout": "horizontal",
+          "alignItems": "center",
+          "gap": 8,
+          "padding": [
+            0,
+            24,
+            0,
+            16
+          ],
+          "fill": "$color.primaryContainer",
+          "children": [
+            {
+              "id": "retryIcon",
+              "type": "icon",
+              "x": 0,
+              "y": 0,
+              "width": 18,
+              "height": 18,
+              "icon": "refresh",
+              "fill": "$color.onPrimaryContainer"
+            },
+            {
+              "id": "retryLabel",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "content": "Retry",
+              "fontSize": "$text.labelLarge.size",
+              "fontWeight": 500,
+              "fill": "$color.onPrimaryContainer"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
