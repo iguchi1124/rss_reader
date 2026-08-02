@@ -188,15 +188,23 @@ view runs the full height of the window. Only the traffic lights are left, and
 they float over the sidebar.
 
 Nothing reports what that costs. The title bar view still sits above the content
-and still swallows drags, so the top `macOSTitleBarHeight` of the window is
-neither empty nor clickable. `TitleBarInset`, wrapped around
-`MaterialApp.builder`, adds it as `MediaQuery` top padding, which is where the
-`SafeArea` in `HomeSidebar` and every `AppBar` then take it from. It sits above
-the navigator so a pushed route clears the strip too.
+and still swallows drags, so that strip of the window is neither empty nor
+clickable. `TitleBarInset`, wrapped around `MaterialApp.builder`, adds it as
+`MediaQuery` top padding, which is where the `SafeArea` in `HomeSidebar` and
+every `AppBar` then take it from. It sits above the navigator so a pushed route
+clears the strip too.
 
-The height is a constant because the title bar's real height never reaches Dart.
-28 is what a plain titled window has; a window that gained a toolbar would need
-a new number.
+The height is not a constant, because it is not constant: full screen turns the
+title bar into an auto-hiding overlay that covers nothing, and a window that
+gained a toolbar would have a taller one. `MainFlutterWindow` measures it —
+`contentView.bounds.height - contentLayoutRect.height`, zero when the style mask
+says full screen — and answers `getHeight` on the `rss_reader/title_bar` channel,
+then pushes `setHeight` from the full-screen notifications. Nothing else tells
+Dart which state the window is in.
+
+The channel is an `OptionalMethodChannel` and `TitleBarInset` carries no platform
+check: only the macOS runner registers it, and a height nobody reports is no
+inset.
 
 ### App icon
 
