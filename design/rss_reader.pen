@@ -3401,11 +3401,11 @@
               "x": 0,
               "y": 0,
               "width": 804,
-              "height": 64,
+              "height": 92,
               "layout": "horizontal",
               "fill": "$color.surface",
               "padding": [
-                0,
+                28,
                 4,
                 0,
                 16
@@ -3593,7 +3593,7 @@
               "x": 0,
               "y": 0,
               "width": 804,
-              "height": 568,
+              "height": 540,
               "layout": "vertical",
               "children": [
                 {
@@ -4210,7 +4210,7 @@
                   "x": 0,
                   "y": 0,
                   "width": 804,
-                  "height": 238.39999999999998,
+                  "height": 210.4,
                   "layout": "none",
                   "fill": "$color.surface",
                   "children": []
@@ -4228,7 +4228,12 @@
           "height": 680,
           "layout": "vertical",
           "fill": "$glass.tint",
-          "padding": 12,
+          "padding": [
+            40,
+            12,
+            12,
+            12
+          ],
           "gap": 4,
           "stroke": "$glass.rim",
           "strokeWidth": {
@@ -4378,9 +4383,49 @@
               "x": 0,
               "y": 0,
               "width": 196,
-              "height": 572,
+              "height": 540,
               "layout": "none",
               "children": []
+            },
+            {
+              "id": "trafficLights1",
+              "type": "frame",
+              "x": 14,
+              "y": 8,
+              "width": 52,
+              "height": 12,
+              "layout": "horizontal",
+              "gap": 8,
+              "layoutPosition": "absolute",
+              "children": [
+                {
+                  "id": "trafficLight1",
+                  "type": "ellipse",
+                  "x": 0,
+                  "y": 0,
+                  "width": 12,
+                  "height": 12,
+                  "fill": "#FF5F57"
+                },
+                {
+                  "id": "trafficLight2",
+                  "type": "ellipse",
+                  "x": 0,
+                  "y": 0,
+                  "width": 12,
+                  "height": 12,
+                  "fill": "#FEBC2E"
+                },
+                {
+                  "id": "trafficLight3",
+                  "type": "ellipse",
+                  "x": 0,
+                  "y": 0,
+                  "width": 12,
+                  "height": 12,
+                  "fill": "#28C840"
+                }
+              ]
             }
           ]
         }
@@ -7248,11 +7293,11 @@
               "x": 0,
               "y": 0,
               "width": 804,
-              "height": 64,
+              "height": 92,
               "layout": "horizontal",
               "fill": "$color.surface",
               "padding": [
-                0,
+                28,
                 4,
                 0,
                 16
@@ -7440,7 +7485,7 @@
               "x": 0,
               "y": 0,
               "width": 804,
-              "height": 568,
+              "height": 540,
               "layout": "vertical",
               "children": [
                 {
@@ -8057,7 +8102,7 @@
                   "x": 0,
                   "y": 0,
                   "width": 804,
-                  "height": 238.39999999999998,
+                  "height": 210.4,
                   "layout": "none",
                   "fill": "$color.surface",
                   "children": []
@@ -8075,7 +8120,12 @@
           "height": 680,
           "layout": "vertical",
           "fill": "$glass.tint",
-          "padding": 12,
+          "padding": [
+            40,
+            12,
+            12,
+            12
+          ],
           "gap": 4,
           "stroke": "$glass.rim",
           "strokeWidth": {
@@ -8225,9 +8275,49 @@
               "x": 0,
               "y": 0,
               "width": 196,
-              "height": 572,
+              "height": 540,
               "layout": "none",
               "children": []
+            },
+            {
+              "id": "trafficLights1Dark",
+              "type": "frame",
+              "x": 14,
+              "y": 8,
+              "width": 52,
+              "height": 12,
+              "layout": "horizontal",
+              "gap": 8,
+              "layoutPosition": "absolute",
+              "children": [
+                {
+                  "id": "trafficLight1Dark",
+                  "type": "ellipse",
+                  "x": 0,
+                  "y": 0,
+                  "width": 12,
+                  "height": 12,
+                  "fill": "#FF5F57"
+                },
+                {
+                  "id": "trafficLight2Dark",
+                  "type": "ellipse",
+                  "x": 0,
+                  "y": 0,
+                  "width": 12,
+                  "height": 12,
+                  "fill": "#FEBC2E"
+                },
+                {
+                  "id": "trafficLight3Dark",
+                  "type": "ellipse",
+                  "x": 0,
+                  "y": 0,
+                  "width": 12,
+                  "height": 12,
+                  "fill": "#28C840"
+                }
+              ]
             }
           ]
         }
