@@ -68,7 +68,6 @@ class _AddFeedDialogState extends State<AddFeedDialog> {
               hintText: 'https://example.com/feed.xml',
               labelText: 'Feed or site URL',
               errorText: _error,
-              border: const OutlineInputBorder(),
             ),
           ),
           const SizedBox(height: 12),

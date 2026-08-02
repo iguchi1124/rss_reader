@@ -232,8 +232,7 @@ class _HtmlBuilder {
     };
 
     final resolved = (style ?? _baseStyle).copyWith(
-      fontWeight: FontWeight.w700,
-      height: 1.4,
+      fontWeight: FontWeight.w600,
       color: theme.colorScheme.onSurface,
     );
 
@@ -442,7 +441,7 @@ class _HtmlBuilder {
       case 'strong' || 'b':
         return _inlineChildren(
           node,
-          style.copyWith(fontWeight: FontWeight.w700),
+          style.copyWith(fontWeight: FontWeight.w600),
         );
 
       case 'em' || 'i' || 'cite' || 'dfn':

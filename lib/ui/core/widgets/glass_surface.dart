@@ -19,7 +19,7 @@ class GlassSurface extends StatelessWidget {
     this.borderRadius = BorderRadius.zero,
     this.border,
     this.blurSigma = 16,
-    this.opacity = 0.7,
+    this.opacity = 0.8,
   });
 
   final Widget child;
@@ -55,12 +55,17 @@ class GlassSurface extends StatelessWidget {
   }
 }
 
-/// The hairline that reads as the lit edge of the panel.
+/// The hairline that separates the panel from what scrolls behind it. It does
+/// that job alone: chrome carries no shadow, so this is the only thing lifting
+/// the panel off the content.
+///
+/// Dark mode lights the edge; on a white canvas a white edge is invisible, so
+/// light mode darkens it instead.
 BorderSide glassEdge(BuildContext context) {
   final brightness = Theme.of(context).brightness;
   return BorderSide(
-    color: Colors.white.withValues(
-      alpha: brightness == Brightness.light ? 0.8 : 0.25,
-    ),
+    color: brightness == Brightness.light
+        ? Colors.black.withValues(alpha: 0.12)
+        : Colors.white.withValues(alpha: 0.15),
   );
 }

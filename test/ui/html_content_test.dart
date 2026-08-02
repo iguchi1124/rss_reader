@@ -43,7 +43,7 @@ void main() {
     expect(span.toPlainText(), 'Heading');
     expect(
       (span.children!.first as TextSpan).style?.fontWeight,
-      FontWeight.w700,
+      FontWeight.w600,
     );
   });
 
