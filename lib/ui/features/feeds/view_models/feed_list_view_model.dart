@@ -1,50 +1,36 @@
-import '../../../../data/repositories/feed_repository.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../../../data/providers.dart';
 import '../../../../domain/models/feed.dart';
 import '../../../../utils/result.dart';
-import '../../../core/disposable_view_model.dart';
+import '../../../core/refresh_state.dart';
 
-class FeedListViewModel extends DisposableViewModel {
-  FeedListViewModel({required FeedRepository repository})
-    : _repository = repository {
-    // Unread counts also change from other screens, e.g. marking an article
-    // read, so this follows the repository rather than only its own actions.
-    _repository.addListener(_onRepositoryChanged);
-    load();
-  }
+final feedListProvider = AsyncNotifierProvider<FeedListViewModel, List<Feed>>(
+  FeedListViewModel.new,
+);
 
-  final FeedRepository _repository;
+final feedListRefreshingProvider = NotifierProvider<RefreshState, bool>(
+  RefreshState.new,
+);
 
-  List<Feed> _feeds = const [];
-  List<Feed> get feeds => List.unmodifiable(_feeds);
+/// Unread articles across every feed, for the badge in the navigation bar.
+final unreadCountProvider = Provider<int>((ref) {
+  final feeds = ref.watch(feedListProvider).value ?? const <Feed>[];
+  return feeds.fold(0, (sum, feed) => sum + feed.unreadCount);
+});
 
-  bool _isLoading = true;
-  bool get isLoading => _isLoading;
-
-  bool _isRefreshing = false;
-  bool get isRefreshing => _isRefreshing;
-
-  String? _errorMessage;
-  String? get errorMessage => _errorMessage;
-
-  bool get isEmpty => !_isLoading && _feeds.isEmpty;
-
-  int get totalUnread => _feeds.fold(0, (sum, feed) => sum + feed.unreadCount);
-
-  Future<void> load() async {
-    _errorMessage = null;
-    try {
-      _feeds = await _repository.listFeeds();
-    } on Object catch (error) {
-      _errorMessage = 'Could not load feeds: $error';
-    } finally {
-      _isLoading = false;
-      safeNotifyListeners();
-    }
+class FeedListViewModel extends AsyncNotifier<List<Feed>> {
+  @override
+  Future<List<Feed>> build() {
+    ref.watch(feedRevisionProvider);
+    return ref.watch(feedRepositoryProvider).listFeeds();
   }
 
   /// Returns null on success, or a message explaining the failure.
   Future<String?> addFeed(String url) async {
-    final result = await _repository.addFeed(url);
+    final result = await ref.writeFeedData(
+      (repository) => repository.addFeed(url),
+    );
     return switch (result) {
       Ok() => null,
       Failure(:final error) =>
@@ -52,31 +38,24 @@ class FeedListViewModel extends DisposableViewModel {
     };
   }
 
-  Future<void> deleteFeed(Feed feed) => _repository.deleteFeed(feed.id);
+  Future<void> deleteFeed(Feed feed) =>
+      ref.writeFeedData((repository) => repository.deleteFeed(feed.id));
 
   /// Returns a summary to show the user.
   Future<String> refreshAll() async {
-    if (_isRefreshing) return 'Already refreshing.';
+    final refreshing = ref.read(feedListRefreshingProvider.notifier);
+    if (!refreshing.start()) return 'Already refreshing.';
 
-    _isRefreshing = true;
-    safeNotifyListeners();
     try {
-      final summary = await _repository.refreshAll();
-      return summary.message;
+      return await ref.writeFeedData(
+        (repository) async => (await repository.refreshAll()).message,
+      );
     } finally {
-      _isRefreshing = false;
-      safeNotifyListeners();
+      refreshing.finish();
     }
   }
 
-  Future<void> markAllRead(Feed feed) =>
-      _repository.markAllRead(feedId: feed.id);
-
-  void _onRepositoryChanged() => load();
-
-  @override
-  void dispose() {
-    _repository.removeListener(_onRepositoryChanged);
-    super.dispose();
-  }
+  Future<void> markAllRead(Feed feed) => ref.writeFeedData(
+    (repository) => repository.markAllRead(feedId: feed.id),
+  );
 }

@@ -268,19 +268,12 @@ void main() {
       await repository.addFeed('https://example.com/feed.xml');
     });
 
-    test(
-      'marking read lowers the unread count and notifies listeners',
-      () async {
-        var notified = 0;
-        repository.addListener(() => notified++);
+    test('marking read lowers the unread count', () async {
+      final article = (await repository.listArticles()).single;
+      await repository.setRead(article.id, true);
 
-        final article = (await repository.listArticles()).single;
-        await repository.setRead(article.id, true);
-
-        expect(await repository.unreadCount(), 0);
-        expect(notified, greaterThan(0));
-      },
-    );
+      expect(await repository.unreadCount(), 0);
+    });
 
     test('stars and unstars an article', () async {
       final article = (await repository.listArticles()).single;
@@ -292,14 +285,10 @@ void main() {
       expect((await repository.findArticle(article.id))?.isStarred, isFalse);
     });
 
-    test('deleting a feed notifies listeners', () async {
-      var notified = 0;
-      repository.addListener(() => notified++);
-
+    test('deleting a feed drops it from the list', () async {
       await repository.deleteFeed((await repository.listFeeds()).single.id);
 
       expect(await repository.listFeeds(), isEmpty);
-      expect(notified, greaterThan(0));
     });
   });
 }

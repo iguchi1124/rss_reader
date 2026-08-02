@@ -1,49 +1,31 @@
-import '../../../../data/repositories/feed_repository.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../../../data/providers.dart';
 import '../../../../domain/models/article.dart';
-import '../../../core/disposable_view_model.dart';
 
-/// Opening the article marks it read, once per visit: leaving before finishing
-/// should not undo that.
-class ArticleDetailViewModel extends DisposableViewModel {
-  ArticleDetailViewModel({
-    required FeedRepository repository,
-    required Article article,
-  }) : _repository = repository,
-       _article = article {
-    _repository.addListener(_onRepositoryChanged);
-    _markAsRead();
-  }
+/// Null once the article's feed is deleted; the screen keeps showing the copy it
+/// was opened with in that case.
+final articleProvider =
+    AsyncNotifierProvider.family<ArticleDetailViewModel, Article?, int>(
+      ArticleDetailViewModel.new,
+      isAutoDispose: true,
+    );
 
-  final FeedRepository _repository;
+class ArticleDetailViewModel extends AsyncNotifier<Article?> {
+  ArticleDetailViewModel(this.articleId);
 
-  Article _article;
-  Article get article => _article;
-
-  Future<void> toggleStarred() =>
-      _repository.setStarred(_article.id, !_article.isStarred);
-
-  Future<void> markAsUnread() async {
-    await _repository.setRead(_article.id, false);
-  }
-
-  Future<void> _markAsRead() async {
-    if (_article.isRead) return;
-    await _repository.setRead(_article.id, true);
-  }
-
-  Future<void> _onRepositoryChanged() async {
-    final updated = await _repository.findArticle(_article.id);
-    // The article is gone once its feed is deleted; keep showing what the user
-    // was reading.
-    if (updated == null) return;
-
-    _article = updated;
-    safeNotifyListeners();
-  }
+  final int articleId;
 
   @override
-  void dispose() {
-    _repository.removeListener(_onRepositoryChanged);
-    super.dispose();
+  Future<Article?> build() {
+    ref.watch(feedRevisionProvider);
+    return ref.watch(feedRepositoryProvider).findArticle(articleId);
   }
+
+  Future<void> setRead(bool isRead) =>
+      ref.writeFeedData((repository) => repository.setRead(articleId, isRead));
+
+  Future<void> toggleStarred(Article article) => ref.writeFeedData(
+    (repository) => repository.setStarred(articleId, !article.isStarred),
+  );
 }
