@@ -1,37 +1,40 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../data/repositories/feed_repository.dart';
 import '../../../../domain/models/article.dart';
 import '../../../../utils/date_format.dart';
 import '../../../core/link_launcher.dart';
 import '../../../core/widgets/html_content.dart';
 import '../view_models/article_detail_view_model.dart';
 
-class ArticleDetailScreen extends StatelessWidget {
+class ArticleDetailScreen extends ConsumerStatefulWidget {
   const ArticleDetailScreen({super.key, required this.article});
 
   final Article article;
 
   @override
-  Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => ArticleDetailViewModel(
-        repository: context.read<FeedRepository>(),
-        article: article,
-      ),
-      child: const _ArticleDetailView(),
-    );
-  }
+  ConsumerState<ArticleDetailScreen> createState() =>
+      _ArticleDetailScreenState();
 }
 
-class _ArticleDetailView extends StatelessWidget {
-  const _ArticleDetailView();
+class _ArticleDetailScreenState extends ConsumerState<ArticleDetailScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // Once per visit: leaving before finishing should not undo it, and marking
+    // the article unread again should stick.
+    if (!widget.article.isRead) {
+      ref.read(articleProvider(widget.article.id).notifier).setRead(true);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    final viewModel = context.watch<ArticleDetailViewModel>();
-    final article = viewModel.article;
+    final viewModel = ref.read(articleProvider(widget.article.id).notifier);
+    // The article disappears once its feed is deleted; keep showing the copy the
+    // screen was opened with.
+    final article =
+        ref.watch(articleProvider(widget.article.id)).value ?? widget.article;
     final theme = Theme.of(context);
 
     return Scaffold(
@@ -43,7 +46,7 @@ class _ArticleDetailView extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: viewModel.toggleStarred,
+            onPressed: () => viewModel.toggleStarred(article),
             icon: Icon(
               article.isStarred ? Icons.star : Icons.star_border,
               color: article.isStarred ? theme.colorScheme.primary : null,
@@ -60,7 +63,7 @@ class _ArticleDetailView extends StatelessWidget {
             tooltip: 'Open in browser',
           ),
           PopupMenuButton<_DetailAction>(
-            onSelected: (action) => _onAction(context, viewModel, action),
+            onSelected: (action) => _onAction(viewModel, action),
             itemBuilder: (context) => const [
               PopupMenuItem(
                 value: _DetailAction.markUnread,
@@ -102,16 +105,12 @@ class _ArticleDetailView extends StatelessWidget {
     );
   }
 
-  void _onAction(
-    BuildContext context,
-    ArticleDetailViewModel viewModel,
-    _DetailAction action,
-  ) {
+  void _onAction(ArticleDetailViewModel viewModel, _DetailAction action) {
     switch (action) {
       case _DetailAction.markUnread:
         // Closing immediately is what makes this stick: staying on the detail
         // screen would look as though the article had been re-read.
-        viewModel.markAsUnread();
+        viewModel.setRead(false);
         Navigator.of(context).pop();
     }
   }

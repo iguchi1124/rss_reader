@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../data/repositories/feed_repository.dart';
 import '../../../../domain/models/article.dart';
 import '../../../../domain/models/feed.dart';
 import '../../../core/widgets/status_view.dart';
@@ -10,41 +9,24 @@ import '../view_models/article_list_view_model.dart';
 import 'article_tile.dart';
 
 /// Shows articles from [feed], or from every feed when it is null.
-class ArticleListScreen extends StatelessWidget {
+class ArticleListScreen extends ConsumerWidget {
   const ArticleListScreen({super.key, this.feed});
 
   final Feed? feed;
 
   @override
-  Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      // Gives each feed its own view model instead of reusing one across feeds.
-      key: ValueKey(feed?.id),
-      create: (context) => ArticleListViewModel(
-        repository: context.read<FeedRepository>(),
-        feed: feed,
-      ),
-      child: const _ArticleListView(),
-    );
-  }
-}
-
-class _ArticleListView extends StatelessWidget {
-  const _ArticleListView();
-
-  @override
-  Widget build(BuildContext context) {
-    final viewModel = context.watch<ArticleListViewModel>();
+  Widget build(BuildContext context, WidgetRef ref) {
+    final asyncArticles = ref.watch(articleListProvider(feed));
+    final isRefreshing = ref.watch(articleListRefreshingProvider(feed));
+    final filter = ref.watch(articleFilterProvider(feed));
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(viewModel.title),
+        title: Text(_title),
         actions: [
           IconButton(
-            onPressed: viewModel.isRefreshing
-                ? null
-                : () => _refresh(context, viewModel),
-            icon: viewModel.isRefreshing
+            onPressed: isRefreshing ? null : () => _refresh(context, ref),
+            icon: isRefreshing
                 ? const SizedBox(
                     width: 20,
                     height: 20,
@@ -54,9 +36,9 @@ class _ArticleListView extends StatelessWidget {
             tooltip: 'Refresh',
           ),
           IconButton(
-            onPressed: viewModel.articles.isEmpty
+            onPressed: (asyncArticles.value?.isEmpty ?? true)
                 ? null
-                : () => _markAllRead(context, viewModel),
+                : () => _markAllRead(context, ref),
             icon: const Icon(Icons.done_all),
             tooltip: 'Mark all as read',
           ),
@@ -64,28 +46,39 @@ class _ArticleListView extends StatelessWidget {
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(48),
           child: _FilterBar(
-            filter: viewModel.filter,
-            onChanged: viewModel.setFilter,
+            filter: filter,
+            onChanged: ref.read(articleFilterProvider(feed).notifier).select,
           ),
         ),
       ),
       body: RefreshIndicator(
-        onRefresh: () => _refresh(context, viewModel),
-        child: _buildBody(context, viewModel),
+        onRefresh: () => _refresh(context, ref),
+        child: _buildBody(context, ref, asyncArticles, filter),
       ),
     );
   }
 
-  Widget _buildBody(BuildContext context, ArticleListViewModel viewModel) {
-    if (viewModel.isLoading) {
+  String get _title => feed?.title ?? 'Latest';
+
+  Widget _buildBody(
+    BuildContext context,
+    WidgetRef ref,
+    AsyncValue<List<Article>> asyncArticles,
+    ArticleFilter filter,
+  ) {
+    if (asyncArticles.error case final error?) {
+      return ErrorView(
+        message: 'Could not load articles: $error',
+        onRetry: () => ref.invalidate(articleListProvider(feed)),
+      );
+    }
+
+    final articles = asyncArticles.value;
+    if (articles == null) {
       return const Center(child: CircularProgressIndicator());
     }
 
-    if (viewModel.errorMessage case final message?) {
-      return ErrorView(message: message, onRetry: viewModel.load);
-    }
-
-    if (viewModel.isEmpty) {
+    if (articles.isEmpty) {
       // Stays scrollable while empty so RefreshIndicator still triggers.
       return LayoutBuilder(
         builder: (context, constraints) => SingleChildScrollView(
@@ -93,17 +86,17 @@ class _ArticleListView extends StatelessWidget {
           child: ConstrainedBox(
             constraints: BoxConstraints(minHeight: constraints.maxHeight),
             child: EmptyView(
-              icon: switch (viewModel.filter) {
+              icon: switch (filter) {
                 ArticleFilter.starred => Icons.star_border,
                 ArticleFilter.unread => Icons.mark_email_read_outlined,
                 ArticleFilter.all => Icons.article_outlined,
               },
-              title: switch (viewModel.filter) {
+              title: switch (filter) {
                 ArticleFilter.starred => 'No starred articles',
                 ArticleFilter.unread => 'No unread articles',
                 ArticleFilter.all => 'No articles yet',
               },
-              message: viewModel.filter == ArticleFilter.all
+              message: filter == ArticleFilter.all
                   ? 'Pull to refresh, or add a feed to get started.'
                   : null,
             ),
@@ -112,7 +105,7 @@ class _ArticleListView extends StatelessWidget {
       );
     }
 
-    final articles = viewModel.articles;
+    final viewModel = ref.read(articleListProvider(feed).notifier);
 
     return ListView.separated(
       physics: const AlwaysScrollableScrollPhysics(),
@@ -132,7 +125,7 @@ class _ArticleListView extends StatelessWidget {
           background: _ReadSwipeBackground(isRead: article.isRead),
           child: ArticleTile(
             article: article,
-            showFeedTitle: viewModel.feed == null,
+            showFeedTitle: feed == null,
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute<void>(
                 builder: (_) => ArticleDetailScreen(article: article),
@@ -145,29 +138,25 @@ class _ArticleListView extends StatelessWidget {
     );
   }
 
-  Future<void> _refresh(
-    BuildContext context,
-    ArticleListViewModel viewModel,
-  ) async {
+  Future<void> _refresh(BuildContext context, WidgetRef ref) async {
     final messenger = ScaffoldMessenger.of(context);
-    final message = await viewModel.refresh();
+    final message = await ref
+        .read(articleListProvider(feed).notifier)
+        .refresh();
     messenger
       ..hideCurrentSnackBar()
       ..showSnackBar(SnackBar(content: Text(message)));
   }
 
-  Future<void> _markAllRead(
-    BuildContext context,
-    ArticleListViewModel viewModel,
-  ) async {
+  Future<void> _markAllRead(BuildContext context, WidgetRef ref) async {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Mark all as read'),
         content: Text(
-          viewModel.feed == null
+          feed == null
               ? 'Every article will be marked as read.'
-              : 'Every article in "${viewModel.title}" will be marked as read.',
+              : 'Every article in "$_title" will be marked as read.',
         ),
         actions: [
           TextButton(
@@ -182,7 +171,9 @@ class _ArticleListView extends StatelessWidget {
       ),
     );
 
-    if (confirmed ?? false) await viewModel.markAllRead();
+    if (confirmed ?? false) {
+      await ref.read(articleListProvider(feed).notifier).markAllRead();
+    }
   }
 }
 

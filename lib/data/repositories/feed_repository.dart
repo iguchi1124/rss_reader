@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 import '../../domain/models/article.dart';
 import '../../domain/models/feed.dart';
 import '../../utils/result.dart';
@@ -11,9 +9,9 @@ import '../services/feed_parser.dart';
 /// The single source of truth for subscribed feeds and their articles.
 ///
 /// Combines fetching (HTTP), parsing (XML), and storage (SQLite), and exposes
-/// domain models only. Notifying through [ChangeNotifier] on every mutation is
-/// what lets several view models share the same state.
-class FeedRepository extends ChangeNotifier {
+/// domain models only. Holds no state of its own; announcing a write so other
+/// screens catch up is the callers' job.
+class FeedRepository {
   FeedRepository({
     required FeedApiClient apiClient,
     required FeedDatabase database,
@@ -79,15 +77,11 @@ class FeedRepository extends ChangeNotifier {
         await _saveItems(feedId, parsed, fetchedAt: fetchedAt);
 
         final feeds = await _database.listFeeds();
-        notifyListeners();
         return Ok(feeds.firstWhere((feed) => feed.id == feedId));
     }
   }
 
-  Future<void> deleteFeed(int feedId) async {
-    await _database.deleteFeed(feedId);
-    notifyListeners();
-  }
+  Future<void> deleteFeed(int feedId) => _database.deleteFeed(feedId);
 
   // --- Refresh --------------------------------------------------------------
 
@@ -116,7 +110,6 @@ class FeedRepository extends ChangeNotifier {
               document,
               fetchedAt: fetchedAt,
             );
-            notifyListeners();
             return Ok(added);
         }
     }
@@ -150,20 +143,14 @@ class FeedRepository extends ChangeNotifier {
 
   // --- Article state --------------------------------------------------------
 
-  Future<void> setRead(int articleId, bool isRead) async {
-    await _database.setRead(articleId, isRead);
-    notifyListeners();
-  }
+  Future<void> setRead(int articleId, bool isRead) =>
+      _database.setRead(articleId, isRead);
 
-  Future<void> setStarred(int articleId, bool isStarred) async {
-    await _database.setStarred(articleId, isStarred);
-    notifyListeners();
-  }
+  Future<void> setStarred(int articleId, bool isStarred) =>
+      _database.setStarred(articleId, isStarred);
 
-  Future<void> markAllRead({int? feedId}) async {
-    await _database.markAllRead(feedId: feedId);
-    notifyListeners();
-  }
+  Future<void> markAllRead({int? feedId}) =>
+      _database.markAllRead(feedId: feedId);
 
   // --- Internals ------------------------------------------------------------
 

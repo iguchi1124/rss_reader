@@ -1,104 +1,97 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../../../data/providers.dart';
 import '../../../../data/repositories/feed_repository.dart';
 import '../../../../domain/models/article.dart';
 import '../../../../domain/models/feed.dart';
 import '../../../../utils/result.dart';
-import '../../../core/disposable_view_model.dart';
+import '../../../core/refresh_state.dart';
 
-/// Scoped to [feed] when one is given, otherwise spanning every feed.
-class ArticleListViewModel extends DisposableViewModel {
-  ArticleListViewModel({required FeedRepository repository, this.feed})
-    : _repository = repository {
-    _repository.addListener(_onRepositoryChanged);
-    load();
-  }
+/// Keyed by the feed being shown, or null for articles from every feed.
+///
+/// Auto-disposing gives a pushed feed the same lifetime its view model used to
+/// have: the filter resets the next time that feed is opened.
+final articleListProvider =
+    AsyncNotifierProvider.family<ArticleListViewModel, List<Article>, Feed?>(
+      ArticleListViewModel.new,
+      isAutoDispose: true,
+    );
 
-  final FeedRepository _repository;
+final articleFilterProvider =
+    NotifierProvider.family<ArticleFilterNotifier, ArticleFilter, Feed?>(
+      (_) => ArticleFilterNotifier(),
+      isAutoDispose: true,
+    );
+
+final articleListRefreshingProvider =
+    NotifierProvider.family<RefreshState, bool, Feed?>(
+      (_) => RefreshState(),
+      isAutoDispose: true,
+    );
+
+class ArticleFilterNotifier extends Notifier<ArticleFilter> {
+  @override
+  ArticleFilter build() => ArticleFilter.all;
+
+  void select(ArticleFilter filter) => state = filter;
+}
+
+class ArticleListViewModel extends AsyncNotifier<List<Article>> {
+  ArticleListViewModel(this.feed);
 
   /// Null when showing articles from every feed.
   final Feed? feed;
 
-  List<Article> _articles = const [];
-  List<Article> get articles => List.unmodifiable(_articles);
-
-  ArticleFilter _filter = ArticleFilter.all;
-  ArticleFilter get filter => _filter;
-
-  bool _isLoading = true;
-  bool get isLoading => _isLoading;
-
-  bool _isRefreshing = false;
-  bool get isRefreshing => _isRefreshing;
-
-  String? _errorMessage;
-  String? get errorMessage => _errorMessage;
-
-  bool get isEmpty => !_isLoading && _articles.isEmpty;
-
-  String get title => feed?.title ?? 'Latest';
-
-  Future<void> load() async {
-    _errorMessage = null;
-    try {
-      _articles = await _repository.listArticles(
-        feedId: feed?.id,
-        filter: _filter,
-      );
-    } on Object catch (error) {
-      _errorMessage = 'Could not load articles: $error';
-    } finally {
-      _isLoading = false;
-      safeNotifyListeners();
-    }
-  }
-
-  Future<void> setFilter(ArticleFilter filter) async {
-    if (_filter == filter) return;
-    _filter = filter;
-    safeNotifyListeners();
-    await load();
+  @override
+  Future<List<Article>> build() {
+    ref.watch(feedRevisionProvider);
+    return ref
+        .watch(feedRepositoryProvider)
+        .listArticles(
+          feedId: feed?.id,
+          filter: ref.watch(articleFilterProvider(feed)),
+        );
   }
 
   /// Returns a summary to show the user.
   Future<String> refresh() async {
-    if (_isRefreshing) return 'Already refreshing.';
+    final refreshing = ref.read(articleListRefreshingProvider(feed).notifier);
+    if (!refreshing.start()) return 'Already refreshing.';
 
-    _isRefreshing = true;
-    safeNotifyListeners();
     try {
-      final target = feed;
-      if (target == null) {
-        return (await _repository.refreshAll()).message;
-      }
-
-      final result = await _repository.refreshFeed(target);
-      return switch (result) {
-        Ok(:final value) => switch (value) {
-          0 => 'No new articles',
-          1 => '1 new article',
-          _ => '$value new articles',
-        },
-        Failure(:final error) =>
-          error is FeedException ? error.message : 'Refresh failed.',
-      };
+      return await ref.writeFeedData(_refreshWith);
     } finally {
-      _isRefreshing = false;
-      safeNotifyListeners();
+      // Popping the screen during a refresh disposes the flag along with the
+      // rest of this feed's state, leaving nothing to reset.
+      if (ref.mounted) refreshing.finish();
     }
   }
 
-  Future<void> toggleRead(Article article) =>
-      _repository.setRead(article.id, !article.isRead);
+  Future<String> _refreshWith(FeedRepository repository) async {
+    final target = feed;
+    if (target == null) return (await repository.refreshAll()).message;
 
-  Future<void> toggleStarred(Article article) =>
-      _repository.setStarred(article.id, !article.isStarred);
-
-  Future<void> markAllRead() => _repository.markAllRead(feedId: feed?.id);
-
-  void _onRepositoryChanged() => load();
-
-  @override
-  void dispose() {
-    _repository.removeListener(_onRepositoryChanged);
-    super.dispose();
+    final result = await repository.refreshFeed(target);
+    return switch (result) {
+      Ok(:final value) => switch (value) {
+        0 => 'No new articles',
+        1 => '1 new article',
+        _ => '$value new articles',
+      },
+      Failure(:final error) =>
+        error is FeedException ? error.message : 'Refresh failed.',
+    };
   }
+
+  Future<void> toggleRead(Article article) => ref.writeFeedData(
+    (repository) => repository.setRead(article.id, !article.isRead),
+  );
+
+  Future<void> toggleStarred(Article article) => ref.writeFeedData(
+    (repository) => repository.setStarred(article.id, !article.isStarred),
+  );
+
+  Future<void> markAllRead() => ref.writeFeedData(
+    (repository) => repository.markAllRead(feedId: feed?.id),
+  );
 }

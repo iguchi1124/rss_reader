@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../domain/models/feed.dart';
 import '../../../../utils/date_format.dart';
@@ -8,22 +8,24 @@ import '../../articles/views/article_list_screen.dart';
 import '../view_models/feed_list_view_model.dart';
 import 'add_feed_dialog.dart';
 
-class FeedListScreen extends StatelessWidget {
+class FeedListScreen extends ConsumerWidget {
   const FeedListScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final viewModel = context.watch<FeedListViewModel>();
+  Widget build(BuildContext context, WidgetRef ref) {
+    final asyncFeeds = ref.watch(feedListProvider);
+    final isRefreshing = ref.watch(feedListRefreshingProvider);
+    final hasFeeds = asyncFeeds.value?.isNotEmpty ?? false;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Feeds'),
         actions: [
           IconButton(
-            onPressed: viewModel.isRefreshing || viewModel.feeds.isEmpty
+            onPressed: isRefreshing || !hasFeeds
                 ? null
-                : () => _refreshAll(context, viewModel),
-            icon: viewModel.isRefreshing
+                : () => _refreshAll(context, ref),
+            icon: isRefreshing
                 ? const SizedBox(
                     width: 20,
                     height: 20,
@@ -35,27 +37,35 @@ class FeedListScreen extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => _showAddDialog(context, viewModel),
+        onPressed: () => _showAddDialog(context, ref),
         icon: const Icon(Icons.add),
         label: const Text('Add'),
       ),
       body: RefreshIndicator(
-        onRefresh: () => _refreshAll(context, viewModel),
-        child: _buildBody(context, viewModel),
+        onRefresh: () => _refreshAll(context, ref),
+        child: _buildBody(context, ref, asyncFeeds),
       ),
     );
   }
 
-  Widget _buildBody(BuildContext context, FeedListViewModel viewModel) {
-    if (viewModel.isLoading) {
+  Widget _buildBody(
+    BuildContext context,
+    WidgetRef ref,
+    AsyncValue<List<Feed>> asyncFeeds,
+  ) {
+    if (asyncFeeds.error case final error?) {
+      return ErrorView(
+        message: 'Could not load feeds: $error',
+        onRetry: () => ref.invalidate(feedListProvider),
+      );
+    }
+
+    final feeds = asyncFeeds.value;
+    if (feeds == null) {
       return const Center(child: CircularProgressIndicator());
     }
 
-    if (viewModel.errorMessage case final message?) {
-      return ErrorView(message: message, onRetry: viewModel.load);
-    }
-
-    if (viewModel.isEmpty) {
+    if (feeds.isEmpty) {
       return LayoutBuilder(
         builder: (context, constraints) => SingleChildScrollView(
           physics: const AlwaysScrollableScrollPhysics(),
@@ -66,7 +76,7 @@ class FeedListScreen extends StatelessWidget {
               title: 'No feeds yet',
               message: 'Add the URL of a site or feed you want to follow.',
               action: FilledButton.icon(
-                onPressed: () => _showAddDialog(context, viewModel),
+                onPressed: () => _showAddDialog(context, ref),
                 icon: const Icon(Icons.add),
                 label: const Text('Add feed'),
               ),
@@ -76,28 +86,23 @@ class FeedListScreen extends StatelessWidget {
       );
     }
 
-    final feeds = viewModel.feeds;
-
     return ListView.separated(
       physics: const AlwaysScrollableScrollPhysics(),
       // Bottom padding keeps the FAB from covering the last row.
       padding: const EdgeInsets.only(bottom: 88),
       itemCount: feeds.length,
       separatorBuilder: (_, _) => const Divider(indent: 16, endIndent: 16),
-      itemBuilder: (context, index) =>
-          _FeedTile(feed: feeds[index], viewModel: viewModel),
+      itemBuilder: (context, index) => _FeedTile(feed: feeds[index]),
     );
   }
 
-  Future<void> _showAddDialog(
-    BuildContext context,
-    FeedListViewModel viewModel,
-  ) async {
+  Future<void> _showAddDialog(BuildContext context, WidgetRef ref) async {
     final messenger = ScaffoldMessenger.of(context);
 
     final added = await showDialog<bool>(
       context: context,
-      builder: (context) => AddFeedDialog(onSubmit: viewModel.addFeed),
+      builder: (context) =>
+          AddFeedDialog(onSubmit: ref.read(feedListProvider.notifier).addFeed),
     );
 
     if (added ?? false) {
@@ -107,26 +112,22 @@ class FeedListScreen extends StatelessWidget {
     }
   }
 
-  Future<void> _refreshAll(
-    BuildContext context,
-    FeedListViewModel viewModel,
-  ) async {
+  Future<void> _refreshAll(BuildContext context, WidgetRef ref) async {
     final messenger = ScaffoldMessenger.of(context);
-    final message = await viewModel.refreshAll();
+    final message = await ref.read(feedListProvider.notifier).refreshAll();
     messenger
       ..hideCurrentSnackBar()
       ..showSnackBar(SnackBar(content: Text(message)));
   }
 }
 
-class _FeedTile extends StatelessWidget {
-  const _FeedTile({required this.feed, required this.viewModel});
+class _FeedTile extends ConsumerWidget {
+  const _FeedTile({required this.feed});
 
   final Feed feed;
-  final FeedListViewModel viewModel;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
 
     return ListTile(
@@ -161,7 +162,7 @@ class _FeedTile extends StatelessWidget {
               backgroundColor: theme.colorScheme.primary,
             ),
           PopupMenuButton<_FeedAction>(
-            onSelected: (action) => _onAction(context, action),
+            onSelected: (action) => _onAction(context, ref, action),
             itemBuilder: (context) => const [
               PopupMenuItem(
                 value: _FeedAction.markAllRead,
@@ -189,16 +190,20 @@ class _FeedTile extends StatelessWidget {
     );
   }
 
-  Future<void> _onAction(BuildContext context, _FeedAction action) async {
+  Future<void> _onAction(
+    BuildContext context,
+    WidgetRef ref,
+    _FeedAction action,
+  ) async {
     switch (action) {
       case _FeedAction.markAllRead:
-        await viewModel.markAllRead(feed);
+        await ref.read(feedListProvider.notifier).markAllRead(feed);
       case _FeedAction.delete:
-        await _confirmDelete(context);
+        await _confirmDelete(context, ref);
     }
   }
 
-  Future<void> _confirmDelete(BuildContext context) async {
+  Future<void> _confirmDelete(BuildContext context, WidgetRef ref) async {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
@@ -222,7 +227,9 @@ class _FeedTile extends StatelessWidget {
       ),
     );
 
-    if (confirmed ?? false) await viewModel.deleteFeed(feed);
+    if (confirmed ?? false) {
+      await ref.read(feedListProvider.notifier).deleteFeed(feed);
+    }
   }
 }
 

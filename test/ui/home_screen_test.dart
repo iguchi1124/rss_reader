@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
+import 'package:rss_reader/data/providers.dart';
 import 'package:rss_reader/data/repositories/feed_repository.dart';
 import 'package:rss_reader/data/services/feed_api_client.dart';
 import 'package:rss_reader/data/services/feed_database.dart';
-import 'package:rss_reader/ui/features/feeds/view_models/feed_list_view_model.dart';
 import 'package:rss_reader/ui/features/home/views/home_screen.dart';
 
 const _rss = '''
@@ -52,10 +52,7 @@ void main() {
     );
   });
 
-  tearDown(() async {
-    repository.dispose();
-    await database.close();
-  });
+  tearDown(() => database.close());
 
   /// Advances real asynchronous work and the widget tree together.
   ///
@@ -74,13 +71,8 @@ void main() {
 
   Future<void> pumpApp(WidgetTester tester) async {
     await tester.pumpWidget(
-      MultiProvider(
-        providers: [
-          ChangeNotifierProvider.value(value: repository),
-          ChangeNotifierProvider(
-            create: (_) => FeedListViewModel(repository: repository),
-          ),
-        ],
+      ProviderScope(
+        overrides: [feedRepositoryProvider.overrideWithValue(repository)],
         child: const MaterialApp(home: HomeScreen()),
       ),
     );
