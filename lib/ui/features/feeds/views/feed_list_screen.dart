@@ -37,18 +37,27 @@ class FeedListScreen extends ConsumerWidget {
           ),
         ],
       ),
+      // With no feeds the empty view offers the same action, so the FAB would
+      // only duplicate it.
+      //
       // This screen's Scaffold has no bottom bar of its own to lift the FAB
       // over: the tab bar belongs to HomeScreen's Scaffold, and `extendBody`
       // there runs this one to the bottom of the window. Nothing but the
       // padding keeps the two apart.
-      floatingActionButton: Padding(
-        padding: EdgeInsets.only(bottom: MediaQuery.paddingOf(context).bottom),
-        child: FloatingActionButton.extended(
-          onPressed: () => _showAddDialog(context, ref),
-          icon: const Icon(Icons.add),
-          label: const Text('Add'),
-        ),
-      ),
+      floatingActionButton: hasFeeds
+          ? Padding(
+              padding: EdgeInsets.only(
+                bottom: MediaQuery.paddingOf(context).bottom,
+              ),
+              child: FloatingActionButton(
+                onPressed: () => _showAddDialog(context, ref),
+                tooltip: 'Add feed',
+                // Material 3 gives a FAB a rounded square; this one is round.
+                shape: const CircleBorder(),
+                child: const Icon(Icons.add),
+              ),
+            )
+          : null,
       body: RefreshIndicator(
         onRefresh: () => _refreshAll(context, ref),
         child: _buildBody(context, ref, asyncFeeds),

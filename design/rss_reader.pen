@@ -2651,52 +2651,25 @@
         {
           "id": "fabAdd",
           "type": "frame",
-          "x": 277,
+          "x": 321,
           "y": 678,
-          "width": 100,
+          "width": 56,
           "height": 56,
           "layout": "horizontal",
           "fill": "$color.primaryContainer",
-          "padding": [
-            0,
-            24,
-            0,
-            16
-          ],
+          "justifyContent": "center",
           "alignItems": "center",
-          "cornerRadius": 16,
+          "cornerRadius": 28,
           "children": [
             {
               "id": "icon25",
               "type": "icon",
               "x": 0,
               "y": 0,
-              "width": 18,
-              "height": 18,
+              "width": 24,
+              "height": 24,
               "library": "Material Symbols Outlined",
               "icon": "add",
-              "fill": "$color.onPrimaryContainer"
-            },
-            {
-              "id": "gap28",
-              "type": "frame",
-              "x": 0,
-              "y": 0,
-              "width": 8,
-              "height": 1,
-              "layout": "none",
-              "children": []
-            },
-            {
-              "id": "text79",
-              "type": "text",
-              "x": 0,
-              "y": 0,
-              "width": 28,
-              "height": 20,
-              "content": "Add",
-              "textGrowth": "fixed-width",
-              "fontSize": "$text.labelLarge.size",
               "fill": "$color.onPrimaryContainer"
             }
           ]
@@ -6525,52 +6498,25 @@
         {
           "id": "fabAddDark",
           "type": "frame",
-          "x": 277,
+          "x": 321,
           "y": 678,
-          "width": 100,
+          "width": 56,
           "height": 56,
           "layout": "horizontal",
           "fill": "$color.primaryContainer",
-          "padding": [
-            0,
-            24,
-            0,
-            16
-          ],
+          "justifyContent": "center",
           "alignItems": "center",
-          "cornerRadius": 16,
+          "cornerRadius": 28,
           "children": [
             {
               "id": "icon25Dark",
               "type": "icon",
               "x": 0,
               "y": 0,
-              "width": 18,
-              "height": 18,
+              "width": 24,
+              "height": 24,
               "library": "Material Symbols Outlined",
               "icon": "add",
-              "fill": "$color.onPrimaryContainer"
-            },
-            {
-              "id": "gap28Dark",
-              "type": "frame",
-              "x": 0,
-              "y": 0,
-              "width": 8,
-              "height": 1,
-              "layout": "none",
-              "children": []
-            },
-            {
-              "id": "text79Dark",
-              "type": "text",
-              "x": 0,
-              "y": 0,
-              "width": 28,
-              "height": 20,
-              "content": "Add",
-              "textGrowth": "fixed-width",
-              "fontSize": "$text.labelLarge.size",
               "fill": "$color.onPrimaryContainer"
             }
           ]

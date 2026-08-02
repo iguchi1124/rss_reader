@@ -93,7 +93,7 @@ drawn in, so a frame's height is what the device shows rather than what the
 scroll view holds:
 
 - `ScreenLatest` — `ArticleListScreen` with the filter bar and the tab bar
-- `ScreenFeeds` — `FeedListScreen` with the extended FAB above the tab bar
+- `ScreenFeeds` — `FeedListScreen` with the circular FAB above the tab bar
 - `ScreenArticleDetail` — the article header and the HtmlContent blocks below it
 
 `ScreenLatestMacOS` is the desktop arrangement and sits at 1024x680 with no
