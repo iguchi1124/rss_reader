@@ -83,14 +83,37 @@ write, since those reload the list too.
 
 ## Design
 
-`design/rss_reader.pen` is a pen.dev canvas mirroring the widgets under `lib/ui/`.
-It is a design source, not a build input — nothing generates Dart from it, and
-`metadata.dart` on a reusable frame names the widget it stands for. Keep the two
-in step or delete the frame.
+`design/rss_reader.pen` is a pen.dev canvas mirroring `lib/ui/`. It is a design
+source, not a build input — nothing generates Dart from it, and `metadata.dart`
+on a screen frame names the file it stands for. Keep the two in step or delete
+the frame.
 
-The `variables` block is generated from `AppTheme`, never hand-edited;
-`test/ui/core/theme_pen_sync_test.dart` fails when it drifts. Regenerate after
-touching the theme:
+Three screen frames sit at 393x852 with the safe-area insets (59 top, 34 bottom)
+drawn in, so a frame's height is what the device shows rather than what the
+scroll view holds:
+
+- `ScreenLatest` — `ArticleListScreen` with the filter bar and navigation bar
+- `ScreenFeeds` — `FeedListScreen` with the extended FAB
+- `ScreenArticleDetail` — the article header and the HtmlContent blocks below it
+
+Below them are the pieces on their own: `ArticleTile`, `FeedTile`, `FilterBar`,
+`ReadSwipeBackground`, `EmptyView`, `ErrorView`, `AddFeedDialog`,
+`ConfirmDialog`, `HtmlContentSpecimen`.
+
+Every node carries an explicit width and height rather than sizing to its
+content, because the canvas has no text engine to reflow with. Text heights are
+`fontSize` times the Material 3 line height, or times the `height` the widget
+overrides it with. Editing a string does not resize its box; the number has to
+follow.
+
+Sizes that Flutter owns rather than this app — app bar 64, navigation bar 80,
+`ListTile` 72, dialog corner radius 28 — are transcribed from the Material 3
+specs Flutter implements. They are close, not authoritative: measure a
+screenshot before trusting one to the pixel.
+
+Only `color.*` and `text.*` variables are generated from `AppTheme`; anything
+else added on the canvas survives. `test/ui/core/theme_pen_sync_test.dart` fails
+when the generated ones drift. Regenerate after touching the theme:
 
 ```sh
 UPDATE_PEN_VARIABLES=1 mise exec flutter -- flutter test test/ui/core/theme_pen_sync_test.dart
