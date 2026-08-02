@@ -1,0 +1,6028 @@
+{
+  "version": "2.14",
+  "themes": {
+    "mode": [
+      "light",
+      "dark"
+    ]
+  },
+  "variables": {
+    "color.primary": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#8D4D2D",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#FFB693",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.onPrimary": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#542104",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.primaryContainer": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFDBCC",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#703718",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.onPrimaryContainer": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#703718",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#FFDBCC",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.secondary": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#765749",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#E6BEAC",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.onSecondary": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#432A1E",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.secondaryContainer": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFDBCC",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#5C4033",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.onSecondaryContainer": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#5C4033",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#FFDBCC",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.surface": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFF8F6",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#1A120E",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.onSurface": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#221A16",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#F0DFD8",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.surfaceContainerLowest": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#140C09",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.surfaceContainerLow": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFF1EB",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#221A16",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.surfaceContainer": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FCEAE3",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#271E1A",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.surfaceContainerHigh": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#F6E5DE",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#322824",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.surfaceContainerHighest": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#F0DFD8",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#3D332E",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.onSurfaceVariant": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#52443D",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#D7C2B9",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.outline": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#85736C",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#A08D85",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.outlineVariant": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#D7C2B9",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#52443D",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.error": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#BA1A1A",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#FFB4AB",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.onError": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#690005",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.errorContainer": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFDAD6",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#93000A",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.onErrorContainer": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#93000A",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#FFDAD6",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.inverseSurface": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#382E2A",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#F0DFD8",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.onInverseSurface": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFEDE6",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#382E2A",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.surfaceTint": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#8D4D2D",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#FFB693",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "color.scrim": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#000000",
+          "theme": {
+            "mode": "light"
+          }
+        },
+        {
+          "value": "#000000",
+          "theme": {
+            "mode": "dark"
+          }
+        }
+      ]
+    },
+    "text.headlineSmall.size": {
+      "type": "number",
+      "value": 24
+    },
+    "text.titleLarge.size": {
+      "type": "number",
+      "value": 22
+    },
+    "text.titleMedium.size": {
+      "type": "number",
+      "value": 16
+    },
+    "text.titleSmall.size": {
+      "type": "number",
+      "value": 14
+    },
+    "text.bodyLarge.size": {
+      "type": "number",
+      "value": 16
+    },
+    "text.bodyMedium.size": {
+      "type": "number",
+      "value": 14
+    },
+    "text.bodySmall.size": {
+      "type": "number",
+      "value": 12
+    },
+    "text.labelLarge.size": {
+      "type": "number",
+      "value": 14
+    },
+    "text.labelMedium.size": {
+      "type": "number",
+      "value": 12
+    },
+    "text.labelSmall.size": {
+      "type": "number",
+      "value": 11
+    }
+  },
+  "children": [
+    {
+      "id": "ScreenLatest",
+      "type": "frame",
+      "x": 0,
+      "y": 0,
+      "width": 393,
+      "height": 852,
+      "layout": "vertical",
+      "fill": "$color.surface",
+      "reusable": true,
+      "metadata": {
+        "dart": "lib/ui/features/articles/views/article_list_screen.dart"
+      },
+      "children": [
+        {
+          "id": "safeArea1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 59,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        },
+        {
+          "id": "appBar1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 64,
+          "layout": "horizontal",
+          "fill": "$color.surface",
+          "padding": [
+            0,
+            4,
+            0,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "text43",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": "fill_container",
+              "height": 28,
+              "content": "Latest",
+              "fontSize": "$text.titleLarge.size",
+              "fill": "$color.onSurface"
+            },
+            {
+              "id": "iconButton6",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon10",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "refresh",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            },
+            {
+              "id": "iconButton7",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon11",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "done_all",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "FilterBar2",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 48,
+          "layout": "horizontal",
+          "fill": "$color.surface",
+          "padding": [
+            0,
+            12,
+            8,
+            12
+          ],
+          "alignItems": "start",
+          "children": [
+            {
+              "id": "segmentedButton2",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 248,
+              "height": 40,
+              "layout": "horizontal",
+              "cornerRadius": 20,
+              "stroke": "$color.outline",
+              "strokeWidth": 1,
+              "children": [
+                {
+                  "id": "segment4",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 80,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "fill": "$color.secondaryContainer",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 20,
+                  "children": [
+                    {
+                      "id": "text44",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 80,
+                      "height": 20,
+                      "content": "All",
+                      "fontSize": "$text.labelLarge.size",
+                      "fill": "$color.onSecondaryContainer",
+                      "textAlign": "center"
+                    }
+                  ]
+                },
+                {
+                  "id": "segment5",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 84,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "text45",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 84,
+                      "height": 20,
+                      "content": "Unread",
+                      "fontSize": "$text.labelLarge.size",
+                      "fill": "$color.onSurface",
+                      "textAlign": "center"
+                    }
+                  ]
+                },
+                {
+                  "id": "segment6",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 84,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "text46",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 84,
+                      "height": 20,
+                      "content": "Starred",
+                      "fontSize": "$text.labelLarge.size",
+                      "fill": "$color.onSurface",
+                      "textAlign": "center"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "articleList1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 567,
+          "layout": "vertical",
+          "children": [
+            {
+              "id": "ArticleTile1",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 124.0,
+              "layout": "horizontal",
+              "fill": "$color.surface",
+              "padding": [
+                12,
+                8,
+                12,
+                16
+              ],
+              "alignItems": "start",
+              "children": [
+                {
+                  "id": "unreadMarker2",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 18,
+                  "height": 14,
+                  "layout": "vertical",
+                  "padding": [
+                    6,
+                    10,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "id": "ellipse2",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "width": 8,
+                      "height": 8,
+                      "fill": "$color.primary"
+                    }
+                  ]
+                },
+                {
+                  "id": "articleText2",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": "fill_container",
+                  "height": 100.0,
+                  "layout": "vertical",
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "id": "text35",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 39.2,
+                      "content": "Designing on canvas, landing in code",
+                      "fontSize": "$text.titleSmall.size",
+                      "fill": "$color.onSurface",
+                      "fontWeight": 700,
+                      "maxLines": 2
+                    },
+                    {
+                      "id": "gap16",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 1,
+                      "height": 4,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text36",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 34.8,
+                      "content": "A short excerpt of the article body, trimmed to two lines so every row in the list keeps the same height.",
+                      "fontSize": "$text.bodySmall.size",
+                      "fill": "$color.onSurfaceVariant",
+                      "maxLines": 2
+                    },
+                    {
+                      "id": "gap17",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 1,
+                      "height": 6,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text37",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 16,
+                      "content": "Example Feed · 2h ago",
+                      "fontSize": "$text.labelSmall.size",
+                      "fill": "$color.outline"
+                    }
+                  ]
+                },
+                {
+                  "id": "iconButton3",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 40,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "icon7",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 20,
+                      "height": 20,
+                      "library": "Material Symbols",
+                      "icon": "star_border",
+                      "fill": "$color.outline"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "divider1",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 1,
+              "layout": "horizontal",
+              "padding": [
+                0,
+                16,
+                0,
+                16
+              ],
+              "children": [
+                {
+                  "id": "rect2",
+                  "type": "rectangle",
+                  "x": 0,
+                  "y": 0,
+                  "width": 361,
+                  "height": 1,
+                  "fill": "$color.outlineVariant"
+                }
+              ]
+            },
+            {
+              "id": "ArticleTile2",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 104.4,
+              "layout": "horizontal",
+              "fill": "$color.surface",
+              "padding": [
+                12,
+                8,
+                12,
+                16
+              ],
+              "alignItems": "start",
+              "children": [
+                {
+                  "id": "unreadMarker3",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 18,
+                  "height": 14,
+                  "layout": "vertical",
+                  "padding": [
+                    6,
+                    10,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "id": "ellipse3",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "width": 8,
+                      "height": 8,
+                      "fill": "$color.surface"
+                    }
+                  ]
+                },
+                {
+                  "id": "articleText3",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": "fill_container",
+                  "height": 80.4,
+                  "layout": "vertical",
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "id": "text38",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 19.6,
+                      "content": "A headline that has already been read",
+                      "fontSize": "$text.titleSmall.size",
+                      "fill": "$color.onSurfaceVariant",
+                      "fontWeight": 400
+                    },
+                    {
+                      "id": "gap18",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 1,
+                      "height": 4,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text39",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 34.8,
+                      "content": "Read rows drop to onSurfaceVariant and lose the bold weight, but keep the marker slot so nothing shifts.",
+                      "fontSize": "$text.bodySmall.size",
+                      "fill": "$color.onSurfaceVariant",
+                      "maxLines": 2
+                    },
+                    {
+                      "id": "gap19",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 1,
+                      "height": 6,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text40",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 16,
+                      "content": "Another Feed · 5h ago",
+                      "fontSize": "$text.labelSmall.size",
+                      "fill": "$color.outline"
+                    }
+                  ]
+                },
+                {
+                  "id": "iconButton4",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 40,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "icon8",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 20,
+                      "height": 20,
+                      "library": "Material Symbols",
+                      "icon": "star_border",
+                      "fill": "$color.outline"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "divider2",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 1,
+              "layout": "horizontal",
+              "padding": [
+                0,
+                16,
+                0,
+                16
+              ],
+              "children": [
+                {
+                  "id": "rect3",
+                  "type": "rectangle",
+                  "x": 0,
+                  "y": 0,
+                  "width": 361,
+                  "height": 1,
+                  "fill": "$color.outlineVariant"
+                }
+              ]
+            },
+            {
+              "id": "ArticleTile3",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 65.6,
+              "layout": "horizontal",
+              "fill": "$color.surface",
+              "padding": [
+                12,
+                8,
+                12,
+                16
+              ],
+              "alignItems": "start",
+              "children": [
+                {
+                  "id": "unreadMarker4",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 18,
+                  "height": 14,
+                  "layout": "vertical",
+                  "padding": [
+                    6,
+                    10,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "id": "ellipse4",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "width": 8,
+                      "height": 8,
+                      "fill": "$color.primary"
+                    }
+                  ]
+                },
+                {
+                  "id": "articleText4",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": "fill_container",
+                  "height": 41.6,
+                  "layout": "vertical",
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "id": "text41",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 19.6,
+                      "content": "A starred article without a summary",
+                      "fontSize": "$text.titleSmall.size",
+                      "fill": "$color.onSurface",
+                      "fontWeight": 700
+                    },
+                    {
+                      "id": "gap20",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 1,
+                      "height": 6,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text42",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 16,
+                      "content": "Third Feed · yesterday",
+                      "fontSize": "$text.labelSmall.size",
+                      "fill": "$color.outline"
+                    }
+                  ]
+                },
+                {
+                  "id": "iconButton5",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 40,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "icon9",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 20,
+                      "height": 20,
+                      "library": "Material Symbols",
+                      "icon": "star",
+                      "fill": "$color.primary"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "listFill1",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 271.0,
+              "layout": "none",
+              "fill": "$color.surface",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "navigationBar1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 80,
+          "layout": "horizontal",
+          "fill": "$color.surfaceContainer",
+          "children": [
+            {
+              "id": "destination1",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 196.5,
+              "height": 80,
+              "layout": "vertical",
+              "padding": [
+                12,
+                0,
+                16,
+                0
+              ],
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "indicator1",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 64,
+                  "height": 32,
+                  "layout": "horizontal",
+                  "fill": "$color.secondaryContainer",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 16,
+                  "children": [
+                    {
+                      "id": "icon12",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 24,
+                      "height": 24,
+                      "library": "Material Symbols",
+                      "icon": "article",
+                      "fill": "$color.onSecondaryContainer"
+                    }
+                  ]
+                },
+                {
+                  "id": "text47",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 196.5,
+                  "height": 16,
+                  "content": "Latest",
+                  "fontSize": "$text.labelMedium.size",
+                  "fill": "$color.onSurface",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "id": "destination2",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 196.5,
+              "height": 80,
+              "layout": "vertical",
+              "padding": [
+                12,
+                0,
+                16,
+                0
+              ],
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "indicator2",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 64,
+                  "height": 32,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 16,
+                  "children": [
+                    {
+                      "id": "icon13",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 24,
+                      "height": 24,
+                      "library": "Material Symbols",
+                      "icon": "rss_feed_outlined",
+                      "fill": "$color.onSurfaceVariant"
+                    }
+                  ]
+                },
+                {
+                  "id": "text48",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 196.5,
+                  "height": 16,
+                  "content": "Feeds",
+                  "fontSize": "$text.labelMedium.size",
+                  "fill": "$color.onSurfaceVariant",
+                  "textAlign": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "safeArea2",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 34,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        }
+      ],
+      "theme": {
+        "mode": "light"
+      }
+    },
+    {
+      "id": "ScreenFeeds",
+      "type": "frame",
+      "x": 453,
+      "y": 0,
+      "width": 393,
+      "height": 852,
+      "layout": "vertical",
+      "fill": "$color.surface",
+      "reusable": true,
+      "metadata": {
+        "dart": "lib/ui/features/feeds/views/feed_list_screen.dart"
+      },
+      "children": [
+        {
+          "id": "safeArea3",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 59,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        },
+        {
+          "id": "appBar2",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 64,
+          "layout": "horizontal",
+          "fill": "$color.surface",
+          "padding": [
+            0,
+            4,
+            0,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "text61",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": "fill_container",
+              "height": 28,
+              "content": "Feeds",
+              "fontSize": "$text.titleLarge.size",
+              "fill": "$color.onSurface"
+            },
+            {
+              "id": "iconButton11",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon18",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "refresh",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "feedsBody1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 615,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": [
+            {
+              "id": "feedList1",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 615,
+              "layout": "vertical",
+              "children": [
+                {
+                  "id": "FeedTile1",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 72,
+                  "layout": "horizontal",
+                  "fill": "$color.surface",
+                  "padding": [
+                    4,
+                    0,
+                    4,
+                    16
+                  ],
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "avatar2",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 40,
+                      "height": 40,
+                      "layout": "horizontal",
+                      "fill": "$color.primaryContainer",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 20,
+                      "children": [
+                        {
+                          "id": "text50",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": 40,
+                          "height": 24,
+                          "content": "F",
+                          "fontSize": "$text.titleMedium.size",
+                          "fill": "$color.onPrimaryContainer",
+                          "textAlign": "center"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedText2",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 233,
+                      "height": 36,
+                      "layout": "vertical",
+                      "alignItems": "start",
+                      "children": [
+                        {
+                          "id": "text51",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 20,
+                          "content": "Flutter Blog",
+                          "fontSize": "$text.titleSmall.size",
+                          "fill": "$color.onSurface"
+                        },
+                        {
+                          "id": "text52",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 16,
+                          "content": "Updated 2h ago · 48 articles",
+                          "fontSize": "$text.bodySmall.size",
+                          "fill": "$color.onSurfaceVariant"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedTrailing2",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 72,
+                      "height": 48,
+                      "layout": "horizontal",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "id": "badge2",
+                          "type": "frame",
+                          "x": 0,
+                          "y": 0,
+                          "width": 24,
+                          "height": 16,
+                          "layout": "horizontal",
+                          "fill": "$color.primary",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "cornerRadius": 8,
+                          "children": [
+                            {
+                              "id": "text49",
+                              "type": "text",
+                              "x": 0,
+                              "y": 0,
+                              "width": 24,
+                              "height": 16,
+                              "content": "12",
+                              "fontSize": "$text.labelSmall.size",
+                              "fill": "$color.onPrimary",
+                              "textAlign": "center"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "iconButton8",
+                          "type": "frame",
+                          "x": 0,
+                          "y": 0,
+                          "width": 48,
+                          "height": 48,
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "icon14",
+                              "type": "icon",
+                              "x": 0,
+                              "y": 0,
+                              "width": 24,
+                              "height": 24,
+                              "library": "Material Symbols",
+                              "icon": "more_vert",
+                              "fill": "$color.onSurfaceVariant"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "divider3",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 1,
+                  "layout": "horizontal",
+                  "padding": [
+                    0,
+                    16,
+                    0,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "id": "rect4",
+                      "type": "rectangle",
+                      "x": 0,
+                      "y": 0,
+                      "width": 361,
+                      "height": 1,
+                      "fill": "$color.outlineVariant"
+                    }
+                  ]
+                },
+                {
+                  "id": "FeedTile2",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 72,
+                  "layout": "horizontal",
+                  "fill": "$color.surface",
+                  "padding": [
+                    4,
+                    0,
+                    4,
+                    16
+                  ],
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "avatar3",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 40,
+                      "height": 40,
+                      "layout": "horizontal",
+                      "fill": "$color.primaryContainer",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 20,
+                      "children": [
+                        {
+                          "id": "text53",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": 40,
+                          "height": 24,
+                          "content": "D",
+                          "fontSize": "$text.titleMedium.size",
+                          "fill": "$color.onPrimaryContainer",
+                          "textAlign": "center"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedText3",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 257,
+                      "height": 36,
+                      "layout": "vertical",
+                      "alignItems": "start",
+                      "children": [
+                        {
+                          "id": "text54",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 20,
+                          "content": "Dart News",
+                          "fontSize": "$text.titleSmall.size",
+                          "fill": "$color.onSurface"
+                        },
+                        {
+                          "id": "text55",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 16,
+                          "content": "Updated 5h ago · 21 articles",
+                          "fontSize": "$text.bodySmall.size",
+                          "fill": "$color.onSurfaceVariant"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedTrailing3",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 48,
+                      "height": 48,
+                      "layout": "horizontal",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "id": "iconButton9",
+                          "type": "frame",
+                          "x": 0,
+                          "y": 0,
+                          "width": 48,
+                          "height": 48,
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "icon15",
+                              "type": "icon",
+                              "x": 0,
+                              "y": 0,
+                              "width": 24,
+                              "height": 24,
+                              "library": "Material Symbols",
+                              "icon": "more_vert",
+                              "fill": "$color.onSurfaceVariant"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "divider4",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 1,
+                  "layout": "horizontal",
+                  "padding": [
+                    0,
+                    16,
+                    0,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "id": "rect5",
+                      "type": "rectangle",
+                      "x": 0,
+                      "y": 0,
+                      "width": 361,
+                      "height": 1,
+                      "fill": "$color.outlineVariant"
+                    }
+                  ]
+                },
+                {
+                  "id": "FeedTile3",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 72,
+                  "layout": "horizontal",
+                  "fill": "$color.surface",
+                  "padding": [
+                    4,
+                    0,
+                    4,
+                    16
+                  ],
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "avatar4",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 40,
+                      "height": 40,
+                      "layout": "horizontal",
+                      "fill": "$color.primaryContainer",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 20,
+                      "children": [
+                        {
+                          "id": "text57",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": 40,
+                          "height": 24,
+                          "content": "R",
+                          "fontSize": "$text.titleMedium.size",
+                          "fill": "$color.onPrimaryContainer",
+                          "textAlign": "center"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedText4",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 233,
+                      "height": 36,
+                      "layout": "vertical",
+                      "alignItems": "start",
+                      "children": [
+                        {
+                          "id": "text58",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 20,
+                          "content": "Release Notes",
+                          "fontSize": "$text.titleSmall.size",
+                          "fill": "$color.onSurface"
+                        },
+                        {
+                          "id": "text59",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 16,
+                          "content": "Never refreshed",
+                          "fontSize": "$text.bodySmall.size",
+                          "fill": "$color.onSurfaceVariant"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedTrailing4",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 72,
+                      "height": 48,
+                      "layout": "horizontal",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "id": "badge3",
+                          "type": "frame",
+                          "x": 0,
+                          "y": 0,
+                          "width": 24,
+                          "height": 16,
+                          "layout": "horizontal",
+                          "fill": "$color.primary",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "cornerRadius": 8,
+                          "children": [
+                            {
+                              "id": "text56",
+                              "type": "text",
+                              "x": 0,
+                              "y": 0,
+                              "width": 24,
+                              "height": 16,
+                              "content": "3",
+                              "fontSize": "$text.labelSmall.size",
+                              "fill": "$color.onPrimary",
+                              "textAlign": "center"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "iconButton10",
+                          "type": "frame",
+                          "x": 0,
+                          "y": 0,
+                          "width": 48,
+                          "height": 48,
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "icon16",
+                              "type": "icon",
+                              "x": 0,
+                              "y": 0,
+                              "width": 24,
+                              "height": 24,
+                              "library": "Material Symbols",
+                              "icon": "more_vert",
+                              "fill": "$color.onSurfaceVariant"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "feedListFill1",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 397,
+                  "layout": "none",
+                  "fill": "$color.surface",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "fabAdd",
+              "type": "frame",
+              "x": 277,
+              "y": 543,
+              "width": 100,
+              "height": 56,
+              "layout": "horizontal",
+              "fill": "$color.primaryContainer",
+              "padding": [
+                0,
+                24,
+                0,
+                16
+              ],
+              "alignItems": "center",
+              "cornerRadius": 16,
+              "children": [
+                {
+                  "id": "icon17",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 18,
+                  "height": 18,
+                  "library": "Material Symbols",
+                  "icon": "add",
+                  "fill": "$color.onPrimaryContainer"
+                },
+                {
+                  "id": "gap21",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 8,
+                  "height": 1,
+                  "layout": "none",
+                  "children": []
+                },
+                {
+                  "id": "text60",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 28,
+                  "height": 20,
+                  "content": "Add",
+                  "fontSize": "$text.labelLarge.size",
+                  "fill": "$color.onPrimaryContainer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "navigationBar2",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 80,
+          "layout": "horizontal",
+          "fill": "$color.surfaceContainer",
+          "children": [
+            {
+              "id": "destination3",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 196.5,
+              "height": 80,
+              "layout": "vertical",
+              "padding": [
+                12,
+                0,
+                16,
+                0
+              ],
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "indicator3",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 64,
+                  "height": 32,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 16,
+                  "children": [
+                    {
+                      "id": "icon19",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 24,
+                      "height": 24,
+                      "library": "Material Symbols",
+                      "icon": "article_outlined",
+                      "fill": "$color.onSurfaceVariant"
+                    }
+                  ]
+                },
+                {
+                  "id": "text62",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 196.5,
+                  "height": 16,
+                  "content": "Latest",
+                  "fontSize": "$text.labelMedium.size",
+                  "fill": "$color.onSurfaceVariant",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "id": "destination4",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 196.5,
+              "height": 80,
+              "layout": "vertical",
+              "padding": [
+                12,
+                0,
+                16,
+                0
+              ],
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "indicator4",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 64,
+                  "height": 32,
+                  "layout": "horizontal",
+                  "fill": "$color.secondaryContainer",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 16,
+                  "children": [
+                    {
+                      "id": "icon20",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 24,
+                      "height": 24,
+                      "library": "Material Symbols",
+                      "icon": "rss_feed",
+                      "fill": "$color.onSecondaryContainer"
+                    }
+                  ]
+                },
+                {
+                  "id": "text63",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 196.5,
+                  "height": 16,
+                  "content": "Feeds",
+                  "fontSize": "$text.labelMedium.size",
+                  "fill": "$color.onSurface",
+                  "textAlign": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "safeArea4",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 34,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        }
+      ],
+      "theme": {
+        "mode": "light"
+      }
+    },
+    {
+      "id": "ScreenArticleDetail",
+      "type": "frame",
+      "x": 906,
+      "y": 0,
+      "width": 393,
+      "height": 852,
+      "layout": "vertical",
+      "fill": "$color.surface",
+      "reusable": true,
+      "metadata": {
+        "dart": "lib/ui/features/article_detail/views/article_detail_screen.dart"
+      },
+      "children": [
+        {
+          "id": "safeArea5",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 59,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        },
+        {
+          "id": "appBar3",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 64,
+          "layout": "horizontal",
+          "fill": "$color.surface",
+          "padding": [
+            0,
+            4,
+            0,
+            4
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "iconButton12",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon21",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "arrow_back",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            },
+            {
+              "id": "text75",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": "fill_container",
+              "height": 20,
+              "content": "Example Feed",
+              "fontSize": "$text.titleSmall.size",
+              "fill": "$color.onSurface"
+            },
+            {
+              "id": "iconButton13",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon22",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "star_border",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            },
+            {
+              "id": "iconButton14",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon23",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "open_in_browser",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            },
+            {
+              "id": "iconButton15",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon24",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "more_vert",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "detailBody1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 695,
+          "layout": "vertical",
+          "fill": "$color.surface",
+          "padding": [
+            16,
+            20,
+            48,
+            20
+          ],
+          "children": [
+            {
+              "id": "text64",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 64.8,
+              "content": "Designing on canvas, landing in code",
+              "fontSize": "$text.headlineSmall.size",
+              "fill": "$color.onSurface",
+              "fontWeight": 700,
+              "maxLines": 2
+            },
+            {
+              "id": "gap22",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 1,
+              "height": 12,
+              "layout": "none",
+              "children": []
+            },
+            {
+              "id": "text65",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 16,
+              "content": "Jane Author · 2 August 2026",
+              "fontSize": "$text.bodySmall.size",
+              "fill": "$color.onSurfaceVariant"
+            },
+            {
+              "id": "metaDivider1",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 32,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "id": "rect6",
+                  "type": "rectangle",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 1,
+                  "fill": "$color.outlineVariant"
+                }
+              ]
+            },
+            {
+              "id": "htmlParagraph2",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 98,
+              "layout": "vertical",
+              "padding": [
+                0,
+                0,
+                16,
+                0
+              ],
+              "children": [
+                {
+                  "id": "text66",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 81.6,
+                  "content": "A paragraph rendered by HtmlContent: bodyLarge at a line height of 1.7, coloured onSurface, with 16 of spacing below it.",
+                  "fontSize": "$text.bodyLarge.size",
+                  "fill": "$color.onSurface",
+                  "maxLines": 3
+                }
+              ]
+            },
+            {
+              "id": "htmlHeading2",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 57,
+              "layout": "vertical",
+              "padding": [
+                16,
+                0,
+                10,
+                0
+              ],
+              "children": [
+                {
+                  "id": "text67",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 30.8,
+                  "content": "How headings render",
+                  "fontSize": "$text.titleLarge.size",
+                  "fill": "$color.onSurface",
+                  "fontWeight": 700
+                }
+              ]
+            },
+            {
+              "id": "htmlParagraph3",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 70,
+              "layout": "vertical",
+              "padding": [
+                0,
+                0,
+                16,
+                0
+              ],
+              "children": [
+                {
+                  "id": "text68",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 54.4,
+                  "content": "h1 and h2 take headlineSmall and titleLarge; h3 and below sit closer to body size.",
+                  "fontSize": "$text.bodyLarge.size",
+                  "fill": "$color.onSurface",
+                  "maxLines": 2
+                }
+              ]
+            },
+            {
+              "id": "htmlBlockquote1",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 70,
+              "layout": "horizontal",
+              "padding": [
+                0,
+                0,
+                16,
+                0
+              ],
+              "children": [
+                {
+                  "id": "rect7",
+                  "type": "rectangle",
+                  "x": 0,
+                  "y": 0,
+                  "width": 3,
+                  "height": 54,
+                  "fill": "$color.primary"
+                },
+                {
+                  "id": "gap23",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 16,
+                  "height": 1,
+                  "layout": "none",
+                  "children": []
+                },
+                {
+                  "id": "text69",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 334,
+                  "height": 54.4,
+                  "content": "A blockquote keeps a 3 wide primary rule on its left and drops to onSurfaceVariant.",
+                  "fontSize": "$text.bodyLarge.size",
+                  "fill": "$color.onSurfaceVariant",
+                  "maxLines": 2
+                }
+              ]
+            },
+            {
+              "id": "htmlCode1",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 88,
+              "layout": "vertical",
+              "padding": [
+                0,
+                0,
+                16,
+                0
+              ],
+              "children": [
+                {
+                  "id": "codeBox1",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 72,
+                  "layout": "vertical",
+                  "fill": "$color.surfaceContainerHighest",
+                  "padding": 12,
+                  "cornerRadius": 8,
+                  "children": [
+                    {
+                      "id": "text70",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 329,
+                      "height": 48.0,
+                      "content": "flutter analyze\nflutter test",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurface",
+                      "maxLines": 2
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "htmlList2",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 78,
+              "layout": "vertical",
+              "padding": [
+                0,
+                0,
+                8,
+                4
+              ],
+              "children": [
+                {
+                  "id": "htmlListItem3",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 349,
+                  "height": 35,
+                  "layout": "horizontal",
+                  "padding": [
+                    0,
+                    0,
+                    8,
+                    0
+                  ],
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "id": "text71",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 28,
+                      "height": 24,
+                      "content": "•",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurfaceVariant",
+                      "textAlign": "right"
+                    },
+                    {
+                      "id": "gap24",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 8,
+                      "height": 1,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text72",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 313,
+                      "height": 27.2,
+                      "content": "Bullets are right-aligned in a 28 column.",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurface"
+                    }
+                  ]
+                },
+                {
+                  "id": "htmlListItem4",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 349,
+                  "height": 35,
+                  "layout": "horizontal",
+                  "padding": [
+                    0,
+                    0,
+                    8,
+                    0
+                  ],
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "id": "text73",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 28,
+                      "height": 24,
+                      "content": "•",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurfaceVariant",
+                      "textAlign": "right"
+                    },
+                    {
+                      "id": "gap25",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 8,
+                      "height": 1,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text74",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 313,
+                      "height": 27.2,
+                      "content": "The body of an item is Expanded.",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurface"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "detailFill1",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 45.200000000000045,
+              "layout": "none",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "safeArea6",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 34,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        }
+      ],
+      "theme": {
+        "mode": "light"
+      }
+    },
+    {
+      "id": "ScreenLatestDark",
+      "type": "frame",
+      "x": 0,
+      "y": 972,
+      "width": 393,
+      "height": 852,
+      "layout": "vertical",
+      "fill": "$color.surface",
+      "reusable": true,
+      "metadata": {
+        "dart": "lib/ui/features/articles/views/article_list_screen.dart"
+      },
+      "children": [
+        {
+          "id": "safeArea1Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 59,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        },
+        {
+          "id": "appBar1Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 64,
+          "layout": "horizontal",
+          "fill": "$color.surface",
+          "padding": [
+            0,
+            4,
+            0,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "text43Dark",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": "fill_container",
+              "height": 28,
+              "content": "Latest",
+              "fontSize": "$text.titleLarge.size",
+              "fill": "$color.onSurface"
+            },
+            {
+              "id": "iconButton6Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon10Dark",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "refresh",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            },
+            {
+              "id": "iconButton7Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon11Dark",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "done_all",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "FilterBar2Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 48,
+          "layout": "horizontal",
+          "fill": "$color.surface",
+          "padding": [
+            0,
+            12,
+            8,
+            12
+          ],
+          "alignItems": "start",
+          "children": [
+            {
+              "id": "segmentedButton2Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 248,
+              "height": 40,
+              "layout": "horizontal",
+              "cornerRadius": 20,
+              "stroke": "$color.outline",
+              "strokeWidth": 1,
+              "children": [
+                {
+                  "id": "segment4Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 80,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "fill": "$color.secondaryContainer",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 20,
+                  "children": [
+                    {
+                      "id": "text44Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 80,
+                      "height": 20,
+                      "content": "All",
+                      "fontSize": "$text.labelLarge.size",
+                      "fill": "$color.onSecondaryContainer",
+                      "textAlign": "center"
+                    }
+                  ]
+                },
+                {
+                  "id": "segment5Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 84,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "text45Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 84,
+                      "height": 20,
+                      "content": "Unread",
+                      "fontSize": "$text.labelLarge.size",
+                      "fill": "$color.onSurface",
+                      "textAlign": "center"
+                    }
+                  ]
+                },
+                {
+                  "id": "segment6Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 84,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "text46Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 84,
+                      "height": 20,
+                      "content": "Starred",
+                      "fontSize": "$text.labelLarge.size",
+                      "fill": "$color.onSurface",
+                      "textAlign": "center"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "articleList1Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 567,
+          "layout": "vertical",
+          "children": [
+            {
+              "id": "ArticleTile1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 124.0,
+              "layout": "horizontal",
+              "fill": "$color.surface",
+              "padding": [
+                12,
+                8,
+                12,
+                16
+              ],
+              "alignItems": "start",
+              "children": [
+                {
+                  "id": "unreadMarker2Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 18,
+                  "height": 14,
+                  "layout": "vertical",
+                  "padding": [
+                    6,
+                    10,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "id": "ellipse2Dark",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "width": 8,
+                      "height": 8,
+                      "fill": "$color.primary"
+                    }
+                  ]
+                },
+                {
+                  "id": "articleText2Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": "fill_container",
+                  "height": 100.0,
+                  "layout": "vertical",
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "id": "text35Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 39.2,
+                      "content": "Designing on canvas, landing in code",
+                      "fontSize": "$text.titleSmall.size",
+                      "fill": "$color.onSurface",
+                      "fontWeight": 700,
+                      "maxLines": 2
+                    },
+                    {
+                      "id": "gap16Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 1,
+                      "height": 4,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text36Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 34.8,
+                      "content": "A short excerpt of the article body, trimmed to two lines so every row in the list keeps the same height.",
+                      "fontSize": "$text.bodySmall.size",
+                      "fill": "$color.onSurfaceVariant",
+                      "maxLines": 2
+                    },
+                    {
+                      "id": "gap17Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 1,
+                      "height": 6,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text37Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 16,
+                      "content": "Example Feed · 2h ago",
+                      "fontSize": "$text.labelSmall.size",
+                      "fill": "$color.outline"
+                    }
+                  ]
+                },
+                {
+                  "id": "iconButton3Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 40,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "icon7Dark",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 20,
+                      "height": 20,
+                      "library": "Material Symbols",
+                      "icon": "star_border",
+                      "fill": "$color.outline"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "divider1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 1,
+              "layout": "horizontal",
+              "padding": [
+                0,
+                16,
+                0,
+                16
+              ],
+              "children": [
+                {
+                  "id": "rect2Dark",
+                  "type": "rectangle",
+                  "x": 0,
+                  "y": 0,
+                  "width": 361,
+                  "height": 1,
+                  "fill": "$color.outlineVariant"
+                }
+              ]
+            },
+            {
+              "id": "ArticleTile2Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 104.4,
+              "layout": "horizontal",
+              "fill": "$color.surface",
+              "padding": [
+                12,
+                8,
+                12,
+                16
+              ],
+              "alignItems": "start",
+              "children": [
+                {
+                  "id": "unreadMarker3Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 18,
+                  "height": 14,
+                  "layout": "vertical",
+                  "padding": [
+                    6,
+                    10,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "id": "ellipse3Dark",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "width": 8,
+                      "height": 8,
+                      "fill": "$color.surface"
+                    }
+                  ]
+                },
+                {
+                  "id": "articleText3Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": "fill_container",
+                  "height": 80.4,
+                  "layout": "vertical",
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "id": "text38Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 19.6,
+                      "content": "A headline that has already been read",
+                      "fontSize": "$text.titleSmall.size",
+                      "fill": "$color.onSurfaceVariant",
+                      "fontWeight": 400
+                    },
+                    {
+                      "id": "gap18Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 1,
+                      "height": 4,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text39Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 34.8,
+                      "content": "Read rows drop to onSurfaceVariant and lose the bold weight, but keep the marker slot so nothing shifts.",
+                      "fontSize": "$text.bodySmall.size",
+                      "fill": "$color.onSurfaceVariant",
+                      "maxLines": 2
+                    },
+                    {
+                      "id": "gap19Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 1,
+                      "height": 6,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text40Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 16,
+                      "content": "Another Feed · 5h ago",
+                      "fontSize": "$text.labelSmall.size",
+                      "fill": "$color.outline"
+                    }
+                  ]
+                },
+                {
+                  "id": "iconButton4Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 40,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "icon8Dark",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 20,
+                      "height": 20,
+                      "library": "Material Symbols",
+                      "icon": "star_border",
+                      "fill": "$color.outline"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "divider2Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 1,
+              "layout": "horizontal",
+              "padding": [
+                0,
+                16,
+                0,
+                16
+              ],
+              "children": [
+                {
+                  "id": "rect3Dark",
+                  "type": "rectangle",
+                  "x": 0,
+                  "y": 0,
+                  "width": 361,
+                  "height": 1,
+                  "fill": "$color.outlineVariant"
+                }
+              ]
+            },
+            {
+              "id": "ArticleTile3Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 65.6,
+              "layout": "horizontal",
+              "fill": "$color.surface",
+              "padding": [
+                12,
+                8,
+                12,
+                16
+              ],
+              "alignItems": "start",
+              "children": [
+                {
+                  "id": "unreadMarker4Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 18,
+                  "height": 14,
+                  "layout": "vertical",
+                  "padding": [
+                    6,
+                    10,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "id": "ellipse4Dark",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "width": 8,
+                      "height": 8,
+                      "fill": "$color.primary"
+                    }
+                  ]
+                },
+                {
+                  "id": "articleText4Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": "fill_container",
+                  "height": 41.6,
+                  "layout": "vertical",
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "id": "text41Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 19.6,
+                      "content": "A starred article without a summary",
+                      "fontSize": "$text.titleSmall.size",
+                      "fill": "$color.onSurface",
+                      "fontWeight": 700
+                    },
+                    {
+                      "id": "gap20Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 1,
+                      "height": 6,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text42Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 16,
+                      "content": "Third Feed · yesterday",
+                      "fontSize": "$text.labelSmall.size",
+                      "fill": "$color.outline"
+                    }
+                  ]
+                },
+                {
+                  "id": "iconButton5Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 40,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "icon9Dark",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 20,
+                      "height": 20,
+                      "library": "Material Symbols",
+                      "icon": "star",
+                      "fill": "$color.primary"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "listFill1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 271.0,
+              "layout": "none",
+              "fill": "$color.surface",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "navigationBar1Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 80,
+          "layout": "horizontal",
+          "fill": "$color.surfaceContainer",
+          "children": [
+            {
+              "id": "destination1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 196.5,
+              "height": 80,
+              "layout": "vertical",
+              "padding": [
+                12,
+                0,
+                16,
+                0
+              ],
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "indicator1Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 64,
+                  "height": 32,
+                  "layout": "horizontal",
+                  "fill": "$color.secondaryContainer",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 16,
+                  "children": [
+                    {
+                      "id": "icon12Dark",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 24,
+                      "height": 24,
+                      "library": "Material Symbols",
+                      "icon": "article",
+                      "fill": "$color.onSecondaryContainer"
+                    }
+                  ]
+                },
+                {
+                  "id": "text47Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 196.5,
+                  "height": 16,
+                  "content": "Latest",
+                  "fontSize": "$text.labelMedium.size",
+                  "fill": "$color.onSurface",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "id": "destination2Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 196.5,
+              "height": 80,
+              "layout": "vertical",
+              "padding": [
+                12,
+                0,
+                16,
+                0
+              ],
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "indicator2Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 64,
+                  "height": 32,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 16,
+                  "children": [
+                    {
+                      "id": "icon13Dark",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 24,
+                      "height": 24,
+                      "library": "Material Symbols",
+                      "icon": "rss_feed_outlined",
+                      "fill": "$color.onSurfaceVariant"
+                    }
+                  ]
+                },
+                {
+                  "id": "text48Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 196.5,
+                  "height": 16,
+                  "content": "Feeds",
+                  "fontSize": "$text.labelMedium.size",
+                  "fill": "$color.onSurfaceVariant",
+                  "textAlign": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "safeArea2Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 34,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        }
+      ],
+      "theme": {
+        "mode": "dark"
+      }
+    },
+    {
+      "id": "ScreenFeedsDark",
+      "type": "frame",
+      "x": 453,
+      "y": 972,
+      "width": 393,
+      "height": 852,
+      "layout": "vertical",
+      "fill": "$color.surface",
+      "reusable": true,
+      "metadata": {
+        "dart": "lib/ui/features/feeds/views/feed_list_screen.dart"
+      },
+      "children": [
+        {
+          "id": "safeArea3Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 59,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        },
+        {
+          "id": "appBar2Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 64,
+          "layout": "horizontal",
+          "fill": "$color.surface",
+          "padding": [
+            0,
+            4,
+            0,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "text61Dark",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": "fill_container",
+              "height": 28,
+              "content": "Feeds",
+              "fontSize": "$text.titleLarge.size",
+              "fill": "$color.onSurface"
+            },
+            {
+              "id": "iconButton11Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon18Dark",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "refresh",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "feedsBody1Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 615,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": [
+            {
+              "id": "feedList1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 615,
+              "layout": "vertical",
+              "children": [
+                {
+                  "id": "FeedTile1Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 72,
+                  "layout": "horizontal",
+                  "fill": "$color.surface",
+                  "padding": [
+                    4,
+                    0,
+                    4,
+                    16
+                  ],
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "avatar2Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 40,
+                      "height": 40,
+                      "layout": "horizontal",
+                      "fill": "$color.primaryContainer",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 20,
+                      "children": [
+                        {
+                          "id": "text50Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": 40,
+                          "height": 24,
+                          "content": "F",
+                          "fontSize": "$text.titleMedium.size",
+                          "fill": "$color.onPrimaryContainer",
+                          "textAlign": "center"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedText2Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 233,
+                      "height": 36,
+                      "layout": "vertical",
+                      "alignItems": "start",
+                      "children": [
+                        {
+                          "id": "text51Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 20,
+                          "content": "Flutter Blog",
+                          "fontSize": "$text.titleSmall.size",
+                          "fill": "$color.onSurface"
+                        },
+                        {
+                          "id": "text52Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 16,
+                          "content": "Updated 2h ago · 48 articles",
+                          "fontSize": "$text.bodySmall.size",
+                          "fill": "$color.onSurfaceVariant"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedTrailing2Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 72,
+                      "height": 48,
+                      "layout": "horizontal",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "id": "badge2Dark",
+                          "type": "frame",
+                          "x": 0,
+                          "y": 0,
+                          "width": 24,
+                          "height": 16,
+                          "layout": "horizontal",
+                          "fill": "$color.primary",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "cornerRadius": 8,
+                          "children": [
+                            {
+                              "id": "text49Dark",
+                              "type": "text",
+                              "x": 0,
+                              "y": 0,
+                              "width": 24,
+                              "height": 16,
+                              "content": "12",
+                              "fontSize": "$text.labelSmall.size",
+                              "fill": "$color.onPrimary",
+                              "textAlign": "center"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "iconButton8Dark",
+                          "type": "frame",
+                          "x": 0,
+                          "y": 0,
+                          "width": 48,
+                          "height": 48,
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "icon14Dark",
+                              "type": "icon",
+                              "x": 0,
+                              "y": 0,
+                              "width": 24,
+                              "height": 24,
+                              "library": "Material Symbols",
+                              "icon": "more_vert",
+                              "fill": "$color.onSurfaceVariant"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "divider3Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 1,
+                  "layout": "horizontal",
+                  "padding": [
+                    0,
+                    16,
+                    0,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "id": "rect4Dark",
+                      "type": "rectangle",
+                      "x": 0,
+                      "y": 0,
+                      "width": 361,
+                      "height": 1,
+                      "fill": "$color.outlineVariant"
+                    }
+                  ]
+                },
+                {
+                  "id": "FeedTile2Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 72,
+                  "layout": "horizontal",
+                  "fill": "$color.surface",
+                  "padding": [
+                    4,
+                    0,
+                    4,
+                    16
+                  ],
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "avatar3Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 40,
+                      "height": 40,
+                      "layout": "horizontal",
+                      "fill": "$color.primaryContainer",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 20,
+                      "children": [
+                        {
+                          "id": "text53Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": 40,
+                          "height": 24,
+                          "content": "D",
+                          "fontSize": "$text.titleMedium.size",
+                          "fill": "$color.onPrimaryContainer",
+                          "textAlign": "center"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedText3Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 257,
+                      "height": 36,
+                      "layout": "vertical",
+                      "alignItems": "start",
+                      "children": [
+                        {
+                          "id": "text54Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 20,
+                          "content": "Dart News",
+                          "fontSize": "$text.titleSmall.size",
+                          "fill": "$color.onSurface"
+                        },
+                        {
+                          "id": "text55Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 16,
+                          "content": "Updated 5h ago · 21 articles",
+                          "fontSize": "$text.bodySmall.size",
+                          "fill": "$color.onSurfaceVariant"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedTrailing3Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 48,
+                      "height": 48,
+                      "layout": "horizontal",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "id": "iconButton9Dark",
+                          "type": "frame",
+                          "x": 0,
+                          "y": 0,
+                          "width": 48,
+                          "height": 48,
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "icon15Dark",
+                              "type": "icon",
+                              "x": 0,
+                              "y": 0,
+                              "width": 24,
+                              "height": 24,
+                              "library": "Material Symbols",
+                              "icon": "more_vert",
+                              "fill": "$color.onSurfaceVariant"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "divider4Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 1,
+                  "layout": "horizontal",
+                  "padding": [
+                    0,
+                    16,
+                    0,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "id": "rect5Dark",
+                      "type": "rectangle",
+                      "x": 0,
+                      "y": 0,
+                      "width": 361,
+                      "height": 1,
+                      "fill": "$color.outlineVariant"
+                    }
+                  ]
+                },
+                {
+                  "id": "FeedTile3Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 72,
+                  "layout": "horizontal",
+                  "fill": "$color.surface",
+                  "padding": [
+                    4,
+                    0,
+                    4,
+                    16
+                  ],
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "avatar4Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 40,
+                      "height": 40,
+                      "layout": "horizontal",
+                      "fill": "$color.primaryContainer",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 20,
+                      "children": [
+                        {
+                          "id": "text57Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": 40,
+                          "height": 24,
+                          "content": "R",
+                          "fontSize": "$text.titleMedium.size",
+                          "fill": "$color.onPrimaryContainer",
+                          "textAlign": "center"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedText4Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 233,
+                      "height": 36,
+                      "layout": "vertical",
+                      "alignItems": "start",
+                      "children": [
+                        {
+                          "id": "text58Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 20,
+                          "content": "Release Notes",
+                          "fontSize": "$text.titleSmall.size",
+                          "fill": "$color.onSurface"
+                        },
+                        {
+                          "id": "text59Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 16,
+                          "content": "Never refreshed",
+                          "fontSize": "$text.bodySmall.size",
+                          "fill": "$color.onSurfaceVariant"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedTrailing4Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 72,
+                      "height": 48,
+                      "layout": "horizontal",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "id": "badge3Dark",
+                          "type": "frame",
+                          "x": 0,
+                          "y": 0,
+                          "width": 24,
+                          "height": 16,
+                          "layout": "horizontal",
+                          "fill": "$color.primary",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "cornerRadius": 8,
+                          "children": [
+                            {
+                              "id": "text56Dark",
+                              "type": "text",
+                              "x": 0,
+                              "y": 0,
+                              "width": 24,
+                              "height": 16,
+                              "content": "3",
+                              "fontSize": "$text.labelSmall.size",
+                              "fill": "$color.onPrimary",
+                              "textAlign": "center"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "iconButton10Dark",
+                          "type": "frame",
+                          "x": 0,
+                          "y": 0,
+                          "width": 48,
+                          "height": 48,
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "icon16Dark",
+                              "type": "icon",
+                              "x": 0,
+                              "y": 0,
+                              "width": 24,
+                              "height": 24,
+                              "library": "Material Symbols",
+                              "icon": "more_vert",
+                              "fill": "$color.onSurfaceVariant"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "feedListFill1Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 397,
+                  "layout": "none",
+                  "fill": "$color.surface",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "fabAddDark",
+              "type": "frame",
+              "x": 277,
+              "y": 543,
+              "width": 100,
+              "height": 56,
+              "layout": "horizontal",
+              "fill": "$color.primaryContainer",
+              "padding": [
+                0,
+                24,
+                0,
+                16
+              ],
+              "alignItems": "center",
+              "cornerRadius": 16,
+              "children": [
+                {
+                  "id": "icon17Dark",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 18,
+                  "height": 18,
+                  "library": "Material Symbols",
+                  "icon": "add",
+                  "fill": "$color.onPrimaryContainer"
+                },
+                {
+                  "id": "gap21Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 8,
+                  "height": 1,
+                  "layout": "none",
+                  "children": []
+                },
+                {
+                  "id": "text60Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 28,
+                  "height": 20,
+                  "content": "Add",
+                  "fontSize": "$text.labelLarge.size",
+                  "fill": "$color.onPrimaryContainer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "navigationBar2Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 80,
+          "layout": "horizontal",
+          "fill": "$color.surfaceContainer",
+          "children": [
+            {
+              "id": "destination3Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 196.5,
+              "height": 80,
+              "layout": "vertical",
+              "padding": [
+                12,
+                0,
+                16,
+                0
+              ],
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "indicator3Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 64,
+                  "height": 32,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 16,
+                  "children": [
+                    {
+                      "id": "icon19Dark",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 24,
+                      "height": 24,
+                      "library": "Material Symbols",
+                      "icon": "article_outlined",
+                      "fill": "$color.onSurfaceVariant"
+                    }
+                  ]
+                },
+                {
+                  "id": "text62Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 196.5,
+                  "height": 16,
+                  "content": "Latest",
+                  "fontSize": "$text.labelMedium.size",
+                  "fill": "$color.onSurfaceVariant",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "id": "destination4Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 196.5,
+              "height": 80,
+              "layout": "vertical",
+              "padding": [
+                12,
+                0,
+                16,
+                0
+              ],
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "indicator4Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 64,
+                  "height": 32,
+                  "layout": "horizontal",
+                  "fill": "$color.secondaryContainer",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 16,
+                  "children": [
+                    {
+                      "id": "icon20Dark",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 24,
+                      "height": 24,
+                      "library": "Material Symbols",
+                      "icon": "rss_feed",
+                      "fill": "$color.onSecondaryContainer"
+                    }
+                  ]
+                },
+                {
+                  "id": "text63Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 196.5,
+                  "height": 16,
+                  "content": "Feeds",
+                  "fontSize": "$text.labelMedium.size",
+                  "fill": "$color.onSurface",
+                  "textAlign": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "safeArea4Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 34,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        }
+      ],
+      "theme": {
+        "mode": "dark"
+      }
+    },
+    {
+      "id": "ScreenArticleDetailDark",
+      "type": "frame",
+      "x": 906,
+      "y": 972,
+      "width": 393,
+      "height": 852,
+      "layout": "vertical",
+      "fill": "$color.surface",
+      "reusable": true,
+      "metadata": {
+        "dart": "lib/ui/features/article_detail/views/article_detail_screen.dart"
+      },
+      "children": [
+        {
+          "id": "safeArea5Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 59,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        },
+        {
+          "id": "appBar3Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 64,
+          "layout": "horizontal",
+          "fill": "$color.surface",
+          "padding": [
+            0,
+            4,
+            0,
+            4
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "iconButton12Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon21Dark",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "arrow_back",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            },
+            {
+              "id": "text75Dark",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": "fill_container",
+              "height": 20,
+              "content": "Example Feed",
+              "fontSize": "$text.titleSmall.size",
+              "fill": "$color.onSurface"
+            },
+            {
+              "id": "iconButton13Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon22Dark",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "star_border",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            },
+            {
+              "id": "iconButton14Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon23Dark",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "open_in_browser",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            },
+            {
+              "id": "iconButton15Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon24Dark",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "more_vert",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "detailBody1Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 695,
+          "layout": "vertical",
+          "fill": "$color.surface",
+          "padding": [
+            16,
+            20,
+            48,
+            20
+          ],
+          "children": [
+            {
+              "id": "text64Dark",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 64.8,
+              "content": "Designing on canvas, landing in code",
+              "fontSize": "$text.headlineSmall.size",
+              "fill": "$color.onSurface",
+              "fontWeight": 700,
+              "maxLines": 2
+            },
+            {
+              "id": "gap22Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 1,
+              "height": 12,
+              "layout": "none",
+              "children": []
+            },
+            {
+              "id": "text65Dark",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 16,
+              "content": "Jane Author · 2 August 2026",
+              "fontSize": "$text.bodySmall.size",
+              "fill": "$color.onSurfaceVariant"
+            },
+            {
+              "id": "metaDivider1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 32,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "id": "rect6Dark",
+                  "type": "rectangle",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 1,
+                  "fill": "$color.outlineVariant"
+                }
+              ]
+            },
+            {
+              "id": "htmlParagraph2Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 98,
+              "layout": "vertical",
+              "padding": [
+                0,
+                0,
+                16,
+                0
+              ],
+              "children": [
+                {
+                  "id": "text66Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 81.6,
+                  "content": "A paragraph rendered by HtmlContent: bodyLarge at a line height of 1.7, coloured onSurface, with 16 of spacing below it.",
+                  "fontSize": "$text.bodyLarge.size",
+                  "fill": "$color.onSurface",
+                  "maxLines": 3
+                }
+              ]
+            },
+            {
+              "id": "htmlHeading2Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 57,
+              "layout": "vertical",
+              "padding": [
+                16,
+                0,
+                10,
+                0
+              ],
+              "children": [
+                {
+                  "id": "text67Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 30.8,
+                  "content": "How headings render",
+                  "fontSize": "$text.titleLarge.size",
+                  "fill": "$color.onSurface",
+                  "fontWeight": 700
+                }
+              ]
+            },
+            {
+              "id": "htmlParagraph3Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 70,
+              "layout": "vertical",
+              "padding": [
+                0,
+                0,
+                16,
+                0
+              ],
+              "children": [
+                {
+                  "id": "text68Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 54.4,
+                  "content": "h1 and h2 take headlineSmall and titleLarge; h3 and below sit closer to body size.",
+                  "fontSize": "$text.bodyLarge.size",
+                  "fill": "$color.onSurface",
+                  "maxLines": 2
+                }
+              ]
+            },
+            {
+              "id": "htmlBlockquote1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 70,
+              "layout": "horizontal",
+              "padding": [
+                0,
+                0,
+                16,
+                0
+              ],
+              "children": [
+                {
+                  "id": "rect7Dark",
+                  "type": "rectangle",
+                  "x": 0,
+                  "y": 0,
+                  "width": 3,
+                  "height": 54,
+                  "fill": "$color.primary"
+                },
+                {
+                  "id": "gap23Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 16,
+                  "height": 1,
+                  "layout": "none",
+                  "children": []
+                },
+                {
+                  "id": "text69Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 334,
+                  "height": 54.4,
+                  "content": "A blockquote keeps a 3 wide primary rule on its left and drops to onSurfaceVariant.",
+                  "fontSize": "$text.bodyLarge.size",
+                  "fill": "$color.onSurfaceVariant",
+                  "maxLines": 2
+                }
+              ]
+            },
+            {
+              "id": "htmlCode1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 88,
+              "layout": "vertical",
+              "padding": [
+                0,
+                0,
+                16,
+                0
+              ],
+              "children": [
+                {
+                  "id": "codeBox1Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 72,
+                  "layout": "vertical",
+                  "fill": "$color.surfaceContainerHighest",
+                  "padding": 12,
+                  "cornerRadius": 8,
+                  "children": [
+                    {
+                      "id": "text70Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 329,
+                      "height": 48.0,
+                      "content": "flutter analyze\nflutter test",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurface",
+                      "maxLines": 2
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "htmlList2Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 78,
+              "layout": "vertical",
+              "padding": [
+                0,
+                0,
+                8,
+                4
+              ],
+              "children": [
+                {
+                  "id": "htmlListItem3Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 349,
+                  "height": 35,
+                  "layout": "horizontal",
+                  "padding": [
+                    0,
+                    0,
+                    8,
+                    0
+                  ],
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "id": "text71Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 28,
+                      "height": 24,
+                      "content": "•",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurfaceVariant",
+                      "textAlign": "right"
+                    },
+                    {
+                      "id": "gap24Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 8,
+                      "height": 1,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text72Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 313,
+                      "height": 27.2,
+                      "content": "Bullets are right-aligned in a 28 column.",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurface"
+                    }
+                  ]
+                },
+                {
+                  "id": "htmlListItem4Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 349,
+                  "height": 35,
+                  "layout": "horizontal",
+                  "padding": [
+                    0,
+                    0,
+                    8,
+                    0
+                  ],
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "id": "text73Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 28,
+                      "height": 24,
+                      "content": "•",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurfaceVariant",
+                      "textAlign": "right"
+                    },
+                    {
+                      "id": "gap25Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 8,
+                      "height": 1,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text74Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 313,
+                      "height": 27.2,
+                      "content": "The body of an item is Expanded.",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurface"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "detailFill1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 45.200000000000045,
+              "layout": "none",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "safeArea6Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 34,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        }
+      ],
+      "theme": {
+        "mode": "dark"
+      }
+    },
+    {
+      "id": "ArticleTile",
+      "type": "frame",
+      "x": 0,
+      "y": 1944,
+      "width": 393,
+      "height": 124.0,
+      "layout": "horizontal",
+      "fill": "$color.surface",
+      "padding": [
+        12,
+        8,
+        12,
+        16
+      ],
+      "alignItems": "start",
+      "children": [
+        {
+          "id": "unreadMarker1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 18,
+          "height": 14,
+          "layout": "vertical",
+          "padding": [
+            6,
+            10,
+            0,
+            0
+          ],
+          "children": [
+            {
+              "id": "ellipse1",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "width": 8,
+              "height": 8,
+              "fill": "$color.primary"
+            }
+          ]
+        },
+        {
+          "id": "articleText1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": "fill_container",
+          "height": 100.0,
+          "layout": "vertical",
+          "alignItems": "start",
+          "children": [
+            {
+              "id": "text20",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": "fill_container",
+              "height": 39.2,
+              "content": "Designing on canvas, landing in code",
+              "fontSize": "$text.titleSmall.size",
+              "fill": "$color.onSurface",
+              "fontWeight": 700,
+              "maxLines": 2
+            },
+            {
+              "id": "gap8",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 1,
+              "height": 4,
+              "layout": "none",
+              "children": []
+            },
+            {
+              "id": "text21",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": "fill_container",
+              "height": 34.8,
+              "content": "A short excerpt of the article body, trimmed to two lines so every row in the list keeps the same height.",
+              "fontSize": "$text.bodySmall.size",
+              "fill": "$color.onSurfaceVariant",
+              "maxLines": 2
+            },
+            {
+              "id": "gap9",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 1,
+              "height": 6,
+              "layout": "none",
+              "children": []
+            },
+            {
+              "id": "text22",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": "fill_container",
+              "height": 16,
+              "content": "Example Feed · 2h ago",
+              "fontSize": "$text.labelSmall.size",
+              "fill": "$color.outline"
+            }
+          ]
+        },
+        {
+          "id": "iconButton1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 40,
+          "height": 40,
+          "layout": "horizontal",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "icon1",
+              "type": "icon",
+              "x": 0,
+              "y": 0,
+              "width": 20,
+              "height": 20,
+              "library": "Material Symbols",
+              "icon": "star_border",
+              "fill": "$color.outline"
+            }
+          ]
+        }
+      ],
+      "reusable": true
+    },
+    {
+      "id": "FeedTile",
+      "type": "frame",
+      "x": 453,
+      "y": 1944,
+      "width": 393,
+      "height": 72,
+      "layout": "horizontal",
+      "fill": "$color.surface",
+      "padding": [
+        4,
+        0,
+        4,
+        16
+      ],
+      "gap": 16,
+      "alignItems": "center",
+      "children": [
+        {
+          "id": "avatar1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 40,
+          "height": 40,
+          "layout": "horizontal",
+          "fill": "$color.primaryContainer",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "cornerRadius": 20,
+          "children": [
+            {
+              "id": "text24",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": 40,
+              "height": 24,
+              "content": "F",
+              "fontSize": "$text.titleMedium.size",
+              "fill": "$color.onPrimaryContainer",
+              "textAlign": "center"
+            }
+          ]
+        },
+        {
+          "id": "feedText1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 233,
+          "height": 36,
+          "layout": "vertical",
+          "alignItems": "start",
+          "children": [
+            {
+              "id": "text25",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": "fill_container",
+              "height": 20,
+              "content": "Flutter Blog",
+              "fontSize": "$text.titleSmall.size",
+              "fill": "$color.onSurface"
+            },
+            {
+              "id": "text26",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": "fill_container",
+              "height": 16,
+              "content": "Updated 2h ago · 48 articles",
+              "fontSize": "$text.bodySmall.size",
+              "fill": "$color.onSurfaceVariant"
+            }
+          ]
+        },
+        {
+          "id": "feedTrailing1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 72,
+          "height": 48,
+          "layout": "horizontal",
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "badge1",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 24,
+              "height": 16,
+              "layout": "horizontal",
+              "fill": "$color.primary",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "cornerRadius": 8,
+              "children": [
+                {
+                  "id": "text23",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 16,
+                  "content": "12",
+                  "fontSize": "$text.labelSmall.size",
+                  "fill": "$color.onPrimary",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "id": "iconButton2",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon2",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "more_vert",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "reusable": true
+    },
+    {
+      "id": "FilterBar",
+      "type": "frame",
+      "x": 906,
+      "y": 1944,
+      "width": 393,
+      "height": 48,
+      "layout": "horizontal",
+      "fill": "$color.surface",
+      "padding": [
+        0,
+        12,
+        8,
+        12
+      ],
+      "alignItems": "start",
+      "children": [
+        {
+          "id": "segmentedButton1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 248,
+          "height": 40,
+          "layout": "horizontal",
+          "cornerRadius": 20,
+          "stroke": "$color.outline",
+          "strokeWidth": 1,
+          "children": [
+            {
+              "id": "segment1",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 80,
+              "height": 40,
+              "layout": "horizontal",
+              "fill": "$color.secondaryContainer",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "cornerRadius": 20,
+              "children": [
+                {
+                  "id": "text27",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 80,
+                  "height": 20,
+                  "content": "All",
+                  "fontSize": "$text.labelLarge.size",
+                  "fill": "$color.onSecondaryContainer",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "id": "segment2",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 84,
+              "height": 40,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "text28",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 84,
+                  "height": 20,
+                  "content": "Unread",
+                  "fontSize": "$text.labelLarge.size",
+                  "fill": "$color.onSurface",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "id": "segment3",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 84,
+              "height": 40,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "text29",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 84,
+                  "height": 20,
+                  "content": "Starred",
+                  "fontSize": "$text.labelLarge.size",
+                  "fill": "$color.onSurface",
+                  "textAlign": "center"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "reusable": true
+    },
+    {
+      "id": "ReadSwipeBackground",
+      "type": "frame",
+      "x": 1359,
+      "y": 1944,
+      "width": 393,
+      "height": 124,
+      "layout": "horizontal",
+      "fill": "$color.primaryContainer",
+      "padding": [
+        0,
+        20,
+        0,
+        20
+      ],
+      "alignItems": "center",
+      "reusable": true,
+      "children": [
+        {
+          "id": "icon3",
+          "type": "icon",
+          "x": 0,
+          "y": 0,
+          "width": 24,
+          "height": 24,
+          "library": "Material Symbols",
+          "icon": "drafts_outlined",
+          "fill": "$color.onPrimaryContainer"
+        },
+        {
+          "id": "gap10",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 8,
+          "height": 1,
+          "layout": "none",
+          "children": []
+        },
+        {
+          "id": "text30",
+          "type": "text",
+          "x": 0,
+          "y": 0,
+          "width": 90,
+          "height": 20,
+          "content": "Mark read",
+          "fontSize": "$text.labelLarge.size",
+          "fill": "$color.onPrimaryContainer"
+        }
+      ]
+    },
+    {
+      "id": "EmptyView",
+      "type": "frame",
+      "x": 1812,
+      "y": 1944,
+      "width": 393,
+      "height": 188,
+      "layout": "vertical",
+      "fill": "$color.surface",
+      "padding": 32,
+      "alignItems": "center",
+      "reusable": true,
+      "children": [
+        {
+          "id": "icon4",
+          "type": "icon",
+          "x": 0,
+          "y": 0,
+          "width": 56,
+          "height": 56,
+          "library": "Material Symbols",
+          "icon": "inbox",
+          "fill": "$color.outline"
+        },
+        {
+          "id": "gap11",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 16,
+          "layout": "none",
+          "children": []
+        },
+        {
+          "id": "text31",
+          "type": "text",
+          "x": 0,
+          "y": 0,
+          "width": 329,
+          "height": 24,
+          "content": "No articles yet",
+          "fontSize": "$text.titleMedium.size",
+          "fill": "$color.onSurface",
+          "textAlign": "center"
+        },
+        {
+          "id": "gap12",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 8,
+          "layout": "none",
+          "children": []
+        },
+        {
+          "id": "text32",
+          "type": "text",
+          "x": 0,
+          "y": 0,
+          "width": 329,
+          "height": 20,
+          "content": "Pull to refresh, or add a feed to get started.",
+          "fontSize": "$text.bodyMedium.size",
+          "fill": "$color.onSurfaceVariant",
+          "textAlign": "center"
+        }
+      ]
+    },
+    {
+      "id": "ErrorView",
+      "type": "frame",
+      "x": 2265,
+      "y": 1944,
+      "width": 393,
+      "height": 240,
+      "layout": "vertical",
+      "fill": "$color.surface",
+      "padding": 32,
+      "alignItems": "center",
+      "reusable": true,
+      "children": [
+        {
+          "id": "icon6",
+          "type": "icon",
+          "x": 0,
+          "y": 0,
+          "width": 56,
+          "height": 56,
+          "library": "Material Symbols",
+          "icon": "error_outline",
+          "fill": "$color.error"
+        },
+        {
+          "id": "gap14",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 16,
+          "layout": "none",
+          "children": []
+        },
+        {
+          "id": "text34",
+          "type": "text",
+          "x": 0,
+          "y": 0,
+          "width": 329,
+          "height": 40,
+          "content": "Could not load articles: the feed could not be reached.",
+          "fontSize": "$text.bodyMedium.size",
+          "fill": "$color.onSurface",
+          "maxLines": 2,
+          "textAlign": "center"
+        },
+        {
+          "id": "gap15",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 24,
+          "layout": "none",
+          "children": []
+        },
+        {
+          "id": "button1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 110,
+          "height": 40,
+          "layout": "horizontal",
+          "fill": "$color.primaryContainer",
+          "padding": [
+            0,
+            24,
+            0,
+            16
+          ],
+          "alignItems": "center",
+          "cornerRadius": 20,
+          "children": [
+            {
+              "id": "icon5",
+              "type": "icon",
+              "x": 0,
+              "y": 0,
+              "width": 18,
+              "height": 18,
+              "library": "Material Symbols",
+              "icon": "refresh",
+              "fill": "$color.onPrimaryContainer"
+            },
+            {
+              "id": "gap13",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 8,
+              "height": 1,
+              "layout": "none",
+              "children": []
+            },
+            {
+              "id": "text33",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": 44,
+              "height": 20,
+              "content": "Retry",
+              "fontSize": "$text.labelLarge.size",
+              "fill": "$color.onPrimaryContainer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AddFeedDialog",
+      "type": "frame",
+      "x": 2718,
+      "y": 1944,
+      "width": 313,
+      "height": 256,
+      "layout": "vertical",
+      "fill": "$color.surfaceContainerHigh",
+      "padding": 24,
+      "cornerRadius": 28,
+      "reusable": true,
+      "children": [
+        {
+          "id": "text6",
+          "type": "text",
+          "x": 0,
+          "y": 0,
+          "width": 265,
+          "height": 28,
+          "content": "Add feed",
+          "fontSize": "$text.titleLarge.size",
+          "fill": "$color.onSurface"
+        },
+        {
+          "id": "gap2",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 16,
+          "layout": "none",
+          "children": []
+        },
+        {
+          "id": "textField1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 265,
+          "height": 56,
+          "layout": "vertical",
+          "padding": [
+            8,
+            12,
+            8,
+            12
+          ],
+          "cornerRadius": 4,
+          "stroke": "$color.outline",
+          "strokeWidth": 1,
+          "children": [
+            {
+              "id": "text1",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": 241,
+              "height": 16,
+              "content": "Feed or site URL",
+              "fontSize": "$text.bodySmall.size",
+              "fill": "$color.onSurfaceVariant"
+            },
+            {
+              "id": "text2",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": 241,
+              "height": 24,
+              "content": "https://example.com/feed.xml",
+              "fontSize": "$text.bodyLarge.size",
+              "fill": "$color.onSurfaceVariant"
+            }
+          ]
+        },
+        {
+          "id": "gap1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 12,
+          "layout": "none",
+          "children": []
+        },
+        {
+          "id": "text3",
+          "type": "text",
+          "x": 0,
+          "y": 0,
+          "width": 265,
+          "height": 32,
+          "content": "Enter a site URL and its feed will be discovered automatically.",
+          "fontSize": "$text.bodySmall.size",
+          "fill": "$color.onSurfaceVariant",
+          "maxLines": 2
+        },
+        {
+          "id": "gap3",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 24,
+          "layout": "none",
+          "children": []
+        },
+        {
+          "id": "dialogActions1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 265,
+          "height": 40,
+          "layout": "horizontal",
+          "gap": 8,
+          "justifyContent": "end",
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "textButton1",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 72,
+              "height": 40,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "text4",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 72,
+                  "height": 20,
+                  "content": "Cancel",
+                  "fontSize": "$text.labelLarge.size",
+                  "fill": "$color.primary",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "id": "filledButton1",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 72,
+              "height": 40,
+              "layout": "horizontal",
+              "fill": "$color.primary",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "cornerRadius": 20,
+              "children": [
+                {
+                  "id": "text5",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 72,
+                  "height": 20,
+                  "content": "Add",
+                  "fontSize": "$text.labelLarge.size",
+                  "fill": "$color.onPrimary",
+                  "textAlign": "center"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ConfirmDialog",
+      "type": "frame",
+      "x": 3091,
+      "y": 1944,
+      "width": 313,
+      "height": 196,
+      "layout": "vertical",
+      "fill": "$color.surfaceContainerHigh",
+      "padding": 24,
+      "cornerRadius": 28,
+      "reusable": true,
+      "children": [
+        {
+          "id": "text10",
+          "type": "text",
+          "x": 0,
+          "y": 0,
+          "width": 265,
+          "height": 28,
+          "content": "Unsubscribe",
+          "fontSize": "$text.titleLarge.size",
+          "fill": "$color.onSurface"
+        },
+        {
+          "id": "gap4",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 16,
+          "layout": "none",
+          "children": []
+        },
+        {
+          "id": "text7",
+          "type": "text",
+          "x": 0,
+          "y": 0,
+          "width": 265,
+          "height": 40,
+          "content": "Unsubscribing from \"Flutter Blog\" also deletes its saved articles.",
+          "fontSize": "$text.bodyMedium.size",
+          "fill": "$color.onSurfaceVariant",
+          "maxLines": 2
+        },
+        {
+          "id": "gap5",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 24,
+          "layout": "none",
+          "children": []
+        },
+        {
+          "id": "dialogActions2",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 265,
+          "height": 40,
+          "layout": "horizontal",
+          "gap": 8,
+          "justifyContent": "end",
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "textButton2",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 72,
+              "height": 40,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "text8",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 72,
+                  "height": 20,
+                  "content": "Cancel",
+                  "fontSize": "$text.labelLarge.size",
+                  "fill": "$color.primary",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "id": "filledButton2",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 136,
+              "height": 40,
+              "layout": "horizontal",
+              "fill": "$color.error",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "cornerRadius": 20,
+              "children": [
+                {
+                  "id": "text9",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 136,
+                  "height": 20,
+                  "content": "Unsubscribe",
+                  "fontSize": "$text.labelLarge.size",
+                  "fill": "$color.onError",
+                  "textAlign": "center"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HtmlContentSpecimen",
+      "type": "frame",
+      "x": 3464,
+      "y": 1944,
+      "width": 393,
+      "height": 521,
+      "layout": "vertical",
+      "fill": "$color.surface",
+      "padding": [
+        16,
+        20,
+        16,
+        20
+      ],
+      "reusable": true,
+      "metadata": {
+        "dart": "lib/ui/core/widgets/html_content.dart"
+      },
+      "children": [
+        {
+          "id": "htmlHeading1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 353,
+          "height": 60,
+          "layout": "vertical",
+          "padding": [
+            16,
+            0,
+            10,
+            0
+          ],
+          "children": [
+            {
+              "id": "text11",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 33.6,
+              "content": "HtmlContent blocks",
+              "fontSize": "$text.headlineSmall.size",
+              "fill": "$color.onSurface",
+              "fontWeight": 700
+            }
+          ]
+        },
+        {
+          "id": "htmlParagraph1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 353,
+          "height": 70,
+          "layout": "vertical",
+          "padding": [
+            0,
+            0,
+            16,
+            0
+          ],
+          "children": [
+            {
+              "id": "text12",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 54.4,
+              "content": "Inline code, marks and links keep the surrounding bodyLarge metrics.",
+              "fontSize": "$text.bodyLarge.size",
+              "fill": "$color.onSurface",
+              "maxLines": 2
+            }
+          ]
+        },
+        {
+          "id": "htmlTable1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 353,
+          "height": 145,
+          "layout": "vertical",
+          "padding": [
+            0,
+            0,
+            16,
+            0
+          ],
+          "children": [
+            {
+              "id": "tableBox1",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 129,
+              "layout": "vertical",
+              "cornerRadius": 8,
+              "stroke": "$color.outlineVariant",
+              "strokeWidth": 1,
+              "children": [
+                {
+                  "id": "htmlTableRow1",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 43,
+                  "layout": "vertical",
+                  "padding": [
+                    8,
+                    12,
+                    8,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "id": "text13",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 329,
+                      "height": 27.2,
+                      "content": "Header row is w700",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurface",
+                      "fontWeight": 700
+                    }
+                  ]
+                },
+                {
+                  "id": "htmlTableRow2",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 43,
+                  "layout": "vertical",
+                  "padding": [
+                    8,
+                    12,
+                    8,
+                    12
+                  ],
+                  "stroke": "$color.outlineVariant",
+                  "strokeWidth": [
+                    1,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "id": "text14",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 329,
+                      "height": 27.2,
+                      "content": "Rows are separated by an outlineVariant border",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurface"
+                    }
+                  ]
+                },
+                {
+                  "id": "htmlTableRow3",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 43,
+                  "layout": "vertical",
+                  "padding": [
+                    8,
+                    12,
+                    8,
+                    12
+                  ],
+                  "stroke": "$color.outlineVariant",
+                  "strokeWidth": [
+                    1,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "id": "text15",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 329,
+                      "height": 27.2,
+                      "content": "Cells pad 12 across and 8 down",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurface"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "htmlList1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 353,
+          "height": 78,
+          "layout": "vertical",
+          "padding": [
+            0,
+            0,
+            8,
+            4
+          ],
+          "children": [
+            {
+              "id": "htmlListItem1",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 349,
+              "height": 35,
+              "layout": "horizontal",
+              "padding": [
+                0,
+                0,
+                8,
+                0
+              ],
+              "alignItems": "start",
+              "children": [
+                {
+                  "id": "text16",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 28,
+                  "height": 24,
+                  "content": "1.",
+                  "fontSize": "$text.bodyLarge.size",
+                  "fill": "$color.onSurfaceVariant",
+                  "textAlign": "right"
+                },
+                {
+                  "id": "gap6",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 8,
+                  "height": 1,
+                  "layout": "none",
+                  "children": []
+                },
+                {
+                  "id": "text17",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 313,
+                  "height": 27.2,
+                  "content": "First ordered item.",
+                  "fontSize": "$text.bodyLarge.size",
+                  "fill": "$color.onSurface"
+                }
+              ]
+            },
+            {
+              "id": "htmlListItem2",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 349,
+              "height": 35,
+              "layout": "horizontal",
+              "padding": [
+                0,
+                0,
+                8,
+                0
+              ],
+              "alignItems": "start",
+              "children": [
+                {
+                  "id": "text18",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 28,
+                  "height": 24,
+                  "content": "2.",
+                  "fontSize": "$text.bodyLarge.size",
+                  "fill": "$color.onSurfaceVariant",
+                  "textAlign": "right"
+                },
+                {
+                  "id": "gap7",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 8,
+                  "height": 1,
+                  "layout": "none",
+                  "children": []
+                },
+                {
+                  "id": "text19",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 313,
+                  "height": 27.2,
+                  "content": "Second ordered item.",
+                  "fontSize": "$text.bodyLarge.size",
+                  "fill": "$color.onSurface"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "htmlImage1",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 353,
+          "height": 136,
+          "layout": "vertical",
+          "padding": [
+            0,
+            0,
+            16,
+            0
+          ],
+          "children": [
+            {
+              "id": "rect1",
+              "type": "rectangle",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 120,
+              "fill": "$color.surfaceContainerHighest",
+              "cornerRadius": 8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
