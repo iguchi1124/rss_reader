@@ -88,6 +88,20 @@ source, not a build input — nothing generates Dart from it, and `metadata.dart
 on a screen frame names the file it stands for. Keep the two in step or delete
 the frame.
 
+`DESIGN.md` at the repo root is the design language both of them answer to: an
+analysis of Apple's surfaces, expressed as colour, type, radius and elevation
+tokens. Its rules are what the palette and the type ladder encode — one accent
+and no second hue, body copy at 17 rather than 16, negative tracking from 14 up,
+a weight ladder of 400 and 600 with 500 and 700 absent, radii of 8 / 18 / pill
+and nothing between, and elevation carried by a hairline or a change of surface
+rather than a shadow. Read it before changing a token; the values here are
+chosen, not derived, and a seed colour will not reproduce them.
+
+Two places bend a documented rule on purpose. `onPrimary` is near-black in dark
+mode, where the doc says white — white on the dark-mode accent measures 2.7:1.
+And `secondaryContainer` is a tint of the accent rather than a hue of its own,
+because the doc forbids a second accent but a selected tab still needs a chip.
+
 Three screen frames sit at 393x852 with the safe-area insets (59 top, 34 bottom)
 drawn in, so a frame's height is what the device shows rather than what the
 scroll view holds:
@@ -155,7 +169,7 @@ dividers' `endIndent` at once.
 
 The gutter is spent edge by edge rather than as a single `Padding` around
 `HomeScreen`'s body, which would be one line. An app bar tints when a list
-scrolls under it — `#fff8f6` to `#f6ebe6` in light, `#1a120e` to `#2c1f18` in
+scrolls under it — `#ffffff` to `#ebf3fb` in light, `#1d1d1f` to `#1e2731` in
 dark — so pulling its background in along with its contents leaves an untinted
 strip down the right of the window. The background stays full width; only what
 sits on it moves.
@@ -204,11 +218,14 @@ cannot take one, which is why they float.
 they re-filter every frame. If a second glass surface ever appears, give them a
 shared `BackdropKey` so the engine filters once.
 
-`glass.tint`, `glass.rim` and `glass.shadow` in the `.pen` are hand-owned. They
-need an alpha channel and the generated `color.*` values are opaque, so they sit
-under their own prefix — which is also what keeps `UPDATE_PEN_VARIABLES=1` from
-deleting them. They were picked by eye against `color.surface` and will not
-follow a change to `AppTheme._seedColor`.
+`glass.tint` and `glass.rim` in the `.pen` are hand-owned. They need an alpha
+channel and the generated `color.*` values are opaque, so they sit under their
+own prefix — which is also what keeps `UPDATE_PEN_VARIABLES=1` from deleting
+them. They were picked by eye against `color.surface` and will not follow a
+change to the accent in `AppTheme`.
+
+There is no `glass.shadow`: the panels carry a hairline and no drop shadow, so
+`glassEdge` is the only thing separating one from the list behind it.
 
 ### Title bar
 

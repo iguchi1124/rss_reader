@@ -58,9 +58,9 @@
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
                   "content": "Latest",
+                  "lineHeight": 1.19,
                   "fontFamily": "Inter",
-                  "fontSize": "$text.titleLarge.size",
-                  "fontWeight": "normal"
+                  "fontSize": "$text.titleLarge.size"
                 },
                 {
                   "type": "frame",
@@ -120,8 +120,8 @@
                   "id": "segmentedButton2",
                   "width": 248,
                   "height": 40,
-                  "cornerRadius": 20,
-                  "stroke": "$color.outline",
+                  "cornerRadius": 9999,
+                  "stroke": "$color.outlineVariant",
                   "strokeWidth": 1,
                   "children": [
                     {
@@ -130,7 +130,7 @@
                       "width": 80,
                       "height": 40,
                       "fill": "$color.secondaryContainer",
-                      "cornerRadius": 20,
+                      "cornerRadius": 9999,
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
@@ -141,10 +141,11 @@
                           "textGrowth": "fixed-width",
                           "width": 80,
                           "content": "All",
+                          "lineHeight": 1.43,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelLarge.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         }
                       ]
                     },
@@ -163,10 +164,11 @@
                           "textGrowth": "fixed-width",
                           "width": 84,
                           "content": "Unread",
+                          "lineHeight": 1.43,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelLarge.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         }
                       ]
                     },
@@ -185,10 +187,11 @@
                           "textGrowth": "fixed-width",
                           "width": 84,
                           "content": "Starred",
+                          "lineHeight": 1.43,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelLarge.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         }
                       ]
                     }
@@ -255,9 +258,11 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Designing on canvas, landing in code",
+                          "lineHeight": 1.29,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "bold"
+                          "fontWeight": "600",
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -276,9 +281,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "A short excerpt of the article body, trimmed to two lines so every row in the list keeps the same height.",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         },
                         {
                           "type": "frame",
@@ -294,9 +300,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Example Feed · 2h ago",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -392,9 +399,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "A headline that has already been read",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -413,9 +421,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Read rows drop to onSurfaceVariant and lose the bold weight, but keep the marker slot so nothing shifts.",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         },
                         {
                           "type": "frame",
@@ -431,9 +440,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Another Feed · 5h ago",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -529,9 +539,11 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Content has to run under the bar",
+                          "lineHeight": 1.29,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "bold"
+                          "fontWeight": "600",
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -550,9 +562,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Glass with nothing behind it is just a translucent rectangle, so the list is not inset for the tab bar.",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         },
                         {
                           "type": "frame",
@@ -568,9 +581,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Third Feed · 8h ago",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -666,9 +680,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "A fourth row, still fully visible",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -687,9 +702,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "The blur only starts where the capsule overlaps.",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         },
                         {
                           "type": "frame",
@@ -705,9 +721,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Fourth Feed · yesterday",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -803,9 +820,11 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "The last row sits behind the glass",
+                          "lineHeight": 1.29,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "bold"
+                          "fontWeight": "600",
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -824,9 +843,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "This is the part the background blur acts on.",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         },
                         {
                           "type": "frame",
@@ -842,9 +862,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Fifth Feed · 2 days ago",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -889,26 +910,14 @@
           "width": 361,
           "height": 56,
           "fill": "$glass.tint",
-          "cornerRadius": 28,
+          "cornerRadius": 9999,
           "stroke": "$glass.rim",
           "strokeWidth": 1,
           "strokeAlignment": "inner",
-          "effect": [
-            {
-              "type": "background_blur",
-              "radius": 32
-            },
-            {
-              "type": "shadow",
-              "shadowType": "outer",
-              "color": "$glass.shadow",
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "blur": 24
-            }
-          ],
+          "effect": {
+            "type": "background_blur",
+            "radius": 32
+          },
           "gap": 4,
           "padding": 6,
           "children": [
@@ -918,7 +927,7 @@
               "width": 172,
               "height": 44,
               "fill": "$color.secondaryContainer",
-              "cornerRadius": 22,
+              "cornerRadius": 9999,
               "layout": "vertical",
               "padding": [
                 4,
@@ -942,10 +951,11 @@
                   "textGrowth": "fixed-width",
                   "width": 172,
                   "content": "Latest",
+                  "lineHeight": 1.43,
                   "textAlign": "center",
                   "fontFamily": "Inter",
                   "fontSize": "$text.labelMedium.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.12
                 }
               ]
             },
@@ -954,7 +964,7 @@
               "id": "glassDestination4",
               "width": 173,
               "height": 44,
-              "cornerRadius": 22,
+              "cornerRadius": 9999,
               "layout": "vertical",
               "padding": [
                 4,
@@ -978,10 +988,11 @@
                   "textGrowth": "fixed-width",
                   "width": 173,
                   "content": "Feeds",
+                  "lineHeight": 1.43,
                   "textAlign": "center",
                   "fontFamily": "Inter",
                   "fontSize": "$text.labelMedium.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.12
                 }
               ]
             }
@@ -1046,9 +1057,9 @@
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
                   "content": "Feeds",
+                  "lineHeight": 1.19,
                   "fontFamily": "Inter",
-                  "fontSize": "$text.titleLarge.size",
-                  "fontWeight": "normal"
+                  "fontSize": "$text.titleLarge.size"
                 },
                 {
                   "type": "frame",
@@ -1099,7 +1110,7 @@
                       "width": 40,
                       "height": 40,
                       "fill": "$color.primaryContainer",
-                      "cornerRadius": 20,
+                      "cornerRadius": 9999,
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
@@ -1110,10 +1121,11 @@
                           "textGrowth": "fixed-width",
                           "width": 40,
                           "content": "F",
+                          "lineHeight": 1.44,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleMedium.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.374
                         }
                       ]
                     },
@@ -1121,7 +1133,6 @@
                       "type": "frame",
                       "id": "feedText2",
                       "width": 229,
-                      "height": 36,
                       "layout": "vertical",
                       "children": [
                         {
@@ -1131,9 +1142,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Flutter Blog",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "text",
@@ -1142,9 +1154,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Updated 2h ago · 48 articles",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         }
                       ]
                     },
@@ -1161,7 +1174,7 @@
                           "width": 24,
                           "height": 16,
                           "fill": "$color.primary",
-                          "cornerRadius": 8,
+                          "cornerRadius": 9999,
                           "justifyContent": "center",
                           "alignItems": "center",
                           "children": [
@@ -1172,10 +1185,11 @@
                               "textGrowth": "fixed-width",
                               "width": 24,
                               "content": "12",
+                              "lineHeight": 1.3,
                               "textAlign": "center",
                               "fontFamily": "Inter",
                               "fontSize": "$text.labelSmall.size",
-                              "fontWeight": "normal"
+                              "letterSpacing": -0.08
                             }
                           ]
                         },
@@ -1242,7 +1256,7 @@
                       "width": 40,
                       "height": 40,
                       "fill": "$color.primaryContainer",
-                      "cornerRadius": 20,
+                      "cornerRadius": 9999,
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
@@ -1253,10 +1267,11 @@
                           "textGrowth": "fixed-width",
                           "width": 40,
                           "content": "D",
+                          "lineHeight": 1.44,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleMedium.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.374
                         }
                       ]
                     },
@@ -1264,7 +1279,6 @@
                       "type": "frame",
                       "id": "feedText3",
                       "width": 253,
-                      "height": 36,
                       "layout": "vertical",
                       "children": [
                         {
@@ -1274,9 +1288,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Dart News",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "text",
@@ -1285,9 +1300,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Updated 5h ago · 21 articles",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         }
                       ]
                     },
@@ -1361,7 +1377,7 @@
                       "width": 40,
                       "height": 40,
                       "fill": "$color.primaryContainer",
-                      "cornerRadius": 20,
+                      "cornerRadius": 9999,
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
@@ -1372,10 +1388,11 @@
                           "textGrowth": "fixed-width",
                           "width": 40,
                           "content": "R",
+                          "lineHeight": 1.44,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleMedium.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.374
                         }
                       ]
                     },
@@ -1383,7 +1400,6 @@
                       "type": "frame",
                       "id": "feedText4",
                       "width": 229,
-                      "height": 36,
                       "layout": "vertical",
                       "children": [
                         {
@@ -1393,9 +1409,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Release Notes",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "text",
@@ -1404,9 +1421,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Never refreshed",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         }
                       ]
                     },
@@ -1423,7 +1441,7 @@
                           "width": 24,
                           "height": 16,
                           "fill": "$color.primary",
-                          "cornerRadius": 8,
+                          "cornerRadius": 9999,
                           "justifyContent": "center",
                           "alignItems": "center",
                           "children": [
@@ -1434,10 +1452,11 @@
                               "textGrowth": "fixed-width",
                               "width": 24,
                               "content": "3",
+                              "lineHeight": 1.3,
                               "textAlign": "center",
                               "fontFamily": "Inter",
                               "fontSize": "$text.labelSmall.size",
-                              "fontWeight": "normal"
+                              "letterSpacing": -0.08
                             }
                           ]
                         },
@@ -1504,7 +1523,7 @@
                       "width": 40,
                       "height": 40,
                       "fill": "$color.primaryContainer",
-                      "cornerRadius": 20,
+                      "cornerRadius": 9999,
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
@@ -1515,10 +1534,11 @@
                           "textGrowth": "fixed-width",
                           "width": 40,
                           "content": "W",
+                          "lineHeight": 1.44,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleMedium.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.374
                         }
                       ]
                     },
@@ -1526,7 +1546,6 @@
                       "type": "frame",
                       "id": "feedText5",
                       "width": 253,
-                      "height": 36,
                       "layout": "vertical",
                       "children": [
                         {
@@ -1536,9 +1555,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Weekly Digest",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "text",
@@ -1547,9 +1567,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Updated 1d ago · 9 articles",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         }
                       ]
                     },
@@ -1623,7 +1644,7 @@
                       "width": 40,
                       "height": 40,
                       "fill": "$color.primaryContainer",
-                      "cornerRadius": 20,
+                      "cornerRadius": 9999,
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
@@ -1634,10 +1655,11 @@
                           "textGrowth": "fixed-width",
                           "width": 40,
                           "content": "N",
+                          "lineHeight": 1.44,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleMedium.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.374
                         }
                       ]
                     },
@@ -1645,7 +1667,6 @@
                       "type": "frame",
                       "id": "feedText6",
                       "width": 229,
-                      "height": 36,
                       "layout": "vertical",
                       "children": [
                         {
@@ -1655,9 +1676,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Nightly Builds",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "text",
@@ -1666,9 +1688,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Updated 3h ago · 132 articles",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         }
                       ]
                     },
@@ -1685,7 +1708,7 @@
                           "width": 24,
                           "height": 16,
                           "fill": "$color.primary",
-                          "cornerRadius": 8,
+                          "cornerRadius": 9999,
                           "justifyContent": "center",
                           "alignItems": "center",
                           "children": [
@@ -1696,10 +1719,11 @@
                               "textGrowth": "fixed-width",
                               "width": 24,
                               "content": "27",
+                              "lineHeight": 1.3,
                               "textAlign": "center",
                               "fontFamily": "Inter",
                               "fontSize": "$text.labelSmall.size",
-                              "fontWeight": "normal"
+                              "letterSpacing": -0.08
                             }
                           ]
                         },
@@ -1745,8 +1769,8 @@
           "y": 678,
           "width": 56,
           "height": 56,
-          "fill": "$color.primaryContainer",
-          "cornerRadius": 28,
+          "fill": "$color.primary",
+          "cornerRadius": 9999,
           "justifyContent": "center",
           "alignItems": "center",
           "children": [
@@ -1757,7 +1781,7 @@
               "height": 24,
               "icon": "add",
               "library": "Material Symbols Outlined",
-              "fill": "$color.onPrimaryContainer"
+              "fill": "$color.onPrimary"
             }
           ]
         },
@@ -1769,26 +1793,14 @@
           "width": 361,
           "height": 56,
           "fill": "$glass.tint",
-          "cornerRadius": 28,
+          "cornerRadius": 9999,
           "stroke": "$glass.rim",
           "strokeWidth": 1,
           "strokeAlignment": "inner",
-          "effect": [
-            {
-              "type": "background_blur",
-              "radius": 32
-            },
-            {
-              "type": "shadow",
-              "shadowType": "outer",
-              "color": "$glass.shadow",
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "blur": 24
-            }
-          ],
+          "effect": {
+            "type": "background_blur",
+            "radius": 32
+          },
           "gap": 4,
           "padding": 6,
           "children": [
@@ -1797,7 +1809,7 @@
               "id": "glassDestination5",
               "width": 172,
               "height": 44,
-              "cornerRadius": 22,
+              "cornerRadius": 9999,
               "layout": "vertical",
               "padding": [
                 4,
@@ -1821,10 +1833,11 @@
                   "textGrowth": "fixed-width",
                   "width": 172,
                   "content": "Latest",
+                  "lineHeight": 1.43,
                   "textAlign": "center",
                   "fontFamily": "Inter",
                   "fontSize": "$text.labelMedium.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.12
                 }
               ]
             },
@@ -1834,7 +1847,7 @@
               "width": 173,
               "height": 44,
               "fill": "$color.secondaryContainer",
-              "cornerRadius": 22,
+              "cornerRadius": 9999,
               "layout": "vertical",
               "padding": [
                 4,
@@ -1858,10 +1871,11 @@
                   "textGrowth": "fixed-width",
                   "width": 173,
                   "content": "Feeds",
+                  "lineHeight": 1.43,
                   "textAlign": "center",
                   "fontFamily": "Inter",
                   "fontSize": "$text.labelMedium.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.12
                 }
               ]
             }
@@ -1932,9 +1946,10 @@
               "textGrowth": "fixed-width",
               "width": "fill_container",
               "content": "Example Feed",
+              "lineHeight": 1.43,
               "fontFamily": "Inter",
               "fontSize": "$text.titleSmall.size",
-              "fontWeight": "normal"
+              "letterSpacing": -0.224
             },
             {
               "type": "frame",
@@ -2019,9 +2034,11 @@
               "textGrowth": "fixed-width",
               "width": 353,
               "content": "Designing on canvas, landing in code",
+              "lineHeight": 1.14,
               "fontFamily": "Inter",
               "fontSize": "$text.headlineSmall.size",
-              "fontWeight": "bold"
+              "fontWeight": "600",
+              "letterSpacing": -0.4
             },
             {
               "type": "frame",
@@ -2037,9 +2054,10 @@
               "textGrowth": "fixed-width",
               "width": 353,
               "content": "Jane Author · 2 August 2026",
+              "lineHeight": 1.43,
               "fontFamily": "Inter",
               "fontSize": "$text.bodySmall.size",
-              "fontWeight": "normal"
+              "letterSpacing": -0.12
             },
             {
               "type": "frame",
@@ -2081,9 +2099,10 @@
                   "textGrowth": "fixed-width",
                   "width": 353,
                   "content": "A paragraph rendered by HtmlContent: bodyLarge at a line height of 1.7, coloured onSurface, with 16 of spacing below it.",
+                  "lineHeight": 1.44,
                   "fontFamily": "Inter",
                   "fontSize": "$text.bodyLarge.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.374
                 }
               ]
             },
@@ -2107,9 +2126,10 @@
                   "textGrowth": "fixed-width",
                   "width": 353,
                   "content": "How headings render",
+                  "lineHeight": 1.19,
                   "fontFamily": "Inter",
                   "fontSize": "$text.titleLarge.size",
-                  "fontWeight": "bold"
+                  "fontWeight": "600"
                 }
               ]
             },
@@ -2136,9 +2156,10 @@
                   "textGrowth": "fixed-width",
                   "width": 353,
                   "content": "h1 and h2 take headlineSmall and titleLarge; h3 and below sit closer to body size.",
+                  "lineHeight": 1.44,
                   "fontFamily": "Inter",
                   "fontSize": "$text.bodyLarge.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.374
                 }
               ]
             },
@@ -2178,9 +2199,10 @@
                   "textGrowth": "fixed-width",
                   "width": 334,
                   "content": "A blockquote keeps a 3 wide primary rule on its left and drops to onSurfaceVariant.",
+                  "lineHeight": 1.44,
                   "fontFamily": "Inter",
                   "fontSize": "$text.bodyLarge.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.374
                 }
               ]
             },
@@ -2217,9 +2239,10 @@
                       "textGrowth": "fixed-width",
                       "width": 329,
                       "content": "flutter analyze\nflutter test",
+                      "lineHeight": 1.44,
                       "fontFamily": "Inter",
                       "fontSize": "$text.bodyLarge.size",
-                      "fontWeight": "normal"
+                      "letterSpacing": -0.374
                     }
                   ]
                 }
@@ -2257,10 +2280,11 @@
                       "textGrowth": "fixed-width",
                       "width": 28,
                       "content": "•",
+                      "lineHeight": 1.44,
                       "textAlign": "right",
                       "fontFamily": "Inter",
                       "fontSize": "$text.bodyLarge.size",
-                      "fontWeight": "normal"
+                      "letterSpacing": -0.374
                     },
                     {
                       "type": "frame",
@@ -2276,9 +2300,10 @@
                       "textGrowth": "fixed-width",
                       "width": 313,
                       "content": "Bullets are right-aligned in a 28 column.",
+                      "lineHeight": 1.44,
                       "fontFamily": "Inter",
                       "fontSize": "$text.bodyLarge.size",
-                      "fontWeight": "normal"
+                      "letterSpacing": -0.374
                     }
                   ]
                 },
@@ -2301,10 +2326,11 @@
                       "textGrowth": "fixed-width",
                       "width": 28,
                       "content": "•",
+                      "lineHeight": 1.44,
                       "textAlign": "right",
                       "fontFamily": "Inter",
                       "fontSize": "$text.bodyLarge.size",
-                      "fontWeight": "normal"
+                      "letterSpacing": -0.374
                     },
                     {
                       "type": "frame",
@@ -2320,9 +2346,10 @@
                       "textGrowth": "fixed-width",
                       "width": 313,
                       "content": "The body of an item is Expanded.",
+                      "lineHeight": 1.44,
                       "fontFamily": "Inter",
                       "fontSize": "$text.bodyLarge.size",
-                      "fontWeight": "normal"
+                      "letterSpacing": -0.374
                     }
                   ]
                 }
@@ -2396,9 +2423,9 @@
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
                   "content": "Latest",
+                  "lineHeight": 1.19,
                   "fontFamily": "Inter",
-                  "fontSize": "$text.titleLarge.size",
-                  "fontWeight": "normal"
+                  "fontSize": "$text.titleLarge.size"
                 },
                 {
                   "type": "frame",
@@ -2458,8 +2485,8 @@
                   "id": "segmentedButton3",
                   "width": 248,
                   "height": 40,
-                  "cornerRadius": 20,
-                  "stroke": "$color.outline",
+                  "cornerRadius": 9999,
+                  "stroke": "$color.outlineVariant",
                   "strokeWidth": 1,
                   "children": [
                     {
@@ -2468,7 +2495,7 @@
                       "width": 80,
                       "height": 40,
                       "fill": "$color.secondaryContainer",
-                      "cornerRadius": 20,
+                      "cornerRadius": 9999,
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
@@ -2479,10 +2506,11 @@
                           "textGrowth": "fixed-width",
                           "width": 80,
                           "content": "All",
+                          "lineHeight": 1.43,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelLarge.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         }
                       ]
                     },
@@ -2501,10 +2529,11 @@
                           "textGrowth": "fixed-width",
                           "width": 84,
                           "content": "Unread",
+                          "lineHeight": 1.43,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelLarge.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         }
                       ]
                     },
@@ -2523,10 +2552,11 @@
                           "textGrowth": "fixed-width",
                           "width": 84,
                           "content": "Starred",
+                          "lineHeight": 1.43,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelLarge.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         }
                       ]
                     }
@@ -2590,9 +2620,11 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Designing on canvas, landing in code",
+                          "lineHeight": 1.29,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "bold"
+                          "fontWeight": "600",
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -2608,9 +2640,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "A short excerpt of the article body. At this width it no longer wraps to two lines, so the row is shorter than on a phone.",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         },
                         {
                           "type": "frame",
@@ -2626,9 +2659,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Example Feed · 2h ago",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -2721,9 +2755,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "A headline that has already been read",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -2739,9 +2774,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Read rows drop to onSurfaceVariant and lose the bold weight.",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         },
                         {
                           "type": "frame",
@@ -2757,9 +2793,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Another Feed · 5h ago",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -2852,9 +2889,11 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "A starred article without a summary",
+                          "lineHeight": 1.29,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "bold"
+                          "fontWeight": "600",
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -2870,9 +2909,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Third Feed · yesterday",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -2965,9 +3005,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "The list starts after the sidebar",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -2983,9 +3024,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Nothing scrolls under the sidebar, so its blur has only the window background to work on.",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         },
                         {
                           "type": "frame",
@@ -3001,9 +3043,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Fourth Feed · yesterday",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -3102,9 +3145,10 @@
                   "textGrowth": "fixed-width",
                   "width": 112,
                   "content": "Latest",
+                  "lineHeight": 1.43,
                   "fontFamily": "Inter",
                   "fontSize": "$text.bodyMedium.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.224
                 },
                 {
                   "type": "frame",
@@ -3112,7 +3156,7 @@
                   "width": 28,
                   "height": 16,
                   "fill": "$color.primary",
-                  "cornerRadius": 8,
+                  "cornerRadius": 9999,
                   "justifyContent": "center",
                   "alignItems": "center",
                   "children": [
@@ -3123,10 +3167,11 @@
                       "textGrowth": "fixed-width",
                       "width": 28,
                       "content": "12",
+                      "lineHeight": 1.3,
                       "textAlign": "center",
                       "fontFamily": "Inter",
                       "fontSize": "$text.labelSmall.size",
-                      "fontWeight": "normal"
+                      "letterSpacing": -0.08
                     }
                   ]
                 }
@@ -3167,9 +3212,10 @@
                   "textGrowth": "fixed-width",
                   "width": 140,
                   "content": "Feeds",
+                  "lineHeight": 1.43,
                   "fontFamily": "Inter",
                   "fontSize": "$text.bodyMedium.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.224
                 }
               ]
             },
@@ -3274,9 +3320,9 @@
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
                   "content": "Latest",
+                  "lineHeight": 1.19,
                   "fontFamily": "Inter",
-                  "fontSize": "$text.titleLarge.size",
-                  "fontWeight": "normal"
+                  "fontSize": "$text.titleLarge.size"
                 },
                 {
                   "type": "frame",
@@ -3336,8 +3382,8 @@
                   "id": "segmentedButton2Dark",
                   "width": 248,
                   "height": 40,
-                  "cornerRadius": 20,
-                  "stroke": "$color.outline",
+                  "cornerRadius": 9999,
+                  "stroke": "$color.outlineVariant",
                   "strokeWidth": 1,
                   "children": [
                     {
@@ -3346,7 +3392,7 @@
                       "width": 80,
                       "height": 40,
                       "fill": "$color.secondaryContainer",
-                      "cornerRadius": 20,
+                      "cornerRadius": 9999,
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
@@ -3357,10 +3403,11 @@
                           "textGrowth": "fixed-width",
                           "width": 80,
                           "content": "All",
+                          "lineHeight": 1.43,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelLarge.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         }
                       ]
                     },
@@ -3379,10 +3426,11 @@
                           "textGrowth": "fixed-width",
                           "width": 84,
                           "content": "Unread",
+                          "lineHeight": 1.43,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelLarge.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         }
                       ]
                     },
@@ -3401,10 +3449,11 @@
                           "textGrowth": "fixed-width",
                           "width": 84,
                           "content": "Starred",
+                          "lineHeight": 1.43,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelLarge.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         }
                       ]
                     }
@@ -3471,9 +3520,11 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Designing on canvas, landing in code",
+                          "lineHeight": 1.29,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "bold"
+                          "fontWeight": "600",
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -3492,9 +3543,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "A short excerpt of the article body, trimmed to two lines so every row in the list keeps the same height.",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         },
                         {
                           "type": "frame",
@@ -3510,9 +3562,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Example Feed · 2h ago",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -3608,9 +3661,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "A headline that has already been read",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -3629,9 +3683,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Read rows drop to onSurfaceVariant and lose the bold weight, but keep the marker slot so nothing shifts.",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         },
                         {
                           "type": "frame",
@@ -3647,9 +3702,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Another Feed · 5h ago",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -3745,9 +3801,11 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Content has to run under the bar",
+                          "lineHeight": 1.29,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "bold"
+                          "fontWeight": "600",
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -3766,9 +3824,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Glass with nothing behind it is just a translucent rectangle, so the list is not inset for the tab bar.",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         },
                         {
                           "type": "frame",
@@ -3784,9 +3843,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Third Feed · 8h ago",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -3882,9 +3942,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "A fourth row, still fully visible",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -3903,9 +3964,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "The blur only starts where the capsule overlaps.",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         },
                         {
                           "type": "frame",
@@ -3921,9 +3983,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Fourth Feed · yesterday",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -4019,9 +4082,11 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "The last row sits behind the glass",
+                          "lineHeight": 1.29,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "bold"
+                          "fontWeight": "600",
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -4040,9 +4105,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "This is the part the background blur acts on.",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         },
                         {
                           "type": "frame",
@@ -4058,9 +4124,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Fifth Feed · 2 days ago",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -4105,26 +4172,14 @@
           "width": 361,
           "height": 56,
           "fill": "$glass.tint",
-          "cornerRadius": 28,
+          "cornerRadius": 9999,
           "stroke": "$glass.rim",
           "strokeWidth": 1,
           "strokeAlignment": "inner",
-          "effect": [
-            {
-              "type": "background_blur",
-              "radius": 32
-            },
-            {
-              "type": "shadow",
-              "shadowType": "outer",
-              "color": "$glass.shadow",
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "blur": 24
-            }
-          ],
+          "effect": {
+            "type": "background_blur",
+            "radius": 32
+          },
           "gap": 4,
           "padding": 6,
           "children": [
@@ -4134,7 +4189,7 @@
               "width": 172,
               "height": 44,
               "fill": "$color.secondaryContainer",
-              "cornerRadius": 22,
+              "cornerRadius": 9999,
               "layout": "vertical",
               "padding": [
                 4,
@@ -4158,10 +4213,11 @@
                   "textGrowth": "fixed-width",
                   "width": 172,
                   "content": "Latest",
+                  "lineHeight": 1.43,
                   "textAlign": "center",
                   "fontFamily": "Inter",
                   "fontSize": "$text.labelMedium.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.12
                 }
               ]
             },
@@ -4170,7 +4226,7 @@
               "id": "glassDestination4Dark",
               "width": 173,
               "height": 44,
-              "cornerRadius": 22,
+              "cornerRadius": 9999,
               "layout": "vertical",
               "padding": [
                 4,
@@ -4194,10 +4250,11 @@
                   "textGrowth": "fixed-width",
                   "width": 173,
                   "content": "Feeds",
+                  "lineHeight": 1.43,
                   "textAlign": "center",
                   "fontFamily": "Inter",
                   "fontSize": "$text.labelMedium.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.12
                 }
               ]
             }
@@ -4262,9 +4319,9 @@
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
                   "content": "Feeds",
+                  "lineHeight": 1.19,
                   "fontFamily": "Inter",
-                  "fontSize": "$text.titleLarge.size",
-                  "fontWeight": "normal"
+                  "fontSize": "$text.titleLarge.size"
                 },
                 {
                   "type": "frame",
@@ -4315,7 +4372,7 @@
                       "width": 40,
                       "height": 40,
                       "fill": "$color.primaryContainer",
-                      "cornerRadius": 20,
+                      "cornerRadius": 9999,
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
@@ -4326,10 +4383,11 @@
                           "textGrowth": "fixed-width",
                           "width": 40,
                           "content": "F",
+                          "lineHeight": 1.44,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleMedium.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.374
                         }
                       ]
                     },
@@ -4337,7 +4395,6 @@
                       "type": "frame",
                       "id": "feedText2Dark",
                       "width": 229,
-                      "height": 36,
                       "layout": "vertical",
                       "children": [
                         {
@@ -4347,9 +4404,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Flutter Blog",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "text",
@@ -4358,9 +4416,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Updated 2h ago · 48 articles",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         }
                       ]
                     },
@@ -4377,7 +4436,7 @@
                           "width": 24,
                           "height": 16,
                           "fill": "$color.primary",
-                          "cornerRadius": 8,
+                          "cornerRadius": 9999,
                           "justifyContent": "center",
                           "alignItems": "center",
                           "children": [
@@ -4388,10 +4447,11 @@
                               "textGrowth": "fixed-width",
                               "width": 24,
                               "content": "12",
+                              "lineHeight": 1.3,
                               "textAlign": "center",
                               "fontFamily": "Inter",
                               "fontSize": "$text.labelSmall.size",
-                              "fontWeight": "normal"
+                              "letterSpacing": -0.08
                             }
                           ]
                         },
@@ -4458,7 +4518,7 @@
                       "width": 40,
                       "height": 40,
                       "fill": "$color.primaryContainer",
-                      "cornerRadius": 20,
+                      "cornerRadius": 9999,
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
@@ -4469,10 +4529,11 @@
                           "textGrowth": "fixed-width",
                           "width": 40,
                           "content": "D",
+                          "lineHeight": 1.44,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleMedium.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.374
                         }
                       ]
                     },
@@ -4480,7 +4541,6 @@
                       "type": "frame",
                       "id": "feedText3Dark",
                       "width": 253,
-                      "height": 36,
                       "layout": "vertical",
                       "children": [
                         {
@@ -4490,9 +4550,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Dart News",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "text",
@@ -4501,9 +4562,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Updated 5h ago · 21 articles",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         }
                       ]
                     },
@@ -4577,7 +4639,7 @@
                       "width": 40,
                       "height": 40,
                       "fill": "$color.primaryContainer",
-                      "cornerRadius": 20,
+                      "cornerRadius": 9999,
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
@@ -4588,10 +4650,11 @@
                           "textGrowth": "fixed-width",
                           "width": 40,
                           "content": "R",
+                          "lineHeight": 1.44,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleMedium.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.374
                         }
                       ]
                     },
@@ -4599,7 +4662,6 @@
                       "type": "frame",
                       "id": "feedText4Dark",
                       "width": 229,
-                      "height": 36,
                       "layout": "vertical",
                       "children": [
                         {
@@ -4609,9 +4671,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Release Notes",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "text",
@@ -4620,9 +4683,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Never refreshed",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         }
                       ]
                     },
@@ -4639,7 +4703,7 @@
                           "width": 24,
                           "height": 16,
                           "fill": "$color.primary",
-                          "cornerRadius": 8,
+                          "cornerRadius": 9999,
                           "justifyContent": "center",
                           "alignItems": "center",
                           "children": [
@@ -4650,10 +4714,11 @@
                               "textGrowth": "fixed-width",
                               "width": 24,
                               "content": "3",
+                              "lineHeight": 1.3,
                               "textAlign": "center",
                               "fontFamily": "Inter",
                               "fontSize": "$text.labelSmall.size",
-                              "fontWeight": "normal"
+                              "letterSpacing": -0.08
                             }
                           ]
                         },
@@ -4720,7 +4785,7 @@
                       "width": 40,
                       "height": 40,
                       "fill": "$color.primaryContainer",
-                      "cornerRadius": 20,
+                      "cornerRadius": 9999,
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
@@ -4731,10 +4796,11 @@
                           "textGrowth": "fixed-width",
                           "width": 40,
                           "content": "W",
+                          "lineHeight": 1.44,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleMedium.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.374
                         }
                       ]
                     },
@@ -4742,7 +4808,6 @@
                       "type": "frame",
                       "id": "feedText5Dark",
                       "width": 253,
-                      "height": 36,
                       "layout": "vertical",
                       "children": [
                         {
@@ -4752,9 +4817,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Weekly Digest",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "text",
@@ -4763,9 +4829,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Updated 1d ago · 9 articles",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         }
                       ]
                     },
@@ -4839,7 +4906,7 @@
                       "width": 40,
                       "height": 40,
                       "fill": "$color.primaryContainer",
-                      "cornerRadius": 20,
+                      "cornerRadius": 9999,
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
@@ -4850,10 +4917,11 @@
                           "textGrowth": "fixed-width",
                           "width": 40,
                           "content": "N",
+                          "lineHeight": 1.44,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleMedium.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.374
                         }
                       ]
                     },
@@ -4861,7 +4929,6 @@
                       "type": "frame",
                       "id": "feedText6Dark",
                       "width": 229,
-                      "height": 36,
                       "layout": "vertical",
                       "children": [
                         {
@@ -4871,9 +4938,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Nightly Builds",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "text",
@@ -4882,9 +4950,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Updated 3h ago · 132 articles",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         }
                       ]
                     },
@@ -4901,7 +4970,7 @@
                           "width": 24,
                           "height": 16,
                           "fill": "$color.primary",
-                          "cornerRadius": 8,
+                          "cornerRadius": 9999,
                           "justifyContent": "center",
                           "alignItems": "center",
                           "children": [
@@ -4912,10 +4981,11 @@
                               "textGrowth": "fixed-width",
                               "width": 24,
                               "content": "27",
+                              "lineHeight": 1.3,
                               "textAlign": "center",
                               "fontFamily": "Inter",
                               "fontSize": "$text.labelSmall.size",
-                              "fontWeight": "normal"
+                              "letterSpacing": -0.08
                             }
                           ]
                         },
@@ -4961,8 +5031,8 @@
           "y": 678,
           "width": 56,
           "height": 56,
-          "fill": "$color.primaryContainer",
-          "cornerRadius": 28,
+          "fill": "$color.primary",
+          "cornerRadius": 9999,
           "justifyContent": "center",
           "alignItems": "center",
           "children": [
@@ -4973,7 +5043,7 @@
               "height": 24,
               "icon": "add",
               "library": "Material Symbols Outlined",
-              "fill": "$color.onPrimaryContainer"
+              "fill": "$color.onPrimary"
             }
           ]
         },
@@ -4985,26 +5055,14 @@
           "width": 361,
           "height": 56,
           "fill": "$glass.tint",
-          "cornerRadius": 28,
+          "cornerRadius": 9999,
           "stroke": "$glass.rim",
           "strokeWidth": 1,
           "strokeAlignment": "inner",
-          "effect": [
-            {
-              "type": "background_blur",
-              "radius": 32
-            },
-            {
-              "type": "shadow",
-              "shadowType": "outer",
-              "color": "$glass.shadow",
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "blur": 24
-            }
-          ],
+          "effect": {
+            "type": "background_blur",
+            "radius": 32
+          },
           "gap": 4,
           "padding": 6,
           "children": [
@@ -5013,7 +5071,7 @@
               "id": "glassDestination5Dark",
               "width": 172,
               "height": 44,
-              "cornerRadius": 22,
+              "cornerRadius": 9999,
               "layout": "vertical",
               "padding": [
                 4,
@@ -5037,10 +5095,11 @@
                   "textGrowth": "fixed-width",
                   "width": 172,
                   "content": "Latest",
+                  "lineHeight": 1.43,
                   "textAlign": "center",
                   "fontFamily": "Inter",
                   "fontSize": "$text.labelMedium.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.12
                 }
               ]
             },
@@ -5050,7 +5109,7 @@
               "width": 173,
               "height": 44,
               "fill": "$color.secondaryContainer",
-              "cornerRadius": 22,
+              "cornerRadius": 9999,
               "layout": "vertical",
               "padding": [
                 4,
@@ -5074,10 +5133,11 @@
                   "textGrowth": "fixed-width",
                   "width": 173,
                   "content": "Feeds",
+                  "lineHeight": 1.43,
                   "textAlign": "center",
                   "fontFamily": "Inter",
                   "fontSize": "$text.labelMedium.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.12
                 }
               ]
             }
@@ -5148,9 +5208,10 @@
               "textGrowth": "fixed-width",
               "width": "fill_container",
               "content": "Example Feed",
+              "lineHeight": 1.43,
               "fontFamily": "Inter",
               "fontSize": "$text.titleSmall.size",
-              "fontWeight": "normal"
+              "letterSpacing": -0.224
             },
             {
               "type": "frame",
@@ -5235,9 +5296,11 @@
               "textGrowth": "fixed-width",
               "width": 353,
               "content": "Designing on canvas, landing in code",
+              "lineHeight": 1.14,
               "fontFamily": "Inter",
               "fontSize": "$text.headlineSmall.size",
-              "fontWeight": "bold"
+              "fontWeight": "600",
+              "letterSpacing": -0.4
             },
             {
               "type": "frame",
@@ -5253,9 +5316,10 @@
               "textGrowth": "fixed-width",
               "width": 353,
               "content": "Jane Author · 2 August 2026",
+              "lineHeight": 1.43,
               "fontFamily": "Inter",
               "fontSize": "$text.bodySmall.size",
-              "fontWeight": "normal"
+              "letterSpacing": -0.12
             },
             {
               "type": "frame",
@@ -5297,9 +5361,10 @@
                   "textGrowth": "fixed-width",
                   "width": 353,
                   "content": "A paragraph rendered by HtmlContent: bodyLarge at a line height of 1.7, coloured onSurface, with 16 of spacing below it.",
+                  "lineHeight": 1.44,
                   "fontFamily": "Inter",
                   "fontSize": "$text.bodyLarge.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.374
                 }
               ]
             },
@@ -5323,9 +5388,10 @@
                   "textGrowth": "fixed-width",
                   "width": 353,
                   "content": "How headings render",
+                  "lineHeight": 1.19,
                   "fontFamily": "Inter",
                   "fontSize": "$text.titleLarge.size",
-                  "fontWeight": "bold"
+                  "fontWeight": "600"
                 }
               ]
             },
@@ -5352,9 +5418,10 @@
                   "textGrowth": "fixed-width",
                   "width": 353,
                   "content": "h1 and h2 take headlineSmall and titleLarge; h3 and below sit closer to body size.",
+                  "lineHeight": 1.44,
                   "fontFamily": "Inter",
                   "fontSize": "$text.bodyLarge.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.374
                 }
               ]
             },
@@ -5394,9 +5461,10 @@
                   "textGrowth": "fixed-width",
                   "width": 334,
                   "content": "A blockquote keeps a 3 wide primary rule on its left and drops to onSurfaceVariant.",
+                  "lineHeight": 1.44,
                   "fontFamily": "Inter",
                   "fontSize": "$text.bodyLarge.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.374
                 }
               ]
             },
@@ -5433,9 +5501,10 @@
                       "textGrowth": "fixed-width",
                       "width": 329,
                       "content": "flutter analyze\nflutter test",
+                      "lineHeight": 1.44,
                       "fontFamily": "Inter",
                       "fontSize": "$text.bodyLarge.size",
-                      "fontWeight": "normal"
+                      "letterSpacing": -0.374
                     }
                   ]
                 }
@@ -5473,10 +5542,11 @@
                       "textGrowth": "fixed-width",
                       "width": 28,
                       "content": "•",
+                      "lineHeight": 1.44,
                       "textAlign": "right",
                       "fontFamily": "Inter",
                       "fontSize": "$text.bodyLarge.size",
-                      "fontWeight": "normal"
+                      "letterSpacing": -0.374
                     },
                     {
                       "type": "frame",
@@ -5492,9 +5562,10 @@
                       "textGrowth": "fixed-width",
                       "width": 313,
                       "content": "Bullets are right-aligned in a 28 column.",
+                      "lineHeight": 1.44,
                       "fontFamily": "Inter",
                       "fontSize": "$text.bodyLarge.size",
-                      "fontWeight": "normal"
+                      "letterSpacing": -0.374
                     }
                   ]
                 },
@@ -5517,10 +5588,11 @@
                       "textGrowth": "fixed-width",
                       "width": 28,
                       "content": "•",
+                      "lineHeight": 1.44,
                       "textAlign": "right",
                       "fontFamily": "Inter",
                       "fontSize": "$text.bodyLarge.size",
-                      "fontWeight": "normal"
+                      "letterSpacing": -0.374
                     },
                     {
                       "type": "frame",
@@ -5536,9 +5608,10 @@
                       "textGrowth": "fixed-width",
                       "width": 313,
                       "content": "The body of an item is Expanded.",
+                      "lineHeight": 1.44,
                       "fontFamily": "Inter",
                       "fontSize": "$text.bodyLarge.size",
-                      "fontWeight": "normal"
+                      "letterSpacing": -0.374
                     }
                   ]
                 }
@@ -5612,9 +5685,9 @@
                   "textGrowth": "fixed-width",
                   "width": "fill_container",
                   "content": "Latest",
+                  "lineHeight": 1.19,
                   "fontFamily": "Inter",
-                  "fontSize": "$text.titleLarge.size",
-                  "fontWeight": "normal"
+                  "fontSize": "$text.titleLarge.size"
                 },
                 {
                   "type": "frame",
@@ -5674,8 +5747,8 @@
                   "id": "segmentedButton3Dark",
                   "width": 248,
                   "height": 40,
-                  "cornerRadius": 20,
-                  "stroke": "$color.outline",
+                  "cornerRadius": 9999,
+                  "stroke": "$color.outlineVariant",
                   "strokeWidth": 1,
                   "children": [
                     {
@@ -5684,7 +5757,7 @@
                       "width": 80,
                       "height": 40,
                       "fill": "$color.secondaryContainer",
-                      "cornerRadius": 20,
+                      "cornerRadius": 9999,
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
@@ -5695,10 +5768,11 @@
                           "textGrowth": "fixed-width",
                           "width": 80,
                           "content": "All",
+                          "lineHeight": 1.43,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelLarge.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         }
                       ]
                     },
@@ -5717,10 +5791,11 @@
                           "textGrowth": "fixed-width",
                           "width": 84,
                           "content": "Unread",
+                          "lineHeight": 1.43,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelLarge.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         }
                       ]
                     },
@@ -5739,10 +5814,11 @@
                           "textGrowth": "fixed-width",
                           "width": 84,
                           "content": "Starred",
+                          "lineHeight": 1.43,
                           "textAlign": "center",
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelLarge.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         }
                       ]
                     }
@@ -5806,9 +5882,11 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Designing on canvas, landing in code",
+                          "lineHeight": 1.29,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "bold"
+                          "fontWeight": "600",
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -5824,9 +5902,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "A short excerpt of the article body. At this width it no longer wraps to two lines, so the row is shorter than on a phone.",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         },
                         {
                           "type": "frame",
@@ -5842,9 +5921,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Example Feed · 2h ago",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -5937,9 +6017,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "A headline that has already been read",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -5955,9 +6036,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Read rows drop to onSurfaceVariant and lose the bold weight.",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         },
                         {
                           "type": "frame",
@@ -5973,9 +6055,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Another Feed · 5h ago",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -6068,9 +6151,11 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "A starred article without a summary",
+                          "lineHeight": 1.29,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "bold"
+                          "fontWeight": "600",
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -6086,9 +6171,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Third Feed · yesterday",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -6181,9 +6267,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "The list starts after the sidebar",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.titleSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.224
                         },
                         {
                           "type": "frame",
@@ -6199,9 +6286,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Nothing scrolls under the sidebar, so its blur has only the window background to work on.",
+                          "lineHeight": 1.43,
                           "fontFamily": "Inter",
                           "fontSize": "$text.bodySmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.12
                         },
                         {
                           "type": "frame",
@@ -6217,9 +6305,10 @@
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
                           "content": "Fourth Feed · yesterday",
+                          "lineHeight": 1.3,
                           "fontFamily": "Inter",
                           "fontSize": "$text.labelSmall.size",
-                          "fontWeight": "normal"
+                          "letterSpacing": -0.08
                         }
                       ]
                     },
@@ -6318,9 +6407,10 @@
                   "textGrowth": "fixed-width",
                   "width": 112,
                   "content": "Latest",
+                  "lineHeight": 1.43,
                   "fontFamily": "Inter",
                   "fontSize": "$text.bodyMedium.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.224
                 },
                 {
                   "type": "frame",
@@ -6328,7 +6418,7 @@
                   "width": 28,
                   "height": 16,
                   "fill": "$color.primary",
-                  "cornerRadius": 8,
+                  "cornerRadius": 9999,
                   "justifyContent": "center",
                   "alignItems": "center",
                   "children": [
@@ -6339,10 +6429,11 @@
                       "textGrowth": "fixed-width",
                       "width": 28,
                       "content": "12",
+                      "lineHeight": 1.3,
                       "textAlign": "center",
                       "fontFamily": "Inter",
                       "fontSize": "$text.labelSmall.size",
-                      "fontWeight": "normal"
+                      "letterSpacing": -0.08
                     }
                   ]
                 }
@@ -6383,9 +6474,10 @@
                   "textGrowth": "fixed-width",
                   "width": 140,
                   "content": "Feeds",
+                  "lineHeight": 1.43,
                   "fontFamily": "Inter",
                   "fontSize": "$text.bodyMedium.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.224
                 }
               ]
             },
@@ -6488,9 +6580,11 @@
               "textGrowth": "fixed-width",
               "width": "fill_container",
               "content": "Designing on canvas, landing in code",
+              "lineHeight": 1.29,
               "fontFamily": "Inter",
               "fontSize": "$text.titleSmall.size",
-              "fontWeight": "bold"
+              "fontWeight": "600",
+              "letterSpacing": -0.224
             },
             {
               "type": "frame",
@@ -6509,9 +6603,10 @@
               "textGrowth": "fixed-width",
               "width": "fill_container",
               "content": "A short excerpt of the article body, trimmed to two lines so every row in the list keeps the same height.",
+              "lineHeight": 1.43,
               "fontFamily": "Inter",
               "fontSize": "$text.bodySmall.size",
-              "fontWeight": "normal"
+              "letterSpacing": -0.12
             },
             {
               "type": "frame",
@@ -6527,9 +6622,10 @@
               "textGrowth": "fixed-width",
               "width": "fill_container",
               "content": "Example Feed · 2h ago",
+              "lineHeight": 1.3,
               "fontFamily": "Inter",
               "fontSize": "$text.labelSmall.size",
-              "fontWeight": "normal"
+              "letterSpacing": -0.08
             }
           ]
         },
@@ -6578,7 +6674,7 @@
           "width": 40,
           "height": 40,
           "fill": "$color.primaryContainer",
-          "cornerRadius": 20,
+          "cornerRadius": 9999,
           "justifyContent": "center",
           "alignItems": "center",
           "children": [
@@ -6589,10 +6685,11 @@
               "textGrowth": "fixed-width",
               "width": 40,
               "content": "F",
+              "lineHeight": 1.44,
               "textAlign": "center",
               "fontFamily": "Inter",
               "fontSize": "$text.titleMedium.size",
-              "fontWeight": "normal"
+              "letterSpacing": -0.374
             }
           ]
         },
@@ -6600,7 +6697,6 @@
           "type": "frame",
           "id": "feedText1",
           "width": 229,
-          "height": 36,
           "layout": "vertical",
           "children": [
             {
@@ -6610,9 +6706,10 @@
               "textGrowth": "fixed-width",
               "width": "fill_container",
               "content": "Flutter Blog",
+              "lineHeight": 1.43,
               "fontFamily": "Inter",
               "fontSize": "$text.titleSmall.size",
-              "fontWeight": "normal"
+              "letterSpacing": -0.224
             },
             {
               "type": "text",
@@ -6621,9 +6718,10 @@
               "textGrowth": "fixed-width",
               "width": "fill_container",
               "content": "Updated 2h ago · 48 articles",
+              "lineHeight": 1.43,
               "fontFamily": "Inter",
               "fontSize": "$text.bodySmall.size",
-              "fontWeight": "normal"
+              "letterSpacing": -0.12
             }
           ]
         },
@@ -6640,7 +6738,7 @@
               "width": 24,
               "height": 16,
               "fill": "$color.primary",
-              "cornerRadius": 8,
+              "cornerRadius": 9999,
               "justifyContent": "center",
               "alignItems": "center",
               "children": [
@@ -6651,10 +6749,11 @@
                   "textGrowth": "fixed-width",
                   "width": 24,
                   "content": "12",
+                  "lineHeight": 1.3,
                   "textAlign": "center",
                   "fontFamily": "Inter",
                   "fontSize": "$text.labelSmall.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.08
                 }
               ]
             },
@@ -6702,8 +6801,8 @@
           "id": "segmentedButton1",
           "width": 248,
           "height": 40,
-          "cornerRadius": 20,
-          "stroke": "$color.outline",
+          "cornerRadius": 9999,
+          "stroke": "$color.outlineVariant",
           "strokeWidth": 1,
           "children": [
             {
@@ -6712,7 +6811,7 @@
               "width": 80,
               "height": 40,
               "fill": "$color.secondaryContainer",
-              "cornerRadius": 20,
+              "cornerRadius": 9999,
               "justifyContent": "center",
               "alignItems": "center",
               "children": [
@@ -6723,10 +6822,11 @@
                   "textGrowth": "fixed-width",
                   "width": 80,
                   "content": "All",
+                  "lineHeight": 1.43,
                   "textAlign": "center",
                   "fontFamily": "Inter",
                   "fontSize": "$text.labelLarge.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.224
                 }
               ]
             },
@@ -6745,10 +6845,11 @@
                   "textGrowth": "fixed-width",
                   "width": 84,
                   "content": "Unread",
+                  "lineHeight": 1.43,
                   "textAlign": "center",
                   "fontFamily": "Inter",
                   "fontSize": "$text.labelLarge.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.224
                 }
               ]
             },
@@ -6767,10 +6868,11 @@
                   "textGrowth": "fixed-width",
                   "width": 84,
                   "content": "Starred",
+                  "lineHeight": 1.43,
                   "textAlign": "center",
                   "fontFamily": "Inter",
                   "fontSize": "$text.labelLarge.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.224
                 }
               ]
             }
@@ -6786,7 +6888,7 @@
       "reusable": true,
       "width": 393,
       "height": 124,
-      "fill": "$color.primaryContainer",
+      "fill": "$color.primary",
       "padding": [
         0,
         20
@@ -6800,7 +6902,7 @@
           "height": 24,
           "icon": "drafts",
           "library": "Material Symbols Outlined",
-          "fill": "$color.onPrimaryContainer"
+          "fill": "$color.onPrimary"
         },
         {
           "type": "frame",
@@ -6812,13 +6914,14 @@
         {
           "type": "text",
           "id": "text30",
-          "fill": "$color.onPrimaryContainer",
+          "fill": "$color.onPrimary",
           "textGrowth": "fixed-width",
           "width": 90,
           "content": "Mark read",
+          "lineHeight": 1.43,
           "fontFamily": "Inter",
           "fontSize": "$text.labelLarge.size",
-          "fontWeight": "normal"
+          "letterSpacing": -0.224
         }
       ]
     },
@@ -6858,10 +6961,11 @@
           "textGrowth": "fixed-width",
           "width": 329,
           "content": "No articles yet",
+          "lineHeight": 1.44,
           "textAlign": "center",
           "fontFamily": "Inter",
           "fontSize": "$text.titleMedium.size",
-          "fontWeight": "normal"
+          "letterSpacing": -0.374
         },
         {
           "type": "frame",
@@ -6877,10 +6981,11 @@
           "textGrowth": "fixed-width",
           "width": 329,
           "content": "Pull to refresh, or add a feed to get started.",
+          "lineHeight": 1.43,
           "textAlign": "center",
           "fontFamily": "Inter",
           "fontSize": "$text.bodyMedium.size",
-          "fontWeight": "normal"
+          "letterSpacing": -0.224
         }
       ]
     },
@@ -6923,10 +7028,11 @@
           "textGrowth": "fixed-width",
           "width": 329,
           "content": "Could not load articles: the feed could not be reached.",
+          "lineHeight": 1.43,
           "textAlign": "center",
           "fontFamily": "Inter",
           "fontSize": "$text.bodyMedium.size",
-          "fontWeight": "normal"
+          "letterSpacing": -0.224
         },
         {
           "type": "frame",
@@ -6940,8 +7046,8 @@
           "id": "button1",
           "width": 110,
           "height": 40,
-          "fill": "$color.primaryContainer",
-          "cornerRadius": 20,
+          "fill": "$color.primary",
+          "cornerRadius": 9999,
           "padding": [
             0,
             24,
@@ -6957,7 +7063,7 @@
               "height": 18,
               "icon": "refresh",
               "library": "Material Symbols Outlined",
-              "fill": "$color.onPrimaryContainer"
+              "fill": "$color.onPrimary"
             },
             {
               "type": "frame",
@@ -6969,13 +7075,14 @@
             {
               "type": "text",
               "id": "text33",
-              "fill": "$color.onPrimaryContainer",
+              "fill": "$color.onPrimary",
               "textGrowth": "fixed-width",
               "width": 44,
               "content": "Retry",
+              "lineHeight": 1.43,
               "fontFamily": "Inter",
               "fontSize": "$text.labelLarge.size",
-              "fontWeight": "normal"
+              "letterSpacing": -0.224
             }
           ]
         }
@@ -6990,7 +7097,10 @@
       "width": 313,
       "height": 256,
       "fill": "$color.surfaceContainerHigh",
-      "cornerRadius": 28,
+      "cornerRadius": 18,
+      "stroke": "$color.outlineVariant",
+      "strokeWidth": 1,
+      "strokeAlignment": "inner",
       "layout": "vertical",
       "padding": 24,
       "children": [
@@ -7001,9 +7111,9 @@
           "textGrowth": "fixed-width",
           "width": 265,
           "content": "Add feed",
+          "lineHeight": 1.19,
           "fontFamily": "Inter",
-          "fontSize": "$text.titleLarge.size",
-          "fontWeight": "normal"
+          "fontSize": "$text.titleLarge.size"
         },
         {
           "type": "frame",
@@ -7017,8 +7127,8 @@
           "id": "textField1",
           "width": 265,
           "height": 56,
-          "cornerRadius": 4,
-          "stroke": "$color.outline",
+          "cornerRadius": 9999,
+          "stroke": "$color.outlineVariant",
           "strokeWidth": 1,
           "layout": "vertical",
           "padding": [
@@ -7033,9 +7143,10 @@
               "textGrowth": "fixed-width",
               "width": 241,
               "content": "Feed or site URL",
+              "lineHeight": 1.43,
               "fontFamily": "Inter",
               "fontSize": "$text.bodySmall.size",
-              "fontWeight": "normal"
+              "letterSpacing": -0.12
             },
             {
               "type": "text",
@@ -7044,9 +7155,10 @@
               "textGrowth": "fixed-width",
               "width": 241,
               "content": "https://example.com/feed.xml",
+              "lineHeight": 1.44,
               "fontFamily": "Inter",
               "fontSize": "$text.bodyLarge.size",
-              "fontWeight": "normal"
+              "letterSpacing": -0.374
             }
           ]
         },
@@ -7067,9 +7179,10 @@
           "textGrowth": "fixed-width",
           "width": 265,
           "content": "Enter a site URL and its feed will be discovered automatically.",
+          "lineHeight": 1.43,
           "fontFamily": "Inter",
           "fontSize": "$text.bodySmall.size",
-          "fontWeight": "normal"
+          "letterSpacing": -0.12
         },
         {
           "type": "frame",
@@ -7102,10 +7215,11 @@
                   "textGrowth": "fixed-width",
                   "width": 72,
                   "content": "Cancel",
+                  "lineHeight": 1.43,
                   "textAlign": "center",
                   "fontFamily": "Inter",
                   "fontSize": "$text.labelLarge.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.224
                 }
               ]
             },
@@ -7115,7 +7229,7 @@
               "width": 72,
               "height": 40,
               "fill": "$color.primary",
-              "cornerRadius": 20,
+              "cornerRadius": 9999,
               "justifyContent": "center",
               "alignItems": "center",
               "children": [
@@ -7126,10 +7240,11 @@
                   "textGrowth": "fixed-width",
                   "width": 72,
                   "content": "Add",
+                  "lineHeight": 1.43,
                   "textAlign": "center",
                   "fontFamily": "Inter",
                   "fontSize": "$text.labelLarge.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.224
                 }
               ]
             }
@@ -7146,7 +7261,10 @@
       "width": 313,
       "height": 196,
       "fill": "$color.surfaceContainerHigh",
-      "cornerRadius": 28,
+      "cornerRadius": 18,
+      "stroke": "$color.outlineVariant",
+      "strokeWidth": 1,
+      "strokeAlignment": "inner",
       "layout": "vertical",
       "padding": 24,
       "children": [
@@ -7157,9 +7275,9 @@
           "textGrowth": "fixed-width",
           "width": 265,
           "content": "Unsubscribe",
+          "lineHeight": 1.19,
           "fontFamily": "Inter",
-          "fontSize": "$text.titleLarge.size",
-          "fontWeight": "normal"
+          "fontSize": "$text.titleLarge.size"
         },
         {
           "type": "frame",
@@ -7178,9 +7296,10 @@
           "textGrowth": "fixed-width",
           "width": 265,
           "content": "Unsubscribing from \"Flutter Blog\" also deletes its saved articles.",
+          "lineHeight": 1.43,
           "fontFamily": "Inter",
           "fontSize": "$text.bodyMedium.size",
-          "fontWeight": "normal"
+          "letterSpacing": -0.224
         },
         {
           "type": "frame",
@@ -7213,10 +7332,11 @@
                   "textGrowth": "fixed-width",
                   "width": 72,
                   "content": "Cancel",
+                  "lineHeight": 1.43,
                   "textAlign": "center",
                   "fontFamily": "Inter",
                   "fontSize": "$text.labelLarge.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.224
                 }
               ]
             },
@@ -7226,7 +7346,7 @@
               "width": 136,
               "height": 40,
               "fill": "$color.error",
-              "cornerRadius": 20,
+              "cornerRadius": 9999,
               "justifyContent": "center",
               "alignItems": "center",
               "children": [
@@ -7237,10 +7357,11 @@
                   "textGrowth": "fixed-width",
                   "width": 136,
                   "content": "Unsubscribe",
+                  "lineHeight": 1.43,
                   "textAlign": "center",
                   "fontFamily": "Inter",
                   "fontSize": "$text.labelLarge.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.224
                 }
               ]
             }
@@ -7258,7 +7379,6 @@
         "dart": "lib/ui/core/widgets/html_content.dart"
       },
       "width": 393,
-      "height": 521,
       "fill": "$color.surface",
       "layout": "vertical",
       "padding": [
@@ -7286,9 +7406,11 @@
               "textGrowth": "fixed-width",
               "width": 353,
               "content": "HtmlContent blocks",
+              "lineHeight": 1.14,
               "fontFamily": "Inter",
               "fontSize": "$text.headlineSmall.size",
-              "fontWeight": "bold"
+              "fontWeight": "600",
+              "letterSpacing": -0.4
             }
           ]
         },
@@ -7315,9 +7437,10 @@
               "textGrowth": "fixed-width",
               "width": 353,
               "content": "Inline code, marks and links keep the surrounding bodyLarge metrics.",
+              "lineHeight": 1.44,
               "fontFamily": "Inter",
               "fontSize": "$text.bodyLarge.size",
-              "fontWeight": "normal"
+              "letterSpacing": -0.374
             }
           ]
         },
@@ -7325,7 +7448,6 @@
           "type": "frame",
           "id": "htmlTable1",
           "width": 353,
-          "height": 145,
           "layout": "vertical",
           "padding": [
             0,
@@ -7338,7 +7460,6 @@
               "type": "frame",
               "id": "tableBox1",
               "width": 353,
-              "height": 129,
               "cornerRadius": 8,
               "stroke": "$color.outlineVariant",
               "strokeWidth": 1,
@@ -7348,7 +7469,6 @@
                   "type": "frame",
                   "id": "htmlTableRow1",
                   "width": 353,
-                  "height": 43,
                   "layout": "vertical",
                   "padding": [
                     8,
@@ -7361,10 +7481,12 @@
                       "fill": "$color.onSurface",
                       "textGrowth": "fixed-width",
                       "width": 329,
-                      "content": "Header row is w700",
+                      "content": "Header row is w600",
+                      "lineHeight": 1.24,
                       "fontFamily": "Inter",
                       "fontSize": "$text.bodyLarge.size",
-                      "fontWeight": "bold"
+                      "fontWeight": "600",
+                      "letterSpacing": -0.374
                     }
                   ]
                 },
@@ -7372,7 +7494,6 @@
                   "type": "frame",
                   "id": "htmlTableRow2",
                   "width": 353,
-                  "height": 43,
                   "stroke": "$color.outlineVariant",
                   "strokeWidth": {
                     "top": 1
@@ -7391,9 +7512,10 @@
                       "textGrowth": "fixed-width",
                       "width": 329,
                       "content": "Rows are separated by an outlineVariant border",
+                      "lineHeight": 1.44,
                       "fontFamily": "Inter",
                       "fontSize": "$text.bodyLarge.size",
-                      "fontWeight": "normal"
+                      "letterSpacing": -0.374
                     }
                   ]
                 },
@@ -7401,7 +7523,6 @@
                   "type": "frame",
                   "id": "htmlTableRow3",
                   "width": 353,
-                  "height": 43,
                   "stroke": "$color.outlineVariant",
                   "strokeWidth": {
                     "top": 1
@@ -7420,9 +7541,10 @@
                       "textGrowth": "fixed-width",
                       "width": 329,
                       "content": "Cells pad 12 across and 8 down",
+                      "lineHeight": 1.44,
                       "fontFamily": "Inter",
                       "fontSize": "$text.bodyLarge.size",
-                      "fontWeight": "normal"
+                      "letterSpacing": -0.374
                     }
                   ]
                 }
@@ -7462,10 +7584,11 @@
                   "textGrowth": "fixed-width",
                   "width": 28,
                   "content": "1.",
+                  "lineHeight": 1.44,
                   "textAlign": "right",
                   "fontFamily": "Inter",
                   "fontSize": "$text.bodyLarge.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.374
                 },
                 {
                   "type": "frame",
@@ -7481,9 +7604,10 @@
                   "textGrowth": "fixed-width",
                   "width": 313,
                   "content": "First ordered item.",
+                  "lineHeight": 1.44,
                   "fontFamily": "Inter",
                   "fontSize": "$text.bodyLarge.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.374
                 }
               ]
             },
@@ -7506,10 +7630,11 @@
                   "textGrowth": "fixed-width",
                   "width": 28,
                   "content": "2.",
+                  "lineHeight": 1.44,
                   "textAlign": "right",
                   "fontFamily": "Inter",
                   "fontSize": "$text.bodyLarge.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.374
                 },
                 {
                   "type": "frame",
@@ -7525,9 +7650,10 @@
                   "textGrowth": "fixed-width",
                   "width": 313,
                   "content": "Second ordered item.",
+                  "lineHeight": 1.44,
                   "fontFamily": "Inter",
                   "fontSize": "$text.bodyLarge.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.374
                 }
               ]
             }
@@ -7567,26 +7693,14 @@
       "width": 361,
       "height": 56,
       "fill": "$glass.tint",
-      "cornerRadius": 28,
+      "cornerRadius": 9999,
       "stroke": "$glass.rim",
       "strokeWidth": 1,
       "strokeAlignment": "inner",
-      "effect": [
-        {
-          "type": "background_blur",
-          "radius": 32
-        },
-        {
-          "type": "shadow",
-          "shadowType": "outer",
-          "color": "$glass.shadow",
-          "offset": {
-            "x": 0,
-            "y": 4
-          },
-          "blur": 24
-        }
-      ],
+      "effect": {
+        "type": "background_blur",
+        "radius": 32
+      },
       "gap": 4,
       "padding": 6,
       "children": [
@@ -7596,7 +7710,7 @@
           "width": 172,
           "height": 44,
           "fill": "$color.secondaryContainer",
-          "cornerRadius": 22,
+          "cornerRadius": 9999,
           "layout": "vertical",
           "padding": [
             4,
@@ -7620,10 +7734,11 @@
               "textGrowth": "fixed-width",
               "width": 172,
               "content": "Latest",
+              "lineHeight": 1.43,
               "textAlign": "center",
               "fontFamily": "Inter",
               "fontSize": "$text.labelMedium.size",
-              "fontWeight": "normal"
+              "letterSpacing": -0.12
             }
           ]
         },
@@ -7632,7 +7747,7 @@
           "id": "glassDestination2",
           "width": 173,
           "height": 44,
-          "cornerRadius": 22,
+          "cornerRadius": 9999,
           "layout": "vertical",
           "padding": [
             4,
@@ -7656,10 +7771,11 @@
               "textGrowth": "fixed-width",
               "width": 173,
               "content": "Feeds",
+              "lineHeight": 1.43,
               "textAlign": "center",
               "fontFamily": "Inter",
               "fontSize": "$text.labelMedium.size",
-              "fontWeight": "normal"
+              "letterSpacing": -0.12
             }
           ]
         }
@@ -7723,9 +7839,10 @@
               "textGrowth": "fixed-width",
               "width": 112,
               "content": "Latest",
+              "lineHeight": 1.43,
               "fontFamily": "Inter",
               "fontSize": "$text.bodyMedium.size",
-              "fontWeight": "normal"
+              "letterSpacing": -0.224
             },
             {
               "type": "frame",
@@ -7733,7 +7850,7 @@
               "width": 28,
               "height": 16,
               "fill": "$color.primary",
-              "cornerRadius": 8,
+              "cornerRadius": 9999,
               "justifyContent": "center",
               "alignItems": "center",
               "children": [
@@ -7744,10 +7861,11 @@
                   "textGrowth": "fixed-width",
                   "width": 28,
                   "content": "12",
+                  "lineHeight": 1.3,
                   "textAlign": "center",
                   "fontFamily": "Inter",
                   "fontSize": "$text.labelSmall.size",
-                  "fontWeight": "normal"
+                  "letterSpacing": -0.08
                 }
               ]
             }
@@ -7788,9 +7906,10 @@
               "textGrowth": "fixed-width",
               "width": 140,
               "content": "Feeds",
+              "lineHeight": 1.43,
               "fontFamily": "Inter",
               "fontSize": "$text.bodyMedium.size",
-              "fontWeight": "normal"
+              "letterSpacing": -0.224
             }
           ]
         },
@@ -7815,13 +7934,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#8D4D2D",
+          "value": "#0066CC",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#FFB693",
+          "value": "#2997FF",
           "theme": {
             "mode": "dark"
           }
@@ -7838,7 +7957,7 @@
           }
         },
         {
-          "value": "#542104",
+          "value": "#1D1D1F",
           "theme": {
             "mode": "dark"
           }
@@ -7849,13 +7968,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#FFDBCC",
+          "value": "#E8F1FC",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#703718",
+          "value": "#0A2A47",
           "theme": {
             "mode": "dark"
           }
@@ -7866,13 +7985,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#703718",
+          "value": "#0066CC",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#FFDBCC",
+          "value": "#7FC0FF",
           "theme": {
             "mode": "dark"
           }
@@ -7883,13 +8002,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#765749",
+          "value": "#333333",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#E6BEAC",
+          "value": "#CCCCCC",
           "theme": {
             "mode": "dark"
           }
@@ -7906,7 +8025,7 @@
           }
         },
         {
-          "value": "#432A1E",
+          "value": "#1D1D1F",
           "theme": {
             "mode": "dark"
           }
@@ -7917,13 +8036,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#FFDBCC",
+          "value": "#E8F1FC",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#5C4033",
+          "value": "#0A2A47",
           "theme": {
             "mode": "dark"
           }
@@ -7934,13 +8053,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#5C4033",
+          "value": "#0066CC",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#FFDBCC",
+          "value": "#2997FF",
           "theme": {
             "mode": "dark"
           }
@@ -7951,13 +8070,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#FFF8F6",
+          "value": "#FFFFFF",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#1A120E",
+          "value": "#1D1D1F",
           "theme": {
             "mode": "dark"
           }
@@ -7968,13 +8087,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#221A16",
+          "value": "#1D1D1F",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#F0DFD8",
+          "value": "#FFFFFF",
           "theme": {
             "mode": "dark"
           }
@@ -7991,7 +8110,7 @@
           }
         },
         {
-          "value": "#140C09",
+          "value": "#000000",
           "theme": {
             "mode": "dark"
           }
@@ -8002,13 +8121,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#FFF1EB",
+          "value": "#F5F5F7",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#221A16",
+          "value": "#252527",
           "theme": {
             "mode": "dark"
           }
@@ -8019,13 +8138,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#FCEAE3",
+          "value": "#F5F5F7",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#271E1A",
+          "value": "#272729",
           "theme": {
             "mode": "dark"
           }
@@ -8036,13 +8155,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#F6E5DE",
+          "value": "#FFFFFF",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#322824",
+          "value": "#2A2A2C",
           "theme": {
             "mode": "dark"
           }
@@ -8053,13 +8172,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#F0DFD8",
+          "value": "#F5F5F7",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#3D332E",
+          "value": "#2F2F31",
           "theme": {
             "mode": "dark"
           }
@@ -8070,13 +8189,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#52443D",
+          "value": "#333333",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#D7C2B9",
+          "value": "#CCCCCC",
           "theme": {
             "mode": "dark"
           }
@@ -8087,13 +8206,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#85736C",
+          "value": "#7A7A7A",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#A08D85",
+          "value": "#98989D",
           "theme": {
             "mode": "dark"
           }
@@ -8104,13 +8223,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#D7C2B9",
+          "value": "#E0E0E0",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#52443D",
+          "value": "#38383A",
           "theme": {
             "mode": "dark"
           }
@@ -8121,13 +8240,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#BA1A1A",
+          "value": "#D70015",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#FFB4AB",
+          "value": "#FF6961",
           "theme": {
             "mode": "dark"
           }
@@ -8144,7 +8263,7 @@
           }
         },
         {
-          "value": "#690005",
+          "value": "#1D1D1F",
           "theme": {
             "mode": "dark"
           }
@@ -8155,13 +8274,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#FFDAD6",
+          "value": "#FDECEC",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#93000A",
+          "value": "#3A1513",
           "theme": {
             "mode": "dark"
           }
@@ -8172,13 +8291,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#93000A",
+          "value": "#D70015",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#FFDAD6",
+          "value": "#FF6961",
           "theme": {
             "mode": "dark"
           }
@@ -8189,13 +8308,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#382E2A",
+          "value": "#1D1D1F",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#F0DFD8",
+          "value": "#F5F5F7",
           "theme": {
             "mode": "dark"
           }
@@ -8206,13 +8325,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#FFEDE6",
+          "value": "#FFFFFF",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#382E2A",
+          "value": "#1D1D1F",
           "theme": {
             "mode": "dark"
           }
@@ -8223,13 +8342,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#8D4D2D",
+          "value": "#0066CC",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#FFB693",
+          "value": "#2997FF",
           "theme": {
             "mode": "dark"
           }
@@ -8255,15 +8374,15 @@
     },
     "text.headlineSmall.size": {
       "type": "number",
-      "value": 24
+      "value": 28
     },
     "text.titleLarge.size": {
       "type": "number",
-      "value": 22
+      "value": 21
     },
     "text.titleMedium.size": {
       "type": "number",
-      "value": 16
+      "value": 17
     },
     "text.titleSmall.size": {
       "type": "number",
@@ -8271,7 +8390,7 @@
     },
     "text.bodyLarge.size": {
       "type": "number",
-      "value": 16
+      "value": 17
     },
     "text.bodyMedium.size": {
       "type": "number",
@@ -8291,19 +8410,19 @@
     },
     "text.labelSmall.size": {
       "type": "number",
-      "value": 11
+      "value": 10
     },
     "glass.tint": {
       "type": "color",
       "value": [
         {
-          "value": "#FFF8F6B3",
+          "value": "#F5F5F7CC",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#1A120EB3",
+          "value": "#1D1D1FCC",
           "theme": {
             "mode": "dark"
           }
@@ -8314,30 +8433,13 @@
       "type": "color",
       "value": [
         {
-          "value": "#FFFFFFCC",
+          "value": "#0000001F",
           "theme": {
             "mode": "light"
           }
         },
         {
-          "value": "#FFFFFF40",
-          "theme": {
-            "mode": "dark"
-          }
-        }
-      ]
-    },
-    "glass.shadow": {
-      "type": "color",
-      "value": [
-        {
-          "value": "#00000026",
-          "theme": {
-            "mode": "light"
-          }
-        },
-        {
-          "value": "#00000059",
+          "value": "#FFFFFF26",
           "theme": {
             "mode": "dark"
           }

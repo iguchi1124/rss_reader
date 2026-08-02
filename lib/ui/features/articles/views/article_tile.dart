@@ -52,11 +52,10 @@ class ArticleTile extends StatelessWidget {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: theme.textTheme.titleSmall?.copyWith(
-                      fontWeight: isUnread ? FontWeight.w700 : FontWeight.w400,
+                      fontWeight: isUnread ? FontWeight.w600 : FontWeight.w400,
                       color: isUnread
                           ? theme.colorScheme.onSurface
                           : theme.colorScheme.onSurfaceVariant,
-                      height: 1.4,
                     ),
                   ),
                   if (article.summary case final summary?) ...[
@@ -67,7 +66,6 @@ class ArticleTile extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: theme.textTheme.bodySmall?.copyWith(
                         color: theme.colorScheme.onSurfaceVariant,
-                        height: 1.45,
                       ),
                     ),
                   ],

@@ -221,7 +221,7 @@ class _ReadSwipeBackground extends StatelessWidget {
     final theme = Theme.of(context);
 
     return Container(
-      color: theme.colorScheme.primaryContainer,
+      color: theme.colorScheme.primary,
       alignment: Alignment.centerLeft,
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
@@ -229,13 +229,13 @@ class _ReadSwipeBackground extends StatelessWidget {
         children: [
           Icon(
             isRead ? Icons.mark_email_unread_outlined : Icons.drafts_outlined,
-            color: theme.colorScheme.onPrimaryContainer,
+            color: theme.colorScheme.onPrimary,
           ),
           const SizedBox(width: 8),
           Text(
             isRead ? 'Mark unread' : 'Mark read',
             style: theme.textTheme.labelLarge?.copyWith(
-              color: theme.colorScheme.onPrimaryContainer,
+              color: theme.colorScheme.onPrimary,
             ),
           ),
         ],

@@ -83,13 +83,7 @@ class _ArticleDetailScreenState extends ConsumerState<ArticleDetailScreen> {
         child: ListView(
           padding: EdgeInsets.fromLTRB(20, 16, 20 + rightGutter(context), 48),
           children: [
-            Text(
-              article.title,
-              style: theme.textTheme.headlineSmall?.copyWith(
-                fontWeight: FontWeight.w700,
-                height: 1.35,
-              ),
-            ),
+            Text(article.title, style: theme.textTheme.headlineSmall),
             const SizedBox(height: 12),
             _Meta(article: article),
             const Divider(height: 32),
