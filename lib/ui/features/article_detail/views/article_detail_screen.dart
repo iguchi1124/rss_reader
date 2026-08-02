@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../domain/models/article.dart';
 import '../../../../utils/date_format.dart';
 import '../../../core/link_launcher.dart';
+import '../../../core/theme.dart';
 import '../../../core/widgets/html_content.dart';
 import '../view_models/article_detail_view_model.dart';
 
@@ -44,6 +45,7 @@ class _ArticleDetailScreenState extends ConsumerState<ArticleDetailScreen> {
           style: theme.textTheme.titleSmall,
           overflow: TextOverflow.ellipsis,
         ),
+        actionsPadding: appBarActionsPadding(context),
         actions: [
           IconButton(
             onPressed: () => viewModel.toggleStarred(article),
@@ -79,7 +81,7 @@ class _ArticleDetailScreenState extends ConsumerState<ArticleDetailScreen> {
       ),
       body: SelectionArea(
         child: ListView(
-          padding: const EdgeInsets.fromLTRB(20, 16, 20, 48),
+          padding: EdgeInsets.fromLTRB(20, 16, 20 + rightGutter(context), 48),
           children: [
             Text(
               article.title,

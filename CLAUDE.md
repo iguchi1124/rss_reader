@@ -129,6 +129,37 @@ without them and only looks wrong once it is open on the canvas:
   the variant on a FILL axis the icon node cannot reach, so a selected tab draws
   outlined on the canvas and filled in the app.
 
+### Right edge
+
+Content sits 16 from either side. The left comes for free — a title, a list
+tile and an app bar's leading icon are all inset 16 by Material. On the right
+two widgets arrive at a different number on their own and are corrected:
+
+- An app bar's `actions` run flush to the edge, so a 48-wide icon button leaves
+  its 24-point glyph 12 in, while the leading icon gets 56 points to sit in and
+  lands at 16. `AppTheme` closes the 4 with `actionsPadding`.
+- `_FeedTile` overrides `contentPadding` to 4 on the right. Its trailing
+  `PopupMenuButton` carries 12 of its own, which the theme's 16 would stack on
+  top of, putting the glyph 28 out.
+
+The article tile's star is the one left alone, 18 rather than 16: its
+`IconButton` insets a 20-point icon by 10, and the 2 is not worth a magic
+number in the tile's padding.
+
+macOS adds 8 on top, so those become 24 — a 16-point edge reads as cramped
+against the 220-point sidebar. `rightGutter` in `theme.dart` is the amount and
+`appBarActionsPadding` folds it into the app bar's 4; both take the platform
+from the theme, like `HomeScreen` does, so a test can render either width. A
+list spends it as `ListView` padding, which carries it to the tiles and to the
+dividers' `endIndent` at once.
+
+The gutter is spent edge by edge rather than as a single `Padding` around
+`HomeScreen`'s body, which would be one line. An app bar tints when a list
+scrolls under it — `#fff8f6` to `#f6ebe6` in light, `#1a120e` to `#2c1f18` in
+dark — so pulling its background in along with its contents leaves an untinted
+strip down the right of the window. The background stays full width; only what
+sits on it moves.
+
 ### Glass
 
 Navigation splits two ways, and `home_screen.dart` branches on

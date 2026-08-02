@@ -1087,7 +1087,7 @@
                   "gap": 16,
                   "padding": [
                     4,
-                    0,
+                    4,
                     4,
                     16
                   ],
@@ -1120,7 +1120,7 @@
                     {
                       "type": "frame",
                       "id": "feedText2",
-                      "width": 233,
+                      "width": 229,
                       "height": 36,
                       "layout": "vertical",
                       "children": [
@@ -1230,7 +1230,7 @@
                   "gap": 16,
                   "padding": [
                     4,
-                    0,
+                    4,
                     4,
                     16
                   ],
@@ -1263,7 +1263,7 @@
                     {
                       "type": "frame",
                       "id": "feedText3",
-                      "width": 257,
+                      "width": 253,
                       "height": 36,
                       "layout": "vertical",
                       "children": [
@@ -1349,7 +1349,7 @@
                   "gap": 16,
                   "padding": [
                     4,
-                    0,
+                    4,
                     4,
                     16
                   ],
@@ -1382,7 +1382,7 @@
                     {
                       "type": "frame",
                       "id": "feedText4",
-                      "width": 233,
+                      "width": 229,
                       "height": 36,
                       "layout": "vertical",
                       "children": [
@@ -1492,7 +1492,7 @@
                   "gap": 16,
                   "padding": [
                     4,
-                    0,
+                    4,
                     4,
                     16
                   ],
@@ -1525,7 +1525,7 @@
                     {
                       "type": "frame",
                       "id": "feedText5",
-                      "width": 257,
+                      "width": 253,
                       "height": 36,
                       "layout": "vertical",
                       "children": [
@@ -1611,7 +1611,7 @@
                   "gap": 16,
                   "padding": [
                     4,
-                    0,
+                    4,
                     4,
                     16
                   ],
@@ -1644,7 +1644,7 @@
                     {
                       "type": "frame",
                       "id": "feedText6",
-                      "width": 233,
+                      "width": 229,
                       "height": 36,
                       "layout": "vertical",
                       "children": [
@@ -4303,7 +4303,7 @@
                   "gap": 16,
                   "padding": [
                     4,
-                    0,
+                    4,
                     4,
                     16
                   ],
@@ -4336,7 +4336,7 @@
                     {
                       "type": "frame",
                       "id": "feedText2Dark",
-                      "width": 233,
+                      "width": 229,
                       "height": 36,
                       "layout": "vertical",
                       "children": [
@@ -4446,7 +4446,7 @@
                   "gap": 16,
                   "padding": [
                     4,
-                    0,
+                    4,
                     4,
                     16
                   ],
@@ -4479,7 +4479,7 @@
                     {
                       "type": "frame",
                       "id": "feedText3Dark",
-                      "width": 257,
+                      "width": 253,
                       "height": 36,
                       "layout": "vertical",
                       "children": [
@@ -4565,7 +4565,7 @@
                   "gap": 16,
                   "padding": [
                     4,
-                    0,
+                    4,
                     4,
                     16
                   ],
@@ -4598,7 +4598,7 @@
                     {
                       "type": "frame",
                       "id": "feedText4Dark",
-                      "width": 233,
+                      "width": 229,
                       "height": 36,
                       "layout": "vertical",
                       "children": [
@@ -4708,7 +4708,7 @@
                   "gap": 16,
                   "padding": [
                     4,
-                    0,
+                    4,
                     4,
                     16
                   ],
@@ -4741,7 +4741,7 @@
                     {
                       "type": "frame",
                       "id": "feedText5Dark",
-                      "width": 257,
+                      "width": 253,
                       "height": 36,
                       "layout": "vertical",
                       "children": [
@@ -4827,7 +4827,7 @@
                   "gap": 16,
                   "padding": [
                     4,
-                    0,
+                    4,
                     4,
                     16
                   ],
@@ -4860,7 +4860,7 @@
                     {
                       "type": "frame",
                       "id": "feedText6Dark",
-                      "width": 233,
+                      "width": 229,
                       "height": 36,
                       "layout": "vertical",
                       "children": [
@@ -6566,7 +6566,7 @@
       "gap": 16,
       "padding": [
         4,
-        0,
+        4,
         4,
         16
       ],
@@ -6599,7 +6599,7 @@
         {
           "type": "frame",
           "id": "feedText1",
-          "width": 233,
+          "width": 229,
           "height": 36,
           "layout": "vertical",
           "children": [
