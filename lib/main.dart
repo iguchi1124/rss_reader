@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'ui/core/theme.dart';
+import 'ui/core/title_bar_inset.dart';
 import 'ui/features/home/views/home_screen.dart';
 
 void main() {
@@ -18,6 +19,8 @@ class RssReaderApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
+      // Above the navigator, so a pushed route clears the title bar too.
+      builder: (context, child) => TitleBarInset(child: child!),
       home: const HomeScreen(),
     );
   }

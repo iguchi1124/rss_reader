@@ -96,9 +96,11 @@ scroll view holds:
 - `ScreenFeeds` — `FeedListScreen` with the circular FAB above the tab bar
 - `ScreenArticleDetail` — the article header and the HtmlContent blocks below it
 
-`ScreenLatestMacOS` is the desktop arrangement and sits at 1024x680 with no
-insets, because a window has none. `metadata.platform` on each frame records
-which build it stands for.
+`ScreenLatestMacOS` is the desktop arrangement and sits at 1024x680. A window
+has no safe area, but the hidden title bar leaves 28 points at the top that the
+app bar and the sidebar both spend, and `trafficLights1` draws the window
+buttons into that strip so nothing is placed under them.
+`metadata.platform` on each frame records which build it stands for.
 
 Each screen carries a `theme` key pinning it to light, and repeats one row down
 as `…Dark`. Pinning is what puts both modes on the canvas at once — an unpinned
@@ -176,6 +178,25 @@ need an alpha channel and the generated `color.*` values are opaque, so they sit
 under their own prefix — which is also what keeps `UPDATE_PEN_VARIABLES=1` from
 deleting them. They were picked by eye against `color.surface` and will not
 follow a change to `AppTheme._seedColor`.
+
+### Title bar
+
+`MainFlutterWindow` hides the macOS title bar — `.fullSizeContentView`,
+`titlebarAppearsTransparent`, `titleVisibility = .hidden` — so the window stops
+painting a band of system colour above the app's own surface and the Flutter
+view runs the full height of the window. Only the traffic lights are left, and
+they float over the sidebar.
+
+Nothing reports what that costs. The title bar view still sits above the content
+and still swallows drags, so the top `macOSTitleBarHeight` of the window is
+neither empty nor clickable. `TitleBarInset`, wrapped around
+`MaterialApp.builder`, adds it as `MediaQuery` top padding, which is where the
+`SafeArea` in `HomeSidebar` and every `AppBar` then take it from. It sits above
+the navigator so a pushed route clears the strip too.
+
+The height is a constant because the title bar's real height never reaches Dart.
+28 is what a plain titled window has; a window that gained a toolbar would need
+a new number.
 
 ### App icon
 
