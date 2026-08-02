@@ -603,6 +603,7 @@
                   "width": "fill_container",
                   "height": 28,
                   "content": "Latest",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.titleLarge.size",
                   "fill": "$color.onSurface"
                 },
@@ -624,7 +625,7 @@
                       "y": 0,
                       "width": 24,
                       "height": 24,
-                      "library": "Material Symbols",
+                      "library": "Material Symbols Outlined",
                       "icon": "refresh",
                       "fill": "$color.onSurfaceVariant"
                     }
@@ -648,7 +649,7 @@
                       "y": 0,
                       "width": 24,
                       "height": 24,
-                      "library": "Material Symbols",
+                      "library": "Material Symbols Outlined",
                       "icon": "done_all",
                       "fill": "$color.onSurfaceVariant"
                     }
@@ -706,6 +707,7 @@
                           "width": 80,
                           "height": 20,
                           "content": "All",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelLarge.size",
                           "fill": "$color.onSecondaryContainer",
                           "textAlign": "center"
@@ -731,6 +733,7 @@
                           "width": 84,
                           "height": 20,
                           "content": "Unread",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelLarge.size",
                           "fill": "$color.onSurface",
                           "textAlign": "center"
@@ -756,6 +759,7 @@
                           "width": 84,
                           "height": 20,
                           "content": "Starred",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelLarge.size",
                           "fill": "$color.onSurface",
                           "textAlign": "center"
@@ -836,10 +840,13 @@
                           "width": "fill_container",
                           "height": 39.2,
                           "content": "Designing on canvas, landing in code",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface",
                           "fontWeight": 700,
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap18",
@@ -859,9 +866,12 @@
                           "width": "fill_container",
                           "height": 34.8,
                           "content": "A short excerpt of the article body, trimmed to two lines so every row in the list keeps the same height.",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant",
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap19",
@@ -881,6 +891,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Example Feed · 2h ago",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -904,8 +915,8 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
-                          "icon": "star_border",
+                          "library": "Material Symbols Outlined",
+                          "icon": "star",
                           "fill": "$color.outline"
                         }
                       ]
@@ -999,10 +1010,13 @@
                           "width": "fill_container",
                           "height": 39.2,
                           "content": "A headline that has already been read",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurfaceVariant",
                           "fontWeight": 400,
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap20",
@@ -1022,9 +1036,12 @@
                           "width": "fill_container",
                           "height": 34.8,
                           "content": "Read rows drop to onSurfaceVariant and lose the bold weight, but keep the marker slot so nothing shifts.",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant",
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap21",
@@ -1044,6 +1061,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Another Feed · 5h ago",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -1067,8 +1085,8 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
-                          "icon": "star_border",
+                          "library": "Material Symbols Outlined",
+                          "icon": "star",
                           "fill": "$color.outline"
                         }
                       ]
@@ -1162,10 +1180,13 @@
                           "width": "fill_container",
                           "height": 39.2,
                           "content": "Content has to run under the bar",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface",
                           "fontWeight": 700,
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap22",
@@ -1185,9 +1206,12 @@
                           "width": "fill_container",
                           "height": 34.8,
                           "content": "Glass with nothing behind it is just a translucent rectangle, so the list is not inset for the tab bar.",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant",
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap23",
@@ -1207,6 +1231,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Third Feed · 8h ago",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -1230,7 +1255,7 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
+                          "library": "Material Symbols Outlined",
                           "icon": "star",
                           "fill": "$color.primary"
                         }
@@ -1325,10 +1350,13 @@
                           "width": "fill_container",
                           "height": 39.2,
                           "content": "A fourth row, still fully visible",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurfaceVariant",
                           "fontWeight": 400,
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap24",
@@ -1348,9 +1376,12 @@
                           "width": "fill_container",
                           "height": 34.8,
                           "content": "The blur only starts where the capsule overlaps.",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant",
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap25",
@@ -1370,6 +1401,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Fourth Feed · yesterday",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -1393,8 +1425,8 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
-                          "icon": "star_border",
+                          "library": "Material Symbols Outlined",
+                          "icon": "star",
                           "fill": "$color.outline"
                         }
                       ]
@@ -1488,10 +1520,13 @@
                           "width": "fill_container",
                           "height": 39.2,
                           "content": "The last row sits behind the glass",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface",
                           "fontWeight": 700,
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap26",
@@ -1511,9 +1546,12 @@
                           "width": "fill_container",
                           "height": 34.8,
                           "content": "This is the part the background blur acts on.",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant",
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap27",
@@ -1533,6 +1571,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Fifth Feed · 2 days ago",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -1556,8 +1595,8 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
-                          "icon": "star_border",
+                          "library": "Material Symbols Outlined",
+                          "icon": "star",
                           "fill": "$color.outline"
                         }
                       ]
@@ -1637,7 +1676,7 @@
                   "y": 0,
                   "width": 20,
                   "height": 20,
-                  "library": "Material Symbols",
+                  "library": "Material Symbols Outlined",
                   "icon": "article",
                   "fill": "$color.onSecondaryContainer"
                 },
@@ -1649,6 +1688,7 @@
                   "width": 172,
                   "height": 16,
                   "content": "Latest",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.labelMedium.size",
                   "fill": "$color.onSecondaryContainer",
                   "textAlign": "center"
@@ -1679,8 +1719,8 @@
                   "y": 0,
                   "width": 20,
                   "height": 20,
-                  "library": "Material Symbols",
-                  "icon": "rss_feed_outlined",
+                  "library": "Material Symbols Outlined",
+                  "icon": "rss_feed",
                   "fill": "$color.onSurfaceVariant"
                 },
                 {
@@ -1691,6 +1731,7 @@
                   "width": 173,
                   "height": 16,
                   "content": "Feeds",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.labelMedium.size",
                   "fill": "$color.onSurfaceVariant",
                   "textAlign": "center"
@@ -1765,6 +1806,7 @@
                   "width": "fill_container",
                   "height": 28,
                   "content": "Feeds",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.titleLarge.size",
                   "fill": "$color.onSurface"
                 },
@@ -1786,7 +1828,7 @@
                       "y": 0,
                       "width": 24,
                       "height": 24,
-                      "library": "Material Symbols",
+                      "library": "Material Symbols Outlined",
                       "icon": "refresh",
                       "fill": "$color.onSurfaceVariant"
                     }
@@ -1842,6 +1884,7 @@
                           "width": 40,
                           "height": 24,
                           "content": "F",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleMedium.size",
                           "fill": "$color.onPrimaryContainer",
                           "textAlign": "center"
@@ -1866,6 +1909,7 @@
                           "width": "fill_container",
                           "height": 20,
                           "content": "Flutter Blog",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface"
                         },
@@ -1877,6 +1921,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Updated 2h ago · 48 articles",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant"
                         }
@@ -1913,6 +1958,7 @@
                               "width": 24,
                               "height": 16,
                               "content": "12",
+                              "textGrowth": "fixed-width",
                               "fontSize": "$text.labelSmall.size",
                               "fill": "$color.onPrimary",
                               "textAlign": "center"
@@ -1937,7 +1983,7 @@
                               "y": 0,
                               "width": 24,
                               "height": 24,
-                              "library": "Material Symbols",
+                              "library": "Material Symbols Outlined",
                               "icon": "more_vert",
                               "fill": "$color.onSurfaceVariant"
                             }
@@ -2012,6 +2058,7 @@
                           "width": 40,
                           "height": 24,
                           "content": "D",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleMedium.size",
                           "fill": "$color.onPrimaryContainer",
                           "textAlign": "center"
@@ -2036,6 +2083,7 @@
                           "width": "fill_container",
                           "height": 20,
                           "content": "Dart News",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface"
                         },
@@ -2047,6 +2095,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Updated 5h ago · 21 articles",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant"
                         }
@@ -2080,7 +2129,7 @@
                               "y": 0,
                               "width": 24,
                               "height": 24,
-                              "library": "Material Symbols",
+                              "library": "Material Symbols Outlined",
                               "icon": "more_vert",
                               "fill": "$color.onSurfaceVariant"
                             }
@@ -2155,6 +2204,7 @@
                           "width": 40,
                           "height": 24,
                           "content": "R",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleMedium.size",
                           "fill": "$color.onPrimaryContainer",
                           "textAlign": "center"
@@ -2179,6 +2229,7 @@
                           "width": "fill_container",
                           "height": 20,
                           "content": "Release Notes",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface"
                         },
@@ -2190,6 +2241,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Never refreshed",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant"
                         }
@@ -2226,6 +2278,7 @@
                               "width": 24,
                               "height": 16,
                               "content": "3",
+                              "textGrowth": "fixed-width",
                               "fontSize": "$text.labelSmall.size",
                               "fill": "$color.onPrimary",
                               "textAlign": "center"
@@ -2250,7 +2303,7 @@
                               "y": 0,
                               "width": 24,
                               "height": 24,
-                              "library": "Material Symbols",
+                              "library": "Material Symbols Outlined",
                               "icon": "more_vert",
                               "fill": "$color.onSurfaceVariant"
                             }
@@ -2325,6 +2378,7 @@
                           "width": 40,
                           "height": 24,
                           "content": "W",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleMedium.size",
                           "fill": "$color.onPrimaryContainer",
                           "textAlign": "center"
@@ -2349,6 +2403,7 @@
                           "width": "fill_container",
                           "height": 20,
                           "content": "Weekly Digest",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface"
                         },
@@ -2360,6 +2415,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Updated 1d ago · 9 articles",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant"
                         }
@@ -2393,7 +2449,7 @@
                               "y": 0,
                               "width": 24,
                               "height": 24,
-                              "library": "Material Symbols",
+                              "library": "Material Symbols Outlined",
                               "icon": "more_vert",
                               "fill": "$color.onSurfaceVariant"
                             }
@@ -2468,6 +2524,7 @@
                           "width": 40,
                           "height": 24,
                           "content": "N",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleMedium.size",
                           "fill": "$color.onPrimaryContainer",
                           "textAlign": "center"
@@ -2492,6 +2549,7 @@
                           "width": "fill_container",
                           "height": 20,
                           "content": "Nightly Builds",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface"
                         },
@@ -2503,6 +2561,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Updated 3h ago · 132 articles",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant"
                         }
@@ -2539,6 +2598,7 @@
                               "width": 24,
                               "height": 16,
                               "content": "27",
+                              "textGrowth": "fixed-width",
                               "fontSize": "$text.labelSmall.size",
                               "fill": "$color.onPrimary",
                               "textAlign": "center"
@@ -2563,7 +2623,7 @@
                               "y": 0,
                               "width": 24,
                               "height": 24,
-                              "library": "Material Symbols",
+                              "library": "Material Symbols Outlined",
                               "icon": "more_vert",
                               "fill": "$color.onSurfaceVariant"
                             }
@@ -2613,7 +2673,7 @@
               "y": 0,
               "width": 18,
               "height": 18,
-              "library": "Material Symbols",
+              "library": "Material Symbols Outlined",
               "icon": "add",
               "fill": "$color.onPrimaryContainer"
             },
@@ -2635,6 +2695,7 @@
               "width": 28,
               "height": 20,
               "content": "Add",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.labelLarge.size",
               "fill": "$color.onPrimaryContainer"
             }
@@ -2697,8 +2758,8 @@
                   "y": 0,
                   "width": 20,
                   "height": 20,
-                  "library": "Material Symbols",
-                  "icon": "article_outlined",
+                  "library": "Material Symbols Outlined",
+                  "icon": "article",
                   "fill": "$color.onSurfaceVariant"
                 },
                 {
@@ -2709,6 +2770,7 @@
                   "width": 172,
                   "height": 16,
                   "content": "Latest",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.labelMedium.size",
                   "fill": "$color.onSurfaceVariant",
                   "textAlign": "center"
@@ -2740,7 +2802,7 @@
                   "y": 0,
                   "width": 20,
                   "height": 20,
-                  "library": "Material Symbols",
+                  "library": "Material Symbols Outlined",
                   "icon": "rss_feed",
                   "fill": "$color.onSecondaryContainer"
                 },
@@ -2752,6 +2814,7 @@
                   "width": 173,
                   "height": 16,
                   "content": "Feeds",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.labelMedium.size",
                   "fill": "$color.onSecondaryContainer",
                   "textAlign": "center"
@@ -2825,7 +2888,7 @@
                   "y": 0,
                   "width": 24,
                   "height": 24,
-                  "library": "Material Symbols",
+                  "library": "Material Symbols Outlined",
                   "icon": "arrow_back",
                   "fill": "$color.onSurfaceVariant"
                 }
@@ -2839,6 +2902,7 @@
               "width": "fill_container",
               "height": 20,
               "content": "Example Feed",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.titleSmall.size",
               "fill": "$color.onSurface"
             },
@@ -2860,8 +2924,8 @@
                   "y": 0,
                   "width": 24,
                   "height": 24,
-                  "library": "Material Symbols",
-                  "icon": "star_border",
+                  "library": "Material Symbols Outlined",
+                  "icon": "star",
                   "fill": "$color.onSurfaceVariant"
                 }
               ]
@@ -2884,7 +2948,7 @@
                   "y": 0,
                   "width": 24,
                   "height": 24,
-                  "library": "Material Symbols",
+                  "library": "Material Symbols Outlined",
                   "icon": "open_in_browser",
                   "fill": "$color.onSurfaceVariant"
                 }
@@ -2908,7 +2972,7 @@
                   "y": 0,
                   "width": 24,
                   "height": 24,
-                  "library": "Material Symbols",
+                  "library": "Material Symbols Outlined",
                   "icon": "more_vert",
                   "fill": "$color.onSurfaceVariant"
                 }
@@ -2940,10 +3004,13 @@
               "width": 353,
               "height": 64.8,
               "content": "Designing on canvas, landing in code",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.headlineSmall.size",
               "fill": "$color.onSurface",
               "fontWeight": 700,
-              "maxLines": 2
+              "metadata": {
+                "maxLines": 2
+              }
             },
             {
               "id": "gap29",
@@ -2963,6 +3030,7 @@
               "width": 353,
               "height": 16,
               "content": "Jane Author · 2 August 2026",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.bodySmall.size",
               "fill": "$color.onSurfaceVariant"
             },
@@ -3010,9 +3078,12 @@
                   "width": 353,
                   "height": 81.6,
                   "content": "A paragraph rendered by HtmlContent: bodyLarge at a line height of 1.7, coloured onSurface, with 16 of spacing below it.",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.bodyLarge.size",
                   "fill": "$color.onSurface",
-                  "maxLines": 3
+                  "metadata": {
+                    "maxLines": 3
+                  }
                 }
               ]
             },
@@ -3039,6 +3110,7 @@
                   "width": 353,
                   "height": 30.8,
                   "content": "How headings render",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.titleLarge.size",
                   "fill": "$color.onSurface",
                   "fontWeight": 700
@@ -3068,9 +3140,12 @@
                   "width": 353,
                   "height": 54.4,
                   "content": "h1 and h2 take headlineSmall and titleLarge; h3 and below sit closer to body size.",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.bodyLarge.size",
                   "fill": "$color.onSurface",
-                  "maxLines": 2
+                  "metadata": {
+                    "maxLines": 2
+                  }
                 }
               ]
             },
@@ -3116,9 +3191,12 @@
                   "width": 334,
                   "height": 54.4,
                   "content": "A blockquote keeps a 3 wide primary rule on its left and drops to onSurfaceVariant.",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.bodyLarge.size",
                   "fill": "$color.onSurfaceVariant",
-                  "maxLines": 2
+                  "metadata": {
+                    "maxLines": 2
+                  }
                 }
               ]
             },
@@ -3157,9 +3235,12 @@
                       "width": 329,
                       "height": 48.0,
                       "content": "flutter analyze\nflutter test",
+                      "textGrowth": "fixed-width",
                       "fontSize": "$text.bodyLarge.size",
                       "fill": "$color.onSurface",
-                      "maxLines": 2
+                      "metadata": {
+                        "maxLines": 2
+                      }
                     }
                   ]
                 }
@@ -3204,6 +3285,7 @@
                       "width": 28,
                       "height": 24,
                       "content": "•",
+                      "textGrowth": "fixed-width",
                       "fontSize": "$text.bodyLarge.size",
                       "fill": "$color.onSurfaceVariant",
                       "textAlign": "right"
@@ -3226,6 +3308,7 @@
                       "width": 313,
                       "height": 27.2,
                       "content": "Bullets are right-aligned in a 28 column.",
+                      "textGrowth": "fixed-width",
                       "fontSize": "$text.bodyLarge.size",
                       "fill": "$color.onSurface"
                     }
@@ -3255,6 +3338,7 @@
                       "width": 28,
                       "height": 24,
                       "content": "•",
+                      "textGrowth": "fixed-width",
                       "fontSize": "$text.bodyLarge.size",
                       "fill": "$color.onSurfaceVariant",
                       "textAlign": "right"
@@ -3277,6 +3361,7 @@
                       "width": 313,
                       "height": 27.2,
                       "content": "The body of an item is Expanded.",
+                      "textGrowth": "fixed-width",
                       "fontSize": "$text.bodyLarge.size",
                       "fill": "$color.onSurface"
                     }
@@ -3362,6 +3447,7 @@
                   "width": "fill_container",
                   "height": 28,
                   "content": "Latest",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.titleLarge.size",
                   "fill": "$color.onSurface"
                 },
@@ -3383,7 +3469,7 @@
                       "y": 0,
                       "width": 24,
                       "height": 24,
-                      "library": "Material Symbols",
+                      "library": "Material Symbols Outlined",
                       "icon": "refresh",
                       "fill": "$color.onSurfaceVariant"
                     }
@@ -3407,7 +3493,7 @@
                       "y": 0,
                       "width": 24,
                       "height": 24,
-                      "library": "Material Symbols",
+                      "library": "Material Symbols Outlined",
                       "icon": "done_all",
                       "fill": "$color.onSurfaceVariant"
                     }
@@ -3465,6 +3551,7 @@
                           "width": 80,
                           "height": 20,
                           "content": "All",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelLarge.size",
                           "fill": "$color.onSecondaryContainer",
                           "textAlign": "center"
@@ -3490,6 +3577,7 @@
                           "width": 84,
                           "height": 20,
                           "content": "Unread",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelLarge.size",
                           "fill": "$color.onSurface",
                           "textAlign": "center"
@@ -3515,6 +3603,7 @@
                           "width": 84,
                           "height": 20,
                           "content": "Starred",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelLarge.size",
                           "fill": "$color.onSurface",
                           "textAlign": "center"
@@ -3595,6 +3684,7 @@
                           "width": "fill_container",
                           "height": 19.6,
                           "content": "Designing on canvas, landing in code",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface",
                           "fontWeight": 700
@@ -3617,6 +3707,7 @@
                           "width": "fill_container",
                           "height": 17.4,
                           "content": "A short excerpt of the article body. At this width it no longer wraps to two lines, so the row is shorter than on a phone.",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant"
                         },
@@ -3638,6 +3729,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Example Feed · 2h ago",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -3661,8 +3753,8 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
-                          "icon": "star_border",
+                          "library": "Material Symbols Outlined",
+                          "icon": "star",
                           "fill": "$color.outline"
                         }
                       ]
@@ -3756,6 +3848,7 @@
                           "width": "fill_container",
                           "height": 19.6,
                           "content": "A headline that has already been read",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurfaceVariant",
                           "fontWeight": 400
@@ -3778,6 +3871,7 @@
                           "width": "fill_container",
                           "height": 17.4,
                           "content": "Read rows drop to onSurfaceVariant and lose the bold weight.",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant"
                         },
@@ -3799,6 +3893,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Another Feed · 5h ago",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -3822,8 +3917,8 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
-                          "icon": "star_border",
+                          "library": "Material Symbols Outlined",
+                          "icon": "star",
                           "fill": "$color.outline"
                         }
                       ]
@@ -3917,6 +4012,7 @@
                           "width": "fill_container",
                           "height": 19.6,
                           "content": "A starred article without a summary",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface",
                           "fontWeight": 700
@@ -3939,6 +4035,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Third Feed · yesterday",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -3962,7 +4059,7 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
+                          "library": "Material Symbols Outlined",
                           "icon": "star",
                           "fill": "$color.primary"
                         }
@@ -4057,6 +4154,7 @@
                           "width": "fill_container",
                           "height": 19.6,
                           "content": "The list starts after the sidebar",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurfaceVariant",
                           "fontWeight": 400
@@ -4079,6 +4177,7 @@
                           "width": "fill_container",
                           "height": 17.4,
                           "content": "Nothing scrolls under the sidebar, so its blur has only the window background to work on.",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant"
                         },
@@ -4100,6 +4199,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Fourth Feed · yesterday",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -4123,8 +4223,8 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
-                          "icon": "star_border",
+                          "library": "Material Symbols Outlined",
+                          "icon": "star",
                           "fill": "$color.outline"
                         }
                       ]
@@ -4191,7 +4291,7 @@
                   "y": 0,
                   "width": 20,
                   "height": 20,
-                  "library": "Material Symbols",
+                  "library": "Material Symbols Outlined",
                   "icon": "article",
                   "fill": "$color.onSecondaryContainer"
                 },
@@ -4213,6 +4313,7 @@
                   "width": 124,
                   "height": 20,
                   "content": "Latest",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.bodyMedium.size",
                   "fill": "$color.onSecondaryContainer"
                 },
@@ -4237,6 +4338,7 @@
                       "width": 28,
                       "height": 16,
                       "content": "12",
+                      "textGrowth": "fixed-width",
                       "fontSize": "$text.labelSmall.size",
                       "fill": "$color.onPrimary",
                       "textAlign": "center"
@@ -4269,8 +4371,8 @@
                   "y": 0,
                   "width": 20,
                   "height": 20,
-                  "library": "Material Symbols",
-                  "icon": "rss_feed_outlined",
+                  "library": "Material Symbols Outlined",
+                  "icon": "rss_feed",
                   "fill": "$color.onSurfaceVariant"
                 },
                 {
@@ -4291,6 +4393,7 @@
                   "width": 152,
                   "height": 20,
                   "content": "Feeds",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.bodyMedium.size",
                   "fill": "$color.onSurface"
                 }
@@ -4374,6 +4477,7 @@
                   "width": "fill_container",
                   "height": 28,
                   "content": "Latest",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.titleLarge.size",
                   "fill": "$color.onSurface"
                 },
@@ -4395,7 +4499,7 @@
                       "y": 0,
                       "width": 24,
                       "height": 24,
-                      "library": "Material Symbols",
+                      "library": "Material Symbols Outlined",
                       "icon": "refresh",
                       "fill": "$color.onSurfaceVariant"
                     }
@@ -4419,7 +4523,7 @@
                       "y": 0,
                       "width": 24,
                       "height": 24,
-                      "library": "Material Symbols",
+                      "library": "Material Symbols Outlined",
                       "icon": "done_all",
                       "fill": "$color.onSurfaceVariant"
                     }
@@ -4477,6 +4581,7 @@
                           "width": 80,
                           "height": 20,
                           "content": "All",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelLarge.size",
                           "fill": "$color.onSecondaryContainer",
                           "textAlign": "center"
@@ -4502,6 +4607,7 @@
                           "width": 84,
                           "height": 20,
                           "content": "Unread",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelLarge.size",
                           "fill": "$color.onSurface",
                           "textAlign": "center"
@@ -4527,6 +4633,7 @@
                           "width": 84,
                           "height": 20,
                           "content": "Starred",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelLarge.size",
                           "fill": "$color.onSurface",
                           "textAlign": "center"
@@ -4607,10 +4714,13 @@
                           "width": "fill_container",
                           "height": 39.2,
                           "content": "Designing on canvas, landing in code",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface",
                           "fontWeight": 700,
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap18Dark",
@@ -4630,9 +4740,12 @@
                           "width": "fill_container",
                           "height": 34.8,
                           "content": "A short excerpt of the article body, trimmed to two lines so every row in the list keeps the same height.",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant",
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap19Dark",
@@ -4652,6 +4765,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Example Feed · 2h ago",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -4675,8 +4789,8 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
-                          "icon": "star_border",
+                          "library": "Material Symbols Outlined",
+                          "icon": "star",
                           "fill": "$color.outline"
                         }
                       ]
@@ -4770,10 +4884,13 @@
                           "width": "fill_container",
                           "height": 39.2,
                           "content": "A headline that has already been read",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurfaceVariant",
                           "fontWeight": 400,
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap20Dark",
@@ -4793,9 +4910,12 @@
                           "width": "fill_container",
                           "height": 34.8,
                           "content": "Read rows drop to onSurfaceVariant and lose the bold weight, but keep the marker slot so nothing shifts.",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant",
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap21Dark",
@@ -4815,6 +4935,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Another Feed · 5h ago",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -4838,8 +4959,8 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
-                          "icon": "star_border",
+                          "library": "Material Symbols Outlined",
+                          "icon": "star",
                           "fill": "$color.outline"
                         }
                       ]
@@ -4933,10 +5054,13 @@
                           "width": "fill_container",
                           "height": 39.2,
                           "content": "Content has to run under the bar",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface",
                           "fontWeight": 700,
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap22Dark",
@@ -4956,9 +5080,12 @@
                           "width": "fill_container",
                           "height": 34.8,
                           "content": "Glass with nothing behind it is just a translucent rectangle, so the list is not inset for the tab bar.",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant",
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap23Dark",
@@ -4978,6 +5105,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Third Feed · 8h ago",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -5001,7 +5129,7 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
+                          "library": "Material Symbols Outlined",
                           "icon": "star",
                           "fill": "$color.primary"
                         }
@@ -5096,10 +5224,13 @@
                           "width": "fill_container",
                           "height": 39.2,
                           "content": "A fourth row, still fully visible",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurfaceVariant",
                           "fontWeight": 400,
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap24Dark",
@@ -5119,9 +5250,12 @@
                           "width": "fill_container",
                           "height": 34.8,
                           "content": "The blur only starts where the capsule overlaps.",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant",
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap25Dark",
@@ -5141,6 +5275,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Fourth Feed · yesterday",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -5164,8 +5299,8 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
-                          "icon": "star_border",
+                          "library": "Material Symbols Outlined",
+                          "icon": "star",
                           "fill": "$color.outline"
                         }
                       ]
@@ -5259,10 +5394,13 @@
                           "width": "fill_container",
                           "height": 39.2,
                           "content": "The last row sits behind the glass",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface",
                           "fontWeight": 700,
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap26Dark",
@@ -5282,9 +5420,12 @@
                           "width": "fill_container",
                           "height": 34.8,
                           "content": "This is the part the background blur acts on.",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant",
-                          "maxLines": 2
+                          "metadata": {
+                            "maxLines": 2
+                          }
                         },
                         {
                           "id": "gap27Dark",
@@ -5304,6 +5445,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Fifth Feed · 2 days ago",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -5327,8 +5469,8 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
-                          "icon": "star_border",
+                          "library": "Material Symbols Outlined",
+                          "icon": "star",
                           "fill": "$color.outline"
                         }
                       ]
@@ -5408,7 +5550,7 @@
                   "y": 0,
                   "width": 20,
                   "height": 20,
-                  "library": "Material Symbols",
+                  "library": "Material Symbols Outlined",
                   "icon": "article",
                   "fill": "$color.onSecondaryContainer"
                 },
@@ -5420,6 +5562,7 @@
                   "width": 172,
                   "height": 16,
                   "content": "Latest",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.labelMedium.size",
                   "fill": "$color.onSecondaryContainer",
                   "textAlign": "center"
@@ -5450,8 +5593,8 @@
                   "y": 0,
                   "width": 20,
                   "height": 20,
-                  "library": "Material Symbols",
-                  "icon": "rss_feed_outlined",
+                  "library": "Material Symbols Outlined",
+                  "icon": "rss_feed",
                   "fill": "$color.onSurfaceVariant"
                 },
                 {
@@ -5462,6 +5605,7 @@
                   "width": 173,
                   "height": 16,
                   "content": "Feeds",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.labelMedium.size",
                   "fill": "$color.onSurfaceVariant",
                   "textAlign": "center"
@@ -5536,6 +5680,7 @@
                   "width": "fill_container",
                   "height": 28,
                   "content": "Feeds",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.titleLarge.size",
                   "fill": "$color.onSurface"
                 },
@@ -5557,7 +5702,7 @@
                       "y": 0,
                       "width": 24,
                       "height": 24,
-                      "library": "Material Symbols",
+                      "library": "Material Symbols Outlined",
                       "icon": "refresh",
                       "fill": "$color.onSurfaceVariant"
                     }
@@ -5613,6 +5758,7 @@
                           "width": 40,
                           "height": 24,
                           "content": "F",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleMedium.size",
                           "fill": "$color.onPrimaryContainer",
                           "textAlign": "center"
@@ -5637,6 +5783,7 @@
                           "width": "fill_container",
                           "height": 20,
                           "content": "Flutter Blog",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface"
                         },
@@ -5648,6 +5795,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Updated 2h ago · 48 articles",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant"
                         }
@@ -5684,6 +5832,7 @@
                               "width": 24,
                               "height": 16,
                               "content": "12",
+                              "textGrowth": "fixed-width",
                               "fontSize": "$text.labelSmall.size",
                               "fill": "$color.onPrimary",
                               "textAlign": "center"
@@ -5708,7 +5857,7 @@
                               "y": 0,
                               "width": 24,
                               "height": 24,
-                              "library": "Material Symbols",
+                              "library": "Material Symbols Outlined",
                               "icon": "more_vert",
                               "fill": "$color.onSurfaceVariant"
                             }
@@ -5783,6 +5932,7 @@
                           "width": 40,
                           "height": 24,
                           "content": "D",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleMedium.size",
                           "fill": "$color.onPrimaryContainer",
                           "textAlign": "center"
@@ -5807,6 +5957,7 @@
                           "width": "fill_container",
                           "height": 20,
                           "content": "Dart News",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface"
                         },
@@ -5818,6 +5969,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Updated 5h ago · 21 articles",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant"
                         }
@@ -5851,7 +6003,7 @@
                               "y": 0,
                               "width": 24,
                               "height": 24,
-                              "library": "Material Symbols",
+                              "library": "Material Symbols Outlined",
                               "icon": "more_vert",
                               "fill": "$color.onSurfaceVariant"
                             }
@@ -5926,6 +6078,7 @@
                           "width": 40,
                           "height": 24,
                           "content": "R",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleMedium.size",
                           "fill": "$color.onPrimaryContainer",
                           "textAlign": "center"
@@ -5950,6 +6103,7 @@
                           "width": "fill_container",
                           "height": 20,
                           "content": "Release Notes",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface"
                         },
@@ -5961,6 +6115,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Never refreshed",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant"
                         }
@@ -5997,6 +6152,7 @@
                               "width": 24,
                               "height": 16,
                               "content": "3",
+                              "textGrowth": "fixed-width",
                               "fontSize": "$text.labelSmall.size",
                               "fill": "$color.onPrimary",
                               "textAlign": "center"
@@ -6021,7 +6177,7 @@
                               "y": 0,
                               "width": 24,
                               "height": 24,
-                              "library": "Material Symbols",
+                              "library": "Material Symbols Outlined",
                               "icon": "more_vert",
                               "fill": "$color.onSurfaceVariant"
                             }
@@ -6096,6 +6252,7 @@
                           "width": 40,
                           "height": 24,
                           "content": "W",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleMedium.size",
                           "fill": "$color.onPrimaryContainer",
                           "textAlign": "center"
@@ -6120,6 +6277,7 @@
                           "width": "fill_container",
                           "height": 20,
                           "content": "Weekly Digest",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface"
                         },
@@ -6131,6 +6289,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Updated 1d ago · 9 articles",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant"
                         }
@@ -6164,7 +6323,7 @@
                               "y": 0,
                               "width": 24,
                               "height": 24,
-                              "library": "Material Symbols",
+                              "library": "Material Symbols Outlined",
                               "icon": "more_vert",
                               "fill": "$color.onSurfaceVariant"
                             }
@@ -6239,6 +6398,7 @@
                           "width": 40,
                           "height": 24,
                           "content": "N",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleMedium.size",
                           "fill": "$color.onPrimaryContainer",
                           "textAlign": "center"
@@ -6263,6 +6423,7 @@
                           "width": "fill_container",
                           "height": 20,
                           "content": "Nightly Builds",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface"
                         },
@@ -6274,6 +6435,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Updated 3h ago · 132 articles",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant"
                         }
@@ -6310,6 +6472,7 @@
                               "width": 24,
                               "height": 16,
                               "content": "27",
+                              "textGrowth": "fixed-width",
                               "fontSize": "$text.labelSmall.size",
                               "fill": "$color.onPrimary",
                               "textAlign": "center"
@@ -6334,7 +6497,7 @@
                               "y": 0,
                               "width": 24,
                               "height": 24,
-                              "library": "Material Symbols",
+                              "library": "Material Symbols Outlined",
                               "icon": "more_vert",
                               "fill": "$color.onSurfaceVariant"
                             }
@@ -6384,7 +6547,7 @@
               "y": 0,
               "width": 18,
               "height": 18,
-              "library": "Material Symbols",
+              "library": "Material Symbols Outlined",
               "icon": "add",
               "fill": "$color.onPrimaryContainer"
             },
@@ -6406,6 +6569,7 @@
               "width": 28,
               "height": 20,
               "content": "Add",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.labelLarge.size",
               "fill": "$color.onPrimaryContainer"
             }
@@ -6468,8 +6632,8 @@
                   "y": 0,
                   "width": 20,
                   "height": 20,
-                  "library": "Material Symbols",
-                  "icon": "article_outlined",
+                  "library": "Material Symbols Outlined",
+                  "icon": "article",
                   "fill": "$color.onSurfaceVariant"
                 },
                 {
@@ -6480,6 +6644,7 @@
                   "width": 172,
                   "height": 16,
                   "content": "Latest",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.labelMedium.size",
                   "fill": "$color.onSurfaceVariant",
                   "textAlign": "center"
@@ -6511,7 +6676,7 @@
                   "y": 0,
                   "width": 20,
                   "height": 20,
-                  "library": "Material Symbols",
+                  "library": "Material Symbols Outlined",
                   "icon": "rss_feed",
                   "fill": "$color.onSecondaryContainer"
                 },
@@ -6523,6 +6688,7 @@
                   "width": 173,
                   "height": 16,
                   "content": "Feeds",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.labelMedium.size",
                   "fill": "$color.onSecondaryContainer",
                   "textAlign": "center"
@@ -6596,7 +6762,7 @@
                   "y": 0,
                   "width": 24,
                   "height": 24,
-                  "library": "Material Symbols",
+                  "library": "Material Symbols Outlined",
                   "icon": "arrow_back",
                   "fill": "$color.onSurfaceVariant"
                 }
@@ -6610,6 +6776,7 @@
               "width": "fill_container",
               "height": 20,
               "content": "Example Feed",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.titleSmall.size",
               "fill": "$color.onSurface"
             },
@@ -6631,8 +6798,8 @@
                   "y": 0,
                   "width": 24,
                   "height": 24,
-                  "library": "Material Symbols",
-                  "icon": "star_border",
+                  "library": "Material Symbols Outlined",
+                  "icon": "star",
                   "fill": "$color.onSurfaceVariant"
                 }
               ]
@@ -6655,7 +6822,7 @@
                   "y": 0,
                   "width": 24,
                   "height": 24,
-                  "library": "Material Symbols",
+                  "library": "Material Symbols Outlined",
                   "icon": "open_in_browser",
                   "fill": "$color.onSurfaceVariant"
                 }
@@ -6679,7 +6846,7 @@
                   "y": 0,
                   "width": 24,
                   "height": 24,
-                  "library": "Material Symbols",
+                  "library": "Material Symbols Outlined",
                   "icon": "more_vert",
                   "fill": "$color.onSurfaceVariant"
                 }
@@ -6711,10 +6878,13 @@
               "width": 353,
               "height": 64.8,
               "content": "Designing on canvas, landing in code",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.headlineSmall.size",
               "fill": "$color.onSurface",
               "fontWeight": 700,
-              "maxLines": 2
+              "metadata": {
+                "maxLines": 2
+              }
             },
             {
               "id": "gap29Dark",
@@ -6734,6 +6904,7 @@
               "width": 353,
               "height": 16,
               "content": "Jane Author · 2 August 2026",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.bodySmall.size",
               "fill": "$color.onSurfaceVariant"
             },
@@ -6781,9 +6952,12 @@
                   "width": 353,
                   "height": 81.6,
                   "content": "A paragraph rendered by HtmlContent: bodyLarge at a line height of 1.7, coloured onSurface, with 16 of spacing below it.",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.bodyLarge.size",
                   "fill": "$color.onSurface",
-                  "maxLines": 3
+                  "metadata": {
+                    "maxLines": 3
+                  }
                 }
               ]
             },
@@ -6810,6 +6984,7 @@
                   "width": 353,
                   "height": 30.8,
                   "content": "How headings render",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.titleLarge.size",
                   "fill": "$color.onSurface",
                   "fontWeight": 700
@@ -6839,9 +7014,12 @@
                   "width": 353,
                   "height": 54.4,
                   "content": "h1 and h2 take headlineSmall and titleLarge; h3 and below sit closer to body size.",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.bodyLarge.size",
                   "fill": "$color.onSurface",
-                  "maxLines": 2
+                  "metadata": {
+                    "maxLines": 2
+                  }
                 }
               ]
             },
@@ -6887,9 +7065,12 @@
                   "width": 334,
                   "height": 54.4,
                   "content": "A blockquote keeps a 3 wide primary rule on its left and drops to onSurfaceVariant.",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.bodyLarge.size",
                   "fill": "$color.onSurfaceVariant",
-                  "maxLines": 2
+                  "metadata": {
+                    "maxLines": 2
+                  }
                 }
               ]
             },
@@ -6928,9 +7109,12 @@
                       "width": 329,
                       "height": 48.0,
                       "content": "flutter analyze\nflutter test",
+                      "textGrowth": "fixed-width",
                       "fontSize": "$text.bodyLarge.size",
                       "fill": "$color.onSurface",
-                      "maxLines": 2
+                      "metadata": {
+                        "maxLines": 2
+                      }
                     }
                   ]
                 }
@@ -6975,6 +7159,7 @@
                       "width": 28,
                       "height": 24,
                       "content": "•",
+                      "textGrowth": "fixed-width",
                       "fontSize": "$text.bodyLarge.size",
                       "fill": "$color.onSurfaceVariant",
                       "textAlign": "right"
@@ -6997,6 +7182,7 @@
                       "width": 313,
                       "height": 27.2,
                       "content": "Bullets are right-aligned in a 28 column.",
+                      "textGrowth": "fixed-width",
                       "fontSize": "$text.bodyLarge.size",
                       "fill": "$color.onSurface"
                     }
@@ -7026,6 +7212,7 @@
                       "width": 28,
                       "height": 24,
                       "content": "•",
+                      "textGrowth": "fixed-width",
                       "fontSize": "$text.bodyLarge.size",
                       "fill": "$color.onSurfaceVariant",
                       "textAlign": "right"
@@ -7048,6 +7235,7 @@
                       "width": 313,
                       "height": 27.2,
                       "content": "The body of an item is Expanded.",
+                      "textGrowth": "fixed-width",
                       "fontSize": "$text.bodyLarge.size",
                       "fill": "$color.onSurface"
                     }
@@ -7133,6 +7321,7 @@
                   "width": "fill_container",
                   "height": 28,
                   "content": "Latest",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.titleLarge.size",
                   "fill": "$color.onSurface"
                 },
@@ -7154,7 +7343,7 @@
                       "y": 0,
                       "width": 24,
                       "height": 24,
-                      "library": "Material Symbols",
+                      "library": "Material Symbols Outlined",
                       "icon": "refresh",
                       "fill": "$color.onSurfaceVariant"
                     }
@@ -7178,7 +7367,7 @@
                       "y": 0,
                       "width": 24,
                       "height": 24,
-                      "library": "Material Symbols",
+                      "library": "Material Symbols Outlined",
                       "icon": "done_all",
                       "fill": "$color.onSurfaceVariant"
                     }
@@ -7236,6 +7425,7 @@
                           "width": 80,
                           "height": 20,
                           "content": "All",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelLarge.size",
                           "fill": "$color.onSecondaryContainer",
                           "textAlign": "center"
@@ -7261,6 +7451,7 @@
                           "width": 84,
                           "height": 20,
                           "content": "Unread",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelLarge.size",
                           "fill": "$color.onSurface",
                           "textAlign": "center"
@@ -7286,6 +7477,7 @@
                           "width": 84,
                           "height": 20,
                           "content": "Starred",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelLarge.size",
                           "fill": "$color.onSurface",
                           "textAlign": "center"
@@ -7366,6 +7558,7 @@
                           "width": "fill_container",
                           "height": 19.6,
                           "content": "Designing on canvas, landing in code",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface",
                           "fontWeight": 700
@@ -7388,6 +7581,7 @@
                           "width": "fill_container",
                           "height": 17.4,
                           "content": "A short excerpt of the article body. At this width it no longer wraps to two lines, so the row is shorter than on a phone.",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant"
                         },
@@ -7409,6 +7603,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Example Feed · 2h ago",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -7432,8 +7627,8 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
-                          "icon": "star_border",
+                          "library": "Material Symbols Outlined",
+                          "icon": "star",
                           "fill": "$color.outline"
                         }
                       ]
@@ -7527,6 +7722,7 @@
                           "width": "fill_container",
                           "height": 19.6,
                           "content": "A headline that has already been read",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurfaceVariant",
                           "fontWeight": 400
@@ -7549,6 +7745,7 @@
                           "width": "fill_container",
                           "height": 17.4,
                           "content": "Read rows drop to onSurfaceVariant and lose the bold weight.",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant"
                         },
@@ -7570,6 +7767,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Another Feed · 5h ago",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -7593,8 +7791,8 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
-                          "icon": "star_border",
+                          "library": "Material Symbols Outlined",
+                          "icon": "star",
                           "fill": "$color.outline"
                         }
                       ]
@@ -7688,6 +7886,7 @@
                           "width": "fill_container",
                           "height": 19.6,
                           "content": "A starred article without a summary",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurface",
                           "fontWeight": 700
@@ -7710,6 +7909,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Third Feed · yesterday",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -7733,7 +7933,7 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
+                          "library": "Material Symbols Outlined",
                           "icon": "star",
                           "fill": "$color.primary"
                         }
@@ -7828,6 +8028,7 @@
                           "width": "fill_container",
                           "height": 19.6,
                           "content": "The list starts after the sidebar",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.titleSmall.size",
                           "fill": "$color.onSurfaceVariant",
                           "fontWeight": 400
@@ -7850,6 +8051,7 @@
                           "width": "fill_container",
                           "height": 17.4,
                           "content": "Nothing scrolls under the sidebar, so its blur has only the window background to work on.",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.bodySmall.size",
                           "fill": "$color.onSurfaceVariant"
                         },
@@ -7871,6 +8073,7 @@
                           "width": "fill_container",
                           "height": 16,
                           "content": "Fourth Feed · yesterday",
+                          "textGrowth": "fixed-width",
                           "fontSize": "$text.labelSmall.size",
                           "fill": "$color.outline"
                         }
@@ -7894,8 +8097,8 @@
                           "y": 0,
                           "width": 20,
                           "height": 20,
-                          "library": "Material Symbols",
-                          "icon": "star_border",
+                          "library": "Material Symbols Outlined",
+                          "icon": "star",
                           "fill": "$color.outline"
                         }
                       ]
@@ -7962,7 +8165,7 @@
                   "y": 0,
                   "width": 20,
                   "height": 20,
-                  "library": "Material Symbols",
+                  "library": "Material Symbols Outlined",
                   "icon": "article",
                   "fill": "$color.onSecondaryContainer"
                 },
@@ -7984,6 +8187,7 @@
                   "width": 124,
                   "height": 20,
                   "content": "Latest",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.bodyMedium.size",
                   "fill": "$color.onSecondaryContainer"
                 },
@@ -8008,6 +8212,7 @@
                       "width": 28,
                       "height": 16,
                       "content": "12",
+                      "textGrowth": "fixed-width",
                       "fontSize": "$text.labelSmall.size",
                       "fill": "$color.onPrimary",
                       "textAlign": "center"
@@ -8040,8 +8245,8 @@
                   "y": 0,
                   "width": 20,
                   "height": 20,
-                  "library": "Material Symbols",
-                  "icon": "rss_feed_outlined",
+                  "library": "Material Symbols Outlined",
+                  "icon": "rss_feed",
                   "fill": "$color.onSurfaceVariant"
                 },
                 {
@@ -8062,6 +8267,7 @@
                   "width": 152,
                   "height": 20,
                   "content": "Feeds",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.bodyMedium.size",
                   "fill": "$color.onSurface"
                 }
@@ -8145,10 +8351,13 @@
               "width": "fill_container",
               "height": 39.2,
               "content": "Designing on canvas, landing in code",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.titleSmall.size",
               "fill": "$color.onSurface",
               "fontWeight": 700,
-              "maxLines": 2
+              "metadata": {
+                "maxLines": 2
+              }
             },
             {
               "id": "gap8",
@@ -8168,9 +8377,12 @@
               "width": "fill_container",
               "height": 34.8,
               "content": "A short excerpt of the article body, trimmed to two lines so every row in the list keeps the same height.",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.bodySmall.size",
               "fill": "$color.onSurfaceVariant",
-              "maxLines": 2
+              "metadata": {
+                "maxLines": 2
+              }
             },
             {
               "id": "gap9",
@@ -8190,6 +8402,7 @@
               "width": "fill_container",
               "height": 16,
               "content": "Example Feed · 2h ago",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.labelSmall.size",
               "fill": "$color.outline"
             }
@@ -8213,8 +8426,8 @@
               "y": 0,
               "width": 20,
               "height": 20,
-              "library": "Material Symbols",
-              "icon": "star_border",
+              "library": "Material Symbols Outlined",
+              "icon": "star",
               "fill": "$color.outline"
             }
           ]
@@ -8261,6 +8474,7 @@
               "width": 40,
               "height": 24,
               "content": "F",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.titleMedium.size",
               "fill": "$color.onPrimaryContainer",
               "textAlign": "center"
@@ -8285,6 +8499,7 @@
               "width": "fill_container",
               "height": 20,
               "content": "Flutter Blog",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.titleSmall.size",
               "fill": "$color.onSurface"
             },
@@ -8296,6 +8511,7 @@
               "width": "fill_container",
               "height": 16,
               "content": "Updated 2h ago · 48 articles",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.bodySmall.size",
               "fill": "$color.onSurfaceVariant"
             }
@@ -8332,6 +8548,7 @@
                   "width": 24,
                   "height": 16,
                   "content": "12",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.labelSmall.size",
                   "fill": "$color.onPrimary",
                   "textAlign": "center"
@@ -8356,7 +8573,7 @@
                   "y": 0,
                   "width": 24,
                   "height": 24,
-                  "library": "Material Symbols",
+                  "library": "Material Symbols Outlined",
                   "icon": "more_vert",
                   "fill": "$color.onSurfaceVariant"
                 }
@@ -8417,6 +8634,7 @@
                   "width": 80,
                   "height": 20,
                   "content": "All",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.labelLarge.size",
                   "fill": "$color.onSecondaryContainer",
                   "textAlign": "center"
@@ -8442,6 +8660,7 @@
                   "width": 84,
                   "height": 20,
                   "content": "Unread",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.labelLarge.size",
                   "fill": "$color.onSurface",
                   "textAlign": "center"
@@ -8467,6 +8686,7 @@
                   "width": 84,
                   "height": 20,
                   "content": "Starred",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.labelLarge.size",
                   "fill": "$color.onSurface",
                   "textAlign": "center"
@@ -8503,8 +8723,8 @@
           "y": 0,
           "width": 24,
           "height": 24,
-          "library": "Material Symbols",
-          "icon": "drafts_outlined",
+          "library": "Material Symbols Outlined",
+          "icon": "drafts",
           "fill": "$color.onPrimaryContainer"
         },
         {
@@ -8525,6 +8745,7 @@
           "width": 90,
           "height": 20,
           "content": "Mark read",
+          "textGrowth": "fixed-width",
           "fontSize": "$text.labelLarge.size",
           "fill": "$color.onPrimaryContainer"
         }
@@ -8550,7 +8771,7 @@
           "y": 0,
           "width": 56,
           "height": 56,
-          "library": "Material Symbols",
+          "library": "Material Symbols Outlined",
           "icon": "inbox",
           "fill": "$color.outline"
         },
@@ -8572,6 +8793,7 @@
           "width": 329,
           "height": 24,
           "content": "No articles yet",
+          "textGrowth": "fixed-width",
           "fontSize": "$text.titleMedium.size",
           "fill": "$color.onSurface",
           "textAlign": "center"
@@ -8594,6 +8816,7 @@
           "width": 329,
           "height": 20,
           "content": "Pull to refresh, or add a feed to get started.",
+          "textGrowth": "fixed-width",
           "fontSize": "$text.bodyMedium.size",
           "fill": "$color.onSurfaceVariant",
           "textAlign": "center"
@@ -8620,8 +8843,8 @@
           "y": 0,
           "width": 56,
           "height": 56,
-          "library": "Material Symbols",
-          "icon": "error_outline",
+          "library": "Material Symbols Outlined",
+          "icon": "error",
           "fill": "$color.error"
         },
         {
@@ -8642,9 +8865,12 @@
           "width": 329,
           "height": 40,
           "content": "Could not load articles: the feed could not be reached.",
+          "textGrowth": "fixed-width",
           "fontSize": "$text.bodyMedium.size",
           "fill": "$color.onSurface",
-          "maxLines": 2,
+          "metadata": {
+            "maxLines": 2
+          },
           "textAlign": "center"
         },
         {
@@ -8682,7 +8908,7 @@
               "y": 0,
               "width": 18,
               "height": 18,
-              "library": "Material Symbols",
+              "library": "Material Symbols Outlined",
               "icon": "refresh",
               "fill": "$color.onPrimaryContainer"
             },
@@ -8704,6 +8930,7 @@
               "width": 44,
               "height": 20,
               "content": "Retry",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.labelLarge.size",
               "fill": "$color.onPrimaryContainer"
             }
@@ -8732,6 +8959,7 @@
           "width": 265,
           "height": 28,
           "content": "Add feed",
+          "textGrowth": "fixed-width",
           "fontSize": "$text.titleLarge.size",
           "fill": "$color.onSurface"
         },
@@ -8771,6 +8999,7 @@
               "width": 241,
               "height": 16,
               "content": "Feed or site URL",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.bodySmall.size",
               "fill": "$color.onSurfaceVariant"
             },
@@ -8782,6 +9011,7 @@
               "width": 241,
               "height": 24,
               "content": "https://example.com/feed.xml",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.bodyLarge.size",
               "fill": "$color.onSurfaceVariant"
             }
@@ -8805,9 +9035,12 @@
           "width": 265,
           "height": 32,
           "content": "Enter a site URL and its feed will be discovered automatically.",
+          "textGrowth": "fixed-width",
           "fontSize": "$text.bodySmall.size",
           "fill": "$color.onSurfaceVariant",
-          "maxLines": 2
+          "metadata": {
+            "maxLines": 2
+          }
         },
         {
           "id": "gap3",
@@ -8850,6 +9083,7 @@
                   "width": 72,
                   "height": 20,
                   "content": "Cancel",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.labelLarge.size",
                   "fill": "$color.primary",
                   "textAlign": "center"
@@ -8877,6 +9111,7 @@
                   "width": 72,
                   "height": 20,
                   "content": "Add",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.labelLarge.size",
                   "fill": "$color.onPrimary",
                   "textAlign": "center"
@@ -8908,6 +9143,7 @@
           "width": 265,
           "height": 28,
           "content": "Unsubscribe",
+          "textGrowth": "fixed-width",
           "fontSize": "$text.titleLarge.size",
           "fill": "$color.onSurface"
         },
@@ -8929,9 +9165,12 @@
           "width": 265,
           "height": 40,
           "content": "Unsubscribing from \"Flutter Blog\" also deletes its saved articles.",
+          "textGrowth": "fixed-width",
           "fontSize": "$text.bodyMedium.size",
           "fill": "$color.onSurfaceVariant",
-          "maxLines": 2
+          "metadata": {
+            "maxLines": 2
+          }
         },
         {
           "id": "gap5",
@@ -8974,6 +9213,7 @@
                   "width": 72,
                   "height": 20,
                   "content": "Cancel",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.labelLarge.size",
                   "fill": "$color.primary",
                   "textAlign": "center"
@@ -9001,6 +9241,7 @@
                   "width": 136,
                   "height": 20,
                   "content": "Unsubscribe",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.labelLarge.size",
                   "fill": "$color.onError",
                   "textAlign": "center"
@@ -9054,6 +9295,7 @@
               "width": 353,
               "height": 33.6,
               "content": "HtmlContent blocks",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.headlineSmall.size",
               "fill": "$color.onSurface",
               "fontWeight": 700
@@ -9083,9 +9325,12 @@
               "width": 353,
               "height": 54.4,
               "content": "Inline code, marks and links keep the surrounding bodyLarge metrics.",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.bodyLarge.size",
               "fill": "$color.onSurface",
-              "maxLines": 2
+              "metadata": {
+                "maxLines": 2
+              }
             }
           ]
         },
@@ -9139,6 +9384,7 @@
                       "width": 329,
                       "height": 27.2,
                       "content": "Header row is w700",
+                      "textGrowth": "fixed-width",
                       "fontSize": "$text.bodyLarge.size",
                       "fill": "$color.onSurface",
                       "fontWeight": 700
@@ -9172,6 +9418,7 @@
                       "width": 329,
                       "height": 27.2,
                       "content": "Rows are separated by an outlineVariant border",
+                      "textGrowth": "fixed-width",
                       "fontSize": "$text.bodyLarge.size",
                       "fill": "$color.onSurface"
                     }
@@ -9204,6 +9451,7 @@
                       "width": 329,
                       "height": 27.2,
                       "content": "Cells pad 12 across and 8 down",
+                      "textGrowth": "fixed-width",
                       "fontSize": "$text.bodyLarge.size",
                       "fill": "$color.onSurface"
                     }
@@ -9252,6 +9500,7 @@
                   "width": 28,
                   "height": 24,
                   "content": "1.",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.bodyLarge.size",
                   "fill": "$color.onSurfaceVariant",
                   "textAlign": "right"
@@ -9274,6 +9523,7 @@
                   "width": 313,
                   "height": 27.2,
                   "content": "First ordered item.",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.bodyLarge.size",
                   "fill": "$color.onSurface"
                 }
@@ -9303,6 +9553,7 @@
                   "width": 28,
                   "height": 24,
                   "content": "2.",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.bodyLarge.size",
                   "fill": "$color.onSurfaceVariant",
                   "textAlign": "right"
@@ -9325,6 +9576,7 @@
                   "width": 313,
                   "height": 27.2,
                   "content": "Second ordered item.",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.bodyLarge.size",
                   "fill": "$color.onSurface"
                 }
@@ -9419,7 +9671,7 @@
               "y": 0,
               "width": 20,
               "height": 20,
-              "library": "Material Symbols",
+              "library": "Material Symbols Outlined",
               "icon": "article",
               "fill": "$color.onSecondaryContainer"
             },
@@ -9431,6 +9683,7 @@
               "width": 172,
               "height": 16,
               "content": "Latest",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.labelMedium.size",
               "fill": "$color.onSecondaryContainer",
               "textAlign": "center"
@@ -9461,8 +9714,8 @@
               "y": 0,
               "width": 20,
               "height": 20,
-              "library": "Material Symbols",
-              "icon": "rss_feed_outlined",
+              "library": "Material Symbols Outlined",
+              "icon": "rss_feed",
               "fill": "$color.onSurfaceVariant"
             },
             {
@@ -9473,6 +9726,7 @@
               "width": 173,
               "height": 16,
               "content": "Feeds",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.labelMedium.size",
               "fill": "$color.onSurfaceVariant",
               "textAlign": "center"
@@ -9527,7 +9781,7 @@
               "y": 0,
               "width": 20,
               "height": 20,
-              "library": "Material Symbols",
+              "library": "Material Symbols Outlined",
               "icon": "article",
               "fill": "$color.onSecondaryContainer"
             },
@@ -9549,6 +9803,7 @@
               "width": 124,
               "height": 20,
               "content": "Latest",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.bodyMedium.size",
               "fill": "$color.onSecondaryContainer"
             },
@@ -9573,6 +9828,7 @@
                   "width": 28,
                   "height": 16,
                   "content": "12",
+                  "textGrowth": "fixed-width",
                   "fontSize": "$text.labelSmall.size",
                   "fill": "$color.onPrimary",
                   "textAlign": "center"
@@ -9605,8 +9861,8 @@
               "y": 0,
               "width": 20,
               "height": 20,
-              "library": "Material Symbols",
-              "icon": "rss_feed_outlined",
+              "library": "Material Symbols Outlined",
+              "icon": "rss_feed",
               "fill": "$color.onSurfaceVariant"
             },
             {
@@ -9627,6 +9883,7 @@
               "width": 152,
               "height": 20,
               "content": "Feeds",
+              "textGrowth": "fixed-width",
               "fontSize": "$text.bodyMedium.size",
               "fill": "$color.onSurface"
             }
