@@ -1301,7 +1301,10 @@
           "fill": "$color.surface",
           "children": []
         }
-      ]
+      ],
+      "theme": {
+        "mode": "light"
+      }
     },
     {
       "id": "ScreenFeeds",
@@ -2061,7 +2064,10 @@
           "fill": "$color.surface",
           "children": []
         }
-      ]
+      ],
+      "theme": {
+        "mode": "light"
+      }
     },
     {
       "id": "ScreenArticleDetail",
@@ -2605,13 +2611,2141 @@
           "fill": "$color.surface",
           "children": []
         }
-      ]
+      ],
+      "theme": {
+        "mode": "light"
+      }
+    },
+    {
+      "id": "ScreenLatestDark",
+      "type": "frame",
+      "x": 0,
+      "y": 972,
+      "width": 393,
+      "height": 852,
+      "layout": "vertical",
+      "fill": "$color.surface",
+      "reusable": true,
+      "metadata": {
+        "dart": "lib/ui/features/articles/views/article_list_screen.dart"
+      },
+      "children": [
+        {
+          "id": "safeArea1Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 59,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        },
+        {
+          "id": "appBar1Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 64,
+          "layout": "horizontal",
+          "fill": "$color.surface",
+          "padding": [
+            0,
+            4,
+            0,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "text43Dark",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": "fill_container",
+              "height": 28,
+              "content": "Latest",
+              "fontSize": "$text.titleLarge.size",
+              "fill": "$color.onSurface"
+            },
+            {
+              "id": "iconButton6Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon10Dark",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "refresh",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            },
+            {
+              "id": "iconButton7Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon11Dark",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "done_all",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "FilterBar2Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 48,
+          "layout": "horizontal",
+          "fill": "$color.surface",
+          "padding": [
+            0,
+            12,
+            8,
+            12
+          ],
+          "alignItems": "start",
+          "children": [
+            {
+              "id": "segmentedButton2Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 248,
+              "height": 40,
+              "layout": "horizontal",
+              "cornerRadius": 20,
+              "stroke": "$color.outline",
+              "strokeWidth": 1,
+              "children": [
+                {
+                  "id": "segment4Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 80,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "fill": "$color.secondaryContainer",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 20,
+                  "children": [
+                    {
+                      "id": "text44Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 80,
+                      "height": 20,
+                      "content": "All",
+                      "fontSize": "$text.labelLarge.size",
+                      "fill": "$color.onSecondaryContainer",
+                      "textAlign": "center"
+                    }
+                  ]
+                },
+                {
+                  "id": "segment5Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 84,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "text45Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 84,
+                      "height": 20,
+                      "content": "Unread",
+                      "fontSize": "$text.labelLarge.size",
+                      "fill": "$color.onSurface",
+                      "textAlign": "center"
+                    }
+                  ]
+                },
+                {
+                  "id": "segment6Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 84,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "text46Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 84,
+                      "height": 20,
+                      "content": "Starred",
+                      "fontSize": "$text.labelLarge.size",
+                      "fill": "$color.onSurface",
+                      "textAlign": "center"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "articleList1Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 567,
+          "layout": "vertical",
+          "children": [
+            {
+              "id": "ArticleTile1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 124.0,
+              "layout": "horizontal",
+              "fill": "$color.surface",
+              "padding": [
+                12,
+                8,
+                12,
+                16
+              ],
+              "alignItems": "start",
+              "children": [
+                {
+                  "id": "unreadMarker2Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 18,
+                  "height": 14,
+                  "layout": "vertical",
+                  "padding": [
+                    6,
+                    10,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "id": "ellipse2Dark",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "width": 8,
+                      "height": 8,
+                      "fill": "$color.primary"
+                    }
+                  ]
+                },
+                {
+                  "id": "articleText2Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": "fill_container",
+                  "height": 100.0,
+                  "layout": "vertical",
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "id": "text35Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 39.2,
+                      "content": "Designing on canvas, landing in code",
+                      "fontSize": "$text.titleSmall.size",
+                      "fill": "$color.onSurface",
+                      "fontWeight": 700,
+                      "maxLines": 2
+                    },
+                    {
+                      "id": "gap16Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 1,
+                      "height": 4,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text36Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 34.8,
+                      "content": "A short excerpt of the article body, trimmed to two lines so every row in the list keeps the same height.",
+                      "fontSize": "$text.bodySmall.size",
+                      "fill": "$color.onSurfaceVariant",
+                      "maxLines": 2
+                    },
+                    {
+                      "id": "gap17Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 1,
+                      "height": 6,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text37Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 16,
+                      "content": "Example Feed · 2h ago",
+                      "fontSize": "$text.labelSmall.size",
+                      "fill": "$color.outline"
+                    }
+                  ]
+                },
+                {
+                  "id": "iconButton3Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 40,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "icon7Dark",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 20,
+                      "height": 20,
+                      "library": "Material Symbols",
+                      "icon": "star_border",
+                      "fill": "$color.outline"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "divider1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 1,
+              "layout": "horizontal",
+              "padding": [
+                0,
+                16,
+                0,
+                16
+              ],
+              "children": [
+                {
+                  "id": "rect2Dark",
+                  "type": "rectangle",
+                  "x": 0,
+                  "y": 0,
+                  "width": 361,
+                  "height": 1,
+                  "fill": "$color.outlineVariant"
+                }
+              ]
+            },
+            {
+              "id": "ArticleTile2Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 104.4,
+              "layout": "horizontal",
+              "fill": "$color.surface",
+              "padding": [
+                12,
+                8,
+                12,
+                16
+              ],
+              "alignItems": "start",
+              "children": [
+                {
+                  "id": "unreadMarker3Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 18,
+                  "height": 14,
+                  "layout": "vertical",
+                  "padding": [
+                    6,
+                    10,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "id": "ellipse3Dark",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "width": 8,
+                      "height": 8,
+                      "fill": "$color.surface"
+                    }
+                  ]
+                },
+                {
+                  "id": "articleText3Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": "fill_container",
+                  "height": 80.4,
+                  "layout": "vertical",
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "id": "text38Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 19.6,
+                      "content": "A headline that has already been read",
+                      "fontSize": "$text.titleSmall.size",
+                      "fill": "$color.onSurfaceVariant",
+                      "fontWeight": 400
+                    },
+                    {
+                      "id": "gap18Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 1,
+                      "height": 4,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text39Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 34.8,
+                      "content": "Read rows drop to onSurfaceVariant and lose the bold weight, but keep the marker slot so nothing shifts.",
+                      "fontSize": "$text.bodySmall.size",
+                      "fill": "$color.onSurfaceVariant",
+                      "maxLines": 2
+                    },
+                    {
+                      "id": "gap19Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 1,
+                      "height": 6,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text40Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 16,
+                      "content": "Another Feed · 5h ago",
+                      "fontSize": "$text.labelSmall.size",
+                      "fill": "$color.outline"
+                    }
+                  ]
+                },
+                {
+                  "id": "iconButton4Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 40,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "icon8Dark",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 20,
+                      "height": 20,
+                      "library": "Material Symbols",
+                      "icon": "star_border",
+                      "fill": "$color.outline"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "divider2Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 1,
+              "layout": "horizontal",
+              "padding": [
+                0,
+                16,
+                0,
+                16
+              ],
+              "children": [
+                {
+                  "id": "rect3Dark",
+                  "type": "rectangle",
+                  "x": 0,
+                  "y": 0,
+                  "width": 361,
+                  "height": 1,
+                  "fill": "$color.outlineVariant"
+                }
+              ]
+            },
+            {
+              "id": "ArticleTile3Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 65.6,
+              "layout": "horizontal",
+              "fill": "$color.surface",
+              "padding": [
+                12,
+                8,
+                12,
+                16
+              ],
+              "alignItems": "start",
+              "children": [
+                {
+                  "id": "unreadMarker4Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 18,
+                  "height": 14,
+                  "layout": "vertical",
+                  "padding": [
+                    6,
+                    10,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "id": "ellipse4Dark",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "width": 8,
+                      "height": 8,
+                      "fill": "$color.primary"
+                    }
+                  ]
+                },
+                {
+                  "id": "articleText4Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": "fill_container",
+                  "height": 41.6,
+                  "layout": "vertical",
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "id": "text41Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 19.6,
+                      "content": "A starred article without a summary",
+                      "fontSize": "$text.titleSmall.size",
+                      "fill": "$color.onSurface",
+                      "fontWeight": 700
+                    },
+                    {
+                      "id": "gap20Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 1,
+                      "height": 6,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text42Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": "fill_container",
+                      "height": 16,
+                      "content": "Third Feed · yesterday",
+                      "fontSize": "$text.labelSmall.size",
+                      "fill": "$color.outline"
+                    }
+                  ]
+                },
+                {
+                  "id": "iconButton5Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 40,
+                  "height": 40,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "icon9Dark",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 20,
+                      "height": 20,
+                      "library": "Material Symbols",
+                      "icon": "star",
+                      "fill": "$color.primary"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "listFill1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 271.0,
+              "layout": "none",
+              "fill": "$color.surface",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "navigationBar1Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 80,
+          "layout": "horizontal",
+          "fill": "$color.surfaceContainer",
+          "children": [
+            {
+              "id": "destination1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 196.5,
+              "height": 80,
+              "layout": "vertical",
+              "padding": [
+                12,
+                0,
+                16,
+                0
+              ],
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "indicator1Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 64,
+                  "height": 32,
+                  "layout": "horizontal",
+                  "fill": "$color.secondaryContainer",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 16,
+                  "children": [
+                    {
+                      "id": "icon12Dark",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 24,
+                      "height": 24,
+                      "library": "Material Symbols",
+                      "icon": "article",
+                      "fill": "$color.onSecondaryContainer"
+                    }
+                  ]
+                },
+                {
+                  "id": "text47Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 196.5,
+                  "height": 16,
+                  "content": "Latest",
+                  "fontSize": "$text.labelMedium.size",
+                  "fill": "$color.onSurface",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "id": "destination2Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 196.5,
+              "height": 80,
+              "layout": "vertical",
+              "padding": [
+                12,
+                0,
+                16,
+                0
+              ],
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "indicator2Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 64,
+                  "height": 32,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 16,
+                  "children": [
+                    {
+                      "id": "icon13Dark",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 24,
+                      "height": 24,
+                      "library": "Material Symbols",
+                      "icon": "rss_feed_outlined",
+                      "fill": "$color.onSurfaceVariant"
+                    }
+                  ]
+                },
+                {
+                  "id": "text48Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 196.5,
+                  "height": 16,
+                  "content": "Feeds",
+                  "fontSize": "$text.labelMedium.size",
+                  "fill": "$color.onSurfaceVariant",
+                  "textAlign": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "safeArea2Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 34,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        }
+      ],
+      "theme": {
+        "mode": "dark"
+      }
+    },
+    {
+      "id": "ScreenFeedsDark",
+      "type": "frame",
+      "x": 453,
+      "y": 972,
+      "width": 393,
+      "height": 852,
+      "layout": "vertical",
+      "fill": "$color.surface",
+      "reusable": true,
+      "metadata": {
+        "dart": "lib/ui/features/feeds/views/feed_list_screen.dart"
+      },
+      "children": [
+        {
+          "id": "safeArea3Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 59,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        },
+        {
+          "id": "appBar2Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 64,
+          "layout": "horizontal",
+          "fill": "$color.surface",
+          "padding": [
+            0,
+            4,
+            0,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "text61Dark",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": "fill_container",
+              "height": 28,
+              "content": "Feeds",
+              "fontSize": "$text.titleLarge.size",
+              "fill": "$color.onSurface"
+            },
+            {
+              "id": "iconButton11Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon18Dark",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "refresh",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "feedsBody1Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 615,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": [
+            {
+              "id": "feedList1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 393,
+              "height": 615,
+              "layout": "vertical",
+              "children": [
+                {
+                  "id": "FeedTile1Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 72,
+                  "layout": "horizontal",
+                  "fill": "$color.surface",
+                  "padding": [
+                    4,
+                    0,
+                    4,
+                    16
+                  ],
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "avatar2Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 40,
+                      "height": 40,
+                      "layout": "horizontal",
+                      "fill": "$color.primaryContainer",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 20,
+                      "children": [
+                        {
+                          "id": "text50Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": 40,
+                          "height": 24,
+                          "content": "F",
+                          "fontSize": "$text.titleMedium.size",
+                          "fill": "$color.onPrimaryContainer",
+                          "textAlign": "center"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedText2Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 233,
+                      "height": 36,
+                      "layout": "vertical",
+                      "alignItems": "start",
+                      "children": [
+                        {
+                          "id": "text51Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 20,
+                          "content": "Flutter Blog",
+                          "fontSize": "$text.titleSmall.size",
+                          "fill": "$color.onSurface"
+                        },
+                        {
+                          "id": "text52Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 16,
+                          "content": "Updated 2h ago · 48 articles",
+                          "fontSize": "$text.bodySmall.size",
+                          "fill": "$color.onSurfaceVariant"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedTrailing2Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 72,
+                      "height": 48,
+                      "layout": "horizontal",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "id": "badge2Dark",
+                          "type": "frame",
+                          "x": 0,
+                          "y": 0,
+                          "width": 24,
+                          "height": 16,
+                          "layout": "horizontal",
+                          "fill": "$color.primary",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "cornerRadius": 8,
+                          "children": [
+                            {
+                              "id": "text49Dark",
+                              "type": "text",
+                              "x": 0,
+                              "y": 0,
+                              "width": 24,
+                              "height": 16,
+                              "content": "12",
+                              "fontSize": "$text.labelSmall.size",
+                              "fill": "$color.onPrimary",
+                              "textAlign": "center"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "iconButton8Dark",
+                          "type": "frame",
+                          "x": 0,
+                          "y": 0,
+                          "width": 48,
+                          "height": 48,
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "icon14Dark",
+                              "type": "icon",
+                              "x": 0,
+                              "y": 0,
+                              "width": 24,
+                              "height": 24,
+                              "library": "Material Symbols",
+                              "icon": "more_vert",
+                              "fill": "$color.onSurfaceVariant"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "divider3Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 1,
+                  "layout": "horizontal",
+                  "padding": [
+                    0,
+                    16,
+                    0,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "id": "rect4Dark",
+                      "type": "rectangle",
+                      "x": 0,
+                      "y": 0,
+                      "width": 361,
+                      "height": 1,
+                      "fill": "$color.outlineVariant"
+                    }
+                  ]
+                },
+                {
+                  "id": "FeedTile2Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 72,
+                  "layout": "horizontal",
+                  "fill": "$color.surface",
+                  "padding": [
+                    4,
+                    0,
+                    4,
+                    16
+                  ],
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "avatar3Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 40,
+                      "height": 40,
+                      "layout": "horizontal",
+                      "fill": "$color.primaryContainer",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 20,
+                      "children": [
+                        {
+                          "id": "text53Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": 40,
+                          "height": 24,
+                          "content": "D",
+                          "fontSize": "$text.titleMedium.size",
+                          "fill": "$color.onPrimaryContainer",
+                          "textAlign": "center"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedText3Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 257,
+                      "height": 36,
+                      "layout": "vertical",
+                      "alignItems": "start",
+                      "children": [
+                        {
+                          "id": "text54Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 20,
+                          "content": "Dart News",
+                          "fontSize": "$text.titleSmall.size",
+                          "fill": "$color.onSurface"
+                        },
+                        {
+                          "id": "text55Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 16,
+                          "content": "Updated 5h ago · 21 articles",
+                          "fontSize": "$text.bodySmall.size",
+                          "fill": "$color.onSurfaceVariant"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedTrailing3Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 48,
+                      "height": 48,
+                      "layout": "horizontal",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "id": "iconButton9Dark",
+                          "type": "frame",
+                          "x": 0,
+                          "y": 0,
+                          "width": 48,
+                          "height": 48,
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "icon15Dark",
+                              "type": "icon",
+                              "x": 0,
+                              "y": 0,
+                              "width": 24,
+                              "height": 24,
+                              "library": "Material Symbols",
+                              "icon": "more_vert",
+                              "fill": "$color.onSurfaceVariant"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "divider4Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 1,
+                  "layout": "horizontal",
+                  "padding": [
+                    0,
+                    16,
+                    0,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "id": "rect5Dark",
+                      "type": "rectangle",
+                      "x": 0,
+                      "y": 0,
+                      "width": 361,
+                      "height": 1,
+                      "fill": "$color.outlineVariant"
+                    }
+                  ]
+                },
+                {
+                  "id": "FeedTile3Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 72,
+                  "layout": "horizontal",
+                  "fill": "$color.surface",
+                  "padding": [
+                    4,
+                    0,
+                    4,
+                    16
+                  ],
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "avatar4Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 40,
+                      "height": 40,
+                      "layout": "horizontal",
+                      "fill": "$color.primaryContainer",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 20,
+                      "children": [
+                        {
+                          "id": "text57Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": 40,
+                          "height": 24,
+                          "content": "R",
+                          "fontSize": "$text.titleMedium.size",
+                          "fill": "$color.onPrimaryContainer",
+                          "textAlign": "center"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedText4Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 233,
+                      "height": 36,
+                      "layout": "vertical",
+                      "alignItems": "start",
+                      "children": [
+                        {
+                          "id": "text58Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 20,
+                          "content": "Release Notes",
+                          "fontSize": "$text.titleSmall.size",
+                          "fill": "$color.onSurface"
+                        },
+                        {
+                          "id": "text59Dark",
+                          "type": "text",
+                          "x": 0,
+                          "y": 0,
+                          "width": "fill_container",
+                          "height": 16,
+                          "content": "Never refreshed",
+                          "fontSize": "$text.bodySmall.size",
+                          "fill": "$color.onSurfaceVariant"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "feedTrailing4Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 72,
+                      "height": 48,
+                      "layout": "horizontal",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "id": "badge3Dark",
+                          "type": "frame",
+                          "x": 0,
+                          "y": 0,
+                          "width": 24,
+                          "height": 16,
+                          "layout": "horizontal",
+                          "fill": "$color.primary",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "cornerRadius": 8,
+                          "children": [
+                            {
+                              "id": "text56Dark",
+                              "type": "text",
+                              "x": 0,
+                              "y": 0,
+                              "width": 24,
+                              "height": 16,
+                              "content": "3",
+                              "fontSize": "$text.labelSmall.size",
+                              "fill": "$color.onPrimary",
+                              "textAlign": "center"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "iconButton10Dark",
+                          "type": "frame",
+                          "x": 0,
+                          "y": 0,
+                          "width": 48,
+                          "height": 48,
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "id": "icon16Dark",
+                              "type": "icon",
+                              "x": 0,
+                              "y": 0,
+                              "width": 24,
+                              "height": 24,
+                              "library": "Material Symbols",
+                              "icon": "more_vert",
+                              "fill": "$color.onSurfaceVariant"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "feedListFill1Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 393,
+                  "height": 397,
+                  "layout": "none",
+                  "fill": "$color.surface",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "fabAddDark",
+              "type": "frame",
+              "x": 277,
+              "y": 543,
+              "width": 100,
+              "height": 56,
+              "layout": "horizontal",
+              "fill": "$color.primaryContainer",
+              "padding": [
+                0,
+                24,
+                0,
+                16
+              ],
+              "alignItems": "center",
+              "cornerRadius": 16,
+              "children": [
+                {
+                  "id": "icon17Dark",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 18,
+                  "height": 18,
+                  "library": "Material Symbols",
+                  "icon": "add",
+                  "fill": "$color.onPrimaryContainer"
+                },
+                {
+                  "id": "gap21Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 8,
+                  "height": 1,
+                  "layout": "none",
+                  "children": []
+                },
+                {
+                  "id": "text60Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 28,
+                  "height": 20,
+                  "content": "Add",
+                  "fontSize": "$text.labelLarge.size",
+                  "fill": "$color.onPrimaryContainer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "navigationBar2Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 80,
+          "layout": "horizontal",
+          "fill": "$color.surfaceContainer",
+          "children": [
+            {
+              "id": "destination3Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 196.5,
+              "height": 80,
+              "layout": "vertical",
+              "padding": [
+                12,
+                0,
+                16,
+                0
+              ],
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "indicator3Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 64,
+                  "height": 32,
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 16,
+                  "children": [
+                    {
+                      "id": "icon19Dark",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 24,
+                      "height": 24,
+                      "library": "Material Symbols",
+                      "icon": "article_outlined",
+                      "fill": "$color.onSurfaceVariant"
+                    }
+                  ]
+                },
+                {
+                  "id": "text62Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 196.5,
+                  "height": 16,
+                  "content": "Latest",
+                  "fontSize": "$text.labelMedium.size",
+                  "fill": "$color.onSurfaceVariant",
+                  "textAlign": "center"
+                }
+              ]
+            },
+            {
+              "id": "destination4Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 196.5,
+              "height": 80,
+              "layout": "vertical",
+              "padding": [
+                12,
+                0,
+                16,
+                0
+              ],
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "indicator4Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 64,
+                  "height": 32,
+                  "layout": "horizontal",
+                  "fill": "$color.secondaryContainer",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 16,
+                  "children": [
+                    {
+                      "id": "icon20Dark",
+                      "type": "icon",
+                      "x": 0,
+                      "y": 0,
+                      "width": 24,
+                      "height": 24,
+                      "library": "Material Symbols",
+                      "icon": "rss_feed",
+                      "fill": "$color.onSecondaryContainer"
+                    }
+                  ]
+                },
+                {
+                  "id": "text63Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 196.5,
+                  "height": 16,
+                  "content": "Feeds",
+                  "fontSize": "$text.labelMedium.size",
+                  "fill": "$color.onSurface",
+                  "textAlign": "center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "safeArea4Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 34,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        }
+      ],
+      "theme": {
+        "mode": "dark"
+      }
+    },
+    {
+      "id": "ScreenArticleDetailDark",
+      "type": "frame",
+      "x": 906,
+      "y": 972,
+      "width": 393,
+      "height": 852,
+      "layout": "vertical",
+      "fill": "$color.surface",
+      "reusable": true,
+      "metadata": {
+        "dart": "lib/ui/features/article_detail/views/article_detail_screen.dart"
+      },
+      "children": [
+        {
+          "id": "safeArea5Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 59,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        },
+        {
+          "id": "appBar3Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 64,
+          "layout": "horizontal",
+          "fill": "$color.surface",
+          "padding": [
+            0,
+            4,
+            0,
+            4
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "iconButton12Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon21Dark",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "arrow_back",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            },
+            {
+              "id": "text75Dark",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": "fill_container",
+              "height": 20,
+              "content": "Example Feed",
+              "fontSize": "$text.titleSmall.size",
+              "fill": "$color.onSurface"
+            },
+            {
+              "id": "iconButton13Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon22Dark",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "star_border",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            },
+            {
+              "id": "iconButton14Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon23Dark",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "open_in_browser",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            },
+            {
+              "id": "iconButton15Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 48,
+              "height": 48,
+              "layout": "horizontal",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "icon24Dark",
+                  "type": "icon",
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24,
+                  "library": "Material Symbols",
+                  "icon": "more_vert",
+                  "fill": "$color.onSurfaceVariant"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "detailBody1Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 695,
+          "layout": "vertical",
+          "fill": "$color.surface",
+          "padding": [
+            16,
+            20,
+            48,
+            20
+          ],
+          "children": [
+            {
+              "id": "text64Dark",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 64.8,
+              "content": "Designing on canvas, landing in code",
+              "fontSize": "$text.headlineSmall.size",
+              "fill": "$color.onSurface",
+              "fontWeight": 700,
+              "maxLines": 2
+            },
+            {
+              "id": "gap22Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 1,
+              "height": 12,
+              "layout": "none",
+              "children": []
+            },
+            {
+              "id": "text65Dark",
+              "type": "text",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 16,
+              "content": "Jane Author · 2 August 2026",
+              "fontSize": "$text.bodySmall.size",
+              "fill": "$color.onSurfaceVariant"
+            },
+            {
+              "id": "metaDivider1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 32,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "id": "rect6Dark",
+                  "type": "rectangle",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 1,
+                  "fill": "$color.outlineVariant"
+                }
+              ]
+            },
+            {
+              "id": "htmlParagraph2Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 98,
+              "layout": "vertical",
+              "padding": [
+                0,
+                0,
+                16,
+                0
+              ],
+              "children": [
+                {
+                  "id": "text66Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 81.6,
+                  "content": "A paragraph rendered by HtmlContent: bodyLarge at a line height of 1.7, coloured onSurface, with 16 of spacing below it.",
+                  "fontSize": "$text.bodyLarge.size",
+                  "fill": "$color.onSurface",
+                  "maxLines": 3
+                }
+              ]
+            },
+            {
+              "id": "htmlHeading2Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 57,
+              "layout": "vertical",
+              "padding": [
+                16,
+                0,
+                10,
+                0
+              ],
+              "children": [
+                {
+                  "id": "text67Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 30.8,
+                  "content": "How headings render",
+                  "fontSize": "$text.titleLarge.size",
+                  "fill": "$color.onSurface",
+                  "fontWeight": 700
+                }
+              ]
+            },
+            {
+              "id": "htmlParagraph3Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 70,
+              "layout": "vertical",
+              "padding": [
+                0,
+                0,
+                16,
+                0
+              ],
+              "children": [
+                {
+                  "id": "text68Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 54.4,
+                  "content": "h1 and h2 take headlineSmall and titleLarge; h3 and below sit closer to body size.",
+                  "fontSize": "$text.bodyLarge.size",
+                  "fill": "$color.onSurface",
+                  "maxLines": 2
+                }
+              ]
+            },
+            {
+              "id": "htmlBlockquote1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 70,
+              "layout": "horizontal",
+              "padding": [
+                0,
+                0,
+                16,
+                0
+              ],
+              "children": [
+                {
+                  "id": "rect7Dark",
+                  "type": "rectangle",
+                  "x": 0,
+                  "y": 0,
+                  "width": 3,
+                  "height": 54,
+                  "fill": "$color.primary"
+                },
+                {
+                  "id": "gap23Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 16,
+                  "height": 1,
+                  "layout": "none",
+                  "children": []
+                },
+                {
+                  "id": "text69Dark",
+                  "type": "text",
+                  "x": 0,
+                  "y": 0,
+                  "width": 334,
+                  "height": 54.4,
+                  "content": "A blockquote keeps a 3 wide primary rule on its left and drops to onSurfaceVariant.",
+                  "fontSize": "$text.bodyLarge.size",
+                  "fill": "$color.onSurfaceVariant",
+                  "maxLines": 2
+                }
+              ]
+            },
+            {
+              "id": "htmlCode1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 88,
+              "layout": "vertical",
+              "padding": [
+                0,
+                0,
+                16,
+                0
+              ],
+              "children": [
+                {
+                  "id": "codeBox1Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 353,
+                  "height": 72,
+                  "layout": "vertical",
+                  "fill": "$color.surfaceContainerHighest",
+                  "padding": 12,
+                  "cornerRadius": 8,
+                  "children": [
+                    {
+                      "id": "text70Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 329,
+                      "height": 48.0,
+                      "content": "flutter analyze\nflutter test",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurface",
+                      "maxLines": 2
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "htmlList2Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 78,
+              "layout": "vertical",
+              "padding": [
+                0,
+                0,
+                8,
+                4
+              ],
+              "children": [
+                {
+                  "id": "htmlListItem3Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 349,
+                  "height": 35,
+                  "layout": "horizontal",
+                  "padding": [
+                    0,
+                    0,
+                    8,
+                    0
+                  ],
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "id": "text71Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 28,
+                      "height": 24,
+                      "content": "•",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurfaceVariant",
+                      "textAlign": "right"
+                    },
+                    {
+                      "id": "gap24Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 8,
+                      "height": 1,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text72Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 313,
+                      "height": 27.2,
+                      "content": "Bullets are right-aligned in a 28 column.",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurface"
+                    }
+                  ]
+                },
+                {
+                  "id": "htmlListItem4Dark",
+                  "type": "frame",
+                  "x": 0,
+                  "y": 0,
+                  "width": 349,
+                  "height": 35,
+                  "layout": "horizontal",
+                  "padding": [
+                    0,
+                    0,
+                    8,
+                    0
+                  ],
+                  "alignItems": "start",
+                  "children": [
+                    {
+                      "id": "text73Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 28,
+                      "height": 24,
+                      "content": "•",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurfaceVariant",
+                      "textAlign": "right"
+                    },
+                    {
+                      "id": "gap25Dark",
+                      "type": "frame",
+                      "x": 0,
+                      "y": 0,
+                      "width": 8,
+                      "height": 1,
+                      "layout": "none",
+                      "children": []
+                    },
+                    {
+                      "id": "text74Dark",
+                      "type": "text",
+                      "x": 0,
+                      "y": 0,
+                      "width": 313,
+                      "height": 27.2,
+                      "content": "The body of an item is Expanded.",
+                      "fontSize": "$text.bodyLarge.size",
+                      "fill": "$color.onSurface"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "detailFill1Dark",
+              "type": "frame",
+              "x": 0,
+              "y": 0,
+              "width": 353,
+              "height": 45.200000000000045,
+              "layout": "none",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "safeArea6Dark",
+          "type": "frame",
+          "x": 0,
+          "y": 0,
+          "width": 393,
+          "height": 34,
+          "layout": "none",
+          "fill": "$color.surface",
+          "children": []
+        }
+      ],
+      "theme": {
+        "mode": "dark"
+      }
     },
     {
       "id": "ArticleTile",
       "type": "frame",
       "x": 0,
-      "y": 972,
+      "y": 1944,
       "width": 393,
       "height": 124.0,
       "layout": "horizontal",
@@ -2749,7 +4883,7 @@
       "id": "FeedTile",
       "type": "frame",
       "x": 453,
-      "y": 972,
+      "y": 1944,
       "width": 393,
       "height": 72,
       "layout": "horizontal",
@@ -2894,7 +5028,7 @@
       "id": "FilterBar",
       "type": "frame",
       "x": 906,
-      "y": 972,
+      "y": 1944,
       "width": 393,
       "height": 48,
       "layout": "horizontal",
@@ -3005,7 +5139,7 @@
       "id": "ReadSwipeBackground",
       "type": "frame",
       "x": 1359,
-      "y": 972,
+      "y": 1944,
       "width": 393,
       "height": 124,
       "layout": "horizontal",
@@ -3057,7 +5191,7 @@
       "id": "EmptyView",
       "type": "frame",
       "x": 1812,
-      "y": 972,
+      "y": 1944,
       "width": 393,
       "height": 188,
       "layout": "vertical",
@@ -3127,7 +5261,7 @@
       "id": "ErrorView",
       "type": "frame",
       "x": 2265,
-      "y": 972,
+      "y": 1944,
       "width": 393,
       "height": 240,
       "layout": "vertical",
@@ -3238,7 +5372,7 @@
       "id": "AddFeedDialog",
       "type": "frame",
       "x": 2718,
-      "y": 972,
+      "y": 1944,
       "width": 313,
       "height": 256,
       "layout": "vertical",
@@ -3414,7 +5548,7 @@
       "id": "ConfirmDialog",
       "type": "frame",
       "x": 3091,
-      "y": 972,
+      "y": 1944,
       "width": 313,
       "height": 196,
       "layout": "vertical",
@@ -3538,7 +5672,7 @@
       "id": "HtmlContentSpecimen",
       "type": "frame",
       "x": 3464,
-      "y": 972,
+      "y": 1944,
       "width": 393,
       "height": 521,
       "layout": "vertical",

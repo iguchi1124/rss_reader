@@ -96,6 +96,15 @@ scroll view holds:
 - `ScreenFeeds` — `FeedListScreen` with the extended FAB
 - `ScreenArticleDetail` — the article header and the HtmlContent blocks below it
 
+Each screen carries a `theme` key pinning it to light, and repeats one row down
+as `…Dark`. Pinning is what puts both modes on the canvas at once — an unpinned
+frame follows whatever mode the canvas is set to, so only one mode is ever
+visible. The cost is that the pair are separate subtrees: editing `ScreenLatest`
+does not reach `ScreenLatestDark`, and nothing checks that they still agree.
+Edit both or delete the dark row.
+
+The component frames are unpinned and follow the canvas.
+
 Below them are the pieces on their own: `ArticleTile`, `FeedTile`, `FilterBar`,
 `ReadSwipeBackground`, `EmptyView`, `ErrorView`, `AddFeedDialog`,
 `ConfirmDialog`, `HtmlContentSpecimen`.
