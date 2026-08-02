@@ -1,4 +1,4 @@
-# rss_reader
+# RSS Reader
 
 An RSS reader built with Flutter. Subscribe to RSS 2.0, RSS 1.0 (RDF), and Atom
 feeds; articles are stored on the device so they can be read offline.
