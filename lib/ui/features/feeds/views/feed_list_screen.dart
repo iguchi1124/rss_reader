@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../domain/models/feed.dart';
 import '../../../../utils/date_format.dart';
+import '../../../core/app_messenger.dart';
 import '../../../core/widgets/status_view.dart';
 import '../../articles/views/article_list_screen.dart';
 import '../view_models/feed_list_view_model.dart';
@@ -36,10 +37,17 @@ class FeedListScreen extends ConsumerWidget {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => _showAddDialog(context, ref),
-        icon: const Icon(Icons.add),
-        label: const Text('Add'),
+      // This screen's Scaffold has no bottom bar of its own to lift the FAB
+      // over: the tab bar belongs to HomeScreen's Scaffold, and `extendBody`
+      // there runs this one to the bottom of the window. Nothing but the
+      // padding keeps the two apart.
+      floatingActionButton: Padding(
+        padding: EdgeInsets.only(bottom: MediaQuery.paddingOf(context).bottom),
+        child: FloatingActionButton.extended(
+          onPressed: () => _showAddDialog(context, ref),
+          icon: const Icon(Icons.add),
+          label: const Text('Add'),
+        ),
       ),
       body: RefreshIndicator(
         onRefresh: () => _refreshAll(context, ref),
@@ -88,8 +96,10 @@ class FeedListScreen extends ConsumerWidget {
 
     return ListView.separated(
       physics: const AlwaysScrollableScrollPhysics(),
-      // Bottom padding keeps the FAB from covering the last row.
-      padding: const EdgeInsets.only(bottom: 88),
+      // Clears the FAB, and on phones the floating tab bar beneath it.
+      padding: EdgeInsets.only(
+        bottom: 88 + MediaQuery.paddingOf(context).bottom,
+      ),
       itemCount: feeds.length,
       separatorBuilder: (_, _) => const Divider(indent: 16, endIndent: 16),
       itemBuilder: (context, index) => _FeedTile(feed: feeds[index]),
@@ -97,7 +107,7 @@ class FeedListScreen extends ConsumerWidget {
   }
 
   Future<void> _showAddDialog(BuildContext context, WidgetRef ref) async {
-    final messenger = ScaffoldMessenger.of(context);
+    final messenger = AppMessenger.of(context);
 
     final added = await showDialog<bool>(
       context: context,
@@ -106,18 +116,14 @@ class FeedListScreen extends ConsumerWidget {
     );
 
     if (added ?? false) {
-      messenger
-        ..hideCurrentSnackBar()
-        ..showSnackBar(const SnackBar(content: Text('Feed added.')));
+      messenger.show('Feed added.');
     }
   }
 
   Future<void> _refreshAll(BuildContext context, WidgetRef ref) async {
-    final messenger = ScaffoldMessenger.of(context);
+    final messenger = AppMessenger.of(context);
     final message = await ref.read(feedListProvider.notifier).refreshAll();
-    messenger
-      ..hideCurrentSnackBar()
-      ..showSnackBar(SnackBar(content: Text(message)));
+    messenger.show(message);
   }
 }
 
