@@ -86,6 +86,11 @@ list follows what happens in the article list.
   number of articles grows
 - **`Result` instead of exceptions** — fetching and parsing fail routinely, so
   callers are forced to handle it
+- **a package for the glass** — the tab bar, the sidebar and the header refract
+  what passes behind them, which needs a fragment shader that Flutter does not
+  ship. `liquid_glass_widgets` supplies one, and
+  `lib/ui/core/widgets/glass_surface.dart` is the only file that imports it, so
+  the rest of the UI asks for a glass panel without knowing where one comes from
 
 ### On feed compatibility
 

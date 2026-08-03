@@ -5,6 +5,7 @@ import '../../../../domain/models/article.dart';
 import '../../../../domain/models/feed.dart';
 import '../../../core/app_messenger.dart';
 import '../../../core/theme.dart';
+import '../../../core/widgets/glass_header_scaffold.dart';
 import '../../../core/widgets/status_view.dart';
 import '../../article_detail/views/article_detail_screen.dart';
 import '../view_models/article_list_view_model.dart';
@@ -22,39 +23,39 @@ class ArticleListScreen extends ConsumerWidget {
     final isRefreshing = ref.watch(articleListRefreshingProvider(feed));
     final filter = ref.watch(articleFilterProvider(feed));
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(_title),
-        actionsPadding: appBarActionsPadding(context),
-        actions: [
-          IconButton(
-            onPressed: isRefreshing ? null : () => _refresh(context, ref),
-            icon: isRefreshing
-                ? const SizedBox(
-                    width: 20,
-                    height: 20,
-                    child: CircularProgressIndicator(strokeWidth: 2),
-                  )
-                : const Icon(Icons.refresh),
-            tooltip: 'Refresh',
-          ),
-          IconButton(
-            onPressed: (asyncArticles.value?.isEmpty ?? true)
-                ? null
-                : () => _markAllRead(context, ref),
-            icon: const Icon(Icons.done_all),
-            tooltip: 'Mark all as read',
-          ),
-        ],
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(48),
-          child: _FilterBar(
-            filter: filter,
-            onChanged: ref.read(articleFilterProvider(feed).notifier).select,
-          ),
+    return GlassHeaderScaffold(
+      title: Text(_title),
+      actions: [
+        IconButton(
+          onPressed: isRefreshing ? null : () => _refresh(context, ref),
+          icon: isRefreshing
+              ? const SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                )
+              : const Icon(Icons.refresh),
+          tooltip: 'Refresh',
+        ),
+        IconButton(
+          onPressed: (asyncArticles.value?.isEmpty ?? true)
+              ? null
+              : () => _markAllRead(context, ref),
+          icon: const Icon(Icons.done_all),
+          tooltip: 'Mark all as read',
+        ),
+      ],
+      bottom: PreferredSize(
+        preferredSize: const Size.fromHeight(48),
+        child: _FilterBar(
+          filter: filter,
+          onChanged: ref.read(articleFilterProvider(feed).notifier).select,
         ),
       ),
-      body: RefreshIndicator(
+      body: (context) => RefreshIndicator(
+        // The list runs behind the header now, so the spinner is pushed clear
+        // of it rather than turning underneath the glass.
+        edgeOffset: MediaQuery.paddingOf(context).top,
         onRefresh: () => _refresh(context, ref),
         child: _buildBody(context, ref, asyncArticles, filter),
       ),
@@ -82,12 +83,21 @@ class ArticleListScreen extends ConsumerWidget {
     }
 
     if (articles.isEmpty) {
-      // Stays scrollable while empty so RefreshIndicator still triggers.
+      final chrome = MediaQuery.paddingOf(context);
+
+      // Stays scrollable while empty so RefreshIndicator still triggers. The
+      // padding is taken out of the minimum height as well as added around the
+      // child, so the view centres in the space between the header and the tab
+      // bar rather than behind them.
       return LayoutBuilder(
         builder: (context, constraints) => SingleChildScrollView(
           physics: const AlwaysScrollableScrollPhysics(),
+          padding: EdgeInsets.only(top: chrome.top, bottom: chrome.bottom),
           child: ConstrainedBox(
-            constraints: BoxConstraints(minHeight: constraints.maxHeight),
+            constraints: BoxConstraints(
+              minHeight: (constraints.maxHeight - chrome.top - chrome.bottom)
+                  .clamp(0.0, double.infinity),
+            ),
             child: EmptyView(
               icon: switch (filter) {
                 ArticleFilter.starred => Icons.star_border,
@@ -112,10 +122,11 @@ class ArticleListScreen extends ConsumerWidget {
 
     return ListView.separated(
       physics: const AlwaysScrollableScrollPhysics(),
-      // The bottom is set explicitly rather than left to the automatic
-      // MediaQuery padding, because what it clears is the floating tab bar,
-      // not a system inset.
+      // Top and bottom are both set explicitly rather than left to the
+      // automatic MediaQuery padding, because what they clear is the glass
+      // header and the floating tab bar — widgets of ours, not system insets.
       padding: EdgeInsets.only(
+        top: MediaQuery.paddingOf(context).top,
         right: rightGutter(context),
         bottom: MediaQuery.paddingOf(context).bottom,
       ),

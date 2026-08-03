@@ -1,56 +1,77 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:liquid_glass_widgets/liquid_glass_widgets.dart';
 
-/// A translucent panel over blurred backdrop.
+/// A panel that refracts and blurs whatever passes behind it.
 ///
-/// [borderRadius] is clipped, not just decorated: a [BackdropFilter] blurs
-/// everything inside its nearest ancestor clip, so without one here the blur
-/// would cover the whole screen.
-///
-/// Only the frosting of Apple's Liquid Glass is reachable this way. The
-/// refraction at the edges would need a fragment shader through
-/// `ImageFilter.shader`, and the specular highlight is stood in for by
-/// [borderColor].
+/// [borderRadius] is not decoration: it is the outline the refraction is solved
+/// against and the path the backdrop is clipped to, so a panel given the wrong
+/// radius bends light in the wrong place rather than merely looking wrong. The
+/// shader takes one radius for the whole shape, which is why this is a `double`
+/// and not a [BorderRadius].
 class GlassSurface extends StatelessWidget {
   const GlassSurface({
     super.key,
     required this.child,
-    this.borderRadius = BorderRadius.zero,
+    this.borderRadius = 0,
     this.border,
-    this.blurSigma = 16,
-    this.opacity = 0.8,
+    this.blurSigma = 12,
+    this.opacity = 0.5,
   });
 
   final Widget child;
-  final BorderRadius borderRadius;
+
+  /// Radius of the squircle the glass is cut to.
+  final double borderRadius;
+
+  /// Drawn inside the glass, over the refraction. Null leaves the panel with
+  /// only the specular edge the shader draws itself.
   final BoxBorder? border;
+
+  /// Zero renders the panel with no [BackdropFilter] at all, which is what lets
+  /// a header that is clear at rest cost nothing at rest.
   final double blurSigma;
+
+  /// Alpha of the surface tint the glass carries. Lower than the frosted panel
+  /// this replaced: the shader supplies a body of its own now, and an opaque
+  /// tint would bury the refraction the panel exists to show.
   final double opacity;
 
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
 
-    return ClipRRect(
-      borderRadius: borderRadius,
-      child: BackdropFilter(
-        // Clamp rather than decal: decal samples transparent outside the
-        // bounds, which darkens the edges of the panel.
-        filter: ImageFilter.blur(
-          sigmaX: blurSigma,
-          sigmaY: blurSigma,
-          tileMode: TileMode.clamp,
-        ),
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            color: colorScheme.surface.withValues(alpha: opacity),
-            borderRadius: borderRadius,
-            border: border,
-          ),
-          child: child,
-        ),
+    return AdaptiveGlass(
+      shape: LiquidRoundedSuperellipse(borderRadius: borderRadius),
+      // Standard rather than premium. Premium captures the backdrop into a
+      // texture that is not scroll-position aware, and every glass panel in
+      // this app sits over a list.
+      quality: GlassQuality.standard,
+      settings: LiquidGlassSettings(
+        glassColor: colorScheme.surface.withValues(alpha: opacity),
+        blur: blurSigma,
+        thickness: 12,
+        refractiveIndex: 1.2,
+        // Chrome carries a hairline and no drop shadow, here as before.
+        shadowElevation: 0,
       ),
+      // Elevation is for controls that press; these are surfaces.
+      allowElevation: false,
+      child: border == null
+          ? child
+          : DecoratedBox(
+              decoration: BoxDecoration(
+                border: border,
+                // The hairline has to follow the same corners the glass is cut
+                // to, or it is stroked as a rectangle and the clip takes the
+                // ends off it. Left null at zero because `Border` refuses a
+                // radius unless every side is the same, and the panels that
+                // carry one edge only are all square.
+                borderRadius: borderRadius == 0
+                    ? null
+                    : BorderRadius.circular(borderRadius),
+              ),
+              child: child,
+            ),
     );
   }
 }

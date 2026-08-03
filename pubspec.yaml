@@ -42,6 +42,9 @@ dependencies:
   intl: ^0.20.3
   html: ^0.15.6
   flutter_riverpod: ^3.3.2
+  # The liquid glass shaders. Pre-1.0 and moving quickly, so the constraint is
+  # deliberately narrow; widen it once the package reaches 1.0.
+  liquid_glass_widgets: ^0.26.0
 
 dev_dependencies:
   flutter_test:

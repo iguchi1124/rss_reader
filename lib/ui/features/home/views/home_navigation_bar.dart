@@ -26,8 +26,6 @@ class HomeNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const radius = BorderRadius.all(Radius.circular(28));
-
     return Padding(
       padding: EdgeInsets.fromLTRB(
         _sideInset,
@@ -36,7 +34,8 @@ class HomeNavigationBar extends StatelessWidget {
         _bottomGap + MediaQuery.viewPaddingOf(context).bottom,
       ),
       child: GlassSurface(
-        borderRadius: radius,
+        // Half the height is the pill the design language asks for.
+        borderRadius: homeNavigationBarHeight / 2,
         border: Border.fromBorderSide(glassEdge(context)),
         child: Material(
           type: MaterialType.transparency,

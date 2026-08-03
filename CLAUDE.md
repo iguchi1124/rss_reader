@@ -184,10 +184,15 @@ Navigation splits two ways, and `home_screen.dart` branches on
 | iOS, Android | `ScreenLatest`, `ScreenFeeds` | `HomeNavigationBar` — a capsule floating over the list |
 | macOS | `ScreenLatestMacOS` | `HomeSidebar` — 220 wide, fixed, full height |
 
-Both are built on `GlassSurface`, which is a `ClipRRect` over a
-`BackdropFilter`. The clip is not decoration: a `BackdropFilter` blurs
-everything inside its nearest ancestor clip, so without one it would blur the
-whole screen.
+Both are built on `GlassSurface`, and so is the header described below.
+`GlassSurface` wraps `AdaptiveGlass` from `liquid_glass_widgets`. The radius it
+takes is a `double` rather than a `BorderRadius` because it is not decoration:
+it is the outline the refraction is solved against and the path the backdrop is
+clipped to, and the shader carries one radius for the whole shape.
+
+The quality is pinned to `standard` and must not be raised to `premium`.
+Premium captures the backdrop into a texture that is not scroll-position aware,
+and every glass panel here sits over a list.
 
 The phone bar floats, which is why `HomeScreen` sets `extendBody: true` — a
 translucent panel with nothing passing behind it is a tinted rectangle, not
@@ -201,10 +206,30 @@ the window, which Flutter cannot reach without an `NSVisualEffectView`, so what
 `HomeSidebar` blurs is the window background. It reads as translucent, not as
 vibrancy, and no amount of tuning here will change that.
 
-Neither is Liquid Glass. The refraction at the edges needs a fragment shader
-through `ImageFilter.shader`; what is here is the frosting and a hairline that
-stands in for the specular edge. Flutter ships none of this and is not taking
-contributions for it, so nothing better arrives by upgrading.
+This is Liquid Glass as far as Flutter reaches. The refraction, the specular
+edge and the chromatic aberration are a fragment shader through
+`ImageFilter.shader`, which `liquid_glass_widgets` supplies and Flutter still
+does not — the framework tracks its own support in flutter/flutter#170310 and
+has shipped nothing, so without the package the ceiling is a `BackdropFilter`
+and a hairline standing in for the edge.
+
+The cost is a dependency on a pre-1.0 package, which is why the constraint in
+`pubspec.yaml` is narrow and why `GlassSurface` is the only file in `lib/` that
+imports it. Everything else asks for a glass panel and is told nothing about how
+one is made; replacing the package again is one file.
+
+Nothing here asks for Impeller directly. `standard` is the package's own
+lightweight shader and runs the same way on Impeller and on Skia; only `premium`
+reaches Impeller's pipeline, and that is the tier this must not use.
+
+Where the fragment program cannot be compiled at all the panel does not fall
+back to frosting — it degrades to a flat tint at fifteen percent with no blur,
+and the `opacity` asked for is discarded. `flutter test` compiles no shader, so
+that is what the widget tests render: enough for the finders, and not what the
+app looks like. Reduce Transparency is a different path and a better one, a
+clipped `BackdropFilter` in place of the shader. If the flat tint ever appears
+on a real device, `GlassQuality.minimal` is the tier that is a `BackdropFilter`
+by construction.
 
 Anything anchored to the bottom of a screen inside the tabs has to clear the
 bar by hand. `Scaffold` lifts its floating action button and its snack bars over
@@ -214,9 +239,14 @@ its own `bottomNavigationBar`, and these screens have none — the bar belongs t
 `AppMessenger`, which floats it and gives it the same margin. A fixed snack bar
 cannot take one, which is why they float.
 
-`BackdropFilter` is expensive, and both of these sit over a scrolling list, so
-they re-filter every frame. If a second glass surface ever appears, give them a
-shared `BackdropKey` so the engine filters once.
+Glass is expensive, and there are two panels on a screen now rather than one:
+the header, and the tab bar or the sidebar. Each owns its layer and captures its
+own backdrop. The header is what keeps that affordable — it is not built at all
+until content is under it, so a screen at rest still pays for one.
+
+`LiquidGlassWidgets.initialize()` in `main.dart` compiles the shaders before the
+first frame. Skipping it is not an error, since they load on first paint, but
+the tab bar then draws unfrosted for a frame or two on a cold start.
 
 `glass.tint` and `glass.rim` in the `.pen` are hand-owned. They need an alpha
 channel and the generated `color.*` values are opaque, so they sit under their
@@ -226,6 +256,36 @@ change to the accent in `AppTheme`.
 
 There is no `glass.shadow`: the panels carry a hairline and no drop shadow, so
 `glassEdge` is the only thing separating one from the list behind it.
+
+### Header
+
+`GlassHeaderScaffold` is the app bar every screen uses. It is clear while the
+content sits below it and glass once the content has run underneath, which is
+the only state in which there is anything to refract.
+
+`extendBodyBehindAppBar` is what puts the content there, and it is the same
+trade `extendBody` makes for the tab bar. It also hands the bar's height down to
+the body as `MediaQuery` top padding, which each scroll view spends explicitly,
+for the same reason the bottom is spent explicitly: what it clears is chrome of
+ours and not a system inset. `RefreshIndicator` takes that number as its
+`edgeOffset` too, or the spinner turns under the glass.
+
+`body` is a `WidgetBuilder` rather than a widget so that padding can be read at
+all. A widget the caller built would close over a context above the `Scaffold`
+and see the bare system inset instead.
+
+The ramp is driven by a `ScrollNotification` at depth zero — a popup menu or a
+dialog reports from further in and must not move the header. Its progress lives
+in a `ValueNotifier` rather than in `setState`, so a scroll repaints the header
+alone and not the list running under it. Sixteen points takes it from nothing to
+full: the header answers the first flick rather than resolving over a screenful.
+
+`AppBar` keeps `scrolledUnderElevation: 0`. Material's own scrolled-under tint
+is a second and opaque answer to the same event, and it would sit behind the
+first.
+
+Nothing changes on the `.pen` canvas. Those frames draw a screen at rest, and at
+rest the header is the surface colour it always was.
 
 ### Title bar
 

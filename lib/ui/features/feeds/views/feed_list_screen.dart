@@ -5,6 +5,7 @@ import '../../../../domain/models/feed.dart';
 import '../../../../utils/date_format.dart';
 import '../../../core/app_messenger.dart';
 import '../../../core/theme.dart';
+import '../../../core/widgets/glass_header_scaffold.dart';
 import '../../../core/widgets/status_view.dart';
 import '../../articles/views/article_list_screen.dart';
 import '../view_models/feed_list_view_model.dart';
@@ -19,26 +20,23 @@ class FeedListScreen extends ConsumerWidget {
     final isRefreshing = ref.watch(feedListRefreshingProvider);
     final hasFeeds = asyncFeeds.value?.isNotEmpty ?? false;
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Feeds'),
-        actionsPadding: appBarActionsPadding(context),
-        actions: [
-          IconButton(
-            onPressed: isRefreshing || !hasFeeds
-                ? null
-                : () => _refreshAll(context, ref),
-            icon: isRefreshing
-                ? const SizedBox(
-                    width: 20,
-                    height: 20,
-                    child: CircularProgressIndicator(strokeWidth: 2),
-                  )
-                : const Icon(Icons.refresh),
-            tooltip: 'Refresh all',
-          ),
-        ],
-      ),
+    return GlassHeaderScaffold(
+      title: const Text('Feeds'),
+      actions: [
+        IconButton(
+          onPressed: isRefreshing || !hasFeeds
+              ? null
+              : () => _refreshAll(context, ref),
+          icon: isRefreshing
+              ? const SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                )
+              : const Icon(Icons.refresh),
+          tooltip: 'Refresh all',
+        ),
+      ],
       // With no feeds the empty view offers the same action, so the FAB would
       // only duplicate it.
       //
@@ -61,7 +59,10 @@ class FeedListScreen extends ConsumerWidget {
               ),
             )
           : null,
-      body: RefreshIndicator(
+      body: (context) => RefreshIndicator(
+        // The list runs behind the header now, so the spinner is pushed clear
+        // of it rather than turning underneath the glass.
+        edgeOffset: MediaQuery.paddingOf(context).top,
         onRefresh: () => _refreshAll(context, ref),
         child: _buildBody(context, ref, asyncFeeds),
       ),
@@ -86,11 +87,20 @@ class FeedListScreen extends ConsumerWidget {
     }
 
     if (feeds.isEmpty) {
+      final chrome = MediaQuery.paddingOf(context);
+
+      // The padding comes out of the minimum height as well as going around
+      // the child, so the view centres between the header and the tab bar
+      // rather than behind them.
       return LayoutBuilder(
         builder: (context, constraints) => SingleChildScrollView(
           physics: const AlwaysScrollableScrollPhysics(),
+          padding: EdgeInsets.only(top: chrome.top, bottom: chrome.bottom),
           child: ConstrainedBox(
-            constraints: BoxConstraints(minHeight: constraints.maxHeight),
+            constraints: BoxConstraints(
+              minHeight: (constraints.maxHeight - chrome.top - chrome.bottom)
+                  .clamp(0.0, double.infinity),
+            ),
             child: EmptyView(
               icon: Icons.rss_feed,
               title: 'No feeds yet',
@@ -108,9 +118,10 @@ class FeedListScreen extends ConsumerWidget {
 
     return ListView.separated(
       physics: const AlwaysScrollableScrollPhysics(),
-      // The bottom clears the FAB, and on phones the floating tab bar beneath
-      // it.
+      // The top clears the glass header; the bottom clears the FAB, and on
+      // phones the floating tab bar beneath it.
       padding: EdgeInsets.only(
+        top: MediaQuery.paddingOf(context).top,
         right: rightGutter(context),
         bottom: 88 + MediaQuery.paddingOf(context).bottom,
       ),
