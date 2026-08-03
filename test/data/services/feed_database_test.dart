@@ -114,6 +114,7 @@ void main() {
         title: 'Iconed',
         feedUrl: feedUrl,
         iconUrl: 'https://iconed.example/icon.png',
+        iconBlurHash: 'L6PZfSjE.AyE_3t7t7R**0o#DgR4',
       );
 
       await database.updateFeedMetadata(
@@ -122,10 +123,54 @@ void main() {
         fetchedAt: DateTime.now(),
       );
 
-      expect(
-        (await database.findFeedByUrl(feedUrl))?.iconUrl,
-        'https://iconed.example/icon.png',
+      final feed = await database.findFeedByUrl(feedUrl);
+      expect(feed?.iconUrl, 'https://iconed.example/icon.png');
+      expect(feed?.iconBlurHash, 'L6PZfSjE.AyE_3t7t7R**0o#DgR4');
+    });
+
+    test('the blur hash follows the icon it belongs to', () async {
+      const feedUrl = 'https://iconed.example/feed.xml';
+
+      final id = await database.insertFeed(
+        title: 'Iconed',
+        feedUrl: feedUrl,
+        iconUrl: 'https://iconed.example/icon.png',
+        iconBlurHash: 'L6PZfSjE.AyE_3t7t7R**0o#DgR4',
       );
+
+      await database.updateFeedMetadata(
+        feedId: id,
+        title: 'Iconed',
+        iconUrl: 'https://iconed.example/moved.png',
+        iconBlurHash: 'LEHV6nWB2yk8pyo0adR*.7kCMdnj',
+        fetchedAt: DateTime.now(),
+      );
+
+      final feed = await database.findFeedByUrl(feedUrl);
+      expect(feed?.iconUrl, 'https://iconed.example/moved.png');
+      expect(feed?.iconBlurHash, 'LEHV6nWB2yk8pyo0adR*.7kCMdnj');
+    });
+
+    test('a new icon with no hash clears the old hash', () async {
+      // Leaving the previous one behind would blur the wrong image under the
+      // new icon.
+      const feedUrl = 'https://iconed.example/feed.xml';
+
+      final id = await database.insertFeed(
+        title: 'Iconed',
+        feedUrl: feedUrl,
+        iconUrl: 'https://iconed.example/icon.png',
+        iconBlurHash: 'L6PZfSjE.AyE_3t7t7R**0o#DgR4',
+      );
+
+      await database.updateFeedMetadata(
+        feedId: id,
+        title: 'Iconed',
+        iconUrl: 'https://iconed.example/moved.png',
+        fetchedAt: DateTime.now(),
+      );
+
+      expect((await database.findFeedByUrl(feedUrl))?.iconBlurHash, isNull);
     });
 
     test('a database written before the column existed still opens', () async {
@@ -184,6 +229,65 @@ void main() {
       final feed = (await upgraded.listFeeds()).single;
       expect(feed.title, 'Subscribed before icons');
       expect(feed.iconUrl, isNull);
+      expect(feed.iconBlurHash, isNull);
+    });
+
+    test('a database written before the hash existed keeps its icon', () async {
+      final directory = await Directory.systemTemp.createTemp('rss_reader_v2');
+      addTearDown(() => directory.delete(recursive: true));
+
+      final path = p.join(directory.path, 'legacy.db');
+      final legacy = await databaseFactory.openDatabase(
+        path,
+        options: OpenDatabaseOptions(
+          version: 2,
+          // Version 2's feeds table, which had icon_url but no hash beside it.
+          onCreate: (db, version) async {
+            await db.execute('''
+              CREATE TABLE feeds (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                title TEXT NOT NULL,
+                feed_url TEXT NOT NULL UNIQUE,
+                site_url TEXT,
+                icon_url TEXT,
+                description TEXT,
+                last_fetched_at INTEGER
+              )
+            ''');
+            await db.execute('''
+              CREATE TABLE articles (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                feed_id INTEGER NOT NULL
+                  REFERENCES feeds (id) ON DELETE CASCADE,
+                guid TEXT NOT NULL,
+                title TEXT NOT NULL,
+                link TEXT,
+                author TEXT,
+                summary TEXT,
+                content TEXT,
+                published_at INTEGER,
+                fetched_at INTEGER NOT NULL,
+                is_read INTEGER NOT NULL DEFAULT 0,
+                is_starred INTEGER NOT NULL DEFAULT 0,
+                UNIQUE (feed_id, guid)
+              )
+            ''');
+          },
+        ),
+      );
+      await legacy.insert('feeds', {
+        'title': 'Subscribed before hashes',
+        'feed_url': 'https://legacy.example/feed.xml',
+        'icon_url': 'https://legacy.example/icon.png',
+      });
+      await legacy.close();
+
+      final upgraded = FeedDatabase(databaseName: path);
+      addTearDown(upgraded.close);
+
+      final feed = (await upgraded.listFeeds()).single;
+      expect(feed.iconUrl, 'https://legacy.example/icon.png');
+      expect(feed.iconBlurHash, isNull);
     });
   });
 
