@@ -24,8 +24,9 @@ class FeedDatabase {
 
     return openDatabase(
       path,
-      version: 1,
+      version: 2,
       onCreate: _createSchema,
+      onUpgrade: _upgradeSchema,
       onConfigure: (db) async {
         // Required for articles to cascade on feed delete. sqflite needs this
         // set per connection.
@@ -41,6 +42,7 @@ class FeedDatabase {
         title TEXT NOT NULL,
         feed_url TEXT NOT NULL UNIQUE,
         site_url TEXT,
+        icon_url TEXT,
         description TEXT,
         last_fetched_at INTEGER
       )
@@ -71,6 +73,14 @@ class FeedDatabase {
     await db.execute(
       'CREATE INDEX idx_articles_published ON articles (published_at DESC)',
     );
+  }
+
+  /// Existing rows keep a null `icon_url` and pick one up on their next
+  /// refresh, which is also the path a feed that never had one takes.
+  Future<void> _upgradeSchema(Database db, int from, int to) async {
+    if (from < 2) {
+      await db.execute('ALTER TABLE feeds ADD COLUMN icon_url TEXT');
+    }
   }
 
   // --- Feeds ----------------------------------------------------------------
@@ -107,6 +117,7 @@ class FeedDatabase {
     required String title,
     required String feedUrl,
     String? siteUrl,
+    String? iconUrl,
     String? description,
   }) async {
     final db = await _db;
@@ -114,6 +125,7 @@ class FeedDatabase {
       'title': title,
       'feed_url': feedUrl,
       'site_url': siteUrl,
+      'icon_url': iconUrl,
       'description': description,
     });
   }
@@ -122,6 +134,7 @@ class FeedDatabase {
     required int feedId,
     required String title,
     String? siteUrl,
+    String? iconUrl,
     String? description,
     required DateTime fetchedAt,
   }) async {
@@ -133,6 +146,9 @@ class FeedDatabase {
         'site_url': siteUrl,
         'description': description,
         'last_fetched_at': fetchedAt.millisecondsSinceEpoch,
+        // Left out rather than written as null: a lookup that came back empty
+        // this time must not erase the icon an earlier one found.
+        'icon_url': ?iconUrl,
       },
       where: 'id = ?',
       whereArgs: [feedId],
@@ -313,6 +329,7 @@ class FeedDatabase {
       title: row['title']! as String,
       feedUrl: row['feed_url']! as String,
       siteUrl: row['site_url'] as String?,
+      iconUrl: row['icon_url'] as String?,
       description: row['description'] as String?,
       lastFetchedAt: _dateFromMillis(row['last_fetched_at']),
       unreadCount: (row['unread_count'] as int?) ?? 0,

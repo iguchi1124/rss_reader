@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter_test/flutter_test.dart';
+import 'package:path/path.dart' as p;
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'package:rss_reader/data/services/feed_database.dart';
 import 'package:rss_reader/domain/models/article.dart';
@@ -75,6 +78,112 @@ void main() {
 
       expect(await database.listFeeds(), isEmpty);
       expect(await database.listArticles(), isEmpty);
+    });
+  });
+
+  group('feed icons', () {
+    test('round-trip through insert and update', () async {
+      const feedUrl = 'https://iconed.example/feed.xml';
+
+      final id = await database.insertFeed(
+        title: 'Iconed',
+        feedUrl: feedUrl,
+        iconUrl: 'https://iconed.example/icon.png',
+      );
+      expect(
+        (await database.findFeedByUrl(feedUrl))?.iconUrl,
+        'https://iconed.example/icon.png',
+      );
+
+      await database.updateFeedMetadata(
+        feedId: id,
+        title: 'Iconed',
+        iconUrl: 'https://iconed.example/moved.png',
+        fetchedAt: DateTime.now(),
+      );
+      expect(
+        (await database.findFeedByUrl(feedUrl))?.iconUrl,
+        'https://iconed.example/moved.png',
+      );
+    });
+
+    test('a refresh that finds no icon keeps the stored one', () async {
+      const feedUrl = 'https://iconed.example/feed.xml';
+
+      final id = await database.insertFeed(
+        title: 'Iconed',
+        feedUrl: feedUrl,
+        iconUrl: 'https://iconed.example/icon.png',
+      );
+
+      await database.updateFeedMetadata(
+        feedId: id,
+        title: 'Iconed',
+        fetchedAt: DateTime.now(),
+      );
+
+      expect(
+        (await database.findFeedByUrl(feedUrl))?.iconUrl,
+        'https://iconed.example/icon.png',
+      );
+    });
+
+    test('a database written before the column existed still opens', () async {
+      // In-memory databases cannot be reopened, so the upgrade needs a file.
+      final directory = await Directory.systemTemp.createTemp('rss_reader_v1');
+      addTearDown(() => directory.delete(recursive: true));
+
+      final path = p.join(directory.path, 'legacy.db');
+      final legacy = await databaseFactory.openDatabase(
+        path,
+        options: OpenDatabaseOptions(
+          version: 1,
+          // Version 1's tables, where feeds had no icon_url. The indexes are
+          // left out: they play no part in the upgrade.
+          onCreate: (db, version) async {
+            await db.execute('''
+              CREATE TABLE feeds (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                title TEXT NOT NULL,
+                feed_url TEXT NOT NULL UNIQUE,
+                site_url TEXT,
+                description TEXT,
+                last_fetched_at INTEGER
+              )
+            ''');
+            await db.execute('''
+              CREATE TABLE articles (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                feed_id INTEGER NOT NULL
+                  REFERENCES feeds (id) ON DELETE CASCADE,
+                guid TEXT NOT NULL,
+                title TEXT NOT NULL,
+                link TEXT,
+                author TEXT,
+                summary TEXT,
+                content TEXT,
+                published_at INTEGER,
+                fetched_at INTEGER NOT NULL,
+                is_read INTEGER NOT NULL DEFAULT 0,
+                is_starred INTEGER NOT NULL DEFAULT 0,
+                UNIQUE (feed_id, guid)
+              )
+            ''');
+          },
+        ),
+      );
+      await legacy.insert('feeds', {
+        'title': 'Subscribed before icons',
+        'feed_url': 'https://legacy.example/feed.xml',
+      });
+      await legacy.close();
+
+      final upgraded = FeedDatabase(databaseName: path);
+      addTearDown(upgraded.close);
+
+      final feed = (await upgraded.listFeeds()).single;
+      expect(feed.title, 'Subscribed before icons');
+      expect(feed.iconUrl, isNull);
     });
   });
 

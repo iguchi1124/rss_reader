@@ -166,14 +166,7 @@ class _FeedTile extends ConsumerWidget {
       // theme's 16 would push its glyph to 28 from the edge. 4 puts it at the
       // 16 the divider and the app bar use.
       contentPadding: const EdgeInsets.fromLTRB(16, 4, 4, 4),
-      leading: CircleAvatar(
-        backgroundColor: theme.colorScheme.primaryContainer,
-        child: Text(
-          // Feeds have no icon of their own, so the initial stands in for one.
-          feed.title.characters.firstOrNull?.toUpperCase() ?? '?',
-          style: TextStyle(color: theme.colorScheme.onPrimaryContainer),
-        ),
-      ),
+      leading: _FeedAvatar(feed: feed),
       title: Text(
         feed.title,
         maxLines: 1,
@@ -269,3 +262,53 @@ class _FeedTile extends ConsumerWidget {
 }
 
 enum _FeedAction { markAllRead, delete }
+
+/// The feed's own icon, or its initial where there is none to draw.
+///
+/// Both are the same circle at the same size, so a list of feeds where only
+/// some publish an icon still reads as one column.
+class _FeedAvatar extends StatelessWidget {
+  const _FeedAvatar({required this.feed});
+
+  /// Matches the diameter [CircleAvatar] takes from its default radius.
+  static const double _diameter = 40;
+
+  final Feed feed;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final initial = CircleAvatar(
+      backgroundColor: theme.colorScheme.primaryContainer,
+      child: Text(
+        feed.title.characters.firstOrNull?.toUpperCase() ?? '?',
+        style: TextStyle(color: theme.colorScheme.onPrimaryContainer),
+      ),
+    );
+
+    final iconUrl = feed.iconUrl;
+    if (iconUrl == null) return initial;
+
+    final pixelRatio = MediaQuery.devicePixelRatioOf(context);
+
+    return ClipOval(
+      child: Image.network(
+        iconUrl,
+        width: _diameter,
+        height: _diameter,
+        fit: BoxFit.cover,
+        // Publishers routinely serve a 512 or 1024 pixel mark. Decoded at that
+        // size it is megabytes in the image cache for a 40-point circle, and
+        // the cache holds every feed in the list at once. Width only: both
+        // dimensions together would stretch a mark that is not square.
+        cacheWidth: (_diameter * pixelRatio).round(),
+        // The initial holds the place until the icon arrives and stays if it
+        // never does. A spinner in every row is a worse list than the letters,
+        // and an icon that will not load is not worth telling the user about.
+        frameBuilder: (context, child, frame, wasSynchronouslyLoaded) =>
+            wasSynchronouslyLoaded || frame != null ? child : initial,
+        errorBuilder: (context, error, stackTrace) => initial,
+      ),
+    );
+  }
+}

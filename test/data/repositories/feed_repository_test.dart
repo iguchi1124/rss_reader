@@ -171,6 +171,136 @@ void main() {
     });
   });
 
+  group('feed icons', () {
+    const rssWithImage = '''
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Test Feed</title>
+    <link>https://example.com/</link>
+    <image><url>https://example.com/logo.png</url></image>
+    <item><title>First</title><guid>1</guid></item>
+  </channel>
+</rss>
+''';
+
+    const htmlWithFeedAndIcon = '''
+<html><head>
+  <link rel="alternate" type="application/rss+xml" href="/feed.xml"/>
+  <link rel="icon" sizes="192x192" href="/icon.png"/>
+</head><body>body</body></html>
+''';
+
+    test('takes the image the feed declares without asking the site', () async {
+      final requested = <String>[];
+      final repository = buildRepository({
+        'https://example.com/feed.xml': rssWithImage,
+      }, requested: requested);
+
+      await repository.addFeed('https://example.com/feed.xml');
+
+      expect(
+        (await repository.listFeeds()).single.iconUrl,
+        'https://example.com/logo.png',
+      );
+      expect(requested, ['https://example.com/feed.xml']);
+    });
+
+    test('reads the icon out of the page it already fetched', () async {
+      final requested = <String>[];
+      final repository = buildRepository({
+        'https://example.com/': htmlWithFeedAndIcon,
+        'https://example.com/feed.xml': _rss,
+      }, requested: requested);
+
+      await repository.addFeed('https://example.com/');
+
+      expect(
+        (await repository.listFeeds()).single.iconUrl,
+        'https://example.com/icon.png',
+      );
+      // The site page is not fetched a second time for the icon.
+      expect(requested, [
+        'https://example.com/',
+        'https://example.com/feed.xml',
+      ]);
+    });
+
+    test('goes to the site when the feed declares no image', () async {
+      final requested = <String>[];
+      final repository = buildRepository({
+        'https://example.com/feed.xml': _rss,
+        'https://example.com/': htmlWithFeedAndIcon,
+      }, requested: requested);
+
+      await repository.addFeed('https://example.com/feed.xml');
+
+      expect(
+        (await repository.listFeeds()).single.iconUrl,
+        'https://example.com/icon.png',
+      );
+      expect(requested, [
+        'https://example.com/feed.xml',
+        'https://example.com/',
+      ]);
+    });
+
+    test('passes over a declared icon that cannot be drawn', () async {
+      // An Atom icon pointing at the favicon is common, and dart:ui has no ICO
+      // codec, so the site's PNG is the better answer.
+      const atomWithIcoIcon = '''
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Test Feed</title>
+  <icon>https://example.com/favicon.ico</icon>
+  <link rel="alternate" href="https://example.com/"/>
+  <entry><title>First</title><id>1</id></entry>
+</feed>
+''';
+
+      final repository = buildRepository({
+        'https://example.com/feed.xml': atomWithIcoIcon,
+        'https://example.com/': htmlWithFeedAndIcon,
+      });
+
+      await repository.addFeed('https://example.com/feed.xml');
+
+      expect(
+        (await repository.listFeeds()).single.iconUrl,
+        'https://example.com/icon.png',
+      );
+    });
+
+    test('leaves the icon null when nothing offers one', () async {
+      final repository = buildRepository({
+        'https://example.com/feed.xml': _rss,
+      });
+
+      await repository.addFeed('https://example.com/feed.xml');
+
+      expect((await repository.listFeeds()).single.iconUrl, isNull);
+    });
+
+    test('keeps a stored icon instead of looking again', () async {
+      final requested = <String>[];
+      final repository = buildRepository({
+        'https://example.com/feed.xml': _rss,
+        'https://example.com/': htmlWithFeedAndIcon,
+      }, requested: requested);
+      await repository.addFeed('https://example.com/feed.xml');
+
+      requested.clear();
+      final feed = (await repository.listFeeds()).single;
+      await repository.refreshFeed(feed);
+
+      expect(
+        (await repository.listFeeds()).single.iconUrl,
+        'https://example.com/icon.png',
+      );
+      expect(requested, ['https://example.com/feed.xml']);
+    });
+  });
+
   group('refreshFeed', () {
     test('returns the new-article count and updates feed metadata', () async {
       var body = _rss;

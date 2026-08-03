@@ -169,6 +169,72 @@ void main() {
     });
   });
 
+  group('feed icons', () {
+    test('reads the image out of an RSS channel', () {
+      const xml = '''
+<rss><channel>
+  <title>t</title>
+  <image><url>https://example.com/logo.png</url><title>t</title></image>
+</channel></rss>
+''';
+      expect(_parse(xml).iconUrl, 'https://example.com/logo.png');
+    });
+
+    test('reads the image RSS 1.0 hangs off the document root', () {
+      const xml = '''
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <channel>
+    <title>t</title>
+    <image rdf:resource="https://example.com/logo.png"/>
+  </channel>
+  <image rdf:about="https://example.com/logo.png">
+    <url>https://example.com/logo.png</url>
+  </image>
+</rdf:RDF>
+''';
+      expect(_parse(xml).iconUrl, 'https://example.com/logo.png');
+    });
+
+    test('prefers the Atom icon over the logo', () {
+      const xml = '''
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>t</title>
+  <icon>https://example.com/icon.png</icon>
+  <logo>https://example.com/logo.png</logo>
+</feed>
+''';
+      expect(_parse(xml).iconUrl, 'https://example.com/icon.png');
+    });
+
+    test('falls back to the Atom logo when there is no icon', () {
+      const xml = '''
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>t</title>
+  <logo>https://example.com/logo.png</logo>
+</feed>
+''';
+      expect(_parse(xml).iconUrl, 'https://example.com/logo.png');
+    });
+
+    test('resolves a relative icon against the feed document', () {
+      const xml = '''
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>t</title>
+  <icon>/icon.png</icon>
+</feed>
+''';
+      expect(
+        _parse(xml, feedUrl: 'https://example.com/blog/atom.xml').iconUrl,
+        'https://example.com/icon.png',
+      );
+    });
+
+    test('leaves the icon null when the feed declares none', () {
+      const xml = '<rss><channel><title>t</title></channel></rss>';
+      expect(_parse(xml).iconUrl, isNull);
+    });
+  });
+
   group('failures', () {
     test('fails on malformed XML', () {
       final result = _parser.parse('<rss><channel><title>never closed');

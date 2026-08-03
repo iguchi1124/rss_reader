@@ -7,6 +7,7 @@ class Feed {
     required this.title,
     required this.feedUrl,
     this.siteUrl,
+    this.iconUrl,
     this.description,
     this.lastFetchedAt,
     this.unreadCount = 0,
@@ -21,6 +22,11 @@ class Feed {
 
   /// Home page the feed points at.
   final String? siteUrl;
+
+  /// Image standing in for the feed in lists. Null where neither the feed nor
+  /// its site offered one that can be drawn, and the initial is shown instead.
+  final String? iconUrl;
+
   final String? description;
   final DateTime? lastFetchedAt;
 
@@ -31,6 +37,7 @@ class Feed {
   Feed copyWith({
     String? title,
     String? siteUrl,
+    String? iconUrl,
     String? description,
     DateTime? lastFetchedAt,
     int? unreadCount,
@@ -41,6 +48,7 @@ class Feed {
       title: title ?? this.title,
       feedUrl: feedUrl,
       siteUrl: siteUrl ?? this.siteUrl,
+      iconUrl: iconUrl ?? this.iconUrl,
       description: description ?? this.description,
       lastFetchedAt: lastFetchedAt ?? this.lastFetchedAt,
       unreadCount: unreadCount ?? this.unreadCount,
@@ -55,6 +63,7 @@ class Feed {
       other.title == title &&
       other.feedUrl == feedUrl &&
       other.siteUrl == siteUrl &&
+      other.iconUrl == iconUrl &&
       other.description == description &&
       other.lastFetchedAt == lastFetchedAt &&
       other.unreadCount == unreadCount &&
@@ -66,6 +75,7 @@ class Feed {
     title,
     feedUrl,
     siteUrl,
+    iconUrl,
     description,
     lastFetchedAt,
     unreadCount,
