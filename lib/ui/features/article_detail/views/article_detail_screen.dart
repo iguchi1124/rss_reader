@@ -5,6 +5,7 @@ import '../../../../domain/models/article.dart';
 import '../../../../utils/date_format.dart';
 import '../../../core/link_launcher.dart';
 import '../../../core/theme.dart';
+import '../../../core/widgets/glass_header_scaffold.dart';
 import '../../../core/widgets/html_content.dart';
 import '../view_models/article_detail_view_model.dart';
 
@@ -38,50 +39,53 @@ class _ArticleDetailScreenState extends ConsumerState<ArticleDetailScreen> {
         ref.watch(articleProvider(widget.article.id)).value ?? widget.article;
     final theme = Theme.of(context);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          article.feedTitle ?? '',
-          style: theme.textTheme.titleSmall,
-          overflow: TextOverflow.ellipsis,
-        ),
-        actionsPadding: appBarActionsPadding(context),
-        actions: [
-          IconButton(
-            onPressed: () => viewModel.toggleStarred(article),
-            icon: Icon(
-              article.isStarred ? Icons.star : Icons.star_border,
-              color: article.isStarred ? theme.colorScheme.primary : null,
-            ),
-            tooltip: article.isStarred ? 'Remove star' : 'Add star',
-          ),
-          IconButton(
-            onPressed: () => openExternalLink(
-              context,
-              article.link,
-              emptyMessage: 'This article has no link.',
-            ),
-            icon: const Icon(Icons.open_in_browser),
-            tooltip: 'Open in browser',
-          ),
-          PopupMenuButton<_DetailAction>(
-            onSelected: (action) => _onAction(viewModel, action),
-            itemBuilder: (context) => const [
-              PopupMenuItem(
-                value: _DetailAction.markUnread,
-                child: ListTile(
-                  leading: Icon(Icons.mark_email_unread_outlined),
-                  title: Text('Mark as unread'),
-                  contentPadding: EdgeInsets.zero,
-                ),
-              ),
-            ],
-          ),
-        ],
+    return GlassHeaderScaffold(
+      title: Text(
+        article.feedTitle ?? '',
+        style: theme.textTheme.titleSmall,
+        overflow: TextOverflow.ellipsis,
       ),
-      body: SelectionArea(
+      actions: [
+        IconButton(
+          onPressed: () => viewModel.toggleStarred(article),
+          icon: Icon(
+            article.isStarred ? Icons.star : Icons.star_border,
+            color: article.isStarred ? theme.colorScheme.primary : null,
+          ),
+          tooltip: article.isStarred ? 'Remove star' : 'Add star',
+        ),
+        IconButton(
+          onPressed: () => openExternalLink(
+            context,
+            article.link,
+            emptyMessage: 'This article has no link.',
+          ),
+          icon: const Icon(Icons.open_in_browser),
+          tooltip: 'Open in browser',
+        ),
+        PopupMenuButton<_DetailAction>(
+          onSelected: (action) => _onAction(viewModel, action),
+          itemBuilder: (context) => const [
+            PopupMenuItem(
+              value: _DetailAction.markUnread,
+              child: ListTile(
+                leading: Icon(Icons.mark_email_unread_outlined),
+                title: Text('Mark as unread'),
+                contentPadding: EdgeInsets.zero,
+              ),
+            ),
+          ],
+        ),
+      ],
+      body: (context) => SelectionArea(
         child: ListView(
-          padding: EdgeInsets.fromLTRB(20, 16, 20 + rightGutter(context), 48),
+          // The top clears the glass header the article now runs behind.
+          padding: EdgeInsets.fromLTRB(
+            20,
+            16 + MediaQuery.paddingOf(context).top,
+            20 + rightGutter(context),
+            48,
+          ),
           children: [
             Text(article.title, style: theme.textTheme.headlineSmall),
             const SizedBox(height: 12),

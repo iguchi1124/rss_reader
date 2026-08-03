@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:liquid_glass_widgets/liquid_glass_widgets.dart';
 
 import 'ui/core/theme.dart';
 import 'ui/core/title_bar_inset.dart';
 import 'ui/features/home/views/home_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Compiles the glass shaders before the first frame. Skipping it is not an
+  // error — they load on first paint instead — but the tab bar then draws
+  // unfrosted for a frame or two on a cold start.
+  await LiquidGlassWidgets.initialize();
   runApp(const ProviderScope(child: RssReaderApp()));
 }
 
