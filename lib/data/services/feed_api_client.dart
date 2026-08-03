@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:html/parser.dart' as html_parser;
 import 'package:http/http.dart' as http;
@@ -44,11 +45,29 @@ class FeedApiClient {
   final Duration _timeout;
 
   /// Sent explicitly because some hosts reject requests without a User-Agent.
-  static const _userAgent = 'rss_reader/1.0 (+https://github.com/iguchi1124/rss_reader)';
+  static const _userAgent =
+      'rss_reader/1.0 (+https://github.com/iguchi1124/rss_reader)';
 
   /// [timeout] overrides the client's own, for a request whose result matters
   /// less than the wait — see `FeedRepository._findSiteIcon`.
   Future<Result<String>> fetch(String url, {Duration? timeout}) async {
+    final response = await _get(url, timeout: timeout);
+    return switch (response) {
+      Ok(:final value) => Ok(_decode(value)),
+      Failure(:final error, :final stackTrace) => Failure(error, stackTrace),
+    };
+  }
+
+  /// The response body undecoded, for an image rather than a document.
+  Future<Result<Uint8List>> fetchBytes(String url, {Duration? timeout}) async {
+    final response = await _get(url, timeout: timeout);
+    return switch (response) {
+      Ok(:final value) => Ok(value.bodyBytes),
+      Failure(:final error, :final stackTrace) => Failure(error, stackTrace),
+    };
+  }
+
+  Future<Result<http.Response>> _get(String url, {Duration? timeout}) async {
     final uri = Uri.tryParse(url);
     if (uri == null || !uri.hasScheme || !uri.hasAuthority) {
       return const Failure(FeedException('That URL is not valid.'));
@@ -68,7 +87,7 @@ class FeedApiClient {
         );
       }
 
-      return Ok(_decode(response));
+      return Ok(response);
     } on SocketException catch (_, stackTrace) {
       return Failure(
         const FeedException('Could not connect. Check your network.'),

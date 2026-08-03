@@ -5,10 +5,15 @@ import '../models/parsed_feed.dart';
 import '../services/feed_api_client.dart';
 import '../services/feed_database.dart';
 import '../services/feed_parser.dart';
+import '../services/image_blur_hash.dart';
 
 /// An HTML page already fetched while resolving a feed, kept so its icon can be
 /// read without asking for the same URL twice.
 typedef _FetchedPage = ({String url, String html});
+
+/// A feed's icon and the blur hash of the image behind it, which are stored
+/// together so the hash can never describe a different image than the URL does.
+typedef _FeedIcon = ({String? url, String? blurHash});
 
 /// How long a site page is given to answer when it is only being asked for an
 /// icon. Well short of a feed fetch: this one is decoration.
@@ -76,11 +81,13 @@ class FeedRepository {
         }
 
         final fetchedAt = DateTime.now();
+        final icon = await _resolveIcon(parsed, page: page);
         final feedId = await _database.insertFeed(
           title: parsed.title,
           feedUrl: feedUrl,
           siteUrl: parsed.siteUrl,
-          iconUrl: await _resolveIconUrl(parsed, page: page),
+          iconUrl: icon.url,
+          iconBlurHash: icon.blurHash,
           description: parsed.description,
         );
         await _saveItems(feedId, parsed, fetchedAt: fetchedAt);
@@ -111,11 +118,13 @@ class FeedRepository {
             // was pushed with, so an icon found by an earlier refresh is not on
             // the object in hand and would be looked up again every time.
             final stored = await _database.findFeedByUrl(feed.feedUrl);
+            final icon = await _resolveIcon(document, stored: stored);
             await _database.updateFeedMetadata(
               feedId: feed.id,
               title: document.title,
               siteUrl: document.siteUrl,
-              iconUrl: await _resolveIconUrl(document, stored: stored?.iconUrl),
+              iconUrl: icon.url,
+              iconBlurHash: icon.blurHash,
               description: document.description,
               fetchedAt: fetchedAt,
             );
@@ -214,15 +223,43 @@ class FeedRepository {
     }
   }
 
-  /// The icon to store for [parsed].
+  /// The icon to store for [parsed], with the blur hash that goes with it.
+  ///
+  /// [stored] is the feed as the database already holds it, and an icon that
+  /// has not moved keeps the hash taken from it — hashing is the one thing here
+  /// that has to download the image itself, and a publisher's mark rarely
+  /// changes.
+  ///
+  /// A URL held with no hash is hashed again, which is how a feed subscribed to
+  /// before this column existed picks one up. It costs that feed one request
+  /// per refresh until an image comes back that `dart:ui` can decode.
+  Future<_FeedIcon> _resolveIcon(
+    ParsedFeed parsed, {
+    _FetchedPage? page,
+    Feed? stored,
+  }) async {
+    final url = await _resolveIconUrl(
+      parsed,
+      page: page,
+      stored: stored?.iconUrl,
+    );
+    if (url == null) return (url: null, blurHash: null);
+
+    if (url == stored?.iconUrl && stored?.iconBlurHash != null) {
+      return (url: url, blurHash: stored!.iconBlurHash);
+    }
+    return (url: url, blurHash: await _hashIcon(url));
+  }
+
+  /// The URL of the icon to store for [parsed].
   ///
   /// The feed's own image comes first, since it arrives inside a document
   /// already being fetched, but it is held to the same standard as a discovered
   /// one. An Atom `icon` pointing at a `favicon.ico` is common, and taking it
   /// would both fail to draw and shut out the PNG the site may also offer.
   ///
-  /// [stored] is what the database already holds, and short-circuits the site
-  /// lookup so a mark that rarely moves is not re-read on every refresh.
+  /// [stored] is the URL the database already holds, and short-circuits the
+  /// site lookup so a mark that rarely moves is not re-read on every refresh.
   Future<String?> _resolveIconUrl(
     ParsedFeed parsed, {
     _FetchedPage? page,
@@ -232,6 +269,19 @@ class FeedRepository {
     if (declared != null && isDrawableImageUrl(declared)) return declared;
     if (stored != null) return stored;
     return _findSiteIcon(parsed.siteUrl, page: page);
+  }
+
+  /// Downloads the icon at [url] once to hash it, on the same short leash as
+  /// the site lookup and for the same reason.
+  ///
+  /// Null where the image cannot be reached or cannot be decoded; the feed then
+  /// shows its initial until the image itself loads.
+  Future<String?> _hashIcon(String url) async {
+    final response = await _apiClient.fetchBytes(url, timeout: _iconTimeout);
+    return switch (response) {
+      Ok(:final value) => encodeImageBlurHash(value),
+      Failure() => null,
+    };
   }
 
   /// Reads the icon off the feed's own site.

@@ -24,7 +24,7 @@ class FeedDatabase {
 
     return openDatabase(
       path,
-      version: 2,
+      version: 3,
       onCreate: _createSchema,
       onUpgrade: _upgradeSchema,
       onConfigure: (db) async {
@@ -43,6 +43,7 @@ class FeedDatabase {
         feed_url TEXT NOT NULL UNIQUE,
         site_url TEXT,
         icon_url TEXT,
+        icon_blur_hash TEXT,
         description TEXT,
         last_fetched_at INTEGER
       )
@@ -76,10 +77,14 @@ class FeedDatabase {
   }
 
   /// Existing rows keep a null `icon_url` and pick one up on their next
-  /// refresh, which is also the path a feed that never had one takes.
+  /// refresh, which is also the path a feed that never had one takes. A null
+  /// `icon_blur_hash` is filled in the same way.
   Future<void> _upgradeSchema(Database db, int from, int to) async {
     if (from < 2) {
       await db.execute('ALTER TABLE feeds ADD COLUMN icon_url TEXT');
+    }
+    if (from < 3) {
+      await db.execute('ALTER TABLE feeds ADD COLUMN icon_blur_hash TEXT');
     }
   }
 
@@ -118,6 +123,7 @@ class FeedDatabase {
     required String feedUrl,
     String? siteUrl,
     String? iconUrl,
+    String? iconBlurHash,
     String? description,
   }) async {
     final db = await _db;
@@ -126,6 +132,7 @@ class FeedDatabase {
       'feed_url': feedUrl,
       'site_url': siteUrl,
       'icon_url': iconUrl,
+      'icon_blur_hash': iconBlurHash,
       'description': description,
     });
   }
@@ -135,6 +142,7 @@ class FeedDatabase {
     required String title,
     String? siteUrl,
     String? iconUrl,
+    String? iconBlurHash,
     String? description,
     required DateTime fetchedAt,
   }) async {
@@ -147,8 +155,14 @@ class FeedDatabase {
         'description': description,
         'last_fetched_at': fetchedAt.millisecondsSinceEpoch,
         // Left out rather than written as null: a lookup that came back empty
-        // this time must not erase the icon an earlier one found.
-        'icon_url': ?iconUrl,
+        // this time must not erase the icon an earlier one found. The hash
+        // describes the image at that URL, so it is written whenever the URL
+        // is — including as null, since a hash of the previous image would
+        // otherwise be left standing in for the new one.
+        if (iconUrl != null) ...{
+          'icon_url': iconUrl,
+          'icon_blur_hash': iconBlurHash,
+        },
       },
       where: 'id = ?',
       whereArgs: [feedId],
@@ -330,6 +344,7 @@ class FeedDatabase {
       feedUrl: row['feed_url']! as String,
       siteUrl: row['site_url'] as String?,
       iconUrl: row['icon_url'] as String?,
+      iconBlurHash: row['icon_blur_hash'] as String?,
       description: row['description'] as String?,
       lastFetchedAt: _dateFromMillis(row['last_fetched_at']),
       unreadCount: (row['unread_count'] as int?) ?? 0,

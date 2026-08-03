@@ -406,8 +406,9 @@ from and `_upgradeSchema` is what an installed one runs on its way up, so a new
 column has to be written into both or the two diverge silently — the developer
 who added it never sees the upgrade path.
 
-**Icons.** The feed list draws the publisher's mark where there is one and the
-title's initial where there is not. The feed document's own image comes first —
+**Icons.** The feed list draws the publisher's mark where there is one, its blur
+hash while that mark is loading or out of reach, and the title's initial where
+there is neither. The feed document's own image comes first —
 RSS `channel > image > url`, RSS 1.0's root-level `image`, Atom `icon` ahead of
 `logo` — because it arrives inside a document already being fetched. Only a feed
 declaring none sends `FeedRepository` to the site page for a
@@ -437,10 +438,41 @@ found by an earlier refresh is not on that object, and `updateFeedMetadata`
 leaves `icon_url` out of the update entirely when it has nothing — a lookup that
 came back empty must not erase what an earlier one found.
 
-Only the URL is stored, decoded at `cacheWidth` rather than full size: the cache
-holds every feed in the list at once and publishers serve marks at 512 or more.
-`Image.network` has no disk cache, so an icon is the one thing in the app that
-does not read offline.
+The image itself is not stored, only its URL, decoded at `cacheWidth` rather than
+full size: the cache holds every feed in the list at once and publishers serve
+marks at 512 or more. `Image.network` has no disk cache, so the icon is the one
+thing in the app that does not read offline.
+
+**Blur hashes.** What does read offline is `icon_blur_hash`, thirty-odd
+characters of BlurHash beside the URL. `_FeedAvatar` draws it while the image
+loads and instead of the image when the image never arrives, which is the state a
+device with no network is always in, and falls back to the initial only for a
+feed that has no hash.
+
+`utils/blur_hash.dart` is the format, encoder and decoder, hand-rolled against
+the reference implementation and answering to it: a hash written by any other
+implementation decodes here and vice versa. It reproduces one wart deliberately —
+the basis is sampled at each pixel's left edge rather than its centre, so a flat
+image does not decode perfectly flat. Correcting it would produce hashes nothing
+else can read.
+
+Hashing needs the image bytes, which is the one thing the app cannot get for
+free: `_hashIcon` downloads the icon, on the same five-second leash as the site
+lookup. That is paid when the URL changes and not on an ordinary refresh, since
+`_resolveIcon` keeps the stored hash whenever the stored URL still stands. A URL
+held with no hash is the exception and is hashed again on every refresh — how a
+feed subscribed to before the column existed picks one up, and what a feed whose
+image cannot be decoded pays forever.
+
+The two are written together by `updateFeedMetadata`, which takes the hash
+whenever it takes a URL, null included. A hash left behind from the previous
+image would blur the wrong picture under the new one.
+
+Decoding is a `CustomPaint` of 32 by 32 rectangles, not a `ui.Image`: at the 40
+points an avatar occupies each cell is barely a point across, and a synchronous
+painter needs neither an image cache nor a frame to arrive. `BlurHashView`
+decodes once per hash in its `State` rather than on every build, since the feed
+list rebuilds on every revision bump.
 
 **HTTP.** `FeedApiClient` sends an explicit `User-Agent` (some hosts reject
 requests without one) and decodes bodies as UTF-8 unless a different charset is
@@ -460,3 +492,9 @@ touches the network.
 Reach the providers by overriding `feedRepositoryProvider` with a repository
 built that way — `ProviderScope(overrides: ...)` for widget tests,
 `ProviderContainer.test()` for view models on their own.
+
+`test/support/` is the one directory that mirrors nothing. `test_images.dart`
+draws a PNG and hands back its bytes, which is what a test of the icon path
+needs: a blur hash is taken from a real encoded image, so a stub string will not
+do. Anything that decodes an image, that one included, needs
+`TestWidgetsFlutterBinding.ensureInitialized()` — the codec is the engine's.

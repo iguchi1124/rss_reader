@@ -8,6 +8,7 @@ class Feed {
     required this.feedUrl,
     this.siteUrl,
     this.iconUrl,
+    this.iconBlurHash,
     this.description,
     this.lastFetchedAt,
     this.unreadCount = 0,
@@ -27,6 +28,11 @@ class Feed {
   /// its site offered one that can be drawn, and the initial is shown instead.
   final String? iconUrl;
 
+  /// BlurHash of the image at [iconUrl], drawn while that image loads and in
+  /// place of it when it cannot be reached. Null where there is no icon, and
+  /// where the icon was there but could not be decoded to hash.
+  final String? iconBlurHash;
+
   final String? description;
   final DateTime? lastFetchedAt;
 
@@ -38,6 +44,7 @@ class Feed {
     String? title,
     String? siteUrl,
     String? iconUrl,
+    String? iconBlurHash,
     String? description,
     DateTime? lastFetchedAt,
     int? unreadCount,
@@ -49,6 +56,7 @@ class Feed {
       feedUrl: feedUrl,
       siteUrl: siteUrl ?? this.siteUrl,
       iconUrl: iconUrl ?? this.iconUrl,
+      iconBlurHash: iconBlurHash ?? this.iconBlurHash,
       description: description ?? this.description,
       lastFetchedAt: lastFetchedAt ?? this.lastFetchedAt,
       unreadCount: unreadCount ?? this.unreadCount,
@@ -64,6 +72,7 @@ class Feed {
       other.feedUrl == feedUrl &&
       other.siteUrl == siteUrl &&
       other.iconUrl == iconUrl &&
+      other.iconBlurHash == iconBlurHash &&
       other.description == description &&
       other.lastFetchedAt == lastFetchedAt &&
       other.unreadCount == unreadCount &&
@@ -76,6 +85,7 @@ class Feed {
     feedUrl,
     siteUrl,
     iconUrl,
+    iconBlurHash,
     description,
     lastFetchedAt,
     unreadCount,

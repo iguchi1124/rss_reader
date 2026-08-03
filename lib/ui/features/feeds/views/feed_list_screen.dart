@@ -5,6 +5,7 @@ import '../../../../domain/models/feed.dart';
 import '../../../../utils/date_format.dart';
 import '../../../core/app_messenger.dart';
 import '../../../core/theme.dart';
+import '../../../core/widgets/blur_hash_view.dart';
 import '../../../core/widgets/glass_header_scaffold.dart';
 import '../../../core/widgets/status_view.dart';
 import '../../articles/views/article_list_screen.dart';
@@ -277,17 +278,8 @@ class _FeedAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final initial = CircleAvatar(
-      backgroundColor: theme.colorScheme.primaryContainer,
-      child: Text(
-        feed.title.characters.firstOrNull?.toUpperCase() ?? '?',
-        style: TextStyle(color: theme.colorScheme.onPrimaryContainer),
-      ),
-    );
-
     final iconUrl = feed.iconUrl;
-    if (iconUrl == null) return initial;
+    if (iconUrl == null) return _placeholder(context);
 
     final pixelRatio = MediaQuery.devicePixelRatioOf(context);
 
@@ -302,12 +294,41 @@ class _FeedAvatar extends StatelessWidget {
         // the cache holds every feed in the list at once. Width only: both
         // dimensions together would stretch a mark that is not square.
         cacheWidth: (_diameter * pixelRatio).round(),
-        // The initial holds the place until the icon arrives and stays if it
-        // never does. A spinner in every row is a worse list than the letters,
-        // and an icon that will not load is not worth telling the user about.
+        // The placeholder holds the place until the icon arrives and stays if
+        // it never does. A spinner in every row is a worse list than what it
+        // replaces, and an icon that will not load is not worth telling the
+        // user about.
         frameBuilder: (context, child, frame, wasSynchronouslyLoaded) =>
-            wasSynchronouslyLoaded || frame != null ? child : initial,
-        errorBuilder: (context, error, stackTrace) => initial,
+            wasSynchronouslyLoaded || frame != null
+            ? child
+            : _placeholder(context),
+        errorBuilder: (context, error, stackTrace) => _placeholder(context),
+      ),
+    );
+  }
+
+  /// The blur of the icon where one has been hashed, and the title's initial
+  /// otherwise.
+  ///
+  /// The hash is the better stand-in and the only one that survives being
+  /// offline: it is stored beside the URL, while the image behind that URL has
+  /// no disk cache to fall back on.
+  Widget _placeholder(BuildContext context) {
+    final theme = Theme.of(context);
+    final blurHash = feed.iconBlurHash;
+
+    if (blurHash != null) {
+      return SizedBox.square(
+        dimension: _diameter,
+        child: ClipOval(child: BlurHashView(hash: blurHash)),
+      );
+    }
+
+    return CircleAvatar(
+      backgroundColor: theme.colorScheme.primaryContainer,
+      child: Text(
+        feed.title.characters.firstOrNull?.toUpperCase() ?? '?',
+        style: TextStyle(color: theme.colorScheme.onPrimaryContainer),
       ),
     );
   }

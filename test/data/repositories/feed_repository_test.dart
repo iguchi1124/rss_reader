@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'dart:typed_data';
+import 'dart:ui' show Color;
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
@@ -8,7 +10,10 @@ import 'package:rss_reader/data/repositories/feed_repository.dart';
 import 'package:rss_reader/data/services/feed_api_client.dart';
 import 'package:rss_reader/data/services/feed_database.dart';
 import 'package:rss_reader/domain/models/feed.dart';
+import 'package:rss_reader/utils/blur_hash.dart';
 import 'package:rss_reader/utils/result.dart';
+
+import '../../support/test_images.dart';
 
 const _rss = '''
 <?xml version="1.0" encoding="UTF-8"?>
@@ -45,6 +50,8 @@ const _htmlWithFeedLink = '''
 
 void main() {
   setUpAll(() {
+    // Hashing an icon decodes it through the engine.
+    TestWidgetsFlutterBinding.ensureInitialized();
     sqfliteFfiInit();
     databaseFactory = databaseFactoryFfi;
   });
@@ -57,16 +64,29 @@ void main() {
 
   tearDown(() => database.close());
 
-  /// Serves [responses] by URL. Requested URLs accumulate in [requested] in
-  /// call order.
+  /// Serves [responses] by URL, and [images] by URL for the icon downloads
+  /// that hashing makes. Requested URLs accumulate in [requested] in call
+  /// order.
   FeedRepository buildRepository(
     Map<String, String> responses, {
+    Map<String, Uint8List>? images,
     List<String>? requested,
     int statusCode = 200,
   }) {
     final client = MockClient((request) async {
-      requested?.add(request.url.toString());
-      final body = responses[request.url.toString()];
+      final url = request.url.toString();
+      requested?.add(url);
+
+      final image = images?[url];
+      if (image != null) {
+        return http.Response.bytes(
+          image,
+          statusCode,
+          headers: {'content-type': 'image/png'},
+        );
+      }
+
+      final body = responses[url];
       if (body == null) return http.Response('not found', 404);
       return http.Response.bytes(
         utf8.encode(body),
@@ -193,9 +213,11 @@ void main() {
 
     test('takes the image the feed declares without asking the site', () async {
       final requested = <String>[];
-      final repository = buildRepository({
-        'https://example.com/feed.xml': rssWithImage,
-      }, requested: requested);
+      final repository = buildRepository(
+        {'https://example.com/feed.xml': rssWithImage},
+        images: {'https://example.com/logo.png': await pngBytes()},
+        requested: requested,
+      );
 
       await repository.addFeed('https://example.com/feed.xml');
 
@@ -203,15 +225,24 @@ void main() {
         (await repository.listFeeds()).single.iconUrl,
         'https://example.com/logo.png',
       );
-      expect(requested, ['https://example.com/feed.xml']);
+      // The site is not asked for anything; the image itself is downloaded
+      // once, which is the only way to hash it.
+      expect(requested, [
+        'https://example.com/feed.xml',
+        'https://example.com/logo.png',
+      ]);
     });
 
     test('reads the icon out of the page it already fetched', () async {
       final requested = <String>[];
-      final repository = buildRepository({
-        'https://example.com/': htmlWithFeedAndIcon,
-        'https://example.com/feed.xml': _rss,
-      }, requested: requested);
+      final repository = buildRepository(
+        {
+          'https://example.com/': htmlWithFeedAndIcon,
+          'https://example.com/feed.xml': _rss,
+        },
+        images: {'https://example.com/icon.png': await pngBytes()},
+        requested: requested,
+      );
 
       await repository.addFeed('https://example.com/');
 
@@ -219,19 +250,25 @@ void main() {
         (await repository.listFeeds()).single.iconUrl,
         'https://example.com/icon.png',
       );
-      // The site page is not fetched a second time for the icon.
+      // The site page is not fetched a second time for the icon; the icon
+      // itself is, to hash it.
       expect(requested, [
         'https://example.com/',
         'https://example.com/feed.xml',
+        'https://example.com/icon.png',
       ]);
     });
 
     test('goes to the site when the feed declares no image', () async {
       final requested = <String>[];
-      final repository = buildRepository({
-        'https://example.com/feed.xml': _rss,
-        'https://example.com/': htmlWithFeedAndIcon,
-      }, requested: requested);
+      final repository = buildRepository(
+        {
+          'https://example.com/feed.xml': _rss,
+          'https://example.com/': htmlWithFeedAndIcon,
+        },
+        images: {'https://example.com/icon.png': await pngBytes()},
+        requested: requested,
+      );
 
       await repository.addFeed('https://example.com/feed.xml');
 
@@ -242,6 +279,7 @@ void main() {
       expect(requested, [
         'https://example.com/feed.xml',
         'https://example.com/',
+        'https://example.com/icon.png',
       ]);
     });
 
@@ -283,10 +321,14 @@ void main() {
 
     test('keeps a stored icon instead of looking again', () async {
       final requested = <String>[];
-      final repository = buildRepository({
-        'https://example.com/feed.xml': _rss,
-        'https://example.com/': htmlWithFeedAndIcon,
-      }, requested: requested);
+      final repository = buildRepository(
+        {
+          'https://example.com/feed.xml': _rss,
+          'https://example.com/': htmlWithFeedAndIcon,
+        },
+        images: {'https://example.com/icon.png': await pngBytes()},
+        requested: requested,
+      );
       await repository.addFeed('https://example.com/feed.xml');
 
       requested.clear();
@@ -298,6 +340,82 @@ void main() {
         'https://example.com/icon.png',
       );
       expect(requested, ['https://example.com/feed.xml']);
+    });
+
+    group('blur hashes', () {
+      test('hashes the icon it stored', () async {
+        final repository = buildRepository(
+          {'https://example.com/feed.xml': rssWithImage},
+          images: {'https://example.com/logo.png': await pngBytes()},
+        );
+
+        await repository.addFeed('https://example.com/feed.xml');
+
+        final hash = (await repository.listFeeds()).single.iconBlurHash;
+        expect(decodeBlurHash(hash!, width: 4, height: 4), isNotNull);
+      });
+
+      test('keeps the icon when the image cannot be hashed', () async {
+        // Nothing serves the image here. The URL is still worth storing: the
+        // list may well reach it even when this did not.
+        final repository = buildRepository({
+          'https://example.com/feed.xml': rssWithImage,
+        });
+
+        await repository.addFeed('https://example.com/feed.xml');
+
+        final feed = (await repository.listFeeds()).single;
+        expect(feed.iconUrl, 'https://example.com/logo.png');
+        expect(feed.iconBlurHash, isNull);
+      });
+
+      test('replaces the hash when the icon moves', () async {
+        final responses = {'https://example.com/feed.xml': rssWithImage};
+        final repository = buildRepository(
+          responses,
+          images: {
+            'https://example.com/logo.png': await pngBytes(),
+            'https://example.com/logo-v2.png': await pngBytes(
+              top: const Color(0xff2244aa),
+              bottom: const Color(0xffddaa22),
+            ),
+          },
+        );
+        await repository.addFeed('https://example.com/feed.xml');
+        final before = (await repository.listFeeds()).single;
+
+        responses['https://example.com/feed.xml'] = rssWithImage.replaceAll(
+          'logo.png',
+          'logo-v2.png',
+        );
+        await repository.refreshFeed(before);
+
+        final after = (await repository.listFeeds()).single;
+        expect(after.iconUrl, 'https://example.com/logo-v2.png');
+        expect(after.iconBlurHash, isNotNull);
+        expect(after.iconBlurHash, isNot(before.iconBlurHash));
+      });
+
+      test('hashes an icon that was stored without one', () async {
+        // The path a feed subscribed to before the column existed takes, and
+        // the one a feed whose image failed to download takes again.
+        final requested = <String>[];
+        final repository = buildRepository(
+          {'https://example.com/feed.xml': _rss},
+          images: {'https://example.com/icon.png': await pngBytes()},
+          requested: requested,
+        );
+        await database.insertFeed(
+          title: 'Test Feed',
+          feedUrl: 'https://example.com/feed.xml',
+          iconUrl: 'https://example.com/icon.png',
+        );
+
+        await repository.refreshFeed((await repository.listFeeds()).single);
+
+        expect((await repository.listFeeds()).single.iconBlurHash, isNotNull);
+        expect(requested, contains('https://example.com/icon.png'));
+      });
     });
   });
 
