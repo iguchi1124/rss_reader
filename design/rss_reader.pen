@@ -2459,9 +2459,9 @@
               "fill": "$color.surface",
               "padding": [
                 28,
-                12,
+                20,
                 0,
-                24
+                32
               ],
               "alignItems": "center",
               "children": [
@@ -2525,9 +2525,9 @@
               "fill": "$color.surface",
               "padding": [
                 0,
-                24,
+                32,
                 8,
-                24
+                32
               ],
               "children": [
                 {
@@ -2625,7 +2625,7 @@
               "layout": "vertical",
               "padding": [
                 0,
-                8
+                16
               ],
               "children": [
                 {
@@ -5790,9 +5790,9 @@
               "fill": "$color.surface",
               "padding": [
                 28,
-                12,
+                20,
                 0,
-                24
+                32
               ],
               "alignItems": "center",
               "children": [
@@ -5856,9 +5856,9 @@
               "fill": "$color.surface",
               "padding": [
                 0,
-                24,
+                32,
                 8,
-                24
+                32
               ],
               "children": [
                 {
@@ -5956,7 +5956,7 @@
               "layout": "vertical",
               "padding": [
                 0,
-                8
+                16
               ],
               "children": [
                 {
