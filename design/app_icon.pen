@@ -3,15 +3,35 @@
   "variables": {
     "icon.background": {
       "type": "color",
-      "value": "#1A120E"
+      "value": "#F5F5F7"
     },
     "icon.foreground": {
       "type": "color",
-      "value": "#FFF8F6"
+      "value": "#1D1D1F"
     },
     "icon.accent": {
       "type": "color",
-      "value": "#E8681B"
+      "value": "#0066CC"
+    },
+    "icon.foregroundDark": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "icon.accentDark": {
+      "type": "color",
+      "value": "#2997FF"
+    },
+    "icon.tintedBackground": {
+      "type": "color",
+      "value": "#1E1E1E"
+    },
+    "icon.tintedForeground": {
+      "type": "color",
+      "value": "#CCCCCC"
+    },
+    "icon.tintedAccent": {
+      "type": "color",
+      "value": "#FFFFFF"
     }
   },
   "children": [
@@ -29,61 +49,134 @@
       },
       "children": [
         {
-          "id": "dot0",
-          "type": "ellipse",
-          "x": 194.56,
-          "y": 298.12,
-          "width": 93.67,
-          "height": 93.67,
-          "fill": "$icon.accent"
-        },
-        {
-          "id": "line0",
+          "id": "row0",
           "type": "rectangle",
-          "x": 329.86,
-          "y": 317.89,
-          "width": 499.58,
-          "height": 54.12,
-          "fill": "$icon.foreground",
-          "cornerRadius": 27.06
+          "x": 194.0,
+          "y": 318.0,
+          "width": 636.0,
+          "height": 54.0,
+          "fill": "$icon.accent",
+          "cornerRadius": 27.0
         },
         {
-          "id": "dot1",
-          "type": "ellipse",
-          "x": 194.56,
-          "y": 475.05,
-          "width": 93.67,
-          "height": 93.67,
-          "fill": "$icon.foreground"
-        },
-        {
-          "id": "line1",
+          "id": "row1",
           "type": "rectangle",
-          "x": 329.86,
-          "y": 494.83,
-          "width": 499.58,
-          "height": 54.12,
+          "x": 194.0,
+          "y": 485.0,
+          "width": 636.0,
+          "height": 54.0,
           "fill": "$icon.foreground",
-          "cornerRadius": 27.06
+          "cornerRadius": 27.0
         },
         {
-          "id": "line2",
+          "id": "row2",
           "type": "rectangle",
-          "x": 329.86,
-          "y": 671.76,
-          "width": 309.74,
-          "height": 54.12,
+          "x": 194.0,
+          "y": 652.0,
+          "width": 404.0,
+          "height": 54.0,
           "fill": "$icon.foreground",
-          "cornerRadius": 27.06
+          "cornerRadius": 27.0
         }
       ],
       "fill": "$icon.background"
     },
     {
-      "id": "AppIconMacOS",
+      "id": "AppIconDark",
       "type": "frame",
       "reusable": true,
       "x": 1180,
+      "y": 0,
+      "width": 1024,
+      "height": 1024,
+      "layout": "none",
+      "metadata": {
+        "export": "design/app_icon_dark.png"
+      },
+      "children": [
+        {
+          "id": "row0",
+          "type": "rectangle",
+          "x": 194.0,
+          "y": 318.0,
+          "width": 636.0,
+          "height": 54.0,
+          "fill": "$icon.accentDark",
+          "cornerRadius": 27.0
+        },
+        {
+          "id": "row1",
+          "type": "rectangle",
+          "x": 194.0,
+          "y": 485.0,
+          "width": 636.0,
+          "height": 54.0,
+          "fill": "$icon.foregroundDark",
+          "cornerRadius": 27.0
+        },
+        {
+          "id": "row2",
+          "type": "rectangle",
+          "x": 194.0,
+          "y": 652.0,
+          "width": 404.0,
+          "height": 54.0,
+          "fill": "$icon.foregroundDark",
+          "cornerRadius": 27.0
+        }
+      ]
+    },
+    {
+      "id": "AppIconTinted",
+      "type": "frame",
+      "reusable": true,
+      "x": 2360,
+      "y": 0,
+      "width": 1024,
+      "height": 1024,
+      "layout": "none",
+      "metadata": {
+        "export": "design/app_icon_tinted.png"
+      },
+      "children": [
+        {
+          "id": "row0",
+          "type": "rectangle",
+          "x": 194.0,
+          "y": 318.0,
+          "width": 636.0,
+          "height": 54.0,
+          "fill": "$icon.tintedAccent",
+          "cornerRadius": 27.0
+        },
+        {
+          "id": "row1",
+          "type": "rectangle",
+          "x": 194.0,
+          "y": 485.0,
+          "width": 636.0,
+          "height": 54.0,
+          "fill": "$icon.tintedForeground",
+          "cornerRadius": 27.0
+        },
+        {
+          "id": "row2",
+          "type": "rectangle",
+          "x": 194.0,
+          "y": 652.0,
+          "width": 404.0,
+          "height": 54.0,
+          "fill": "$icon.tintedForeground",
+          "cornerRadius": 27.0
+        }
+      ],
+      "fill": "$icon.tintedBackground"
+    },
+    {
+      "id": "AppIconMacOS",
+      "type": "frame",
+      "reusable": true,
+      "x": 3540,
       "y": 0,
       "width": 1024,
       "height": 1024,
@@ -93,52 +186,34 @@
       },
       "children": [
         {
-          "id": "dot0",
-          "type": "ellipse",
-          "x": 256.59,
-          "y": 339.91,
-          "width": 75.37,
-          "height": 75.37,
-          "fill": "$icon.accent"
-        },
-        {
-          "id": "line0",
+          "id": "row0",
           "type": "rectangle",
-          "x": 365.45,
-          "y": 355.82,
-          "width": 401.96,
-          "height": 43.55,
-          "fill": "$icon.foreground",
-          "cornerRadius": 21.77
+          "x": 256.14,
+          "y": 355.91,
+          "width": 511.73,
+          "height": 43.45,
+          "fill": "$icon.accent",
+          "cornerRadius": 21.72
         },
         {
-          "id": "dot1",
-          "type": "ellipse",
-          "x": 256.59,
-          "y": 482.27,
-          "width": 75.37,
-          "height": 75.37,
-          "fill": "$icon.foreground"
-        },
-        {
-          "id": "line1",
+          "id": "row1",
           "type": "rectangle",
-          "x": 365.45,
-          "y": 498.18,
-          "width": 401.96,
-          "height": 43.55,
+          "x": 256.14,
+          "y": 490.28,
+          "width": 511.73,
+          "height": 43.45,
           "fill": "$icon.foreground",
-          "cornerRadius": 21.77
+          "cornerRadius": 21.72
         },
         {
-          "id": "line2",
+          "id": "row2",
           "type": "rectangle",
-          "x": 365.45,
-          "y": 640.54,
-          "width": 249.22,
-          "height": 43.55,
+          "x": 256.14,
+          "y": 624.64,
+          "width": 325.06,
+          "height": 43.45,
           "fill": "$icon.foreground",
-          "cornerRadius": 21.77
+          "cornerRadius": 21.72
         }
       ],
       "fill": "$icon.background",
@@ -148,7 +223,7 @@
       "id": "AppIconForeground",
       "type": "frame",
       "reusable": true,
-      "x": 2360,
+      "x": 4720,
       "y": 0,
       "width": 1024,
       "height": 1024,
@@ -158,52 +233,79 @@
       },
       "children": [
         {
-          "id": "dot0",
-          "type": "ellipse",
-          "x": 256.0,
-          "y": 339.51,
-          "width": 75.54,
-          "height": 75.54,
-          "fill": "$icon.accent"
-        },
-        {
-          "id": "line0",
+          "id": "row0",
           "type": "rectangle",
-          "x": 365.11,
-          "y": 355.46,
-          "width": 402.89,
-          "height": 43.65,
-          "fill": "$icon.foreground",
-          "cornerRadius": 21.82
+          "x": 194.0,
+          "y": 318.0,
+          "width": 636.0,
+          "height": 54.0,
+          "fill": "$icon.accent",
+          "cornerRadius": 27.0
         },
         {
-          "id": "dot1",
-          "type": "ellipse",
-          "x": 256.0,
-          "y": 482.2,
-          "width": 75.54,
-          "height": 75.54,
-          "fill": "$icon.foreground"
-        },
-        {
-          "id": "line1",
+          "id": "row1",
           "type": "rectangle",
-          "x": 365.11,
-          "y": 498.15,
-          "width": 402.89,
-          "height": 43.65,
+          "x": 194.0,
+          "y": 485.0,
+          "width": 636.0,
+          "height": 54.0,
           "fill": "$icon.foreground",
-          "cornerRadius": 21.82
+          "cornerRadius": 27.0
         },
         {
-          "id": "line2",
+          "id": "row2",
           "type": "rectangle",
-          "x": 365.11,
-          "y": 640.84,
-          "width": 249.79,
-          "height": 43.65,
+          "x": 194.0,
+          "y": 652.0,
+          "width": 404.0,
+          "height": 54.0,
           "fill": "$icon.foreground",
-          "cornerRadius": 21.82
+          "cornerRadius": 27.0
+        }
+      ]
+    },
+    {
+      "id": "AppIconMonochrome",
+      "type": "frame",
+      "reusable": true,
+      "x": 5900,
+      "y": 0,
+      "width": 1024,
+      "height": 1024,
+      "layout": "none",
+      "metadata": {
+        "export": "design/app_icon_monochrome.png"
+      },
+      "children": [
+        {
+          "id": "row0",
+          "type": "rectangle",
+          "x": 194.0,
+          "y": 318.0,
+          "width": 636.0,
+          "height": 54.0,
+          "fill": "$icon.foregroundDark",
+          "cornerRadius": 27.0
+        },
+        {
+          "id": "row1",
+          "type": "rectangle",
+          "x": 194.0,
+          "y": 485.0,
+          "width": 636.0,
+          "height": 54.0,
+          "fill": "$icon.foregroundDark",
+          "cornerRadius": 27.0
+        },
+        {
+          "id": "row2",
+          "type": "rectangle",
+          "x": 194.0,
+          "y": 652.0,
+          "width": 404.0,
+          "height": 54.0,
+          "fill": "$icon.foregroundDark",
+          "cornerRadius": 27.0
         }
       ]
     }

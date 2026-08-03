@@ -2,11 +2,14 @@ flutter_launcher_icons:
   image_path: design/app_icon.png
 
   android: true
-  adaptive_icon_background: "#1A120E"
+  adaptive_icon_background: "#F5F5F7"
   adaptive_icon_foreground: design/app_icon_foreground.png
+  adaptive_icon_monochrome: design/app_icon_monochrome.png
 
   ios: true
   remove_alpha_ios: true
+  image_path_ios_dark_transparent: design/app_icon_dark.png
+  image_path_ios_tinted_grayscale: design/app_icon_tinted.png
 
   macos:
     generate: true

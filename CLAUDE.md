@@ -256,36 +256,73 @@ inset.
 
 ### App icon
 
-`design/app_icon.pen` holds three frames, each exporting to the PNG named in its
+The mark is three rows on a parchment plate, the lead one in the accent and the
+two behind it in ink — the article list, reduced until only the unread signal is
+left. Every frame is those same three rectangles over a different plate.
+
+`design/app_icon.pen` holds six frames, each exporting to the PNG named in its
 `metadata.export`:
 
 | frame | export | used for |
 | --- | --- | --- |
-| `AppIcon` | `design/app_icon.png` | iOS, Android legacy `mipmap` |
+| `AppIcon` | `design/app_icon.png` | iOS light, Android legacy `mipmap` |
+| `AppIconDark` | `design/app_icon_dark.png` | iOS 18 dark — transparent |
+| `AppIconTinted` | `design/app_icon_tinted.png` | iOS 18 tinted — opaque grayscale |
 | `AppIconMacOS` | `design/app_icon_macos.png` | macOS — rounded and inset, since macOS does not mask |
 | `AppIconForeground` | `design/app_icon_foreground.png` | Android adaptive foreground, transparent |
+| `AppIconMonochrome` | `design/app_icon_monochrome.png` | Android 13+ themed icon, transparent |
 
-The foreground frame draws the glyph smaller than the others on purpose: an
-adaptive icon only guarantees the middle 72 of its 108 units are visible, so
-artwork sized like `AppIcon` would lose its edges under a circular mask.
+iOS is the only platform where the icon follows the system: from iOS 18,
+`AppIconDark` replaces `AppIcon` in dark mode. It carries no plate of its own
+because iOS draws one, and it lightens the accent to Sky Link Blue for the same
+reason `AppTheme` does — Action Blue does not survive a near-black surface.
 
-Re-export the three PNGs from pen.dev, then regenerate every platform asset:
+`AppIconTinted` is not a mode the system picks but one the user does, from Home
+Screen customisation, and the slot takes a fully opaque grayscale image whose
+luminance the system maps onto the hue they chose. Colour is gone there, so the
+hierarchy is carried by lightness instead: the lead row is white and the two
+behind it are the muted grey. Leaving the slot empty does not opt out — iOS
+tints the base icon instead, which is worse.
+
+Android and macOS have no such switch. An adaptive icon is one fixed background
+plus one foreground, and the Android 13+ themed icon is a different thing again:
+a single monochrome layer the launcher paints with the wallpaper's colours, and
+only when the user has turned themed icons on. macOS gets a single `.icns` —
+`flutter_launcher_icons` does not emit the `.icon` bundle that would carry
+appearances.
+
+`AppIconForeground` and `AppIconMonochrome` are drawn at `AppIcon`'s size rather
+than inset. An adaptive icon only guarantees the middle 72 of its 108 units, but
+the generator already wraps the foreground in `<inset android:inset="16%">`,
+which leaves the artwork 73 of those units; the mark is wide and flat, and its
+half-diagonal still lands well inside the circle at that size. Insetting the
+artwork on top of that put it at barely half the width of the mask.
+
+Re-export the six PNGs from pen.dev, then regenerate every platform asset:
 
 ```sh
 mise exec flutter -- flutter pub get
 mise exec flutter -- dart run flutter_launcher_icons
 ```
 
-`flutter_launcher_icons.yaml` holds the configuration. `#1A120E` appears there
+`flutter_launcher_icons.yaml` holds the configuration. `#F5F5F7` appears there
 and in `android/app/src/main/res/values/colors.xml` because the Android adaptive
 background is a platform resource, not a Flutter theme value — it cannot read
 `AppTheme`. Change it in both, or the launcher background and the icon artwork
 drift apart.
 
-The icon's colours are fixed, not theme-derived: `$icon.background`,
-`$icon.foreground`, and `$icon.accent` in the `.pen` file carry no `theme` key.
-A launcher icon does not follow the system light/dark setting, so the rule about
-`$color.*` references tracking `AppTheme` does not apply here.
+`remove_alpha_ios` flattens the base icon only, which is what lets `AppIconDark`
+keep the transparency it needs. Check
+`ios/Runner/Assets.xcassets/AppIcon.appiconset` after generating: the dark and
+tinted images belong in that one catalog beside the base icon, and the generator
+has been reported to write them into sibling `AppIcon-Dark.appiconset`
+directories that Xcode then ignores.
+
+The icon's colours are `$icon.*` variables holding the palette by value, not
+`$color.*` references, and they carry no `theme` key. The light/dark pair here is
+two frames exported to two files rather than one frame the canvas re-themes, and
+the tinted frame is a grayscale the system recolours rather than a palette at
+all.
 
 ## Conventions
 
