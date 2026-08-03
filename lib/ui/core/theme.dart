@@ -216,7 +216,7 @@ abstract final class AppTheme {
 /// test can render either width, the same way `HomeScreen` picks its
 /// navigation.
 double contentGutter(BuildContext context) =>
-    Theme.of(context).platform == TargetPlatform.macOS ? 8 : 0;
+    Theme.of(context).platform == TargetPlatform.macOS ? 16 : 0;
 
 /// Padding that leaves an app bar's trailing action on the screen's right
 /// edge, gutter included. The app bar's own background still runs full width.

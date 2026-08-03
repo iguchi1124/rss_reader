@@ -164,7 +164,7 @@ The filter bar pays its own 16 on the left, where the lists have theirs paid for
 them. It rides in the app bar's `bottom` rather than in the list below it, so
 nothing insets it.
 
-macOS adds 8 to both sides, so those become 24 — 16 reads as cramped between
+macOS adds 16 to both sides, so those become 32 — 16 reads as cramped between
 the 220-point sidebar and a window this wide. `contentGutter` in `theme.dart` is
 the amount; `appBarActionsPadding` folds it into the app bar's 4 and
 `appBarTitlePadding` puts it around the title. Both take the platform from the

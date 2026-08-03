@@ -200,7 +200,8 @@ void main() {
 
     // Everything in the content pane sits 16 from its edge plus the gutter,
     // and the pane itself starts where the sidebar ends.
-    const expected = homeSidebarWidth + 16 + 8;
+    const gutter = 16.0;
+    const expected = homeSidebarWidth + 16 + gutter;
 
     expect(tester.getTopLeft(find.text('Latest').last).dx, expected);
     expect(
@@ -210,7 +211,7 @@ void main() {
     // The tile pays its 16 itself, so its box starts at the gutter alone.
     expect(
       tester.getTopLeft(find.byType(ArticleTile)).dx,
-      homeSidebarWidth + 8,
+      homeSidebarWidth + gutter,
     );
   });
 
