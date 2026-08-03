@@ -7,6 +7,30 @@ import 'package:http/http.dart' as http;
 import '../../utils/result.dart';
 import 'html_text.dart';
 
+const _undrawableExtensions = {'.ico', '.svg', '.svgz'};
+const _undrawableTypes = {
+  'image/x-icon',
+  'image/vnd.microsoft.icon',
+  'image/svg+xml',
+};
+
+/// Whether Flutter can draw the image at [url].
+///
+/// `dart:ui` has no ICO or SVG codec (flutter/flutter#105848), and `.ico` is
+/// still what most sites advertise, so an icon that fails this is not worth
+/// storing: it would fail on every build rather than resolve into anything.
+///
+/// Extension and declared [type] are all there is to go on without fetching the
+/// bytes. Anything unrecognised passes, and the widget showing it falls back on
+/// its own if the guess was wrong.
+bool isDrawableImageUrl(String url, {String? type}) {
+  if (type != null && _undrawableTypes.contains(type.toLowerCase().trim())) {
+    return false;
+  }
+  final path = Uri.tryParse(url)?.path.toLowerCase() ?? '';
+  return !_undrawableExtensions.any((extension) => path.endsWith(extension));
+}
+
 /// HTTP access to feed publishers.
 ///
 /// Goes no further than turning a response into a string; parsing and storage
@@ -22,7 +46,9 @@ class FeedApiClient {
   /// Sent explicitly because some hosts reject requests without a User-Agent.
   static const _userAgent = 'rss_reader/1.0 (+https://github.com/iguchi1124/rss_reader)';
 
-  Future<Result<String>> fetch(String url) async {
+  /// [timeout] overrides the client's own, for a request whose result matters
+  /// less than the wait — see `FeedRepository._findSiteIcon`.
+  Future<Result<String>> fetch(String url, {Duration? timeout}) async {
     final uri = Uri.tryParse(url);
     if (uri == null || !uri.hasScheme || !uri.hasAuthority) {
       return const Failure(FeedException('That URL is not valid.'));
@@ -34,7 +60,7 @@ class FeedApiClient {
     try {
       final response = await _httpClient
           .get(uri, headers: const {'User-Agent': _userAgent, 'Accept': '*/*'})
-          .timeout(_timeout);
+          .timeout(timeout ?? _timeout);
 
       if (response.statusCode != 200) {
         return Failure(
@@ -108,6 +134,59 @@ class FeedApiClient {
     }
 
     return null;
+  }
+
+  /// Finds the icon an HTML page advertises for itself.
+  ///
+  /// `rel="icon"` and `rel="apple-touch-icon"` are both candidates and the
+  /// largest declared size wins: the feed list draws these at 40 points, and a
+  /// 16-pixel favicon is visibly soft there.
+  ///
+  /// Anything [isDrawableImageUrl] rejects is dropped rather than stored, and
+  /// `.ico` is still what most sites advertise, so this returns null for a good
+  /// many pages.
+  String? discoverIconUrl(String html, {required String baseUrl}) {
+    final document = html_parser.parse(html);
+
+    String? best;
+    var bestSize = -1;
+
+    for (final link in document.querySelectorAll('link')) {
+      final rels =
+          link.attributes['rel']?.toLowerCase().split(RegExp(r'\s+')) ??
+          const <String>[];
+      final isTouchIcon = rels.contains('apple-touch-icon');
+      if (!isTouchIcon && !rels.contains('icon')) continue;
+
+      final href = resolveUrl(link.attributes['href'], baseUrl: baseUrl);
+      if (href == null ||
+          !isDrawableImageUrl(href, type: link.attributes['type'])) {
+        continue;
+      }
+
+      // An apple-touch-icon seldom declares a size and is 180 by convention,
+      // which is the one worth having when nothing else says how big it is.
+      final size =
+          _declaredSize(link.attributes['sizes']) ?? (isTouchIcon ? 180 : 0);
+      if (size > bestSize) {
+        bestSize = size;
+        best = href;
+      }
+    }
+
+    return best;
+  }
+
+  /// The largest width the `sizes` attribute names, or null where it names none
+  /// — `sizes="any"` says nothing about pixels.
+  int? _declaredSize(String? sizes) {
+    var largest = 0;
+    for (final token
+        in sizes?.toLowerCase().split(RegExp(r'\s+')) ?? const <String>[]) {
+      final width = int.tryParse(token.split('x').first);
+      if (width != null && width > largest) largest = width;
+    }
+    return largest == 0 ? null : largest;
   }
 
   void dispose() => _httpClient.close();

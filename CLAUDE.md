@@ -401,6 +401,47 @@ content but never overwrites `is_read` or `is_starred` — those are the user's
 state. `PRAGMA foreign_keys` must be set per connection in `onConfigure` for
 cascade delete to work. Timestamps are stored as epoch milliseconds.
 
+The schema is versioned. `_createSchema` is the shape a fresh database starts
+from and `_upgradeSchema` is what an installed one runs on its way up, so a new
+column has to be written into both or the two diverge silently — the developer
+who added it never sees the upgrade path.
+
+**Icons.** The feed list draws the publisher's mark where there is one and the
+title's initial where there is not. The feed document's own image comes first —
+RSS `channel > image > url`, RSS 1.0's root-level `image`, Atom `icon` ahead of
+`logo` — because it arrives inside a document already being fetched. Only a feed
+declaring none sends `FeedRepository` to the site page for a
+`<link rel="icon">`, and `refreshFeed` then keeps whatever it found rather than
+looking again. A feed with no icon anywhere is the one case that pays an extra
+request on every refresh; every other feed pays none.
+
+`_resolveFeed` hands back the HTML page it went through when the user pasted a
+site URL, and `_findSiteIcon` reads the icon out of that rather than asking for
+the same URL a second time. That is why it returns a three-element record and
+why the page is taken as final even when it declares no icon.
+
+`isDrawableImageUrl` drops `.ico` and `.svg`, and both sources are held to it —
+an Atom `icon` pointing at a favicon is common, and taking it would shut out the
+PNG the site also offers. `dart:ui` has no codec for either
+(flutter/flutter#105848), so keeping one would fail on every build rather than
+resolve into anything. `.ico` is still what most sites advertise, so a good many
+pages yield no icon at all: the initial is a real state, not a placeholder.
+
+The site lookup runs on a five-second leash rather than the client's twenty.
+Decoration must not hold up a subscription, and `refreshAll` refreshes serially,
+so the wait would otherwise be paid once per iconless feed.
+
+`refreshFeed` reads the stored icon back out of the database instead of trusting
+the `Feed` it was handed. A screen keeps the copy it was pushed with, so an icon
+found by an earlier refresh is not on that object, and `updateFeedMetadata`
+leaves `icon_url` out of the update entirely when it has nothing — a lookup that
+came back empty must not erase what an earlier one found.
+
+Only the URL is stored, decoded at `cacheWidth` rather than full size: the cache
+holds every feed in the list at once and publishers serve marks at 512 or more.
+`Image.network` has no disk cache, so an icon is the one thing in the app that
+does not read offline.
+
 **HTTP.** `FeedApiClient` sends an explicit `User-Agent` (some hosts reject
 requests without one) and decodes bodies as UTF-8 unless a different charset is
 declared, because `http` assumes Latin-1 and mangles non-ASCII feeds.

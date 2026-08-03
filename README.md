@@ -10,6 +10,8 @@ feeds; articles are stored on the device so they can be read offline.
 - **Fetching** — refresh one feed or all of them. Already-imported articles are
   matched by `guid`, so only the content is replaced while read and starred state
   is preserved
+- **Feed icons** — the publisher's own image, or failing that the site's favicon,
+  stands in for a feed in the list. Feeds that offer neither keep their initial
 - **Read state** — tap to read, swipe to toggle read/unread, mark a whole feed as
   read at once
 - **Stars** — mark articles to read later and filter the list down to them

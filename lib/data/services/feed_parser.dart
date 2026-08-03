@@ -54,6 +54,7 @@ class FeedParser {
       ParsedFeed(
         title: _feedTitle(_text(channel, 'title'), feedUrl),
         siteUrl: siteUrl,
+        iconUrl: _imageUrl(channel, feedUrl),
         description: htmlToPlainText(_text(channel, 'description')),
         items: _children(
           channel,
@@ -100,6 +101,9 @@ class FeedParser {
       ParsedFeed(
         title: _feedTitle(_text(channel, 'title'), feedUrl),
         siteUrl: siteUrl,
+        // RSS 1.0 hangs image off the document root and leaves the channel with
+        // only an rdf:resource pointer to it.
+        iconUrl: _imageUrl(root, feedUrl),
         description: htmlToPlainText(_text(channel, 'description')),
         items: _children(
           root,
@@ -118,6 +122,12 @@ class FeedParser {
       ParsedFeed(
         title: _feedTitle(_text(root, 'title'), feedUrl),
         siteUrl: siteUrl,
+        // icon is the square, favicon-sized one and is what the list wants;
+        // logo is wide and only stands in when there is no icon.
+        iconUrl: resolveUrl(
+          _text(root, 'icon') ?? _text(root, 'logo'),
+          baseUrl: feedUrl,
+        ),
         description: htmlToPlainText(
           _text(root, 'subtitle') ?? _text(root, 'tagline'),
         ),
@@ -180,6 +190,15 @@ class FeedParser {
   }
 
   String _itemTitle(String? raw) => htmlToPlainText(raw) ?? '(untitled)';
+
+  /// The `image` element both RSS versions use, resolved against the feed
+  /// document rather than the site: the URL is absolute by spec, and where a
+  /// publisher writes a relative one anyway the feed is what it is relative to.
+  String? _imageUrl(XmlElement parent, String? feedUrl) {
+    final image = _child(parent, 'image');
+    if (image == null) return null;
+    return resolveUrl(_text(image, 'url'), baseUrl: feedUrl);
+  }
 
   XmlElement? _child(XmlElement parent, String localName) {
     for (final element in parent.childElements) {
