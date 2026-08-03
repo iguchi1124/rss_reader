@@ -81,9 +81,9 @@ class _ArticleDetailScreenState extends ConsumerState<ArticleDetailScreen> {
         child: ListView(
           // The top clears the glass header the article now runs behind.
           padding: EdgeInsets.fromLTRB(
-            20,
+            20 + contentGutter(context),
             16 + MediaQuery.paddingOf(context).top,
-            20 + rightGutter(context),
+            20 + contentGutter(context),
             48,
           ),
           children: [

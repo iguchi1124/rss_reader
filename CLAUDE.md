@@ -143,11 +143,11 @@ without them and only looks wrong once it is open on the canvas:
   the variant on a FILL axis the icon node cannot reach, so a selected tab draws
   outlined on the canvas and filled in the app.
 
-### Right edge
+### Side edges
 
-Content sits 16 from either side. The left comes for free — a title, a list
-tile and an app bar's leading icon are all inset 16 by Material. On the right
-two widgets arrive at a different number on their own and are corrected:
+Content sits 16 from either side. On a phone the left comes for free — a title,
+a list tile and an app bar's leading icon are all inset 16 by Material. On the
+right two widgets arrive at a different number on their own and are corrected:
 
 - An app bar's `actions` run flush to the edge, so a 48-wide icon button leaves
   its 24-point glyph 12 in, while the leading icon gets 56 points to sit in and
@@ -160,18 +160,28 @@ The article tile's star is the one left alone, 18 rather than 16: its
 `IconButton` insets a 20-point icon by 10, and the 2 is not worth a magic
 number in the tile's padding.
 
-macOS adds 8 on top, so those become 24 — a 16-point edge reads as cramped
-against the 220-point sidebar. `rightGutter` in `theme.dart` is the amount and
-`appBarActionsPadding` folds it into the app bar's 4; both take the platform
-from the theme, like `HomeScreen` does, so a test can render either width. A
-list spends it as `ListView` padding, which carries it to the tiles and to the
-dividers' `endIndent` at once.
+The filter bar pays its own 16 on the left, where the lists have theirs paid for
+them. It rides in the app bar's `bottom` rather than in the list below it, so
+nothing insets it.
+
+macOS adds 8 to both sides, so those become 24 — 16 reads as cramped between
+the 220-point sidebar and a window this wide. `contentGutter` in `theme.dart` is
+the amount; `appBarActionsPadding` folds it into the app bar's 4 and
+`appBarTitlePadding` puts it around the title. Both take the platform from the
+theme, like `HomeScreen` does, so a test can render either width. A list spends
+it as `ListView` padding, which carries it to the tiles and to the dividers'
+`indent` and `endIndent` at once.
+
+The title takes a `Padding` rather than a wider `titleSpacing`, because that
+number is also the gap after a leading icon: raising it would push the title off
+a back button as well as off the edge. The back button is then the one thing the
+gutter does not move, and keeps Material's 16 on a pushed route.
 
 The gutter is spent edge by edge rather than as a single `Padding` around
 `HomeScreen`'s body, which would be one line. An app bar tints when a list
 scrolls under it — `#ffffff` to `#ebf3fb` in light, `#1d1d1f` to `#1e2731` in
 dark — so pulling its background in along with its contents leaves an untinted
-strip down the right of the window. The background stays full width; only what
+strip down the side of the window. The background stays full width; only what
 sits on it moves.
 
 ### Glass

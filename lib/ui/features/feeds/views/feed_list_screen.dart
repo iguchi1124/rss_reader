@@ -48,7 +48,7 @@ class FeedListScreen extends ConsumerWidget {
       floatingActionButton: hasFeeds
           ? Padding(
               padding: EdgeInsets.only(
-                right: rightGutter(context),
+                right: contentGutter(context),
                 bottom: MediaQuery.paddingOf(context).bottom,
               ),
               child: FloatingActionButton(
@@ -123,7 +123,8 @@ class FeedListScreen extends ConsumerWidget {
       // phones the floating tab bar beneath it.
       padding: EdgeInsets.only(
         top: MediaQuery.paddingOf(context).top,
-        right: rightGutter(context),
+        left: contentGutter(context),
+        right: contentGutter(context),
         bottom: 88 + MediaQuery.paddingOf(context).bottom,
       ),
       itemCount: feeds.length,

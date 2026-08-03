@@ -127,7 +127,8 @@ class ArticleListScreen extends ConsumerWidget {
       // header and the floating tab bar — widgets of ours, not system insets.
       padding: EdgeInsets.only(
         top: MediaQuery.paddingOf(context).top,
-        right: rightGutter(context),
+        left: contentGutter(context),
+        right: contentGutter(context),
         bottom: MediaQuery.paddingOf(context).bottom,
       ),
       itemCount: articles.length,
@@ -204,8 +205,12 @@ class _FilterBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final gutter = contentGutter(context);
+
     return Padding(
-      padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
+      // The bar sits in the app bar rather than in the list, so it pays the
+      // whole inset itself to land on the same edge as the tiles below it.
+      padding: EdgeInsets.fromLTRB(16 + gutter, 0, 16 + gutter, 8),
       child: Align(
         alignment: Alignment.centerLeft,
         child: SegmentedButton<ArticleFilter>(

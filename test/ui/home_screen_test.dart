@@ -10,7 +10,11 @@ import 'package:rss_reader/data/providers.dart';
 import 'package:rss_reader/data/repositories/feed_repository.dart';
 import 'package:rss_reader/data/services/feed_api_client.dart';
 import 'package:rss_reader/data/services/feed_database.dart';
+import 'package:rss_reader/domain/models/article.dart';
+import 'package:rss_reader/ui/core/theme.dart';
+import 'package:rss_reader/ui/features/articles/views/article_tile.dart';
 import 'package:rss_reader/ui/features/home/views/home_screen.dart';
+import 'package:rss_reader/ui/features/home/views/home_sidebar.dart';
 
 const _rss = '''
 <?xml version="1.0" encoding="UTF-8"?>
@@ -69,11 +73,16 @@ void main() {
     }
   }
 
-  Future<void> pumpApp(WidgetTester tester) async {
+  Future<void> pumpApp(WidgetTester tester, {TargetPlatform? platform}) async {
     await tester.pumpWidget(
       ProviderScope(
         overrides: [feedRepositoryProvider.overrideWithValue(repository)],
-        child: const MaterialApp(home: HomeScreen()),
+        child: MaterialApp(
+          theme: platform == null
+              ? null
+              : AppTheme.light().copyWith(platform: platform),
+          home: const HomeScreen(),
+        ),
       ),
     );
     await settle(tester);
@@ -177,6 +186,32 @@ void main() {
 
     expect(find.text('Imported article'), findsNothing);
     expect(find.text('No unread articles'), findsOneWidget);
+  });
+
+  testWidgets('the header, the filter bar and the tiles share a left edge', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(1024, 680);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+
+    await tester.runAsync(() => repository.addFeed('https://example.com/rss'));
+    await pumpApp(tester, platform: TargetPlatform.macOS);
+
+    // Everything in the content pane sits 16 from its edge plus the gutter,
+    // and the pane itself starts where the sidebar ends.
+    const expected = homeSidebarWidth + 16 + 8;
+
+    expect(tester.getTopLeft(find.text('Latest').last).dx, expected);
+    expect(
+      tester.getTopLeft(find.byType(SegmentedButton<ArticleFilter>)).dx,
+      expected,
+    );
+    // The tile pays its 16 itself, so its box starts at the gutter alone.
+    expect(
+      tester.getTopLeft(find.byType(ArticleTile)).dx,
+      homeSidebarWidth + 8,
+    );
   });
 
   testWidgets('a starred article survives the starred filter', (tester) async {
