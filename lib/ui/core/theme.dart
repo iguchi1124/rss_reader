@@ -206,21 +206,30 @@ abstract final class AppTheme {
   );
 }
 
-/// Extra space a screen leaves on its right edge, on top of its own padding.
+/// Extra space a screen leaves on either edge, on top of its own padding.
 ///
 /// Zero on a phone, where 16 is the whole width budget. A desktop window is
 /// wide and carries a 220-point sidebar on the left, which makes the same 16
-/// read as cramped.
+/// read as cramped against it and against the window's own edge.
 ///
 /// Taken from the theme rather than `dart:io` so an override reaches it and a
 /// test can render either width, the same way `HomeScreen` picks its
 /// navigation.
-double rightGutter(BuildContext context) =>
-    Theme.of(context).platform == TargetPlatform.macOS ? 8 : 0;
+double contentGutter(BuildContext context) =>
+    Theme.of(context).platform == TargetPlatform.macOS ? 16 : 0;
 
 /// Padding that leaves an app bar's trailing action on the screen's right
 /// edge, gutter included. The app bar's own background still runs full width.
 EdgeInsetsGeometry appBarActionsPadding(BuildContext context) =>
     (AppBarTheme.of(context).actionsPadding ?? EdgeInsets.zero).add(
-      EdgeInsetsDirectional.only(end: rightGutter(context)),
+      EdgeInsetsDirectional.only(end: contentGutter(context)),
     );
+
+/// Padding that puts an app bar's title on the same left edge as the content
+/// below it.
+///
+/// `AppBar` has no `titlePadding`, and its `titleSpacing` is also the gap after
+/// a leading icon, so raising that would push the title away from a back button
+/// as well as off the edge. The gutter goes around the title widget instead.
+EdgeInsetsGeometry appBarTitlePadding(BuildContext context) =>
+    EdgeInsetsDirectional.only(start: contentGutter(context));

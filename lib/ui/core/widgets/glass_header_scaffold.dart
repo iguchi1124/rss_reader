@@ -76,7 +76,10 @@ class _GlassHeaderScaffoldState extends State<GlassHeaderScaffold> {
     final scaffold = Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: widget.title,
+        title: Padding(
+          padding: appBarTitlePadding(context),
+          child: widget.title,
+        ),
         actionsPadding: appBarActionsPadding(context),
         actions: widget.actions,
         bottom: widget.bottom,
