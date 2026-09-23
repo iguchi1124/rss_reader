@@ -41,7 +41,7 @@ dependencies:
   url_launcher: ^6.3.2
   intl: ^0.20.3
   html: ^0.15.7
-  flutter_riverpod: ^3.3.2
+  flutter_riverpod: ^3.4.3
   # The liquid glass shaders. Pre-1.0 and moving quickly, so the constraint is
   # deliberately narrow; widen it once the package reaches 1.0.
   liquid_glass_widgets: ^0.26.0
